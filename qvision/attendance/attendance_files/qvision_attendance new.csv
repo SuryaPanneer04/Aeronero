@@ -1,0 +1,4 @@
+S No,emp_code,in_log_date,punch_in_time,punch_out_time,status,total_days,Employee_Name
+1,QSPLO1185,20-04-2026,9:00:00,18:00:00,1,18,Divya sri
+2,1190,20-04-2026,9:00:00,18:00:00,1,18,Gokul
+3,QSPLO1188,20-04-2026,9:00:00,18:00:00,1,18,sanjay

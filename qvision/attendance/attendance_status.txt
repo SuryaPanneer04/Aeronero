@@ -1,0 +1,20 @@
+Attendance Status
+
+Absent                 => 0;
+Present                 => 1;
+Half day Present   => 2;
+
+
+0 = Absent = LOP  ;           
+
+1= Present= Full Salary;
+
+2= Casual Leave Present = Full Salary;
+
+3= Sick Leave Present = Full Salary;
+
+4= Earned Leave Present = Full Salary;
+
+5 =Half a day Absent = ½ day LOP;
+
+6 = Half a day Present = ½ Present Half Salary;

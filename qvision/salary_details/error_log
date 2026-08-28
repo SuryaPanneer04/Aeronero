@@ -1,0 +1,16 @@
+[01-Feb-2024 03:26:17 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_main.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[01-Feb-2024 03:26:17 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_main.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[01-Feb-2024 03:26:17 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_main.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[01-Feb-2024 03:26:17 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_main.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[01-Feb-2024 03:26:20 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_main.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[01-Feb-2024 03:26:29 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[01-Feb-2024 03:26:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php on line 107
+[01-Feb-2024 03:26:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php on line 108
+[01-Feb-2024 03:26:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php on line 114
+[01-Feb-2024 03:26:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php on line 115
+[01-Feb-2024 03:26:29 America/Boise] PHP Fatal error:  Uncaught TypeError: number_format(): Argument #1 ($num) must be of type float, string given in /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php:260
+Stack trace:
+#0 /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php(260): number_format('21,708', 2)
+#1 {main}
+  thrown in /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_view.php on line 260
+[12-Feb-2024 21:09:03 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/Qvision/salary_details/salary_details_main.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3

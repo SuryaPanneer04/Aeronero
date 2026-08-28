@@ -1,0 +1,284 @@
+<?php
+require '../../connect.php';
+include("../../user.php");
+$id=$_REQUEST['id'];
+$stmt = $con->prepare("SELECT distinct new_plant_master.id,new_client_master.status as client_master_status,z_department_master.*,candidate_form_details.*,enquiry.id as eq_id,enquiry.*,new_client_master.*,org_type_master.*,new_plant_master.*,s.*,c.* FROM `new_client_master` left join  new_plant_master on new_client_master.id=new_plant_master.client_id left join states s on new_plant_master.state=s.id left join cities c on new_plant_master.city=c.id  left join z_department_master ON new_client_master.department_id=z_department_master.id left JOIN candidate_form_details ON new_client_master.employee_id = candidate_form_details.id left join enquiry on new_client_master.org_name=enquiry.Company_name left JOIN org_type_master ON new_client_master.org_type=org_type_master.id where new_client_master.id='$id'"); 
+
+  
+
+$stmt->execute(); 
+$row = $stmt->fetch();
+$eq_id=$row['eq_id'];
+?>
+<head>
+    <link rel="stylesheet" href="Qvision\commonstyle.css">
+    </head>
+		<style>
+.card-primary:not(.card-outline)>.card-header{
+background-color: #f1cc61 !important;
+}
+.card-primary:not(.card-outline)>.card-header{
+	color: black !important;
+}
+.btn-dark{
+	background-color: #ed5d00 !important;
+    border-color: #ed5d00 !important;
+}
+.card-primary:not(.card-outline)>.card-header a {
+	color: black !important;
+}
+</style>
+<div class="card card-primary">
+<div class="card-header">
+	<center><h3 class="card-title"><b>Client DETAILS FORM</b></h3></center>
+	<a onclick="back_ctc()" style="float: right;" data-toggle="modal" class="btn btn-danger"></i>Back</a>
+</div>
+</div>
+
+<!--form method="POST" name="form" id="form" action="" autocomplete="off"-->
+<form method="POST" name="form" id="form" action="" >
+
+<input type="hidden" name="client_id" id="client_id" value="<?php echo $id;?>">
+<input type="hidden" name="enquiry_id" id="enquiry_id" value="<?php echo $eq_id;?>">
+
+			<table class="table table-bordered" id="new_tab">
+			<tr>
+				<td>Client Org Name*</td>
+				<td colspan="5">
+					<input type="text" class="form-control" id="txt_org_name" name="txt_org_name" value="<?php echo $row['org_name'];?>" readonly> 
+						
+				</td>
+				
+			</tr>
+			<tr>
+				<td>Client Org Type:</td>
+   <td colspan="5">
+     <input type="text" name="client_type" id="client_type" class="form-control" value="<?php echo $row['organization_type'];?>" readonly>
+		
+	</td>
+		
+<tr>
+   <td>Website </td>
+   <td colspan="5"><input type="text" class="form-control" id="txt_website" name="txt_website" value="<?php echo $row['website'];?>" readonly></td>
+   <td colspan="2"> </td>
+</tr>		
+			</tr>
+			
+			<div id="product_detail">
+			</div>
+			<td>Location</td>
+			<td colspan="4"><input type="text" class="form-control" id="Location" name="Location" value="<?php echo $row['location'];?>" readonly></td>
+			<tr>
+				<td>State *</td>
+				<td colspan="5">
+					<input type="text" class="form-control" name="state_1" id="state_1" value="<?php echo $row['statename'];?>" readonly>
+					
+				</td>
+			</tr>
+			<tr>
+				<td>City *</td>
+				<td colspan="5"><input type="text" class="form-control" name="city_1" id="city_1" value="<?php echo $row['city_name'];?>" readonly></td>
+			</tr>
+			<tr id="txt_gst_noo">
+				<td>GST NO</td>
+				<td colspan="4"><input type="text" class="form-control gst form-control mandatory" style="text-transform:uppercase" id="txt_gst_no" name="txt_gst_no"   value="<?php echo $row['gst_no'];?>" readonly></td>
+				<input type="hidden" name="txt_duplicate_gstno" id="txt_duplicate_gstno">
+			</tr>
+			<tr id="txt_pan_noo">
+				<td>PAN NO</td>
+				<td colspan="4"><input type="text"  style="text-transform:uppercase" class="form-control pan" id="txt_pan_no_1" name="txt_pan_no_1" value="<?php echo $row['pan_no'];?>" readonly></td>
+				<input type="hidden" name="txt_duplicate_panno" id="txt_duplicate_panno">
+			</tr>
+			<tr>
+				<td>Company Address *</td>
+				<td colspan="4"><input type="text" class="form-control" id="txt_address_1" name="txt_address_1" value="<?php echo $row['address'];?>" readonly></td>
+			</tr>
+			<tr>
+			   <td>Contact Person *</td>
+			   <td colspan="2"><input type="text" class="form-control" id="txt_client_name" name="txt_client_name" value="<?php echo $row['contact_person'];?>" readonly></td>
+			  
+			   <td colspan="2"><input type="text" class="form-control" id="txt_client_desig" name="txt_client_desig" value="<?php echo $row['designation'];?>" readonly ></td>
+			</tr>
+
+		<tr>
+		   <td>Mobile No1 * </td>
+		   <td colspan="2"><input type="text" class="form-control" id="txt_mobile1" name="txt_mobile1" value="<?php echo $row['mobile1'];?>" readonly></td>
+			
+		   <td colspan="2"><input type="text" class="form-control" id="txt_mobile2" name="txt_mobile2" value="<?php echo $row['mobile2'];?>" readonly></td>
+		</tr>
+		<tr>
+		   <td>Email Id 1 *</td>
+		   <td colspan="2"><input type="text" class="form-control" id="txt_mail_id1" name="txt_mail_id1" value="<?php echo $row['email1'];?>" readonly></td>
+		
+		   <td colspan="2"><input type="text" class="form-control" id="txt_mail_id2" name="txt_mail_id2" value="<?php echo $row['email2'];?>" readonly></td>
+		</tr>
+			<tr>
+				<td></td>
+				<td colspan="2"><input type="text" class="form-control " id="txt_area_1" name="txt_area_1" value="<?php echo $row['area'];?>" readonly></td>
+				<td colspan="2"><input type="text" class="form-control pin" id="txt_pincode_1" name="txt_pincode_1" value="<?php echo $row['pincode'];?>" readonly></td>
+			</tr>
+			<tr>
+				<td>IT Department</td>
+				<td colspan="2"><input type="text" class="form-control " id="txt_client_name_1" name="txt_client_name_1" value="<?php echo $row['it_name'];?>" readonly></td>
+				<td colspan="2"><input type="text" class="form-control " id="txt_client_desig_1" name="txt_client_desig_1" value="<?php echo $row['it_designation'];?>" readonly></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2"><input type="text" class="form-control mob" id="txt_mobileone_1" maxlength="10" name="txt_mobileone_1" value="<?php echo $row['it_mob1'];?>" readonly></td>
+				<td colspan="2"><input type="text" class="form-control amob" id="txt_mobiletwo_1" maxlength="10" name="txt_mobiletwo_1"  value="<?php echo $row['it_mob2'];?>" readonly></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2"><input type="mail" class="form-control mail" id="txt_mail_idone_1" name="txt_mail_idone_1"  value="<?php echo $row['it_mail1'];?>" readonly></td>
+				<td colspan="2"><input type="mail" class="form-control amail" id="txt_mail_idtwo_1" name="txt_mail_idtwo_1"  value="<?php echo $row['it_mail2'];?>" readonly></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="4"><input type="text" class="form-control " id="txt_landno_1" name="txt_landno_1"  value="<?php echo $row['it_landno'];?>" readonly></td>
+				</td>
+			</tr>
+			<tr>
+				<td>Purchase Department</td>
+				<td colspan="2"><input type="text" class="form-control " id="pur_name_1" name="pur_name_1"  value="<?php echo $row['pur_name'];?>" readonly></td>
+				<td colspan="2"><input type="text" class="form-control " id="pur_designation_1" name="pur_designation_1" value="<?php echo $row['pur_designation'];?>" readonly></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2"><input type="text" class="form-control " id="pur_contact_1" name="pur_contact_1" value="<?php echo $row['pur_contact'];?>" readonly></td>
+				<td colspan="2"><input type="mail" class="form-control purmail" id="pur_mail_1" name="pur_mail_1" value="<?php echo $row['pur_mail'];?>" readonly></td>
+			</tr>
+			<tr>
+				<td>Finance Department</td>
+				<td colspan="2"><input type="text" class="form-control " id="fin_name_1" name="fin_name_1" value="<?php echo $row['fin_name'];?>" readonly></td>
+				<td colspan="2"><input type="text" class="form-control " id="fin_designation_1" name="fin_designation_1" value="<?php echo $row['fin_designation'];?>" readonly></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2"><input type="text" class="form-control " id="fin_contact_1" name="fin_contact_1" value="<?php echo $row['fin_contact'];?>" readonly></td>
+				<td colspan="2"><input type="mail" class="form-control finmail" id="fin_mail_1" name="fin_mail_1" value="<?php echo $row['fin_mail'];?>" readonly></td>
+			</tr>
+			<tr>
+		<td>Sales Person Name</td>
+		<td colspan="5">
+
+		<input type="text"  id="sale_person" name="sale_person"  value="<?php echo $row['sales_person'];?>" class="form-control" required="true" readonly>
+		</td>
+        </tr>
+		<tr>
+		<td>Credit Period (No of days)</td>
+		<td colspan="5">
+
+		<input type="text"  id="credit_period" name="credit_period"  value="<?php echo $row['credit_period'];?>" class="form-control" required="true" readonly>
+		</td>
+        </tr>
+		<tr>
+		<td>Credit limit (Value in Rs.)</td>
+		<td colspan="5">
+
+		<input type="text"  id="credit_limit" name="credit_limit"  value="<?php echo $row['credit_limit'];?>" class="form-control" required="true" readonly>
+		</td>
+        </tr>
+			<tr id="remrk" >
+	<td >Remarks *</td>
+	<td colspan="2"><input type="text" id="remarks" name="remarks" class="form-control" required></td>
+	<td colspan="2"><input type="button" class="btn btn-danger btn-lg" id="submit" name="submit" onclick="update_status()" value="Update"></td>
+</tr>
+		</table>
+	
+	<center>
+<?php if ( $row['client_master_status']==1){
+	?>
+ <input type="button" class="btn btn-success btn-lg" id="save" name="save" onclick="approved()" value="Approve">
+
+<input type="button" class="btn btn-danger btn-lg" id="save1" name="save1" onclick="rejected()" value="Reject">
+<?php }
+?>
+</center>
+</form>
+
+
+
+<script>
+
+$(document).ready(function()
+{
+	
+document.getElementById('remrk').style.visibility = "hidden";
+//document.getElementById('submit').style.visibility = "hidden";
+	
+});
+
+function back_ctc()
+{
+cost_sheet_approval()
+}
+function approved()
+{
+var id=$('#client_id').val();
+var data = $('form').serialize();
+$.ajax({
+type:'GET',
+data:"id="+id,data,
+
+url:'qvision/CRM/accounts_approval.php?id='+id,
+success:function(data)
+{
+if(data==1)
+{ 
+alert('Not');
+}
+else
+{
+alert("Client Approved Successfully");
+cost_sheet_approval()
+}
+}           
+});
+}
+function rejected()
+{
+
+//alert(id);
+
+document.getElementById('remrk').style.visibility = "visible";
+//document.getElementById('submit').style.visibility = "visible";
+document.getElementById('save1').style.visibility = "hidden";
+document.getElementById('save').style.visibility = "hidden";
+
+
+}
+
+
+function update_status()
+{
+	var id=$('#client_id').val();
+	var remarks=$('#remarks').val();
+	if(remarks == '')
+	{
+		alert("Enter Remarks");
+	}
+	else{
+			var data = $('form').serialize();
+ $.ajax({
+type:'GET',
+data:"id="+id,data,
+
+url:'qvision/CRM/accounts_rejected.php',
+success:function(data)
+{
+if(data==1)
+{ 
+alert('Not');
+}
+else
+{
+alert("Client Rejected Successfully");
+cost_sheet_approval()
+}
+}           
+});	
+	}
+ 
+}
+</script>
+

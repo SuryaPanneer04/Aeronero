@@ -1,0 +1,3 @@
+Employee_Code,Emp_Name,In_Log_Date,Log_Day,Punch_In_Time,Punch_Out_Time,Work_Hours,Status,Total_Days,Working_Days
+EMP001,Siva,2023-10-25,Wednesday,09:00:00,18:00:00,09:00,1,31,22
+EMP002,Karthik,2023-10-25,Wednesday,00:00:00,00:00:00,00:00,0,31,22

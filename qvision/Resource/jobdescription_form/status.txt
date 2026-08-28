@@ -1,0 +1,8 @@
+JD status
+
+initial sts = 0 (waiting for approve from MD);
+approved sts = 1(jdcode generated)
+initial data sts = 5;
+reject sts = 4;
+jd allocated sts = 2;
+jd close sts = 3;

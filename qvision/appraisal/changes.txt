@@ -1,0 +1,20 @@
+In add appraisal -> From date , To date for financial year instead of month.
+appraisal period is FEB 15 to MARCH 15 constantly.
+
+Self Appraisal --> employee have to fill they own appraisal from FEB 1 to FEB 10.
+In self appraisal the question enter by employee itself  OR the employee assure to manager to finish the goals within the financial year.
+Then that goal are shown as questions for self appraisal.
+
+In self rating time when the rating is below 3 the employee has to give explanation for that question.
+
+The Employee have to work for 8 months then only the employee eligible for the appraisal on the 9 month.
+If the employee is not eligible send alert.
+
+flow for approval --> Dept Manager(rating,remarks) => CEO(give salary,designation) => MD(only approve)
+
+Service, Sale[Goverment] ==> Rajkumar (CEO)
+Sale[corporate] ==> Karthick (CEO)
+CEO is the reporting person for department manager.
+
+salary date by HR duration is 15 April to 15 May.   
+

@@ -1,0 +1,86 @@
+-- phpMyAdmin SQL Dump
+-- version 5.0.2
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1:3306
+-- Generation Time: Apr 21, 2023 at 12:04 PM
+-- Server version: 5.7.31
+-- PHP Version: 7.2.33
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `ss_info_new`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `quote_generate`
+--
+
+DROP TABLE IF EXISTS `quote_generate`;
+CREATE TABLE IF NOT EXISTS `quote_generate` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `quote_no` varchar(200) NOT NULL,
+  `quote_date` date NOT NULL,
+  `cost_sheet_id` int(11) DEFAULT NULL,
+  `cost_sheet_no` varchar(200) NOT NULL,
+  `status` int(11) NOT NULL,
+  `po` varchar(250) DEFAULT NULL,
+  `so_number` varchar(50) DEFAULT NULL,
+  `po_date` date DEFAULT NULL,
+  `po_upload_status` varchar(10) DEFAULT NULL,
+  `finance_status` varchar(11) DEFAULT NULL,
+  `finance_approved_by` varchar(11) DEFAULT NULL,
+  `finance_remarks` varchar(250) DEFAULT NULL,
+  `service_status` varchar(10) DEFAULT NULL,
+  `service_approved_by` varchar(11) DEFAULT NULL,
+  `service_remarks` varchar(250) DEFAULT NULL,
+  `marketing_status` varchar(10) DEFAULT NULL,
+  `marketing_approved_by` varchar(11) DEFAULT NULL,
+  `marketing_remarks` varchar(250) DEFAULT NULL,
+  `created_by` int(11) NOT NULL,
+  `created_on` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `modified_by` int(11) DEFAULT NULL,
+  `modified_on` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `quote_generate`
+--
+
+INSERT INTO `quote_generate` (`id`, `quote_no`, `quote_date`, `cost_sheet_id`, `cost_sheet_no`, `status`, `po`, `so_number`, `po_date`, `po_upload_status`, `finance_status`, `finance_approved_by`, `finance_remarks`, `service_status`, `service_approved_by`, `service_remarks`, `marketing_status`, `marketing_approved_by`, `marketing_remarks`, `created_by`, `created_on`, `modified_by`, `modified_on`) VALUES
+(1, 'QOT03/23-23/00001/1', '2023-03-15', NULL, 'SSPR00001/23-23/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-03-15 05:48:35', 40, '2023-03-15 05:50:39'),
+(2, 'QOT03/23-23/00002/1', '2023-03-15', NULL, 'SSSE00002/-1-23/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-03-15 08:45:51', 40, '2023-03-15 08:47:33'),
+(3, 'QOT03/23-23/00003/1', '2023-03-15', NULL, 'SSSL00003/-1-23/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-03-15 09:03:43', 40, '2023-03-15 09:05:05'),
+(4, 'QOT03/23-23/00004/1', '2023-03-17', NULL, 'SSPR00004/-1-23/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-03-17 10:54:44', 40, '2023-03-17 10:57:31'),
+(5, 'QOT03/23-23/00005/1', '2023-03-18', NULL, 'SSPR00005/-1-23/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-03-18 07:24:02', NULL, NULL),
+(6, 'QOT03/23-23/00006/1', '2023-03-18', NULL, 'SSPR00006/-1-23/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-03-18 07:41:29', 40, '2023-03-18 07:43:14'),
+(7, 'QOT04/23-24/00007/1', '2023-04-07', NULL, 'SSPR00007/23-24/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 04:39:42', 40, '2023-04-07 04:40:33'),
+(8, 'QOT04/23-24/00008/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:02:14', NULL, NULL),
+(9, 'QOT04/23-24/00009/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:05:24', NULL, NULL),
+(10, 'QOT04/23-24/00010/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:05:37', NULL, NULL),
+(11, 'QOT04/23-24/00011/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:07:26', NULL, NULL),
+(12, 'QOT04/23-24/00012/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:07:49', NULL, NULL),
+(13, 'QOT04/23-24/00013/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:09:17', NULL, NULL),
+(14, 'QOT04/23-24/00014/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:11:41', NULL, NULL),
+(15, 'QOT04/23-24/00015/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:16:59', NULL, NULL),
+(16, 'QOT04/23-24/00016/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:28:24', NULL, NULL),
+(17, 'QOT04/23-24/00017/1', '2023-04-07', NULL, '', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-07 11:31:04', NULL, NULL),
+(18, 'QOT04/23-24/00018/1', '2023-04-13', NULL, 'SSPR00008/23-24/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-13 08:52:31', 40, '2023-04-13 08:53:21'),
+(19, 'QOT04/23-24/00019/1', '2023-04-13', NULL, 'SSPR00009/23-24/1', 1, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 4, '2023-04-13 09:00:55', 40, '2023-04-13 09:01:56');
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

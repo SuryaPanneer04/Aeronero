@@ -1,0 +1,9 @@
+Appraisal STATUS :-
+
+Initial status => 0,
+CEO Approve => 1,
+CEO Reject => 2,
+New Salary Update By HR => 3,
+[(salary & designation update when approve => 4) but now removed in approve page and sal &desgn fill by Manager itself.],
+MD Approve => 5,
+MD reject => 6,

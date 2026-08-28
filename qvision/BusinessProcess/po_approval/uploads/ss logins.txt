@@ -1,0 +1,70 @@
+Admin login	admin 		info@ssinformation.in	ROLE-014	Admin Login
+
+customer enquiry detail
+                                                 Welcome@123
+CRM Flow
+
+1st login 	Pavithra(Sales)			pavithra@ssinformation.in	R006	Sales & Marketing Executive	- Create Enquiry and Create New clinent
+
+2nd login	R BALAJI			karthick@ssinformation.in
+						balaji@ssinformation.in		R008	Finance Head 			- New Client Approve
+
+
+3rd login 	Pavithra			pavithra@ssinformation.in	R006	Sales & Marketing Executive	- Cost sheet generated in Lead and feed cost 															  	  sheet in Business process- For Approval
+
+
+4th login	Srinivasa C Rao(Sales HEAD)	rajkumar@ssinformation.in	
+						srinivasarao@ssinformation.in	R004	Sales & Marketing HEAD		- Cost sheet approve, Margin (Corresponding 							Purushothaman_l@ssinformation.in						dept head will approve)	
+
+
+5th login	Pavithra			pavithra@ssinformation.in	R006	Sales & Marketing Executive	- Quote send AND PO Upload for approval
+
+
+						rajkumar@ssinformation.in       R010
+6th A login	Srinivasa C Rao(Sales HEAD)	srinivasarao@ssinformation.in	R004	Sales & Marketing HEAD		- PO Upload
+						Purushothaman_l@ssinformation.in
+
+						karthick@ssinformation.in
+6th login	R BALAJI			balaji@ssinformation.in		R008	Finance Head 			- PO Upload
+
+
+7th Login	Mathaneshwaran(Service HEAD)	raja_n@ssinformation.in
+						mathaneswaran@ssinformation.in	R009	Sr CS Engg- SERVICE HEAD	- PO Upload Service approval not required
+															  msg will provide (PO Notification)
+
+unga local la old code katuga
+
+
+8th login	Srinivasa C Rao(Sales HEAD)	srinivasarao@ssinformation.in	R004	Sales & Marketing HEAD		- PO Upload
+9th login										- PURCHASE		
+
+
+	
+
+1st login	R RAMESH (SERVICE)		rameshr@ssinformation.in	R013	Service Executive
+4th login	M.SENTHILKUMAR			senthil@ssinformation.in	R009	SERVICE HEAD
+
+
+
+Login - 	email-ID
+Password - 	Welcome@123
+
+
+						HRMS  flow
+********************************************************************************************************************************************************************
+1.jobdescription
+2.resource
+3.recruitment
+
+first check the three then go to interview rounds allocation
+ok
+
+1st Login	Selvi (HR Manager)	selvi@ssinformation.in			R010	HR Manager-	To create JD in Master then Fill the Resource form in Resource 														menu then schedule the interview
+
+2nd login	Candidate mobile number login								once candidate submit the details then recruitment process 													started
+
+3rd login	Selvi (HR Manager)	selvi@ssinformation.in			R010	HR Manager-	In Recruitment - Candidate List - Allocate for candidate round 														allocation for next round interview
+
+4th login	
+
+

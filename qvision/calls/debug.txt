@@ -1,0 +1,36 @@
+Array
+(
+    [id] => 268
+    [client_org] => Individual Customer
+    [client_name] => test
+    [contact] => 6383167659
+    [whatsapp] => 
+    [email] => vdkumardk11@gmail.com
+    [mail] => 
+    [website] => 
+    [address] => New No:118, Anna Salai, Manikkam Lane, Guindy, Chennai, Tamil-Nadu 600032
+    [Product] => Product
+    [services] => Desktop
+    [remarks] => 
+    [feedback1] => Array
+        (
+            [0] => good
+        )
+
+    [feedback_date1] => Array
+        (
+            [0] => 2026-07-15
+        )
+
+    [fed_date1] => Array
+        (
+            [0] => 2026-07-16
+        )
+
+    [idd] => 268
+    [Department] => 
+    [sco] => 
+                            
+)
+
+Success: 1

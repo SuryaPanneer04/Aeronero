@@ -1,0 +1,1005 @@
+[05-Feb-2024 23:51:41 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:51:42 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:51:42 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:51:43 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:51:55 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:51:55 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:52:01 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:52:07 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:52:10 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:52:13 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:52:16 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:52:19 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:52:24 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[05-Feb-2024 23:55:05 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[05-Feb-2024 23:55:52 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[06-Feb-2024 00:05:59 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_list.php on line 4
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:19:00 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:19:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:06 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[06-Feb-2024 00:21:51 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[06-Feb-2024 00:22:29 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:26:34 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:17 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:27:54 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[06-Feb-2024 00:31:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:45:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:48:22 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[06-Feb-2024 00:48:33 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:54:04 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[06-Feb-2024 00:55:28 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  require(../../../PHPMailer/PHPMailerAutoload.php): Failed to open stream: No such file or directory in /home2/bluebase/public_html/qvision/Recruitment/staff/send_mail.php on line 6
+[06-Feb-2024 00:59:31 America/Boise] PHP Fatal error:  Uncaught Error: Failed opening required '../../../PHPMailer/PHPMailerAutoload.php' (include_path='.:/opt/cpanel/ea-php82/root/usr/share/pear') in /home2/bluebase/public_html/qvision/Recruitment/staff/send_mail.php:6
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/send_mail.php on line 6
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[06-Feb-2024 00:59:31 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:08:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[12-Feb-2024 21:08:25 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:20 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:33 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:09:53 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:10:12 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:17:28 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[12-Feb-2024 21:17:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:18:23 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[12-Feb-2024 21:18:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[12-Feb-2024 21:19:17 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[12-Feb-2024 22:11:59 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[12-Feb-2024 22:12:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:12:18 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:17:58 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 115
+[12-Feb-2024 22:17:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 115
+[12-Feb-2024 22:17:58 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 178
+[12-Feb-2024 22:17:58 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 178
+[12-Feb-2024 22:17:58 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 334
+[12-Feb-2024 22:17:58 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 358
+[12-Feb-2024 22:17:58 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 359
+[12-Feb-2024 22:19:26 America/Boise] PHP Warning:  Undefined variable $sql in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 8
+[12-Feb-2024 22:19:26 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php:8
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 8
+[12-Feb-2024 22:20:33 America/Boise] PHP Warning:  Undefined variable $sql in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 9
+[12-Feb-2024 22:20:33 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 9
+[12-Feb-2024 22:20:33 America/Boise] PHP Warning:  Undefined variable $sql in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 9
+[12-Feb-2024 22:20:33 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php:9
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 9
+[12-Feb-2024 22:20:47 America/Boise] PHP Warning:  Undefined variable $sql in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:20:47 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:20:59 America/Boise] PHP Warning:  Undefined variable $sql in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:20:59 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:21:19 America/Boise] PHP Warning:  Undefined variable $sql in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:21:19 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:22:51 America/Boise] PHP Warning:  Undefined variable $sql in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:22:51 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function fetch() on null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php:11
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit1.php on line 11
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:13 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:19 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:24 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:32 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:23:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:01 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $val in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 115
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $des in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 178
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 307
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 314
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 338
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $site_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 345
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $location in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $location_name in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 363
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Undefined variable $loca_fet in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:39 America/Boise] PHP Warning:  Trying to access array offset on value of type null in /home2/bluebase/public_html/qvision/Recruitment/staff/staff_edit.php on line 369
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 70
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 77
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 81
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 85
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 89
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 93
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 97
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 101
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 106
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 113
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 120
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 125
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 126
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 130
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 131
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 135
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 136
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 140
+[12-Feb-2024 22:24:53 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/Recruitment/staff/document_view.php on line 235

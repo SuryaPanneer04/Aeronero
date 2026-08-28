@@ -1,0 +1,27 @@
+.product-item {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.product-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2) !important;
+}
+
+.product-card img {
+    transition: transform 0.3s;
+}
+
+.product-item:hover img {
+    transform: scale(1.05);
+}
+
+.card-title {
+    color: #0191dc;
+    font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .product-card {
+        margin-bottom: 2rem;
+    }
+}

@@ -1,0 +1,3 @@
+[05-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/masters/appraisal_master/kra_approve.php on line 4
+[05-Feb-2024 00:27:30 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/masters/appraisal_master/kra_approve.php on line 5
+[05-Feb-2024 00:27:30 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/masters/appraisal_master/kra_approve.php on line 9

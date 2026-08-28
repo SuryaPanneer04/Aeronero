@@ -1,0 +1,6 @@
+Employee_Code,Emp_Name,In_Log_Date,Log_Day,Punch_In_Time,Punch_Out_Time,Work_Hours,Status,Total_Days,Working_Days
+1185,Sivagurunathan R,2023-10-25,Wednesday,09:00:00,18:00:00,09:00,1,31,22
+1190,Venkatesan M,2023-10-25,Wednesday,09:00:00,18:00:00,09:00,1,31,22
+1188,Vanjinathan A,2023-10-25,Wednesday,00:00:00,00:00:00,00:00,0,31,22
+1215,Muralitharan D,2023-10-25,Wednesday,09:00:00,18:00:00,09:00,1,31,22
+1338,Karthikeyan,2023-10-25,Wednesday,09:00:00,13:30:00,04:30,5,31,22

@@ -1,0 +1,63 @@
+Employee Code,Emp_Name,In_Log_Date,Log_Day,Punch_In_Time,Punch_Out_Time,Work Hours,Status,Total_Days,Working_Days
+,,,,,,,,,
+QSPLE459,Jhon Peter,01-06-2026,Thursday,09:00:00,18:00:00,9,0,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,02-07-2026,Friday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,03-07-2026,Saturday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,04-07-2026,Sunday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,05-07-2026,Monday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,06-07-2026,Tuesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,07-07-2026,Wednesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,08-07-2026,Thursday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,09-07-2026,Friday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,10-07-2026,Saturday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,11-07-2026,Sunday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,12-07-2026,Monday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,13-07-2026,Tuesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,14-07-2026,Wednesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,15-07-2026,Thursday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,16-07-2026,Friday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,17-07-2026,Saturday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,18-07-2026,Sunday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,19-07-2026,Monday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,20-07-2026,Tuesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,21-07-2026,Wednesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,22-07-2026,Thursday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,23-07-2026,Friday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,24-07-2026,Saturday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,25-07-2026,Sunday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,26-07-2026,Monday,09:00:00,18:00:00,9,0,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,27-07-2026,Tuesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,28-07-2026,Wednesday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,29-07-2026,Thursday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,30-07-2026,Thursday,09:00:00,18:00:00,9,1,31,31
+,,,,,,,,,
+QSPLE459,Jhon Peter,31-07-2026,Thursday,09:00:00,18:00:00,9,0,31,31

@@ -1,0 +1,130 @@
+[05-Feb-2024 00:27:24 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 4
+[05-Feb-2024 00:27:24 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 5
+[05-Feb-2024 00:27:24 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 37
+[05-Feb-2024 00:27:24 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 39
+[05-Feb-2024 00:27:24 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 45
+[05-Feb-2024 00:27:36 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 4
+[05-Feb-2024 00:27:36 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 5
+[05-Feb-2024 00:27:36 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 33
+[05-Feb-2024 00:27:36 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 34
+[05-Feb-2024 00:29:35 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 4
+[05-Feb-2024 00:29:35 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 5
+[05-Feb-2024 00:29:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 00:29:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 00:29:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 00:29:36 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 4
+[05-Feb-2024 00:29:36 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 5
+[05-Feb-2024 00:29:36 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 6
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 4
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 5
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:39 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_select_view.php on line 76
+[05-Feb-2024 00:29:41 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_upload_list.php on line 4
+[05-Feb-2024 00:29:41 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_upload_list.php on line 33
+[05-Feb-2024 00:29:41 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_upload_list.php on line 34
+[05-Feb-2024 00:29:56 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 4
+[05-Feb-2024 00:29:56 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 5
+[05-Feb-2024 00:29:56 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 37
+[05-Feb-2024 00:29:56 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 39
+[05-Feb-2024 00:29:56 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_view.php on line 45
+[05-Feb-2024 01:39:05 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quatation_list.php on line 4
+[05-Feb-2024 01:39:05 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quatation_list.php on line 5
+[05-Feb-2024 01:39:05 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quatation_list.php on line 38
+[05-Feb-2024 01:39:05 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quatation_list.php on line 39
+[05-Feb-2024 01:39:10 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 4
+[05-Feb-2024 01:39:10 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 5
+[05-Feb-2024 01:39:10 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 33
+[05-Feb-2024 01:39:10 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_revise_list.php on line 34
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 4
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 5
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 4
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 5
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:39:12 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:39:13 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 4
+[05-Feb-2024 01:39:13 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 5
+[05-Feb-2024 01:39:13 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 48
+[05-Feb-2024 01:39:13 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php:51
+Stack trace:
+#0 /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php(51): PDOStatement->execute()
+#1 {main}
+  thrown in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 51
+[05-Feb-2024 01:39:15 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 4
+[05-Feb-2024 01:39:15 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 5
+[05-Feb-2024 01:39:15 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 6
+[05-Feb-2024 01:39:15 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 4
+[05-Feb-2024 01:39:15 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 5
+[05-Feb-2024 01:39:15 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 6
+[05-Feb-2024 01:39:16 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 4
+[05-Feb-2024 01:39:16 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 5
+[05-Feb-2024 01:39:16 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bluebase_qvision.product/services' doesn't exist in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php:40
+Stack trace:
+#0 /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php(40): PDO->query('SELECT a.id as ...')
+#1 {main}
+  thrown in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 40
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 4
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 5
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_send_list.php on line 81
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 4
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 5
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 48
+[05-Feb-2024 01:44:36 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php:51
+Stack trace:
+#0 /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php(51): PDOStatement->execute()
+#1 {main}
+  thrown in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 51
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 4
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 5
+[05-Feb-2024 01:44:36 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 6
+[05-Feb-2024 01:44:37 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 4
+[05-Feb-2024 01:44:37 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 5
+[05-Feb-2024 01:44:37 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bluebase_qvision.product/services' doesn't exist in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php:40
+Stack trace:
+#0 /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php(40): PDO->query('SELECT a.id as ...')
+#1 {main}
+  thrown in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 40
+[05-Feb-2024 01:44:43 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 4
+[05-Feb-2024 01:44:43 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 5
+[05-Feb-2024 01:44:44 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 87
+[05-Feb-2024 01:44:44 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 87
+[05-Feb-2024 01:44:44 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 87
+[05-Feb-2024 01:44:44 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 87
+[05-Feb-2024 01:44:44 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 87
+[05-Feb-2024 01:44:44 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 87
+[05-Feb-2024 01:44:44 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/overall_quotation_list.php on line 87
+[05-Feb-2024 01:44:47 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 4
+[05-Feb-2024 01:44:47 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 5
+[05-Feb-2024 01:44:47 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 6
+[05-Feb-2024 01:44:49 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 4
+[05-Feb-2024 01:44:49 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 5
+[05-Feb-2024 01:44:49 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 48
+[05-Feb-2024 01:44:49 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1 in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php:51
+Stack trace:
+#0 /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php(51): PDOStatement->execute()
+#1 {main}
+  thrown in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/cost_sheet_list.php on line 51
+[05-Feb-2024 01:44:50 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 4
+[05-Feb-2024 01:44:50 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 5
+[05-Feb-2024 01:44:50 America/Boise] PHP Warning:  Undefined array key "userid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/costsheet_revise_list.php on line 6
+[05-Feb-2024 01:44:51 America/Boise] PHP Warning:  Undefined array key "candidateid" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 4
+[05-Feb-2024 01:44:51 America/Boise] PHP Warning:  Undefined array key "userrole" in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 5
+[05-Feb-2024 01:44:51 America/Boise] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'bluebase_qvision.product/services' doesn't exist in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php:40
+Stack trace:
+#0 /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php(40): PDO->query('SELECT a.id as ...')
+#1 {main}
+  thrown in /home2/bluebase/public_html/qvision/BusinessProcess/quotation/quotation_reg_list.php on line 40

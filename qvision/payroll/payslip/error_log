@@ -1,0 +1,68 @@
+[02-Feb-2024 01:40:37 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:40:37 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:40:46 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:40:46 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $work_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 318
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $month_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 320
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $work_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 353
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $month_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 353
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $work_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 384
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $month_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 384
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $work_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 406
+[02-Feb-2024 01:41:02 America/Boise] PHP Warning:  Undefined variable $month_days in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 407
+[02-Feb-2024 01:41:02 America/Boise] PHP Fatal error:  Uncaught DivisionByZeroError: Division by zero in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:407
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 407
+[02-Feb-2024 01:41:15 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:41:15 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:41:43 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:41:43 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:42:02 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:42:02 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 162
+[02-Feb-2024 01:42:02 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:42:09 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:42:09 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:42:18 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:42:18 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[02-Feb-2024 01:42:27 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[02-Feb-2024 01:42:27 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[05-Feb-2024 22:09:26 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[05-Feb-2024 22:09:26 America/Boise] PHP Warning:  Undefined array key "employee" in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 45
+[05-Feb-2024 22:09:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 50
+[05-Feb-2024 22:09:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 51
+[05-Feb-2024 22:09:26 America/Boise] PHP Fatal error:  Uncaught Error: Call to a member function format() on bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:54
+Stack trace:
+#0 {main}
+  thrown in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 54
+[05-Feb-2024 22:27:22 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[05-Feb-2024 22:27:22 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[05-Feb-2024 23:47:46 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[05-Feb-2024 23:47:46 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 374
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 393
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 396
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 411
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 445
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 461
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 492
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 503
+[12-Feb-2024 21:53:35 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 523
+[12-Feb-2024 22:01:21 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[12-Feb-2024 22:01:21 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Cannot modify header information - headers already sent by (output started at /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php:1) in /home2/bluebase/public_html/qvision/connect.php on line 3
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 167
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 360
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 385
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 389
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 430
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 461
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 478
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 503
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Trying to access array offset on value of type bool in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 523
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Undefined array key -60 in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 568
+[12-Feb-2024 22:01:26 America/Boise] PHP Warning:  Undefined array key -1 in /home2/bluebase/public_html/qvision/payroll/payslip/payslip_view.php on line 568

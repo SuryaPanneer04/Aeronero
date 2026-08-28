@@ -1,0 +1,11 @@
+SERVICE (id=2)
+raja_n@ssinformation.in                Welcome@123    R009
+mangalapandi@ssinformation.in     Welcome@123    ROLE-004
+
+SALES (id=3)
+karthick@ssinformation.in              Welcome@123    R008
+rajkumar@ssinformation.in             Welcome@123    R010 
+
+ACCOUNTS (id=4)
+balaji@ssinformation.in                   Welcome@123   R008
+karthick@ssinformation.in               Welcome@123   R008

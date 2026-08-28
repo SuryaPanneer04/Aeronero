@@ -1,0 +1,199 @@
+<?php
+require '../../../connect.php'; 
+require '../../../user.php'; 
+require '../../../PHPMailer/PHPMailerAutoload.php';
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+require '../../../PHPMailer/src/Exception.php';
+require '../../../PHPMailer/src/PHPMailer.php';
+require '../../../PHPMailer/src/SMTP.php';
+
+$candidateid=$_SESSION['candidateid'];	echo $candidateid;
+$uploadDir = 'uploads/'; echo $uploadDir;
+$allowTypes = array('pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'); 
+$response = array( 
+    //'status' => 0, 
+    //'message' => 'Form submission failed, please try again.' 
+);
+if( isset($_POST['get_id']) ||  isset($_POST['quote_no']) || isset($_POST['quote_date']) || isset($_POST['cost_sheet_no']) || isset($_POST['attachment']) || isset($_POST['po_date'])|| isset($_POST['enquiry_id'])|| isset($_POST['business_id']))
+{ 
+
+$qid=$_POST['get_id'];echo '$33$'; echo $qid;echo '$44$';
+$quote_no=$_POST['quote_no'];
+$po_date=$_POST['po_date'];
+$enquiry_id=$_POST['enquiry_id'];echo $enquiry_id;
+$business_id=$_POST['business_id'];
+$cost_sheet_no=$_POST['cost_sheet_no'];
+$filesArr3 = $_FILES["attachment"];
+
+//$row_query = "SELECT * FROM po_generate";
+$row_query = "SELECT DISTINCT e.id,e.company_name,e.client,e.mail,e.created_by,cse.cost_sheet_no,zud.full_name,pg.cost_sheet_no FROM enquiry e 
+JOIN z_user_master zud ON zud.candidate_id=e.created_by 
+JOIN cost_sheet_entry cse ON cse.enquiry_id=e.id 
+JOIN po_generate pg ON pg.cost_sheet_no= cse.cost_sheet_no WHERE e.created_by='$candidateid' and e.id='$enquiry_id'";
+
+
+ $query = $con->query($row_query);
+ $query->execute();
+  $count   = $query->rowCount();
+ $row_val = $query->fetch();echo '%99*99%';
+ $username=$row_val['full_name'];echo $username; echo '&&';
+ $mailerID=$row_val['mail']; echo $mailerID;
+    //$user_name=$row_val['user_name']; echo $user_name;
+	$client_name=$row_val['client'];echo $client_name;
+ 
+if($count == 0)
+	
+{   
+   //echo"1";
+        $so_char='SS';
+	    if($business_id ==1){
+			 $type ="SIN";
+		}elseif($business_id ==2){
+			 $type ="SER";
+		 }elseif($business_id ==3){
+			 $type ="SOL";
+		 }
+         $NO1 = "00001";
+    
+         $SO_NO = $so_char.'/'.$type.'/'.$NO1 ;
+
+}else{
+	     $row_query = "SELECT so_number FROM po_generate ORDER BY id DESC ";
+     
+		 $query2 = $con->query($row_query);
+		 $query2->execute();
+		 $count = $query2->rowCount();
+		 $row = $query2->fetch();
+		 //echo $row['so_number'];
+		 $username=$row_val['full_name'];echo $username;echo '%%&&%%';
+    //$user_name=$row_val['user_name']; echo $user_name;
+	$client_name=$row_val['client'];echo $client_name;
+		
+		 if (!empty($row['so_number'])){
+	
+		 $splite_val = explode("/",$row['so_number']);
+				    $so_char   =  $splite_val[0];
+					$type =  $splite_val[1];
+					$NO1 =  $splite_val[2];
+					
+					$new_no = str_pad($NO1 + 1, 5, 0, STR_PAD_LEFT);
+				    $SO_NO = $so_char.'/'.$type.'/'.$new_no; 
+		}
+    }
+	
+           
+/* PO upload */
+		$fileNames = array_filter($filesArr3['name']); 
+			 
+         
+        // Upload file 
+        $uploadedFile = ''; 
+                                  
+            foreach($filesArr3['name'] as $key=>$val)
+			{  
+                // File upload path  
+                $fileName = basename($filesArr3['name'][$key]);  
+                $targetFilePath = $uploadDir . $fileName;  
+                  
+                // Check whether file type is valid  
+                 $fileType = pathinfo($targetFilePath, PATHINFO_EXTENSION);  
+                
+                    // Upload file to server  
+                    if(move_uploaded_file($filesArr3["tmp_name"][$key], $targetFilePath)){  
+                        $uploadedFile = $fileName; 
+                     
+                }
+            }  
+        
+        
+		     //$sql=$con->query("update quote_generate set po='$fileName',status='3',po_date='$po_date',po_upload_status='1',finance_status='0',service_status='0',marketing_status='0' where id='$qid'");
+		     //echo "update po_generate set po='$fileName',status=4,po_date='$po_date',po_upload_status='1' where id='$qid'";
+		     $insert_query1= $con->query("Update enquiry set status='5',approved_by ='$candidateid' where id='$enquiry_id'");
+           
+		  
+             			 
+		     $insert_query=$con->query("insert into po_generate (so_number,quote_no,cost_sheet_no,po_date,po_upload,po_upload_status,finance_status,service_status,marketing_status,md_status,created_by,created_on) 
+		     values ('$SO_NO','$quote_no','$cost_sheet_no','$po_date','$uploadedFile','1','0','0','0','0','$candidateid',NOW())");
+		
+		/* echo "insert into po_generate (so_number,quote_no,cost_sheet_no,po_date,po_upload,po_upload_status,finance_status,service_status,marketing_status,created_by,created_on) 
+		     values ('$SO_NO','$quote_no','$cost_sheet_no','$po_date','$uploadedFile','1','0','0','0','$candidateid',NOW())"; */
+			 
+		    $update_query =$con->query("update po_generate set po_upload_status ='1' where quote_no ='$quote_no'");
+		     $update_query2 = $con->query("update cost_sheet_entry set status ='4', modified_by ='$candidateid' WHERE cost_sheet_no= '$cost_sheet_no'");  
+		    $insert_query2= $con->query("Update enquiry set status='7' where id='$enquiry_id'");
+			 
+			 if ($insert_query1 && $insert_query && $update_query && $update_query2 && $insert_query2)
+			 {
+				 $response ['status']= 1;
+            
+                 $response ['message']= "**Uploaded successfully**"; 
+				 			
+		//Quotation_send();
+		}
+
+			
+		//echo json_encode($response);
+ 				
+//		echo json_encode($response);
+$row_query1 = "SELECT DISTINCT e.id,e.company_name,e.client,e.mail,e.created_by,cse.cost_sheet_no,zud.full_name,pg.cost_sheet_no FROM enquiry e 
+JOIN z_user_master zud ON zud.candidate_id=e.created_by 
+JOIN cost_sheet_entry cse ON cse.enquiry_id=e.id 
+JOIN po_generate pg ON pg.cost_sheet_no= cse.cost_sheet_no WHERE e.created_by='$candidateid' and e.id='$enquiry_id'";
+ $query1 = $con->query1($row_query1);
+ $query1->execute();
+  //$count   = $query->rowCount();
+ $row_val1 = $query1->fetch();echo '%99*99%';
+ $username=$row_val1['full_name'];echo $username; echo '&&';
+ $mailerID=$row_val1['mail']; echo $mailerID;
+    //$user_name=$row_val['user_name']; echo $user_name;
+	$client_name=$row_val1['client'];echo $client_name;
+//$date=$_REQUEST['date'];
+$mail = new PHPMailer;
+$mail->SMTPDebug = 2; 
+$mail->Mailer = "smtp";
+$mail->IsSMTP(true); 
+$mail->Port = 587;
+$mail->Host = 'mail2.ssinformation.in';                                    // Set mailer to use SMTP
+$mail->SMTPAuth = true;                               // Enable SMTP authentication
+$mail->Username = 'test1@ssinformation.in';
+$mail->Password = 'dqR8mdSzsb';                           // SMTP password
+$mail->SMTPSecure = 'tls';                            // Enable encryption, 'ssl' also accepted
+$mail->SMTPOptions = [
+    'ssl' => [
+        'verify_peer' => false,
+        'verify_peer_name' => false,
+		'allow_self_singed' => true,
+    ]
+];
+
+$mail->From = 'test1@ssinformation.in';
+$mail->FromName = 'PO Upload Alert..';
+$mail->AddAddress($mailerID , $username);		//Adds a "To" address
+//$mail->addAddress("laxmipriya@bluebase.in");     // Add a recipient
+$mail->WordWrap = 50;                                 // Set word wrap to 50 characters
+$mail->isHTML(true);                                 // Set email format to HTML
+$subject="PO Uploaded..";			
+	$html_table = 'Dear&nbsp;&nbsp;'. $client_name.', <br> 
+		&nbsp;&nbsp;	This Mail regarding your Purchase Order uploaded Successfully.';
+		
+	$html_table .=' </table>';
+	$html_table .=' <h4>Thanks & Regards,</h4><br>
+	'.$username.'
+	<p>SS Information</p>';
+	$mail->Subject =$subject;
+	$mail->Body =$html_table;
+	
+
+if(!$mail->send()) {
+    echo 'Message could not be sent.';
+    echo 'Mailer Error: ' . $mail->ErrorInfo;
+	echo "0";
+} 
+else {
+    echo 'Message has been sent';
+	echo "1";
+}//Quotation_send(); 
+			 }	
+		?>
+		

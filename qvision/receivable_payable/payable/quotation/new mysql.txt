@@ -1,0 +1,76 @@
+
+<?php
+define('TITLE', 'My Website Title');
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "uco";
+
+try {
+    $conn = new PDO("mysql:host=$servername;dbname=$database", $username, $password);
+    // set the PDO error mode to exception
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    echo "Connected successfully";
+} catch(PDOException $e) {
+    echo "Connection failed: " . $e->getMessage();
+}
+?>
+
+
+
+
+
+<?php
+date_default_timezone_set('Asia/Kolkata');
+define ("DB_USER", "root");
+define ("DB_PASSWORD", "");
+define ("DB_DATABASE", "uco");
+define ("DB_HOST", "localhost");
+define ("TITLE", "UCO");
+define ("URL", "/UCO/");
+
+  //Do the conntection
+    $checkconnection = @mysql_connect(DB_HOST,DB_USER,DB_PASSWORD);
+
+    //Check if it's valid
+    if(!$checkconnection) 
+	{
+
+        //Add it up to the session, and redirect
+        $errorMsg= "<div style='padding-left: 50px;color:#FF0000'>Cannot connect to mysql server!</div>";
+       echo  $errorMsg;
+	   $log  = "Cannot connect to mysql server".' - '.date("F j, Y, g:i a").PHP_EOL.
+        "-------------------------".PHP_EOL;
+       file_put_contents('../logs/dbServer/log_'.date("j.n.Y").'.txt', $log, FILE_APPEND);
+        exit();
+
+    } 
+	else
+	{
+        //die("Connection failed: " . mysql_connect_error());
+		mysql_select_db(DB_DATABASE);
+    }
+
+
+
+/*
+<script type='text/javascript' src='<?php echo URL;?>js/jquery.min.js'></script>
+<script type="text/javascript">
+	$(document).ready(function()
+{ 
+      $(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
+}); 
+});
+	</script>
+<script type="text/javascript">
+	$(document).on("contextmenu", function (e) {        
+    e.preventDefault();
+});
+	</script>
+	*/
+	?>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<div  class="card card-primary">
+              <div class="card-header">
+                <h3 class="card-title"><font size="5">  Leave Mapping</font></h3>
+				<input type="button" style="float:right;" class="btn btn-danger" name="back" value="BACK" onclick="leave_mapping_view()">
+				</input>
+              </div>
+    <form method="POST" enctype="multipart/form-data">
+    <!-- Post -->
+    <table class="table table-bordered">
+	<tr>
+        <td colspan="6"><center><b> Leave Mapping</b></center></td>
+		 <tr>
+        <td>Leave ID</td>
+        <td colspan="5"><input type="text" class="form-control"  id="leave_id" name="leave_id" ></td>
+        </tr>
+        
+        <tr>
+        <td>From Date</td>
+        <td colspan="5"><input type="date" class="form-control"  id="date" name="from_date" ></td>
+        </tr>
+		<tr>
+        <td>To Date</td>
+        <td colspan="5"><input type="date" class="form-control"  id="date" name="to_date" ></td>
+        </tr>
+       
+		 <tr>
+        <td>Month</td>
+                <td colspan="5"><input type="text" class="form-control" placeholder="Month" id="Month" name="days_per_month" ></td>
+        </tr>
+		
+        <tr>
+        <td>Year</td>
+                <td colspan="5"><input type="text" class="form-control" placeholder="Year" id="Year" name="days_per_year" ></td>
+        </tr>
+		
+		<tr>
+		<td>is_cummulative</td>
+	  <td colspan="5" >   
+      
+   
+      <select name="is_cummulative" id="is_cummulative" class="form-control">
+	  
+      <option value="yes">Yes</option>
+      <option value="no">No</option>
+	  
+      </select></tr>
+ <tr>     		
+<td>Status</td>
+<td colspan="5">
+<select id="status" name="status" class="form-control" >
+ 
+
+    <option value="1">Active</option>
+	 <option value="2"> IN Active</option>
+
+</select>
+</td>
+
+       </td>
+	   </tr>
+	   
+	<tr>
+		 
+        <td colspan="6"><input type="button" class="btn btn-success" name="save" onclick="leave_mapping_insert()" value="save"></td>
+
+		<td> <button type="button" class="btn btn-primary" onclick="leave_mapping_view();">Cancel</button></td>
+        </tr></tr>
+        </table>
+		<div id="leave_view">
+     </div>
+        <!-- /.post -->
+    </form>
+        </div>
+		</html>
+		 <script>
+	function leave_mapping_view()
+	{
+		$.ajax({
+		type:"POST",
+		url:"Leave_Management/leave_mapping/leave_mapping_view.php",
+		success:function(data){
+		$("#leave_view").html(data);
+		
+		}
+		})
+	}
+    
+   
+function leave_mapping_insert()
+    {
+    var id=0;
+	alert(id);
+    var data = $('form').serialize();
+	alert(data);
+    $.ajax({
+    type:'GET',
+    data: data + "&" + "id="+id,
+    url:'Leave_Management/leave_mapping/leave_mapping_insert.php',
+	
+    success:function(data)
+    {
+      
+        alert("Entry Successfully");
+leave_mapping_view()
+      
+      
+    }       
+    });
+    }
+    </script>

@@ -1,0 +1,4 @@
+All internal & Consultant Users can add enquiry
+assign enquiry multiple times
+Concern department HOD can view the enquiry feedback
+Management and finance can view all enquiry

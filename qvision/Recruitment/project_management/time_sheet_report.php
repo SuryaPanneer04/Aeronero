@@ -5,9 +5,13 @@ $userrole=$_SESSION['userrole'];
 ?>
 
 <div  class="card card-primary">
-              <div class="card-header" style="background-color: #f1cc61;">
-                <h3 class="card-title" ><font size="5">Time Sheet Report</font></h3>
-			
+              <div class="card-header" style="background-color: #f1cc61; overflow: hidden; padding: 10px 15px;">
+                <h3 class="card-title" style="margin: 0; float: left; padding-top: 3px;"><font size="5">Time Sheet Report</font></h3>
+                
+                <!-- Excel Export Button moved to exact right -->
+                <a href="qvision/Recruitment/project_management/export_timesheet_excel.php" class="btn btn-success btn-sm" style="float: right; font-weight: bold; background-color: #28a745; border-color: #28a745;">
+                    <i class="fa fa-file-excel-o"></i> Export Excel
+                </a>
               </div>
   
               <div class="card-body">

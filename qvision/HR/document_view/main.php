@@ -19,20 +19,18 @@ if(isset($_POST['action'])) {
         exit;
     }
 
-    // Action B: Fetch Employees
+   // Action B: Fetch Employees
     if($action == 'get_employees') {
         $div_id = $_POST['div_id'];
         $dept_id = $_POST['dept_id'];
-        $stmt = $con->prepare("
-            SELECT zum.user_name, zum.full_name 
-            FROM z_user_master zum 
-            INNER JOIN staff_master sm ON zum.candidate_id = sm.candid_id 
-            WHERE zum.department = ? AND sm.div_id = ? AND zum.status = 1
-        ");
+        
+        // Fetching directly from staff_master without z_user_master
+        $stmt = $con->prepare("SELECT emp_code, emp_name FROM staff_master WHERE dep_id = ? AND div_id = ?");
         $stmt->execute([$dept_id, $div_id]);
+        
         echo "<option value=''>-- Select Employee --</option>";
         while($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<option value='".$row['user_name']."'>".$row['full_name']." (".$row['user_name'].")</option>";
+            echo "<option value='".$row['emp_code']."'>".$row['emp_name']." (".$row['emp_code'].")</option>";
         }
         exit;
     }
@@ -49,26 +47,19 @@ if(isset($_POST['action'])) {
                 <button type="button" class="btn btn-info btn-sm text-white" onclick="view_employee_documents()" style="background-color: #17a2b8; font-weight: 600; padding: 6px 20px; border-radius: 4px;"><i class="fa fa-eye"></i> View Uploaded Docs</button>
             </div>
             
-            <!-- Document Sections -->
-            <?php 
-            $documents = ["1. Offer Letter" => "Offer Letter", "2. Relieving Order" => "Relieving Order", "3. NDA" => "NDA", "4. System Agreement" => "System Agreement"];
-            foreach($documents as $label => $doc_type) {
-                $container_id = "container_" . str_replace(' ', '_', $doc_type);
-            ?>
+            <!-- Dynamic Document Upload Section -->
             <div class="row align-items-start mb-3 pb-3 border-bottom">
-                <div class="col-md-3">
-                    <button type="button" class="btn btn-outline-secondary w-100 text-left" style="font-weight: 500; border-color: #ccc;"><?php echo $label; ?></button>
-                </div>
-                <!-- flex-wrap allows items to sit side-by-side -->
-                <div class="col-md-9 d-flex flex-wrap" id="<?php echo $container_id; ?>" style="gap: 15px;">
-                    <form class="d-flex align-items-center upload-form" data-doc-type="<?php echo $doc_type; ?>" style="gap: 5px;">
-                        <input type="file" name="doc_file" class="form-control form-control-sm" style="width: 220px;" required>
-                        <button type="button" class="btn btn-sm" onclick="add_specific_doc('<?php echo $container_id; ?>', '<?php echo $doc_type; ?>')" style="background-color: #eb6a14; color: #fff; border: 1px solid #c2590e; font-weight: 600; padding: 3px 12px; border-radius: 3px;">ADD</button>
-                        <button type="button" class="btn btn-sm" onclick="upload_single_doc(this)" style="background-color: #5a6268; color: white; border: 1px solid #545b62; font-weight: 600; padding: 3px 12px; border-radius: 3px;">Upload</button>
+                <div class="col-md-12 d-flex flex-column" id="dynamic_docs_container" style="gap: 15px;">
+                    <!-- Initial Form Row -->
+                    <!-- Initial Form Row -->
+                    <form class="d-flex align-items-center upload-form" style="gap: 15px;">
+                        <input type="text" name="custom_doc_name" class="form-control custom-doc-name" placeholder="Enter Document Name (e.g. Aadhar, Offer Letter)" style="width: 450px; height: 40px; font-size: 15px;" required>
+                        <input type="file" name="doc_file" class="form-control" style="width: 350px; height: 40px; font-size: 15px; padding-top: 7px;" required>
+                        <button type="button" class="btn" onclick="add_dynamic_doc()" style="background-color: #eb6a14; color: #fff; border: 1px solid #c2590e; font-weight: 600; padding: 7px 20px; border-radius: 3px; height: 40px;">ADD</button>
+                        <button type="button" class="btn" onclick="upload_single_doc(this)" style="background-color: #5a6268; color: white; border: 1px solid #545b62; font-weight: 600; padding: 7px 20px; border-radius: 3px; height: 40px;">Upload</button>
                     </form>
                 </div>
             </div>
-            <?php } ?>
             
         </div>
         <?php
@@ -111,8 +102,8 @@ if(isset($_POST['action'])) {
     if($action == 'view_employee_documents') {
         $emp_id = $_POST['emp_id'];
         
-        // Fetch exact Employee Name
-        $emp_stmt = $con->prepare("SELECT full_name FROM z_user_master WHERE user_name = ?");
+        // Fetch exact Employee Name directly from staff_master
+        $emp_stmt = $con->prepare("SELECT emp_name FROM staff_master WHERE emp_code = ?");
         $emp_stmt->execute([$emp_id]);
         $emp_name = $emp_stmt->fetchColumn();
         
@@ -267,33 +258,38 @@ function load_employee_documents(emp_id) {
         });
     }
 }
-
-// Dynamic Add side-by-side with Red X button
-function add_specific_doc(container_id, doc_type) {
-    var html = '<form class="d-flex align-items-center upload-form" data-doc-type="'+doc_type+'" style="gap: 5px;">' +
-               '<input type="file" name="doc_file" class="form-control form-control-sm" style="width: 220px;" required>' +
-               '<button type="button" class="btn btn-danger btn-sm" onclick="remove_specific_doc(this)" style="font-weight: 600; padding: 3px 12px; border-radius: 3px;">X</button>' +
-               '<button type="button" class="btn btn-sm" onclick="upload_single_doc(this)" style="background-color: #5a6268; color: white; border: 1px solid #545b62; font-weight: 600; padding: 3px 12px; border-radius: 3px;">Upload</button>' +
+function add_dynamic_doc() {
+    var html = '<form class="d-flex align-items-center upload-form mt-3" style="gap: 15px;">' +
+               '<input type="text" name="custom_doc_name" class="form-control custom-doc-name" placeholder="Enter Document Name (e.g. PAN Card)" style="width: 450px; height: 40px; font-size: 15px;" required>' +
+               '<input type="file" name="doc_file" class="form-control" style="width: 350px; height: 40px; font-size: 15px; padding-top: 7px;" required>' +
+               '<button type="button" class="btn btn-danger" onclick="remove_dynamic_doc(this)" style="font-weight: 600; padding: 7px 20px; border-radius: 3px; height: 40px;">X</button>' +
+               '<button type="button" class="btn" onclick="upload_single_doc(this)" style="background-color: #5a6268; color: white; border: 1px solid #545b62; font-weight: 600; padding: 7px 20px; border-radius: 3px; height: 40px;">Upload</button>' +
                '</form>';
-    $("#" + container_id).append(html);
+    $("#dynamic_docs_container").append(html);
 }
-
-function remove_specific_doc(element) {
+function remove_dynamic_doc(element) {
     $(element).closest('.upload-form').remove();
 }
 
 function upload_single_doc(btn_element) {
-    var form = $(btn_element).closest('.upload-form')[0];
-    var doc_type = $(btn_element).closest('.upload-form').attr('data-doc-type');
+    var form = $(btn_element).closest('.upload-form');
     var emp_id = $("#current_emp_id").val();
+    
+    // Get the typed document name instead of hardcoded attribute
+    var doc_type = form.find('.custom-doc-name').val(); 
 
-    var formData = new FormData(form);
+    if(!doc_type || doc_type.trim() === "") {
+        alert("Please enter a Document Name before uploading.");
+        return;
+    }
+
+    var fileInput = form.find('input[type="file"]').val();
+    if(!fileInput) { alert("Please choose a file to upload."); return; }
+
+    var formData = new FormData(form[0]);
     formData.append('action', 'upload_single_document');
     formData.append('emp_id', emp_id);
     formData.append('doc_type', doc_type);
-
-    var fileInput = $(form).find('input[type="file"]').val();
-    if(!fileInput) { alert("Please choose a file to upload."); return; }
 
     $(btn_element).text('...').prop('disabled', true);
 
@@ -306,7 +302,6 @@ function upload_single_doc(btn_element) {
         success: function(response) {
             alert(response); 
             $(btn_element).text('Upload').prop('disabled', false); 
-            // Optional: You can remove the row after successful upload if it's an appended one
         }
     });
 }

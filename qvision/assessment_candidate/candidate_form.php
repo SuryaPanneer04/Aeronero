@@ -7,10 +7,10 @@ require '../../connect.php';
         <table class="table table-bordered">
             <tr>
                 <td>
-                    <center><img src="qvision/images/logo123.jpg" alt="BlueBase" style="width:100px;height:50px;"></center>
+                    <center><img src="qvision/images/logo123.jpg" alt="Aeronero solutions" style="width:100px;height:50px;"></center>
                 </td>
                 <td colspan="5">
-                    <center><b>Bluebase Software Services Private Limited</b></center>
+                    <center><b>Aeronero solutions private limited</b></center>
                 </td>
             </tr>
             <tr>

@@ -27,7 +27,7 @@ $city = $row['city'];
 <table class="table table-bordered">
 		<tr>
 			<td><center><img src="/KerliERP/Recruitment/image/userlog/quadsel.png"  style="width:200px;height:100px;"></center></td>
-			<td colspan="5"><center><h1><b>Bluebase Software Services Private Limited</b></h1></center></td>
+			<td colspan="5"><center><h1><b>Aeronero solutions private limited</b></h1></center></td>
 		</tr>	
 		<table class="table table-bordered" id="new_tab">
 			<tr>

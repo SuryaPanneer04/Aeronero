@@ -47,14 +47,12 @@ $userrole=$_SESSION['userrole'];
 		</thead>
 		<tbody>
 		  <?php
-$emp_sql = $con->query("SELECT *, s.id as id, s.status as status FROM staff_master s LEFT JOIN z_department_master d ON s.dep_id = d.id WHERE s.status = 1 ORDER BY s.id DESC");
-		  //"SELECT *,s.id as id,s.status as status FROM staff_master s left join z_department_master d on s.dep_id=d.id where s.status=1"
-//echo "SELECT *,s.id as id,s.status as status FROM staff_master s left join z_department_master d on s.dep_id=d.id  where s.status=1";		 
-		 $i=1;
+		  $emp_sql = $con->query("SELECT *, s.id as id, s.status as status FROM staff_master s LEFT JOIN z_department_master d ON s.dep_id = d.id WHERE s.status IN (1, 2) ORDER BY s.id DESC");
+		 
+		  $i=1;
 		  while($emp_res = $emp_sql->fetch(PDO::FETCH_ASSOC))
 		  {
-		  $emp_id = $emp_res['id'] ;
-		  
+		      $emp_id = $emp_res['id'] ;
 		  ?>
 		  <tr>
 			  <td><?php echo $i; ?></td>
@@ -67,30 +65,36 @@ $emp_sql = $con->query("SELECT *, s.id as id, s.status as status FROM staff_mast
 			  if($emp_res['status'] == 1)
 			  {
 				  ?>
-			<span style="color:orange;text-align:center;"><b>Active</b></span>
+			      <span style="color:orange;text-align:center;"><b>Active</b></span>
 			  <?php
-			  }
+			  } 
+              elseif($emp_res['status'] == 2) 
+              {
+                  ?>
+                  <span style="color:red;text-align:center;"><b>Inactive</b></span>
+              <?php
+              }
 			  ?>		   
 			  </td>
 			  
-			   <td><?php if($emp_res['status'] == 1)
+			   <td>
+               <?php 
+               if($emp_res['status'] == 1)
 			   {
 				  ?>
-			  <button class="btn btn-primary btn-sm" data-id="<?php echo $emp_res['id']; ?>" onclick="edit(<?php echo $emp_res['id']; ?>)"> <i class="fa fa-mail">Edit</i></button>
-			 <!-- <button class="btn btn-primary btn-sm" data-id="<?php echo $emp_res['id']; ?>" onclick="staff_mail(<?php echo $emp_res['id']; ?>)"> Send Mail</button>-->
+			      <button class="btn btn-primary btn-sm" data-id="<?php echo $emp_res['id']; ?>" onclick="edit(<?php echo $emp_res['id']; ?>)"> <i class="fa fa-mail">Edit</i></button>
 			  <?php 
-			  
-			  }  ?>
+			   }  
+               ?>
 			  
 			  <button class="btn btn-success btn-sm" data-id="<?php echo $emp_res['id']; ?>" onclick="staff_view(<?php echo $emp_res['id']; ?>)"> View</button>
-			  
 			  
 			 </td>
 		  </tr>
 		  <?php
 		  $i++;
 		  }
-      ?>
+          ?>
       </tbody>
       </table>
 	  </div>

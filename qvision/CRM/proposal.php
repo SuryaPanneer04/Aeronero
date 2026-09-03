@@ -98,9 +98,9 @@ $userrole=$_SESSION['userrole'];
 		  <?php 
 		  if($enquiry['companys']==1)
 		  {
-			  echo "Bluebase Software Services Pvt Ltd";
+			  echo "Aeronero solutions private limited";
 	  } else {
-		  echo "Bluebase Software Services Private Limited";
+		  echo "Aeronero solutions private limited";
 	  }
 		  ?>
 		  

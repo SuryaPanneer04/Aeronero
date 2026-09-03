@@ -47,8 +47,8 @@ require '../../connect.php';
 		<!-- Post -->
 			<table class="table table-bordered">
 				<tr>
-					<td><center><img src="qvision/images/logo123.jpg" alt="bluebase" style="width:100px;height:50px;"></center></td>
-					<td colspan="5"><center><b>Bluebase Software Services Private Limited</b></center></td>
+					<td><center><img src="qvision/images/logo123.jpg" alt="Aeronero solutions" style="width:100px;height:50px;"></center></td>
+					<td colspan="5"><center><b>Aeronero solutions private limited</b></center></td>
 				</tr>			  
 				<tr>
 					<td colspan="6"><center><b>Add Enquiries</b></center></td>

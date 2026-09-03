@@ -86,7 +86,7 @@ where quotation.Enquire_id='$id'");
                     </tr>
 
                     <tr>
-                        <td>Proposal - Bluebase Software Services Private Limited </td>
+                        <td>Aeronero solutions private limited </td>
                         <td colspan="5">
                             <input type="text"  class="form-control" style ="border:none;width:710px;height:100px" value="<?php echo $row_stmt1['Proposal_statement']; ?>"readonly>
                         </td>
@@ -159,7 +159,7 @@ where quotation.Enquire_id='$id'");
                             </textarea></td>
                     </tr>
                     <tr>
-                        <td>Proposal - Bluebase Software Services Private Limited </td>
+                        <td>Proposal - Aeronero solutions private limited </td>
                         <td colspan="5">
 
                             <textarea id="Proposal" name="Proposal_statement" class="form-control" style="height:168px">

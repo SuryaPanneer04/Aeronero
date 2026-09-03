@@ -13,14 +13,12 @@ $name = $_SESSION['fullname'];
         padding: 10px;
     }
 
-   .header-menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color:#ff8b3d;
-        color: white;
-        padding: 10px;
-    }
+  .header-menu {
+       align-items: center;
+       background-color: #009EE3; /* Changed to Aeronero Blue */
+       color: white;
+       padding: 10px;
+   }
 
     .menu-item {
         margin-right: 20px;
@@ -89,7 +87,7 @@ $name = $_SESSION['fullname'];
 </style>
 <nav class="sidebarr" id="sidebar" style="display: none;margin: -17px -42px;">
     <ul class="navv">
-<div id="submenuContainer" style="width:240px; background-color: #ff8b3d; position: absolute; height:100vh; overflow: auto;">    </ul>
+<div id="submenuContainer" style="width:240px; background-color: #009EE3; position: absolute; height:100vh; overflow: auto;">    </ul>
 </nav>
 </div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

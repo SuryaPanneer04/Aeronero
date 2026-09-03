@@ -6,19 +6,6 @@ if (isset($_SESSION['user'])) {
     // var_dump($_SESSION);
 }
 ?>
-<style>
-    .p1 {
-        font-family: Times;
-    }
-
-    .p2 {
-        font-family: Algerian;
-    }
-
-    .p3 {
-        font-family: monospace;
-    }
-</style>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,16 +15,13 @@ if (isset($_SESSION['user'])) {
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>QVision ERP LOGIN</title>
 
-
-    <!-- Owl-Carousel -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"
-        integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
-        integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
-
     <!-- Font Awesome CDN -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <!-- Custom Style-->
     <link rel="stylesheet" href="./css/Style.css">
@@ -45,80 +29,128 @@ if (isset($_SESSION['user'])) {
 
 <body>
 
-    <div class="container">
-        <div class="panel">
-            <div class="row">
-                <div class="col liquid">
-                    <!-- <h1 style="color: #f8c401;
-                        font-family: fangsong;
-                        margin-top: 350px;
-                        margin-left: 80px;
-                        font-size: 70px;">Q Vision</h1> -->
+    <div class="login-page">
+
+        <!-- LEFT PANEL: Slanted Background with Water Animation -->
+        <div class="left-bg-container">
+            <div class="left-bg-image"></div>
+        </div>
+
+        <section class="left-panel">
+            
+            <!-- TOP GROUP: Logo and Hero Text -->
+            <div class="left-top">
+                <div class="left-header">
+                    <img src="../images/logo123.jpg" alt="Aeronero Logo" class="left-logo">
                 </div>
-                <div class="col login" style="margin-top: 50px;
-                margin-left: -100px;">
-                    <form method="POST" action="validation.php">
-                        <div class="titles">
-                            <img src="..\qvision\images\logo123.jpg" alt="" class="login_img" style="max-width: 573px;
-    max-height: 260px;
-    margin-top: 40px;
-    margin-left: 60px;">
-                        </div>
 
-                        <div class="form-group" style=" margin-top: 70px;">
-
-                            <div class="input-icon" style=" margin-left: 20px;">
-                                <i class="fas fa-user"></i>
-                            </div>
-                            <input type="text" placeholder="User Name" name="Inputusername" class="form-input" Autocomplete="off" autofocus>
-
-
-                        </div>
-                       <div class="form-group" style="position: relative;">
-                            <div class="input-icon" style="margin-left: 20px;">
-                                <i class="fas fa-user-lock"></i>
-                            </div>
-
-                            <input type="password" id="password" name="InputPassword" placeholder="Password" class="form-input" autocomplete="off" style="padding-right: 45px;">
-
-                            <span onclick="togglePassword()" style="
-                                position: absolute;
-                                right: 15px;
-                                top: 50%;
-                                transform: translateY(-50%);
-                                cursor: pointer;
-                                color: #666;
-                                font-size: 18px;
-                                z-index: 10;
-                                ">
-                                <i class="fas fa-eye" id="toggleIcon"></i>
-                            </span>
-                        </div>
-
-                        <input type="submit" class="btn btn-primary btn-block" style="margin-top: 71px;margin-left: 206px;width:100px;font-size:20px;" value="Login" />
-                    </form>
-
+                <div class="hero-content">
+                    <h1 class="hero-title">Smart ERP for<br><span class="highlight-blue">Water</span> Solutions</h1>
+                    <div class="yellow-dash"></div>
+                    <p class="hero-desc">Manage leads, quotations, and service<br>operations for your water & aeration systems<br>business, in one place.</p>
                 </div>
             </div>
-        </div>
+
+            <!-- Orbit Graphic -->
+            <div class="orbit-container">
+                <div class="orbit-circle orbit-outer">
+                    <div class="orbit-icon icon-1"><i class="fas fa-users"></i></div>
+                    <div class="orbit-icon icon-2"><i class="fas fa-chart-line"></i></div>
+                </div>
+                <div class="orbit-circle orbit-inner">
+                    <div class="orbit-icon icon-3" style="color: #FBC710; border-color: #FBC710;"><i class="fas fa-bars"></i></div>
+                </div>
+                <div class="orbit-center">
+                    <div class="center-icon-bg">
+                        <img src="assets/Aeronero Fav_page-0002.jpg" alt="Center Icon" class="center-icon">
+                    </div>
+                </div>
+            </div>
+
+            <!-- BOTTOM GROUP: Stats and Footer pushed to the very bottom -->
+            <div class="left-bottom">
+                <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-text">
+                            <h4>500+</h4>
+                            <p>Happy Clients</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-tint"></i></div>
+                        <div class="stat-text">
+                            <h4>1200+</h4>
+                            <p>Projects Completed</p>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="stat-text">
+                            <h4>99.9%</h4>
+                            <p>System Uptime</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="left-footer">
+                    &copy; 2026 Aeronero Solutions Private Limited | Powered by QVision ERP
+                </div>
+            </div>
+        </section>
+
+        <!-- RIGHT PANEL: Glassmorphic White Login Form -->
+        <section class="right-panel">
+            <div class="form-card">
+            
+
+                <div class="form-header">
+                    <img src="../images/logo123.jpg" alt="Aeronero Solutions Private Limited" class="form-logo">
+                    <h2>Welcome back!</h2>
+                    <p>Sign in to continue to your ERP workspace</p>
+                </div>
+
+                <!-- Backend inputs UNTOUCHED -->
+                <form method="POST" action="validation.php" class="login-form">
+                    
+                    <div class="field-group">
+                        <label for="username">User name</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-user input-icon"></i>
+                            <input type="text" id="username" name="Inputusername" placeholder="Enter your user name" autocomplete="off" autofocus>
+                        </div>
+                    </div>
+
+                    <div class="field-group">
+                        <label for="password">Password</label>
+                        <div class="input-wrapper">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input type="password" id="password" name="InputPassword" placeholder="Enter your password" autocomplete="off">
+                            <i class="fas fa-eye toggle-icon" id="toggleIcon" onclick="togglePassword()"></i>
+                        </div>
+                    </div>
+
+                    <div class="form-actions">
+                        <label class="remember-me">
+                            <input type="checkbox" checked>
+                            <span class="checkmark"></span>
+                            Remember me
+                        </label>
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-signin">Sign in <i class="fas fa-arrow-right"></i></button>
+                </form>
+
+                <p class="signup-text" style="margin-top: 2rem;">
+                    Don't have an account? <a href="#">Contact your administrator</a>
+                </p>
+
+            </div>
+        </section>
+
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"
-        integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
-
-    <script>
-        $(document).ready(function() {
-
-            $('.owl-carousel').owlCarousel({
-                loop: true,
-                autoplay: true,
-                autoplayTimeout: 2000,
-                autoplayHoverPause: true,
-                items: 1
-            });
-        });
-    </script>
     <script>
         function togglePassword() {
             var password = document.getElementById("password");

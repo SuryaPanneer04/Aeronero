@@ -21,7 +21,8 @@
 }
 
 .card-primary:not(.card-outline)>.card-header {
-    background-color: #df8459 !important;
+    background-color: #009EE3 !important;
+    /* background-color: #df8459 !important; */
 }
 .card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
     color: #808080 !important;
@@ -35,6 +36,7 @@
 .page-item.active .page-link {
     background-color: #d79475;
     border-color: #df8459;
+    /* border-color: #df8459; */
 }
 .page-link:hover {
     color: #808080;

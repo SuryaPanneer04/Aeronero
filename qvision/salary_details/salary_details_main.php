@@ -14,7 +14,7 @@
 }
 </style>	
 	<div  class="card card-primary">
-    <div class="card-header" style="background-color:#ff8b3d !important;color:white !important;">
+    <div class="card-header" style="background-color:#009EE3  !important;color:white !important;">
 	<div class="col-lg-12">
 	<h4>Salary Details View</h4>
 	</div>

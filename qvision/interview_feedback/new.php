@@ -18,7 +18,7 @@ $userid=$_SESSION['candidateid'];
 }
 </style>
 <div  class="card card-primary">
-              <div class="card-header" style="background-color:#ff8b3d !important;color:white !important;">
+              <div class="card-header" style="background-color:#009EE3  !important;color:white !important;">
             <h3>Interview Allocated List</h3>
           </div> <br>
      

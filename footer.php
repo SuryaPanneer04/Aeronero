@@ -1,6 +1,6 @@
 <style>
   a {
-    color: orange;
+    color: #009EE3  RGB: rgb(0, 158, 227);
 }
   </style>
 <footer class="main-footer">

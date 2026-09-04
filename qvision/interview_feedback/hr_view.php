@@ -19,7 +19,7 @@ $row = $stmt->fetch();
 }
 </style>
 <div  class="card card-primary">
-   <div class="card-header" style="background-color:#ff8b3d !important;color:white !important;">
+   <div class="card-header" style="background-color:#009EE3  !important;color:white !important;">
                 <h3 class="card-title"><font size="5">INTERVIEW FEEDBACK DETAILS VIEW</font></h3>
 				<a onclick="return back_ctc()" style="float: right;color:white !important;" data-toggle="modal" class="btn btn-danger"><i class="fa fa-minus"></i>Back</a>
               </div>

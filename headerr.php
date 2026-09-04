@@ -37,7 +37,7 @@ $name = $_SESSION['fullname'];
 
     .menu-title.active {
         /* text-decoration: underline; */
-        color: #d80831 !important;
+        color: #FBC710 !important;
 
     }
 
@@ -70,8 +70,8 @@ $name = $_SESSION['fullname'];
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <div style="margin:-200px;">
-        <i class="fa fa-user fa-fw" style="color:#df8459"></i>
-        <b style="color:#df8459;"><?php echo $name . '-' . $username; ?></b>
+        <i class="fa fa-user fa-fw" style="color:#FBC710"></i>
+        <b style="color:#009EE3;"><?php echo $name . '-' . $username; ?></b>
     </div>
     <!-- Left navbar links -->
     <!--<ul class="navbar-nav">

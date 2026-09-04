@@ -45,7 +45,7 @@ if (isset($_SESSION['user'])) {
                 </div>
 
                 <div class="hero-content">
-                    <h1 class="hero-title">Smart ERP for<br><span class="highlight-blue">Water</span> Solutions</h1>
+                    <h1 class="hero-title">Smart HRMS for<br><span class="highlight-blue">Water</span> Solutions</h1>
                     <div class="yellow-dash"></div>
                     <p class="hero-desc">Manage leads, quotations, and service<br>operations for your water & aeration systems<br>business, in one place.</p>
                 </div>

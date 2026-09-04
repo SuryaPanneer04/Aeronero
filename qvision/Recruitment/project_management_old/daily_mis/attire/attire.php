@@ -11,7 +11,7 @@ $user_id=$_SESSION['userid'];
 
 <html>
 <div  class="card card-primary">
-              <div class="card-header" style="background-color:#ff8b3d !important;">
+              <div class="card-header" style="background-color:#009EE3  !important;">
                 <h3 class="card-title"><font size="5">Attire Form</font></h3>
 				<!--<input type="button" style="float:right;" class="btn btn-danger" name="back" value="BACK" onclick="attire()">-->
 				</input>

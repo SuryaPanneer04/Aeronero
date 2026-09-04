@@ -9,7 +9,7 @@
 </head>
 <body>
 <div class="card card-primary">
-    <div class="card-header" style="background-color:#ff8b3d !important;color:white !important;">
+    <div class="card-header" style="background-color:#009EE3  !important;color:white !important;">
         <h3 style="float: left;color:white !important;">VISITOR MANAGEMENT SYSTEM LIST</h3>
         <a onclick="addvms();" style="float: right;color:white !important;" data-toggle="modal" class="btn btn-dark"><i class="fa fa-plus"></i>  New Visitors</a>
     </div>

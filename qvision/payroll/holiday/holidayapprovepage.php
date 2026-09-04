@@ -8,7 +8,7 @@ $row = $stmt->fetch();
 ?>
 <div class="container-fluid">
     <div class="card mb-3">
-        <div class="card-header" style="background-color:#ff8b3d !important;">
+        <div class="card-header" style="background-color:#009EE3  !important;">
           <span style="color:white;font-size:20px;">Holiday  Approve</span>
             <a onclick="back_holiday()" style="float: right;background:gray;color:white;border:1px solid orange;border-radius:11px;" data-toggle="modal" class="btn btn-primary">Back</a>
         </div>

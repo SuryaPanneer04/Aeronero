@@ -58,7 +58,7 @@ sbar {
 	
 <section class="wage_content">
 <div class="card card-primary">
-              <div class="card-header" style="background:#ff8b3d !important;">
+              <div class="card-header" style="background-color:#009EE3 !important;">
                 
 				              <center><h3 class="card-title" style="color:white !important;"><font size="5">COST SHEET ENTRY DETAILS</font></h3></center>
 <?php if($page_id == "0" ){ ?>

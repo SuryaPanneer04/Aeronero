@@ -28,7 +28,7 @@ background-color: rgb(237, 93, 0) !important;
 <div class="col-md-12">
 
 <div class="card card-primary">
-<div class="card-header" style="background-color:#ff8b3d !important;">
+<div class="card-header" style="background-color:#009EE3  !important;">
   <center><h3 class="card-title">EDIT DOLLER VENDOR</h3></center>
 <a onclick="return back_ctc()" style="float: right;" data-toggle="modal" class="btn btn-dark"></i>Back</a>
 </div>

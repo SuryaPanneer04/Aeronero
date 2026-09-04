@@ -31,7 +31,7 @@ window.location.href = uri + base64(format(template, ctx))
 })() 
 </script>	
  <div  class="card card-primary">
-    <div class="card-header" style="background-color:#ff8b3d !important;">
+    <div class="card-header" style="background-color:#009EE3  !important;">
         <h3 class="card-title"><font size="5">House Keeping Report List</font></h3>
        <!--<a onclick="add_enquree()" style="float: right;" data-toggle="modal" class="btn btn-dark"><i class="fa fa-plus"></i> Back</a>
 -->

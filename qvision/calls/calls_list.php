@@ -29,7 +29,7 @@ if($head_status==1){
 
 ?>
 <div  class="card card-primary">
-    <div class="card-header" style="background: #f1cc61;">
+    <div class="card-header" style="background-color:#009EE3;">
         <h3 class="card-title"><font size="5">Enquiry List</font></h3>
 		<!-- <a onclick="call_upload()"  style="float: right;    background-color: #da542e;" data-toggle="modal" class="btn btn-default"><i class="fa fa-upload"></i> Upload</a>-->
 		 

@@ -39,7 +39,7 @@ background-color:#009EE3 !important;
 </style>
 <section class="wage_content">
 <div class="card card-primary">
-<div class="card-header" style="background:#ff8b3d !important;">
+<div class="card-header" style="background-color:#009EE3 !important;">
 	<center><h3 class="card-title"><b>CLIENT DETAILS FORM</b></h3></center>
 	<a onclick="back_ctc()" style="float: right;" data-toggle="modal" class="btn btn-danger"></i>Back</a>
 </div>

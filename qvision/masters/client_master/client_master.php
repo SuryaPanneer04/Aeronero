@@ -11,7 +11,7 @@ $userrole=$_SESSION['userrole'];
 	}
 	</style>
 <div  class="card card-primary">
-              <div class="card-header" style="background-color:#ff8b3d !important;">
+              <div class="card-header" style="background-color:#009EE3  !important;">
                 <h3 class="card-title"><font size="5">Client List</font></h3>		 	            			    
 		    <!--<a onclick="plant_excel()" style="float: right;" data-toggle="modal" class="btn btn-danger btn"><i class="fa fa-plus"></i>PLANT EXCEL</a> &nbsp;&nbsp;&nbsp;&nbsp;-->
 		    <a onclick="add_plant()" style="float: right;" data-toggle="modal" class="btn btn-dark"><i class="fa fa-plus"></i> ADD PLANT</a>

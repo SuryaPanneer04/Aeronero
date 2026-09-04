@@ -12,7 +12,7 @@ $sid=$row['site_id'];
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color: #ff8b3d !important;
+		background-color:#009EE3  !important;
 	}
 	</style>
 	

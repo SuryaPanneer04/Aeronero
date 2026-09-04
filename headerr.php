@@ -88,7 +88,7 @@ $name = $_SESSION['fullname'];
 
     <ul class="navbar-nav ml-auto">
         <li class="dropdown">
-            <a href="login/login.php" style="font-size17px;"><img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;">Logout</a>
+            <a href="login/login.php" style="font-size:17px;"><img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;">Logout</a>
 
         </li>
     </ul>

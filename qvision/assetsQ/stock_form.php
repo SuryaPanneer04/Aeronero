@@ -5,7 +5,7 @@ $userrole=$_SESSION['userrole'];
 
 ?>
   <div class="card card-info">
-    <div class="card-header" style="background-color:#ff8b3d;">
+    <div class="card-header" style="background-color:#009EE3 !important;">
        <h3 class="card-title"><b>New Stock</b></h3>
 		<a onclick="return back()" style="float: right;background-color:black;border:1px solid black;" data-toggle="modal" class="btn btn-primary"><i class="fa fa-minus"></i>Back</a>
       </div>

@@ -27,7 +27,7 @@ $userrole = isset($_SESSION['userrole']) ? $_SESSION['userrole'] : '';
     border-color: #ed5d00;
 }
 .card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
+	background-color:#009EE3 !important;
 }
 .btn-danger{
 	background-color: #ed5d00;

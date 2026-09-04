@@ -7,19 +7,6 @@ $row = $stmt->fetch();
 $sta=$row['status'];
 ?>
 
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #ff8b3d !important;
-}
-.card-primary:not(.card-outline)>.card-header{
-color: white !important;
-}
-.btn-dark{
-background-color: rgb(237, 93, 0) !important;
-    color: rgb(60, 8, 8) !important;
-    border-color: rgb(237, 93, 0) !important;
-}
-</style>
 <div class="container-fluid">
 
 

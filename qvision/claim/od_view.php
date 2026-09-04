@@ -23,7 +23,7 @@ $newDate = date("d-m-Y", strtotime($date));
     </head>
 		<style>
 .card-primary:not(.card-outline)>.card-header{
-background-color: #f1cc61 !important;
+background-color:#009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header{
 	color: black !important;
@@ -39,7 +39,7 @@ background-color: #f1cc61 !important;
 
 <div class="card card-info">
 
-    <div class="card-header" style="background-color:#ff8b3d;">
+    <div class="card-header" style="background-color:#009EE3 !important;">
 
         <center><h3 class="card-title"><b>OD VIEW</b></h3></center>
         <a onclick="back_od()" style="float: right;" data-toggle="modal" class="btn btn-primary">Back</a>

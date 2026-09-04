@@ -4,6 +4,7 @@ require '../../../connect.php';
 <!DOCTYPE html>
 <html>
 <head>
+	  <link rel="stylesheet" href="Qvision\commonstyle.css">
  <style>
 /* Button used to open the contact form - fixed at the bottom of the page */
 .open-button {
@@ -88,7 +89,7 @@ require '../../../connect.php';
 <div id="table_view">
      </div>
 <div  class="card card-primary">
-       <div class="card-header" style="background-color:#ff8b3d;">
+       <div class="card-header" style="background-color:#009EE3 !important;">
 <h3 class="card-title"><font size="5">Staff Leave update</font></h3>
 <span class="leave_date"> <input type="date" class="form-control" name="leavedate" id="l_date"  onchange="changedate()"/> </span>
 </div>

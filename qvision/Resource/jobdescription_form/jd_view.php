@@ -6,17 +6,6 @@ $jid=$_REQUEST['jid'];
 $sql=$con->query("SELECT *,j.status as status,j.id as jid FROM `jobdescription_form_details` j left join jobdescription_master m on j.jobdescription_id=m.id where j.id='$jid'");
 $sfet=$sql->fetch();
 ?>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-</style>
    <div class="card card-primary">
    <div class="card-header">
    <center><h3 class="card-title"><b>Job Description</b></h3></center>

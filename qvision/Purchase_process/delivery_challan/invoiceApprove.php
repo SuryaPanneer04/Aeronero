@@ -14,7 +14,7 @@ $count=$sql->rowcount();
 
 ?>
 <div  class="card card-primary">
-     <div class="card-header" style="background-color: #f1cc61 !important;">
+     <div class="card-header" style="background-color:#009EE3 !important;">
 	<h2 class="card-title"><font size="5"><b>Invoice Approve List</b></font> </h2></div>
 	<div class="card-body">
     <table id="example1" class="table table-bordered table-striped">

@@ -67,7 +67,7 @@ $stmtc=$con->prepare("SELECT id,client_code FROM new_client_master where id='$ma
     </head>
 		<style>
 .card-primary:not(.card-outline)>.card-header{
-background-color: #f1cc61 !important;
+background-color:#009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header{
 	color: black !important;

@@ -4,7 +4,7 @@ include("../../../user.php");
 $userrole = $_SESSION['userrole'];
 ?>
 <div class="card card-info">
-    <div class="card-header" style="background-color:#ff8b3d;">
+    <div class="card-header" style="background-color:#009EE3 !important;">
 
         <center>
             <h3 class="card-title"><b>PRODUCTS ADD</b></h3>

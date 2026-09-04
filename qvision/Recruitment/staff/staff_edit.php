@@ -7,18 +7,6 @@ $sql=$con->query("select *, s.id as staff_id from staff_master s left join candi
 //echo "select * from candidate_form_details  where id='$candidateid'";
 $data=$sql->fetch();
 ?>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
-}
-.btn-danger{
-	background-color: rgb(237, 93, 0) !important;
-    border-color: rgb(237, 93, 0) !important;
-	color:black !important;
-}
-</style>
-
-
 <div class="card card-primary">
               <div class="card-header">
                 

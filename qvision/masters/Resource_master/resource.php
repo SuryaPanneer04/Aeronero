@@ -118,7 +118,7 @@ $userrole = $_SESSION['userrole'];
     //alert(v);
     $.ajax({
       type: "POST",
-      url: "/bbvision/qvision/masters/Resource_master/resource_edit.php?id="+v,
+      url: "qvision/masters/Resource_master/resource_edit.php?id="+v,
 
       success: function(data) {
         $("#main_content").html(data);

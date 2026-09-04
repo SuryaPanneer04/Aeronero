@@ -12,7 +12,7 @@ $candidateid=$_SESSION['candidateid'];
 $userrole=$_SESSION['userrole'];
 ?>
 <div  class="card card-primary">
-     <div class="card-header" style="background-color: #f1cc61 !important;">
+     <div class="card-header" style="background-color:#009EE3 !important;">
 	 <h1 class="card-title"><font size="5"><b>Vendor PO	List</b></font> </h1></div>
     <div class="card-body">
      <table id="example1" class="table table-bordered table-striped">

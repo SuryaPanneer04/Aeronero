@@ -23,21 +23,7 @@ $userrole=$_SESSION['userrole'];
 	border-bottom: 3px solid #eee !important;
 }
 </style>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
-}
-.btn-danger{
-	background-color: #ed5d00;
-    border-color: #ed5d00;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-</style>
+
 <div  class="card card-primary">
    <div class="card-header">
     <h3 class="card-title"><font size="5">Resource List</font></h3>

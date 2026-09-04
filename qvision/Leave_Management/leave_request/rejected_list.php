@@ -13,7 +13,7 @@ $userrole = $_SESSION['userrole'];
 <div id="table_view">
      </div>
 <div  class="card card-primary">
-       <div class="card-header" style="background-color:#ff8b3d;">
+       <div class="card-header" style="background-color:#009EE3 !important;">
 <h3 class="card-title"><font size="5">Staff Leave Approve</font></h3>
 <input type="button" style="float:right;" class="btn btn-danger" name="back" value="BACK" onclick="leave_mapping_view()">
 

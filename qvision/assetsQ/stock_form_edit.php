@@ -15,7 +15,7 @@ $gst = $con->query("select * from products_gst where product_id='$aid' and produ
 $gstt = $gst->fetch();
 ?>
   <div class="card card-info">
-              <div class="card-header"  style="background-color:#ff8b3d;">
+              <div class="card-header"  style="background-color:#009EE3 !important;">
                 
 				              <center><h3 class="card-title"><b>New Stock</b></h3></center>
 		<a onclick="return back()" style="float: right;" data-toggle="modal" class="btn btn-primary"><i class="fa fa-minus"></i>Back</a>

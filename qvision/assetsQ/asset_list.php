@@ -5,7 +5,7 @@ $candidateid=$_SESSION['candidateid'];
 $userrole=$_SESSION['userrole'];
 ?>
 <div  class="card card-primary">
-              <div class="card-header"  style="background-color:#ff8b3d;">
+              <div class="card-header"  style="background-color:#009EE3 !important;">
                 <h3 class="card-title"><font size="5"> Asset List</font></h3>
 			
 		

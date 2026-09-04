@@ -7,7 +7,7 @@ $row = $stmt->fetch();
 ?>
 <div class="container-fluid">
 <div class="card mb-3">
-<div class="card-header" style="background-color:#ff8b3d;">
+<div class="card-header" style="background-color:#009EE3 !important;">
 <i class="fa fa-table"></i> Arrear View
 <a onclick="back_to_arrears()" style="float: right;background-color:black;border:1px solid black;color:white;" data-toggle="modal" class="btn btn-primary"> <i class="fa fa-minus"></i>Back</a>
 </div>

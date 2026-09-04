@@ -91,7 +91,7 @@ if ($action == 'save_mapping') {
 <style>
     /* Custom Bluebase Theme Styles */
     .custom-theme-header {
-        background-color: #dc8460 !important; /* Matches Staff Asset List header */
+        background-color:#009EE3  !important; /* Matches Staff Asset List header */
         color: #333 !important;
         border-radius: 4px 4px 0 0;
     }

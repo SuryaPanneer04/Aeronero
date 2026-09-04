@@ -23,7 +23,7 @@ $round = $sfet['interview_round_level'];
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <style>
 .card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
+	background-color:#009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header a {
 	color: black;

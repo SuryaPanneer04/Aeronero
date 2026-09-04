@@ -9,17 +9,6 @@ $sta=$row['status'];
 $rid=$row['round_id'];
 $pid=$row['person_name'];
 ?>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-</style>
 
 <div  class="card card-primary">
 <div class="card-header">

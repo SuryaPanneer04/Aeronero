@@ -6,7 +6,7 @@ $userrole = $_SESSION['userrole'];
 ?>
 <style>
   .card-primary:not(.card-outline)>.card-header {
-    background-color: #f1cc61 !important;
+    background-color:#009EE3 !important;
   }
 
   .card-primary:not(.card-outline)>.card-header,
@@ -55,7 +55,7 @@ $userrole = $_SESSION['userrole'];
   }
 
   .card-primary:not(.card-outline)>.card-header {
-    background-color: #f1cc61 !important;
+    background-color:#009EE3 !important;
   }
 </style>
 <div class="card card-primary">

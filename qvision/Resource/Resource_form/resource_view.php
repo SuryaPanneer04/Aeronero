@@ -5,24 +5,7 @@ $resourceid = $_REQUEST['id'];
 $sql = $con->query("SELECT *,s.status as status FROM resource_form_detail s left join jobdescription_master m on s.position=m.id join source_master sm on s.source=sm.id where s.id='$resourceid'");
 $fet = $sql->fetch();
 ?>
-<style>
-	.card-primary:not(.card-outline)>.card-header {
-		background-color: #f1cc61 !important;
-	}
 
-	.btn-danger {
-		background-color: #ed5d00;
-		border-color: #ed5d00;
-	}
-
-	.card-primary:not(.card-outline)>.card-header a {
-		color: black;
-	}
-
-	.card-primary:not(.card-outline)>.card-header {
-		color: black !important;
-	}
-</style>
 <div class="card card-primary">
 	<div class="card-header">
 		<h3 class="card-title">

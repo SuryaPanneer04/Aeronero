@@ -13,21 +13,6 @@ $sql=$con->query("SELECT * FROM `emp_personal_details`  where emp_id='$candidate
 //echo "SELECT * FROM `emp_personal_details`  where emp_id='$candidateid'";
 $data=$sql->fetch();
 ?>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black !important;
-}
-.btn-danger{
-	background-color: #ed5d00 !important;
-    border-color: #ed5d00 !important;
-}
-</style>
 <div class="card card-primary">
     <div class="card-header">
        <h3 class="card-title"><font size="5">STAFF LIST</font></h3>

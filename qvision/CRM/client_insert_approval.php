@@ -16,7 +16,7 @@ $eq_id = $row['eq_id'] ?? 0;
 </head>
 <style>
 	.card-primary:not(.card-outline)>.card-header {
-		background-color: #f1cc61 !important;
+		background-color:#009EE3 !important;
 	}
 
 	.card-primary:not(.card-outline)>.card-header {

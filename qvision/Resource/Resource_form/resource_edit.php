@@ -7,7 +7,7 @@ $fet=$sql->fetch();
 ?>
 <style>
 .card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
+	background-color:#009EE3 !important;
 }
 .btn-danger{
 	background-color: #ed5d00;

@@ -11,7 +11,7 @@ $sta = isset($row['status']) ? $row['status'] : 1;
 </head>
 <style>
 .card-primary:not(.card-outline)>.card-header {
-    background-color: #f1cc61 !important;
+    background-color:#009EE3 !important;
     color: black !important;
 }
 .btn-dark {

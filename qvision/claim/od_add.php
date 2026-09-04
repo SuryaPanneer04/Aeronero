@@ -10,7 +10,7 @@ $candidateid = $_SESSION['candidateid'];
 </head>
 <style>
 .card-primary:not(.card-outline)>.card-header {
-    background-color: #f1cc61 !important;
+    background-color:#009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header {
     color: black !important;
@@ -24,7 +24,7 @@ $candidateid = $_SESSION['candidateid'];
 }
 </style>
 <div class="card card-info">
-    <div class="card-header" style="background-color:#ff8b3d;">
+    <div class="card-header" style="background-color:#009EE3 !important;">
         <center><h3 class="card-title"><b>Add Claim</b></h3></center>
         <a onclick="back_od()" style="float: right;" data-toggle="modal" class="btn btn-primary">Back</a>
     </div>

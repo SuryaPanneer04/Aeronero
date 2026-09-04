@@ -25,7 +25,7 @@ if (isset($_SESSION['candidateid'])) {
 </head>
 
 <div class="card card-primary">
-    <div class="card-header" style="background-color:#ff8b3d;">
+    <div class="card-header" style="background-color:#009EE3 !important;">
         <h3 class="card-title"><font size="5">CLAIM REQUEST</font></h3>
         <a onclick="return add_od()" style="float: right; background-color: #ff8b3d;" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i>ADD</a>
     </div>

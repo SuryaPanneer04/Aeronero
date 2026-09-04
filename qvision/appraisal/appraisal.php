@@ -12,7 +12,7 @@ $t_date = "31-03-".date("Y",strtotime('+1 years')); //d-m-Y
   </head>
 <style>
 .card-primary:not(.card-outline)>.card-header{
-background-color: #f1cc61 !important;
+background-color:#009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header{
 	color: black !important;

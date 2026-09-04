@@ -3,20 +3,6 @@ require '../../../connect.php';
 include("../../../user.php");
 $userrole=$_SESSION['userrole'];
 ?>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-.card-body.box-profile
-{
-	/*max-width: 252vh; */
-    /* display: flex; */
-    /* margin-left: 33vh;*/
-}
-</style>
 		<div id="table_view">
 		<div  class="card card-primary">
 		<div class="card-header">

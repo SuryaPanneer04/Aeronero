@@ -16,7 +16,7 @@ if(($userrole =='R008')||($userrole =='R005')||($userrole =='R004')) {
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color: #f1cc61 !important;
+		background-color:#009EE3 !important;
 	}
 	</style>
 <div class="wage_content">

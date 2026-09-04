@@ -7,17 +7,9 @@ $fet=$sql->fetch();
 $rid=$fet['resource_id'];
 $status=$fet['cstatus'];
 ?>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-</style>
+<head>
+    <link rel="stylesheet" href="Qvision\commonstyle.css">
+    </head>
   <div class="card card-primary">
      <div class="card-header">
 	     <h3 class="card-title"> <b>Candidate Details View</b></h3>

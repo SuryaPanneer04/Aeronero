@@ -11,7 +11,7 @@ $row = $stmt->fetch();
  $name=$row['name']
 ?>
 <div class="card card-info">
-<div class="card-header" style="background-color:#ff8b3d;">
+<div class="card-header" style="background-color:#009EE3 !important;">
 
 <center><h3 class="card-title"><b>PRODUCTS EDIT</b></h3></center>
 <a onclick="back_ctc()" style="float: right;" data-toggle="modal" class="btn btn-danger"></i>Back</a>

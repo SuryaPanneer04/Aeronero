@@ -16,7 +16,7 @@ require '../../connect.php';
 </head>
 <body>
 <div  class="card card-primary">
-     <div class="card-header" style="background-color: #f1cc61 !important;">
+     <div class="card-header" style="background-color:#009EE3 !important;">
     <h2 class="card-title"><font size="4"><b>Vendor Quote List</b></font> </h2>
 	</div>
     <div class="card-body">

@@ -9,7 +9,7 @@ $user_id=$_SESSION['userid'];
 <html>
 
 <div class="card card-info">
-              <div class="card-header" style="background-color: #f1cc61; !important">
+              <div class="card-header" style="background-color:#009EE3; !important">
                 <h3 class="card-title"><font size="5"> Permission Request</font></h3>
 				<input type="button" style="float:right;" class="btn btn-danger" name="back" value="BACK" onclick="leave_mapping_view()">
 				</input>

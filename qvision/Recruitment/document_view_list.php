@@ -130,7 +130,7 @@ $userrole=$_SESSION['userrole'];
       </thead>
       <tbody>
       <?php
-      $emp_sql=$con->query("SELECT *,d.dept_name,dm.designation_name as desname,c.id as id,c.status as status FROM `candidate_form_details` c left join z_department_master d on c.department=d.id left join designation_master dm on c.position=dm.id where  c.status=20 or c.status=22 order by c.id desc ");
+      $emp_sql=$con->query("SELECT c.*, d.dept_name, COALESCE(dm.designation_name, zr.role_name) as desname, c.id as id, c.status as status FROM `candidate_form_details` c left join z_department_master d on c.department=d.id left join designation_master dm on c.position=dm.id left join z_role_master zr on c.position=zr.id where c.status=20 or c.status=22 order by c.id desc ");
       $i=1;
       while($emp_res = $emp_sql->fetch(PDO::FETCH_ASSOC))
       {

@@ -35,9 +35,14 @@ if (isset($_POST['Upload'])) {
                 // EXCEL COLUMN MAPPING (Based on your uploaded image)
                 $emp_code   = trim($filesop[0]); // Column A: Employee_Code
                 $log_date   = trim($filesop[2]); // Column C: In_Log_Date
+                $log_date   = str_replace('/', '-', $log_date); // Force dd-mm-yyyy parsing
                 $punch_in   = trim($filesop[4]); // Column E: Punch_In
                 $punch_out  = trim($filesop[5]); // Column F: Punch_Out
                 $status_val = trim($filesop[7]); // Column H: Status
+                
+                if (empty($log_date) || strtotime($log_date) === false) { 
+                    continue; // Skip if the date is empty or invalid
+                }
 
                 // Check staff_master using correct emp_code
                 $emp_name_sql = "SELECT id,emp_name,emp_code,prefix_code,dep_id,div_id,design_id FROM staff_master WHERE emp_code = '$emp_code' ";

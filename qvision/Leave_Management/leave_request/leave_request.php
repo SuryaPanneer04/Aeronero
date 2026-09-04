@@ -10,8 +10,6 @@ $user_id=$_SESSION['userid'];
 <div  class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title"><font size="5">  Leave Request</font></h3>
-				<input type="button" style="float: right;background-color:black;border:1px solid black;" class="btn btn-danger" name="back" value="BACK" onclick="leave_mapping_view()">
-				</input>
               </div>
 			  <div class="card-body">
 					<form method="POST" name="leave" id="leave" enctype="multipart/form-data">
@@ -77,9 +75,8 @@ $user_id=$_SESSION['userid'];
 									
 								</tr> 
 								<tr>		 
-									<td colspan="8"><input type="submit" class="btn btn-success" name="submit" id="submit" value="save">
-									
-									<button type="button" class="btn btn-primary" onclick="leave_mapping_view();">Cancel</button></td>
+									<td colspan="8"><input type="submit" class="btn btn-success" name="submit" id="submit" value="Save Request">
+									</td>
 								</tr>
 							</tr>
 						</table>

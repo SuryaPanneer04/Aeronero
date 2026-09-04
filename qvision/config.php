@@ -4,7 +4,7 @@ header("Access-Control-Allow-Origin: *");
 
 //define("Title", 'Recruitment');
 try {
-	$con = new pdo ('mysql:host=localhost;dbname=demobluebase_bluebase','demobluebase_bluebase','Girish@2708'); //admin@123
+	$con = new pdo ('mysql:host=localhost;dbname=demobluebase_aeronero','root',''); //admin@123
 } 
 catch (Exception $e) 
 {
@@ -18,9 +18,9 @@ class Database{
   
     // specify your own database credentials
     private $host = "localhost";
-    private $db_name = "demobluebase_bluebase";
-    private $username = "demobluebase_bluebase";
-    private $password = "Girish@2708"; 
+    private $db_name = "demobluebase_aeronero";
+    private $username = "root";
+    private $password = ""; 
     public $conn;
   
     // get the database connection

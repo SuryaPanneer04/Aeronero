@@ -136,38 +136,40 @@ function leave_reject_list()
 	</head>
 	<body>
 		<!-- <section class="content"> -->
-			<div class="card">
+			<?php 
+			$is_hr_menu = (isset($_GET['menu']) && $_GET['menu'] == 'hr') ? true : false;
+			$show_buttons = false;
+			if(($userrole=="R003" && $is_hr_menu) || $userrole=="R005" || $userrole == "R001") {
+				$show_buttons = true;
+			}
+			
+			if($show_buttons) {
+			?>
+			<div class="card mb-3">
 				<div class="card-body">
-					<!--<input class="btn btn-primary" type="button" value="Leave Master" onclick="leave_master_view()"> 
-					<input class="btn btn-success" type="button" value="Leave Mapping" onclick="leaves_mapping_view()">
-					<input class="btn btn-warning" type="button" value="Leave Mapping with Staff" onclick="staff_leave_mapping_view()">
-					<input class="btn btn-warning" type="button" value="Leave Openings" onclick="staff_leave_opening_view()">
-					<input class="btn btn-success" type="button" value="Leave Balance" onclick="leave_balance_view()"><br>-->
 					<input class="btn button3" type="button" value="Leave Request" onclick="leave_request()">
 					
 				<?php 
-				$is_hr_menu = (isset($_GET['menu']) && $_GET['menu'] == 'hr') ? true : false;
 				if($userrole=="R003" && $is_hr_menu)
 				{?>
 					<input class="btn button2" type="button" value="Staff Leave Update" onclick="leave_update()">
 					<input class="btn button" type="button" value="Staff Leave Master" onclick="leave_master_app()">
 					<input class="btn button4" type="button" value="Leave Approve List" onclick="leave_app_list()">
 					<input class="btn button5" type="button" value="Leave Rejected List" onclick="leave_reject_list()">
+					<input class="btn button1" type="button" value="Staff Leave Approve" onclick="leave_app()">
 					<?php
-					}
-					else if($userrole=="R008"){
-						?>					
+				}
+				else if($userrole=="R005" || $userrole == "R001"){
+					?>					
 					<input class="btn button1" type="button" value="Staff Leave Approve" onclick="leave_app()">
 					<?php } ?>
-					
-				
-				
 				</div>
 			</div>
-			<div class="card">
-				<div class="card-body">
-				<div id="leave_view">
-				</div>
+			<?php } ?>
+			
+			<div class="card border-0 shadow-none" style="background: transparent;">
+				<div class="card-body p-0">
+					<div id="leave_view"></div>
 				</div>
 			</div>
 		</section>
@@ -274,5 +276,10 @@ function leave_master_app()
     }
   })
 }
+
+$(document).ready(function() {
+    // Automatically load the leave request form when the page is loaded
+    leave_request();
+});
 
 </script>

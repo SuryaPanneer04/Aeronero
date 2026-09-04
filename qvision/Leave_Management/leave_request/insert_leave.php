@@ -16,7 +16,7 @@ $to_date=$_POST['to_date'];
 $approve_date=$_POST['lveapp'];
 //$balance_leave=$_POST['balance_leave'];
 
-		$stmtz = $con->prepare("SELECT prefix_code,emp_code,candid_id FROM staff_master where candid_id='$candids_id'");
+	   $stmtz = $con->prepare("SELECT prefix_code,emp_code,candid_id FROM staff_master where candid_id='$candids_id'");
 		//echo "SELECT prefix_code,emp_code,candid_id FROM staff_master where candid_id='$candids_id'";
 	   $stmtz->execute(); 
 	   $rowz = $stmtz->fetch();

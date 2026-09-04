@@ -6,7 +6,11 @@ if (!headers_sent()) {
 
 //define("Title", 'Recruitment');
 try {
+<<<<<<< Updated upstream
 	$con = new pdo ('mysql:host=localhost;dbname=demobluebase_bluebase','root',''); //admin@123
+=======
+	$con = new pdo ('mysql:host=localhost;dbname=demobluebase_aeronero','root',''); //admin@123
+>>>>>>> Stashed changes
     $con->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
     $con->query("SET SESSION sql_mode = ''");
 } 
@@ -22,7 +26,11 @@ class Database{
   
     // specify your own database credentials
     private $host = "localhost";
+<<<<<<< Updated upstream
     private $db_name = "demobluebase_bluebase";
+=======
+    private $db_name = "demobluebase_aeronero";
+>>>>>>> Stashed changes
     private $username = "root";
     private $password = ""; 
     public $conn;

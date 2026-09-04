@@ -107,7 +107,7 @@ if (isset($_SESSION['user'])) {
                 <div class="form-header">
                     <img src="../images/logo123.jpg" alt="Aeronero Solutions Private Limited" class="form-logo">
                     <h2>Welcome back!</h2>
-                    <p>Sign in to continue to your ERP workspace</p>
+                    <p>Sign in to continue to your HRMS workspace</p>
                 </div>
 
                 <!-- Backend inputs UNTOUCHED -->
@@ -136,7 +136,6 @@ if (isset($_SESSION['user'])) {
                             <span class="checkmark"></span>
                             Remember me
                         </label>
-                        <a href="#" class="forgot-link">Forgot password?</a>
                     </div>
 
                     <button type="submit" class="btn-signin">Sign in <i class="fas fa-arrow-right"></i></button>

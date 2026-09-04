@@ -6,21 +6,7 @@ $userrole=$_SESSION['userrole'];
 <head>
     <link rel="stylesheet" href="Qvision\commonstyle.css">
     </head>
-		<style>
-.card-primary:not(.card-outline)>.card-header{
-background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-.btn-dark{
-	background-color: #ed5d00 !important;
-    border-color: #ed5d00 !important;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black !important;
-}
-</style>
+		
 <!-- <div class="container-fluid">
 <div class="card mb-3"> -->
 

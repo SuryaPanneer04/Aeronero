@@ -9,21 +9,6 @@ $sta=$row['status'];
 <head>
     <link rel="stylesheet" href="Qvision\commonstyle.css">
     </head>
-	<style>
-.card-primary:not(.card-outline)>.card-header{
-background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-.btn-dark{
-	background-color: #ed5d00 !important;
-    border-color: #ed5d00 !important;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black !important;
-}
-</style>
 <div  class="card card-primary">
               <div class="card-header">
                 <h3 style="float: left;"><font size="5">EDIT COMPANY DETAILS</font></h3>

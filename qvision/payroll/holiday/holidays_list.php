@@ -16,7 +16,7 @@ require __DIR__ . "/../../../user.php";
 </head>
 <body>
 <div  class="card card-primary">
-    <div class="card-header" style="background-color:#ff8b3d !important;">
+    <div class="card-header">
 	
         <h3 class="card-title"><font size="5">HOLIDAYS</font></h3>
 		

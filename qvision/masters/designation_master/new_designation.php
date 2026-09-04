@@ -1,39 +1,21 @@
 <?php
 require '../../../connect.php';
 
-// 👇 PUDHU CODE: Puthu file create pannathuku bathila ithe file-la AJAX request-ah handle pandrom
 if(isset($_POST['action']) && $_POST['action'] == 'get_division') {
     $dept_id = $_POST['department_id'];
     
-    // Division data fetch pandrom
     $sql = $con->query("SELECT id, div_name FROM division_master WHERE dep_id = '$dept_id' AND status = 1");
     
     echo '<option value="0">-- Select Division --</option>';
     while($row = $sql->fetch(PDO::FETCH_ASSOC)) {
         echo '<option value="'.$row['id'].'">'.$row['div_name'].'</option>';
     }
-    exit; // Mukkiyam: HTML kela load aagama irukka intha 'exit' theva.
+    exit; 
 }
-// 👆 PUDHU CODE MUDINJATHU
 
 include("../../../user.php");
 $userrole = $_SESSION['userrole'];
 ?>
-<style>
-	.card-primary:not(.card-outline)>.card-header {
-		background-color: #f1cc61 !important;
-	}
-	.card-primary:not(.card-outline)>.card-header {
-		color: black !important;
-	}
-	.btn-dark {
-		background-color: #ed5d00 !important;
-		border-color: #ed5d00 !important;
-	}
-	.card-primary:not(.card-outline)>.card-header a {
-		color: black !important;
-	}	
-</style>
 <div class="container-fluid">
 	<div class="card card-primary">
 		<div class="card-header">

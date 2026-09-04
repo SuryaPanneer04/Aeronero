@@ -1,43 +1,34 @@
-#page-wrapper{
-	margin-left: 100px !important;
-	}
-
-.page-header{
-	border-bottom: 1px solid #eee !important;
+#page-wrapper {
+    margin-left: 100px !important;
 }
 
-.btn-warning{
-    padding-top: 0px !important;
-	background-color: #ed5d00 !important;
-    border-color: #ed5d00 !important;
+.page-header {
+    border-bottom: 1px solid #eee !important;
 }
-.btn-success{
-	background-color: #ed5d00 !important;
-    border-color: #ed5d00 !important;
-}
-.btn-primary{
+
+/* Global Buttons set to Orange */
+.btn-warning, .btn-success, .btn-primary {
     background-color: #ed5d00 !important;
     border-color: #ed5d00 !important;
 }
 
-.card-primary:not(.card-outline)>.card-header {
+/* 1. UNIVERSAL HEADER BLUE COLOR (Fixes Designation Master and all others) */
+.card:not(.card-outline) > .card-header {
     background-color: #009EE3 !important;
-    /* background-color: #df8459 !important; */
-}
-.card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
-    color: #808080 !important;
-}
-.card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
-    color: #3c0808 !important;
-    background-color: #ed5d00;
+    color: #FFFFFF !important; /* Text color white for better visibility */
 }
 
+/* 2. KEEP THE 'ADD' BUTTON ORANGE */
+.card:not(.card-outline) > .card-header a {
+    background-color: #ed5d00 !important;
+    color: #FFFFFF !important;
+}
 
+/* Pagination */
 .page-item.active .page-link {
-    background-color: #d79475;
-    border-color: #df8459;
-    /* border-color: #df8459; */
+    background-color: #d79475 !important;
+    border-color: #009EE3 !important; /* Active page border matches Brand Blue */
 }
 .page-link:hover {
-    color: #808080;
+    color: #808080 !important;
 }

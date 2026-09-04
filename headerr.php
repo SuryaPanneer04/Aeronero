@@ -80,8 +80,11 @@ $name = $_SESSION['fullname'];
 </ul>-->
 
 <ul class="navbar-nav ml-auto">
+    <a href="index.php">
 	<img src="qvision/images/logo123.jpg" alt="Aeronero Solutions Private Limited" style="width:auto;height:75px;">
-	</ul>
+</a>	
+</ul>
+
 <ul class="navbar-nav ml-auto">
 <li class="dropdown">
 <a href="login/login.php" style="font-size17px;"><img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;">Logout</a>

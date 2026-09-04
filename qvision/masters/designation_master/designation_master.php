@@ -6,11 +6,6 @@ $userrole=$_SESSION['userrole'];
 <head>
     <link rel="stylesheet" href="Qvision\commonstyle.css">
     </head>
-	<style>
-	.card-primary:not(.card-outline)>.card-header{
-		background-color: #f1cc61 !important;
-	}
-	</style>
       <div  class="card card-primary">
               <div class="card-header">
                 <h3 class="card-title"><font size="5">DESIGNATION MASTER LIST</font></h3>

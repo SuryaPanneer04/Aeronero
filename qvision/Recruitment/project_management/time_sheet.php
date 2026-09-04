@@ -37,7 +37,7 @@ $over_time=$row['over_time'];
 ?>
 
 <div  class="card card-primary">
-              <div class="card-header" style="background-color:#ff8b3d;">
+              <div class="card-header"">
                 <h3 class="card-title"><font size="5">Hourly Time Sheet For <?php echo $date?></font></h3>
 			
 			

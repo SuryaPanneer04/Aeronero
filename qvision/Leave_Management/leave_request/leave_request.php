@@ -8,7 +8,7 @@ $user_id=$_SESSION['userid'];
 
 <html>
 <div  class="card card-primary">
-              <div class="card-header" style="background-color:#ff8b3d;">
+              <div class="card-header">
                 <h3 class="card-title"><font size="5">  Leave Request</font></h3>
 				<input type="button" style="float: right;background-color:black;border:1px solid black;" class="btn btn-danger" name="back" value="BACK" onclick="leave_mapping_view()">
 				</input>

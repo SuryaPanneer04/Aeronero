@@ -7,21 +7,7 @@ $row = $stmt->fetch();
 $sta=$row['status'];
 $did=$row['dep_id'];
 ?>
-<style>
-.card-primary:not(.card-outline)>.card-header{
-background-color: #f1cc61 !important;
-}
-.card-primary:not(.card-outline)>.card-header{
-	color: black !important;
-}
-.btn-dark{
-	background-color: #ed5d00 !important;
-    border-color: #ed5d00 !important;
-}
-.card-primary:not(.card-outline)>.card-header a {
-	color: black !important;
-}
-</style>
+
 <div class="container-fluid">
 
 

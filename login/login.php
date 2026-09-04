@@ -67,7 +67,6 @@ if (isset($_SESSION['user'])) {
                 </div>
             </div>
 
-            <!-- BOTTOM GROUP: Stats and Footer pushed to the very bottom -->
             <div class="left-bottom">
                 <div class="stats-row">
                     <div class="stat-item">

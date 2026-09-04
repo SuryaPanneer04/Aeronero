@@ -6418,7 +6418,7 @@ button.bg-dark:focus {
 }
 
 .bg-white {
-  background-color: #ffffff !important;
+  background-color:#009EE3 !important;
 }
 
 .bg-transparent {
@@ -9662,7 +9662,7 @@ a.text-dark:hover, a.text-dark:focus {
   }
   .table td,
   .table th {
-    background-color: #ffffff !important;
+    background-color:#009EE3 !important;
   }
   .table-bordered th,
   .table-bordered td {
@@ -14584,7 +14584,7 @@ blockquote.quote-gray-dark h6 {
 }
 
 .bg-white {
-  background-color: #ffffff !important;
+  background-color:#009EE3 !important;
 }
 
 .bg-white,

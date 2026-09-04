@@ -18,7 +18,8 @@
     color: #FFFFFF !important; /* Text color white for better visibility */
 }
 
-/* 2. KEEP THE 'ADD' BUTTON ORANGE */
+/* 3. KEEP THE 'ADD' BUTTON ORANGE */
+.card-header a.btn,
 .card:not(.card-outline) > .card-header a {
     background-color: #ed5d00 !important;
     color: #FFFFFF !important;
@@ -27,7 +28,7 @@
 /* Pagination */
 .page-item.active .page-link {
     background-color: #d79475 !important;
-    border-color: #009EE3 !important; /* Active page border matches Brand Blue */
+    border-color: #009EE3 !important; 
 }
 .page-link:hover {
     color: #808080 !important;

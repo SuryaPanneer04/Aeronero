@@ -8,21 +8,12 @@ $name = $_SESSION['fullname'];
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #0191dc;
-        color: white;
-        padding: 10px;
-    }
-
-    .header-menu {
-        align-items: center;
-        background-color: #009EE3;
-        /* Changed to Aeronero Blue */
-        color: white;
+        background-color: #009EE3; /* Aeronero Blue */
         padding: 10px;
     }
 
     .menu-item {
-        margin-right: 20px;
+        margin-right: 5px; /* Gap-a nalla korachachu */
         position: static;
     }
 
@@ -30,49 +21,56 @@ $name = $_SESSION['fullname'];
         margin-right: 0;
     }
 
-    .menu-item a {
+    .menu-item a, .menu-title {
         color: white;
         text-decoration: none;
+        padding: 5px 10px; /* Padding-um korachachu so tight ah irukkum */
+        font-weight: 500;
+        border-radius: 4px;
+        transition: all 0.3s ease;
     }
 
+    /* HOVER EFFECT */
+    .menu-item a:hover, .menu-title:hover {
+        color: #FBC710 !important; 
+        background-color: rgba(255, 255, 255, 0.15) !important; 
+    }
+
+    /* GLOWING EFFECT - Active Menu (Jolikkura Mari & Pop-out) */
     .menu-title.active {
-        /* text-decoration: underline; */
-        color: #FBC710 !important;
-
+        background-color: transparent !important; 
+        color: #FBC710 !important; 
+        text-shadow: 0 0 10px rgba(251, 199, 16, 0.8), 0 0 20px rgba(251, 199, 16, 0.4); 
+        transform: scale(1.05); 
+        display: inline-block; 
     }
 
-    /* .submenu.active {
-    background-color: white !important;
-}
-
-.active-submenu a {
-    color: #d80831 !important;
-} */
-
-
+    /* SIDEBAR SUBMENU */
     .submenu.active-submenu {
-        background-color: white !important;
-        color: #d80831 !important;
+        background-color: transparent !important; 
+        color: #FBC710 !important;
+        text-shadow: 0 0 8px rgba(251, 199, 16, 0.6); 
         display: block;
     }
 
-
     .submenu:hover {
-        background-color: white;
-        color: #d80831 !important;
+        background-color: rgba(255, 255, 255, 0.05) !important; 
+        color: #FBC710 !important;
+        text-shadow: 0 0 8px rgba(251, 199, 16, 0.6);
     }
 
     .submenu {
         color: white !important;
     }
 </style>
-<!-- Navbar -->
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <div style="margin:-200px;">
+    <a href="user_profile.php" style="text-decoration: none;">
         <i class="fa fa-user fa-fw" style="color:#FBC710"></i>
         <b style="color:#009EE3;"><?php echo $name . '-' . $username; ?></b>
-    </div>
+    </a>
+</div>
     <!-- Left navbar links -->
     <!--<ul class="navbar-nav">
 <li class="nav-item">

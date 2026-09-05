@@ -154,7 +154,7 @@ function leave_reject_list()
 				{?>
 					<input class="btn button2" type="button" value="Staff Leave Update" onclick="leave_update()">
 					<input class="btn button" type="button" value="Staff Leave Master" onclick="leave_master_app()">
-					<input class="btn button4" type="button" value="Leave Approve List" onclick="leave_app_list()">
+					<input class="btn button4" type="button" value="Leave Approve List" onclick="leave_app_list()"> 
 					<input class="btn button5" type="button" value="Leave Rejected List" onclick="leave_reject_list()">
 					<input class="btn button1" type="button" value="Staff Leave Approve" onclick="leave_app()">
 					<?php

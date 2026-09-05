@@ -24,8 +24,8 @@ $user_id=$_SESSION['userid'];
 									//echo "SELECT user_id,full_name,candidate_id FROM z_user_master where user_id='$user_id'";
 											   $stmts->execute(); 
                                                $rows = $stmts->fetch();
-											   $emp_name=$rows['full_name'];
-											   $candid_id=$rows['candidate_id'];
+											   $emp_name=$rows ? $rows['full_name'] : " ";
+											   $candid_id=$rows ? $rows['candidate_id']: " ";
 
 
 												   ?>
@@ -83,6 +83,66 @@ $user_id=$_SESSION['userid'];
 					</form>
 			</div>
         </div>
+
+		<!-- My Leave Status Table -->
+		<div class="card card-info mt-4">
+			<div class="card-header" style="background-color:#009EE3;">
+				<h3 class="card-title" style="color: white;"><font size="5">My Leave Status</font></h3>
+			</div>
+			<div class="card-body">
+				<table class="table table-bordered table-striped">
+					<thead>
+						<tr>
+							<th>S.No</th>
+							<th>Leave Type</th>
+							<th>From Date</th>
+							<th>To Date</th>
+							<th>Reason</th>
+							<th>Status</th>
+						</tr>
+					</thead>
+					<tbody>
+						<?php
+						$my_leaves = $con->prepare("
+							SELECT l.*, m.leave_name 
+							FROM leave_apply_masters l
+							LEFT JOIN master_leave m ON l.leave_type = m.id
+							WHERE l.candid_id = '$candid_id' 
+							ORDER BY l.id DESC
+						");
+						$my_leaves->execute();
+						$sno = 1;
+						$has_records = false;
+						while($leave = $my_leaves->fetch(PDO::FETCH_ASSOC)) {
+							$has_records = true;
+							$status_text = "Pending";
+							$color = "orange";
+							if($leave['status'] == 2) {
+								$status_text = "Approved";
+								$color = "green";
+							} elseif($leave['status'] == 3 || $leave['status'] == 0) { // Assuming 0 or 3 might be rejected/cancelled
+								$status_text = "Rejected";
+								$color = "red";
+							}
+						?>
+						<tr>
+							<td><?php echo $sno++; ?></td>
+							<td><?php echo htmlspecialchars($leave['leave_name'] ? $leave['leave_name'] : ($leave['leave_type'] ? $leave['leave_type'] : 'N/A')); ?></td>
+							<td><?php echo date('d-m-Y', strtotime($leave['from_date'])); ?></td>
+							<td><?php echo date('d-m-Y', strtotime($leave['to_date'])); ?></td>
+							<td><?php echo htmlspecialchars($leave['leave_reason']); ?></td>
+							<td><b style="color: <?php echo $color; ?>;"><?php echo $status_text; ?></b></td>
+						</tr>
+						<?php 
+						} 
+						if(!$has_records) {
+							echo '<tr><td colspan="6" class="text-center text-muted">No leave requests found.</td></tr>';
+						}
+						?>
+					</tbody>
+				</table>
+			</div>
+		</div>
 		
 		<script>  
  $(document).ready(function(){  

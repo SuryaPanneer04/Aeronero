@@ -25,14 +25,57 @@ $user=$_SESSION['userid'];
   /* echo "update staff_master set emp_name='$cname', dep_id='$deprt', div_id='$div', design_id='$desig',reporting_person='$reporting',site='$site',location='$location',head_status='$head_status',status='$status',modified_by='$user',modified_on='$date' where candid_id='$candidid'"; */
   /* echo "update staff_master set emp_name='$cname', dep_id='$deprt', div_id='$div', design_id='$desig',reporting_person='$reporting',head_status='$head_status',modified_by='$user',modified_on='$date' where candid_id='$candidid'"; */
   /* echo "update staff_master set emp_name='$cname', dep_id='$deprt', div_id='$div', design_id='$desig' where candid_id='$candidid',modified_by='$user',modified_on='$date'"; */
-  $update=$con->query("update staff_master set prefix_code='$prefix_code',suff_code='$suff_code',emp_code='$emp_code',emp_name='$cname', dep_id='$deprt', div_id='$div', design_id='$desig',reporting_person='$reporting',head_status='$head_status',status='$status',modified_by='$user',modified_on='$date' where id='$candidid'");
-  if($update)
-  {
-	  echo 0;
-  }
-  else
-  {
-      $errorInfo = $con->errorInfo();
-      echo "Error: " . $errorInfo[2];
-  }
+//   $update=$con->query("update staff_master set prefix_code='$prefix_code',suff_code='$suff_code',emp_code='$emp_code',emp_name='$cname', dep_id='$deprt', div_id='$div', design_id='$desig',reporting_person='$reporting',head_status='$head_status',status='$status',modified_by='$user',modified_on='$date' where id='$candidid'");
+//   $update1=$con->query("update z_user_master set ass_emp_id = '$emp_code',department ='$deprt' where id = '$candidid'");
+//   if($update)
+//   {
+// 	  echo 0;
+//   }
+//   else
+//   {
+//       $errorInfo = $con->errorInfo();
+//       echo "Error: " . $errorInfo[2];
+//   }
+
+$update = $con->query("
+    UPDATE staff_master 
+    SET 
+        prefix_code = '$prefix_code',
+        suff_code = '$suff_code',
+        emp_code = '$emp_code',
+        emp_name = '$cname',
+        dep_id = '$deprt',
+        div_id = '$div',
+        design_id = '$desig',
+        reporting_person = '$reporting',
+        head_status = '$head_status',
+        status = '$status',
+        modified_by = '$user',
+        modified_on = '$date'
+    WHERE id = '$candidid'
+");
+
+if ($update) {
+
+    $update1 = $con->query("
+        UPDATE z_user_master 
+        SET 
+            ass_emp_id = '$emp_code',
+            department = '$deprt'
+        WHERE candidate_id = '$candidid'
+    ");
+
+    if ($update1) {
+        echo 0;
+    } else {
+        $errorInfo = $con->errorInfo();
+        echo "Error updating z_user_master: " . $errorInfo[2];
+    }
+
+} else {
+
+    $errorInfo = $con->errorInfo();
+    echo "Error updating staff_master: " . $errorInfo[2];
+}
+
 ?>

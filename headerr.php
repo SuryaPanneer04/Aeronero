@@ -350,6 +350,7 @@ try {
     }
 </style>
 
+<<<<<<< Updated upstream
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <div style="margin:-200px; position: relative; z-index: 1000;">
         <a href="#" class="username-trigger" onclick="togglePremiumProfile(event)" style="text-decoration: none; cursor: pointer;">
@@ -361,9 +362,18 @@ try {
     <ul class="navbar-nav ml-auto">
         <a href="index.php">
             <img src="qvision/images/logo123.jpg" alt="Aeronero Solutions Private Limited" style="width:auto;height:75px;">
+=======
+<nav class="main-header navbar navbar-expand navbar-white navbar-light" style="margin-left: 0 !important; display: flex; justify-content: space-between; align-items: center; padding: 10px 20px;">
+    <!-- Left Section -->
+    <div style="display: flex; align-items: center; flex: 1; justify-content: flex-start;">
+        <a href="user_profile.php" style="text-decoration: none; display: flex; align-items: center; gap: 5px;">
+            <i class="fa fa-user fa-fw" style="color:#FBC710; font-size: 1.2rem;"></i>
+            <b style="color:#009EE3; font-size: 1.1rem;"><?php echo $name . '-' . $username; ?></b>
+>>>>>>> Stashed changes
         </a>
-    </ul>
+    </div>
 
+<<<<<<< Updated upstream
     <ul class="navbar-nav ml-auto">
         <li class="dropdown">
             <a href="login/login.php" style="font-size:17px;"><img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;">Logout</a>
@@ -480,21 +490,89 @@ try {
     ?>
         <div class="menu-item">
             <span class="menu-title" onclick="setActiveMenu(this);loadSubMenu('<?php echo $row['menu_name']; ?>','<?php echo $menuid; ?>','<?php echo $userrole; ?>')" style="color:white;font-family: helvetica;font-size: x-large; cursor:pointer;">
+=======
+    <!-- Center Section -->
+    <div style="display: flex; justify-content: center; align-items: center; flex: 1;">
+        <a href="index.php">
+            <img src="qvision/images/logo123.jpg" alt="Aeronero Solutions Private Limited" style="width:auto; height:75px;">
+        </a>
+    </div>
+
+    <!-- Right Section -->
+    <div style="display: flex; align-items: center; flex: 1; justify-content: flex-end;">
+        <a href="login/login.php" style="font-size:17px; color: #333; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+            <img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;"> Logout
+        </a>
+    </div>
+</nav>
+
+<div class="header-menu" style="position: relative; z-index: 1001; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <?php
+    $userrole = $_SESSION['userrole'];
+    $sql = $con->query("SELECT zmsm.id,zmsm.menu_name,zmsm.call_method FROM z_masters_menu zmsm join z_role_detail zrd on zrd.menu_id=zmsm.id WHERE zrd.code='$userrole'  and zrd.view_only='1' AND zrd.edit_only='1' AND zrd.all_only='1'group by menu_name ORDER BY zmsm.id");
+    while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
+        $menuid = $row['id'];
+    ?>
+        <div class="menu-item" style="cursor: pointer;">
+            <span class="menu-title" onclick="setActiveMenu(this);loadSubMenu('<?php echo $row['menu_name']; ?>','<?php echo $menuid; ?>','<?php echo $userrole; ?>')" style="color:white;font-family: helvetica;font-size: 18px;">
+>>>>>>> Stashed changes
                 <?php echo $row['menu_name']; ?>
             </span>
-            <i class="menu-arrow"></i>
         </div>
         <input type="hidden" id="menuid" name="menuid" value="">
     <?php
     } ?>
 </div>
 
+<<<<<<< Updated upstream
 <nav class="sidebarr" id="sidebar" style="display: none;margin: -17px -42px;">
     <ul class="navv">
         <div id="submenuContainer" style="width:240px; background-color: #009EE3; position: absolute; height:100vh; overflow: auto;">
     </ul>
 </nav>
 
+=======
+<style>
+    .navv {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .sidebarr {
+        display: none;
+        width: 240px;
+        position: absolute; /* Using absolute so it can float over or be left-aligned */
+        left: 0;
+        background-color: #009EE3;
+        height: calc(100vh - 130px);
+        overflow-y: auto;
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    .nav-item .nav-link.submenu {
+        padding: 12px 20px !important;
+        display: block !important;
+        cursor: pointer !important;
+        font-family: helvetica;
+        font-size: 16px !important;
+        color: white !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        transition: all 0.3s ease !important;
+    }
+    .nav-item .nav-link.submenu:hover,
+    .nav-item .nav-link.submenu.active-submenu {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FBC710 !important;
+        border-left: 4px solid #FBC710 !important;
+        padding-left: 16px !important; 
+    }
+</style>
+
+<nav class="sidebarr" id="sidebar">
+    <ul class="navv" id="submenuContainer">
+    </ul>
+</nav>
+>>>>>>> Stashed changes
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function togglePremiumProfile(event) {

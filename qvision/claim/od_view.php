@@ -68,27 +68,9 @@ background-color:#009EE3 !important;
     <td colspan="5"><input type="text" class="form-control"  id="date" name="date" value="<?php echo $newDate; ?>" readonly></td>
    </tr>
    <tr>
-    <td>Travel Type</td>
-	<?php
-	
-	$stmtt = $con->prepare("SELECT * FROM travel_master where id='$travel_type'");
-									
-											   $stmtt->execute(); 
-                                               $rowt = $stmtt->fetch();
-											   $travel_typez=$rowt['travel_type'];
-											   ?>
-    <td colspan="5"><input type="text" class="form-control" value="<?php echo $travel_typez; ?>" placeholder="Enter Amount" id="travel" name="travel" readonly></td>
+    <td>Claim Type</td>
+    <td colspan="5"><input type="text" class="form-control" value="<?php echo $travel_type; ?>" placeholder="Enter Claim Type" id="travel" name="travel" readonly></td>
     </tr>
- <tr id="dep3">
-		<td>Kms</td>
-		<td colspan="5">
-		<input type="text" class="form-control" value="<?php echo $row['kms']; ?>" placeholder="Enter Kms" id="kms" name="kms" readonly></td>	
-     </tr>
-     <tr>
-     <td>Customer Name</td>
-    <td colspan="5"><input type="text" class="form-control" value="<?php echo $row['customer_name']; ?>" placeholder="Enter Customer Name" id="Customer_name" name="Customer_name" readonly></td>
-    </tr>
-
     <tr>
     <td>Location</td>
     <td colspan="5"><input type="text" class="form-control" value="<?php echo $row['visit_loc']; ?>" placeholder="Enter Location" id="Location" name="Location" readonly></td>
@@ -98,20 +80,32 @@ background-color:#009EE3 !important;
     <td colspan="5"><input type="text" class="form-control" value="<?php echo $row['purpose']; ?>" placeholder="Enter Purpose" id="Purpose" name="Purpose" readonly></td>
     </tr>
 
-<?php //echo$candidateid; ?>
-		
-	<!--<tr>
-    <td>Distance</td>
-    <td colspan="5"><input type="text" class="form-control" placeholder="Enter Distance" id="distance" name="distance"></td>
-    </tr>-->
 	<tr>
     <td>Amount</td>
     <td colspan="5"><input type="text" class="form-control" value="<?php echo $row['amount']; ?>" placeholder="Enter Amount" id="amount" name="amount" readonly></td>
     </tr>
     <tr id="dep3">
-		<td>Attach File</td>
-		
-		  <td colspan="5"><a href="qvision/claim/Uploads/<?php echo $row['file']; ?>" download="<?php echo $row['file']; ?>"><?php echo $row['file']; ?></a>	</td>
+		<td>Attached File(s)</td>
+		<td colspan="5">
+            <?php
+            $docs_stmt = $con->prepare("SELECT document_title, document_name FROM claim_document WHERE claim_id='$id'");
+            $docs_stmt->execute();
+            $documents = $docs_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            if(count($documents) > 0) {
+                echo "<table class='table table-sm table-bordered'><tr><th>Document Name</th><th>File</th></tr>";
+                foreach($documents as $doc) {
+                    echo "<tr><td>" . ($doc['document_title'] ? htmlspecialchars($doc['document_title']) : 'Document') . "</td>";
+                    echo "<td><a href='qvision/claim/Uploads/".$doc['document_name']."' download='".$doc['document_name']."'>".$doc['document_name']."</a></td></tr>";
+                }
+                echo "</table>";
+            } else if($row['file']) {
+                echo "<a href='qvision/claim/Uploads/".$row['file']."' download='".$row['file']."'>".$row['file']."</a>";
+            } else {
+                echo "No documents attached.";
+            }
+            ?>
+        </td>
      </tr>
 <?php
 	/*

@@ -105,57 +105,13 @@ try {
     .navv {
         list-style-type: none; 
     }
-    /* ========================================================= */
-    /* PREMIUM PROFILE CARD POPUP CSS (WITH BLUE HEADER & LOGO)  */
-    /* ========================================================= */
-    .premium-profile-card {
-        position: fixed;
-        top: 155px; 
-        right: 25px; 
-        width: 380px; 
-        background: #ffffff;
-        border-radius: 12px; 
-        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
-        z-index: 99999; 
-        border: 1px solid #e2e8f0;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
-        overflow: hidden; /* To keep the blue header rounded */
-        
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
-        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    }
-
-    .premium-profile-card.show-card {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
-    }
-
-    /* ========================================================= */
-    /* ANIMATED WATER WAVE KEYFRAMES                             */
-    /* ========================================================= */
-   /* ========================================================= */
-    /* ANIMATED WATER WAVE KEYFRAMES                             */
-    /* ========================================================= */
-    @keyframes waveFlow {
-        0% { background-position-x: 0; }
-        100% { background-position-x: 1440px; }
-    }
-
-    /* Rendaavathu wave cross-a move aaga */
-    @keyframes waveFlowReverse {
-        0% { background-position-x: 1440px; }
-        100% { background-position-x: 0; }
-    }
 
     /* --- PREMIUM PROFILE CARD POPUP CSS --- */
     .premium-profile-card {
         position: fixed;
-        top: 145px; 
+        top: 152px; 
         right: 25px; 
-        width: 420px; /* INCREASED SIZE: Pazhaya mari side-la nalla perusa aakiyachu */
+        width: 460px;
         background: #ffffff;
         border-radius: 12px; 
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
@@ -163,7 +119,6 @@ try {
         border: 1px solid #e2e8f0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
         overflow: hidden; 
-        
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
@@ -176,45 +131,41 @@ try {
         transform: translateY(0);
     }
 
-    /* --- PREMIUM BLUE HEADER --- */
-    .premium-header-bg {
-        background: linear-gradient(135deg, #009EE3 0%, #006b99 100%);
-        padding: 22px 25px;
-        position: relative;
-        overflow: hidden; 
+    /* Top Image - No Flip (Water drop on Right) */
+    @keyframes ultraSlowBreatheNormal {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.10); } 
+        100% { transform: scale(1); }
     }
 
-    /* --- WATER WAVE 1 (Back Layer - Slower & Light) --- */
+    /* Bottom Image - Flipped (Earth on Left) */
+    @keyframes ultraSlowBreatheFlipped {
+        0% { transform: scaleX(-1) scale(1); }
+        50% { transform: scaleX(-1) scale(1.10); } 
+        100% { transform: scaleX(-1) scale(1); }
+    }
+    /* --- PREMIUM BLUE HEADER --- */
+    .premium-header-bg {
+        padding: 25px 40px 30px 40px; 
+        position: relative;
+        border-radius: 12px 12px 0 0;
+        overflow: hidden; 
+        background-color: #006b99;
+    }
+
+    /* --- HEADER IMAGE FIX (Top Image) --- */
     .premium-header-bg::before {
         content: "";
         position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 75%;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.25' d='M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,149.3C672,139,768,149,864,170.7C960,192,1056,224,1152,229.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-        background-size: 1440px auto; 
-        background-position: 0 bottom;
-        z-index: 1;
-        animation: waveFlow 15s linear infinite;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('qvision/images/Dashboard_img1.png');
+        background-size: cover; 
+        background-position: center;
+        /* transform: scaleX(-1); <-- Idha thookiyachu, so water drop Right side poidum */
+        z-index: 0;
+        animation: ultraSlowBreatheNormal 18s ease-in-out infinite; 
     }
 
-    /* --- WATER WAVE 2 (Front Layer - Faster & High Opacity for Heavy Effect) --- */
-    .premium-header-bg::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 65%;
-        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.45' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,208C960,192,1056,160,1152,149.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
-        background-size: 1440px auto; 
-        background-position: 0 bottom;
-        z-index: 1;
-        animation: waveFlowReverse 10s linear infinite;
-    }
-
-    /* --- ALIGNMENT FIX (Avatar & Text Side-by-Side) --- */
     .premium-header-content {
         display: flex;
         align-items: center; 
@@ -232,19 +183,7 @@ try {
         cursor: pointer;
         line-height: 1;
         transition: 0.2s;
-        z-index: 2; /* Ensure close button is clickable above waves */
-    }
-
-    .premium-close-btn {
-        position: absolute;
-        top: 10px;
-        right: 15px;
-        color: rgba(255, 255, 255, 0.7);
-        font-size: 22px;
-        cursor: pointer;
-        line-height: 1;
-        transition: 0.2s;
-        z-index: 2;
+        z-index: 3; 
     }
 
     .premium-close-btn:hover {
@@ -273,29 +212,42 @@ try {
         gap: 2px;
     }
     
+    /* --- TEXT READABILITY FIX (Shadow & Colors) --- */
     .premium-user-title-white {
         color: #ffffff; 
         font-size: 17px;
         font-weight: 700;
         letter-spacing: 0.3px;
         margin-bottom: 3px;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Dark shadow for visibility */
     }
     
     .premium-user-role-white {
-        color: rgba(255, 255, 255, 0.9); 
+        color: #FBC710; /* Yellow color for designation to pop out */
         font-size: 14px;
-        font-weight: 500;
+        font-weight: 600;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     }
 
     .premium-user-dept-white {
-        color: rgba(255, 255, 255, 0.7); 
+        color: #ffffff; 
         font-size: 13px;
-        font-weight: 400;
+        font-weight: 500;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
+    }
+
+    .premium-subtitle {
+        color: #e0f2fe;
+        font-size: 11px;
+        font-style: italic;
+        margin-top: 6px;
+        letter-spacing: 0.5px;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     }
 
     /* --- BODY SECTION --- */
     .premium-body-section {
-        padding: 15px 25px;
+        padding: 15px 40px;
     }
 
     .premium-list-item {
@@ -318,7 +270,7 @@ try {
 
     .premium-label {
         color: #64748b; 
-        width: 140px; 
+        width: 160px;
         font-weight: 500;
     }
 
@@ -328,24 +280,47 @@ try {
         flex: 1;
     }
 
-   /* --- PREMIUM FOOTER LOGO --- */
+   /* --- FIX: PREMIUM FOOTER CUT-OFF --- */
     .premium-footer-section {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 10px 25px; /* Slight padding adjust for bigger logo */
+        padding: 20px 40px; /* Padding increase panniyachu height-kaaga */
         border-top: 1px solid #f1f5f9;
+        border-radius: 0 0 12px 12px;
+        position: relative;
+        overflow: hidden;
         background: #f8fafc;
+    }
+
+   /* --- FOOTER IMAGE FIX (Bottom Image) --- */
+    .premium-footer-section::before {
+        content: "";
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-image: url('qvision/images/dashboard_img.png');
+        background-size: cover; 
+        background-position: center; 
+        transform: scaleX(-1); /* Ithu ippadiye irukkanum, appo thaan Earth Left-la varum */
+        z-index: 0;
+        animation: ultraSlowBreatheFlipped 18s ease-in-out infinite; 
+    }
+
+    /* Keep Motto and Logo above the animated background */
+    .premium-motto, .premium-logo {
+        position: relative;
+        z-index: 2;
     }
 
     .premium-motto {
         font-family: 'Brush Script MT', 'Comic Sans MS', cursive; 
-        color: #cbd5e1;
-        font-size: 19px; /* Konjam perusa aakiyachu */
+        color: #64748b; /* Konjam darker text for better visibility on Earth background */
+        font-size: 19px; 
+        text-shadow: 1px 1px 3px rgba(255,255,255,0.7); /* Adds slight readability over water/earth */
     }
 
     .premium-logo img {
-        height: 70px; /* 35px la irunthu 55px ku increase panniyachu */
+        height: 90px; 
         width: auto;
     }
 </style>
@@ -375,18 +350,18 @@ try {
 </nav>
 
 <!-- ======================================================= -->
-<!-- PREMIUM PROFILE CARD HTML (EXACT 1ST IMAGE UI)          -->
+<!-- PREMIUM PROFILE CARD HTML (IMAGE BACKGROUND)            -->
 <!-- ======================================================= -->
 <div id="premiumProfile" class="premium-profile-card">
     
-    <!-- TOP HEADER: Blue Gradient with Avatar -->
+    <!-- 1. TOP HEADER -->
     <div class="premium-header-bg">
         <span class="premium-close-btn" onclick="togglePremiumProfile(event)">&times;</span>
+        
         <div class="premium-header-content">
             <!-- Circular Initials Avatar -->
             <div class="premium-avatar">
                 <?php 
-                    // Automatically get initials (e.g. "Demo HR" -> "DH")
                     $n = trim($_SESSION['fullname']);
                     $parts = explode(' ', $n);
                     $initials = strtoupper(substr($n, 0, 1));
@@ -407,11 +382,15 @@ try {
                 <div class="premium-user-dept-white">
                     <?php echo $display_dept; ?> Department
                 </div>
+                <!-- SUBTITLE -->
+                <div class="premium-subtitle">
+                    Clean Water | Sustainable Tomorrow
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- LIST OF DETAILS -->
+    <!-- 2. LIST OF DETAILS (BODY SECTION) -->
     <div class="premium-body-section">
         <div class="premium-list-item">
             <i class="fa fa-user premium-icon"></i>
@@ -462,12 +441,12 @@ try {
         </div>
     </div>
 
-    <!-- FOOTER WITH MOTTO AND LOGO -->
+    <!-- 3. FOOTER WITH MOTTO AND LOGO -->
     <div class="premium-footer-section">
         <div class="premium-motto">People Power Progress</div>
         <div class="premium-logo">
-            <!-- Using your navbar logo path -->
-            <img src="login/assets/background_img.png" alt="Aeronero Solutions">
+            <!-- Puthusa Add Panna Top Logo (Bottom Right) -->
+            <img src="login\assets\background_img.png" alt="Aeronero Solutions">
         </div>
     </div>
 

@@ -1,7 +1,7 @@
 <section class="content" >
       <div class="container-fluid" id="main_content" style="position: relative; min-height: 80vh;">
 
-<div style="position: absolute; top: 270px; left: 40%; transform: translate(-50%, -50%); opacity: 0.35; z-index: 0; pointer-events: none; width: 100%; text-align: center;">
+<div style="position: absolute; top: 270px; left: 43%; transform: translate(-50%, -50%); opacity: 0.35; z-index: 0; pointer-events: none; width: 100%; text-align: center;">
     <img src="login/assets/background_img.png" style="width: 90vw; max-width: 1100px;" alt="background">
 </div>
 

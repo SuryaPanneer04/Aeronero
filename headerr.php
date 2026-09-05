@@ -1,6 +1,48 @@
 <?php
 $username = $_SESSION['username'];
 $name = $_SESSION['fullname'];
+
+$display_doj = '-';
+$display_dept = '-';
+$display_email = '-';
+$display_role = '-';
+$display_mobile = '-';
+$display_location = '-'; 
+
+try {
+    $profile_query = "
+        SELECT 
+            s.DOJ, 
+            s.location, 
+            d.dept_name,
+            u.email_id,
+            u.mobile_no,
+            r.role_name
+        FROM staff_master s 
+        LEFT JOIN z_department_master d ON s.dep_id = d.id 
+        LEFT JOIN z_user_master u ON s.emp_code = u.user_name 
+        LEFT JOIN z_role_master r ON u.user_group_code = r.code 
+        WHERE s.emp_code = '$username'
+    ";
+                      
+    $sql_profile = $con->query($profile_query);
+    
+    if ($sql_profile) {
+        $employeeData = $sql_profile->fetch(PDO::FETCH_ASSOC);
+        
+        if ($employeeData) {
+            $display_doj = !empty($employeeData['DOJ']) ? $employeeData['DOJ'] : '-';
+            $display_dept = !empty($employeeData['dept_name']) ? $employeeData['dept_name'] : '-';
+            $display_email = !empty($employeeData['email_id']) ? $employeeData['email_id'] : '-';
+            $display_role = !empty($employeeData['role_name']) ? $employeeData['role_name'] : '-';
+            $display_mobile = !empty($employeeData['mobile_no']) ? $employeeData['mobile_no'] : '-';
+            
+            $display_location = !empty($employeeData['location']) ? $employeeData['location'] : '-';
+        }
+    }
+} catch(PDOException $e) {
+    echo "<script>console.log('DB Fetch Error: " . addslashes($e->getMessage()) . "');</script>";
+}
 ?>
 
 <style>
@@ -8,12 +50,12 @@ $name = $_SESSION['fullname'];
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: #009EE3; /* Aeronero Blue */
+        background-color: #009EE3; 
         padding: 10px;
     }
 
     .menu-item {
-        margin-right: 5px; /* Gap-a nalla korachachu */
+        margin-right: 5px; 
         position: static;
     }
 
@@ -24,19 +66,17 @@ $name = $_SESSION['fullname'];
     .menu-item a, .menu-title {
         color: white;
         text-decoration: none;
-        padding: 5px 10px; /* Padding-um korachachu so tight ah irukkum */
+        padding: 5px 10px; 
         font-weight: 500;
         border-radius: 4px;
         transition: all 0.3s ease;
     }
 
-    /* HOVER EFFECT */
     .menu-item a:hover, .menu-title:hover {
         color: #FBC710 !important; 
         background-color: rgba(255, 255, 255, 0.15) !important; 
     }
 
-    /* GLOWING EFFECT - Active Menu (Jolikkura Mari & Pop-out) */
     .menu-title.active {
         background-color: transparent !important; 
         color: #FBC710 !important; 
@@ -45,7 +85,6 @@ $name = $_SESSION['fullname'];
         display: inline-block; 
     }
 
-    /* SIDEBAR SUBMENU */
     .submenu.active-submenu {
         background-color: transparent !important; 
         color: #FBC710 !important;
@@ -62,22 +101,263 @@ $name = $_SESSION['fullname'];
     .submenu {
         color: white !important;
     }
+
+    .navv {
+        list-style-type: none; 
+    }
+    /* ========================================================= */
+    /* PREMIUM PROFILE CARD POPUP CSS (WITH BLUE HEADER & LOGO)  */
+    /* ========================================================= */
+    .premium-profile-card {
+        position: fixed;
+        top: 155px; 
+        right: 25px; 
+        width: 380px; 
+        background: #ffffff;
+        border-radius: 12px; 
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
+        z-index: 99999; 
+        border: 1px solid #e2e8f0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+        overflow: hidden; /* To keep the blue header rounded */
+        
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .premium-profile-card.show-card {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* ========================================================= */
+    /* ANIMATED WATER WAVE KEYFRAMES                             */
+    /* ========================================================= */
+   /* ========================================================= */
+    /* ANIMATED WATER WAVE KEYFRAMES                             */
+    /* ========================================================= */
+    @keyframes waveFlow {
+        0% { background-position-x: 0; }
+        100% { background-position-x: 1440px; }
+    }
+
+    /* Rendaavathu wave cross-a move aaga */
+    @keyframes waveFlowReverse {
+        0% { background-position-x: 1440px; }
+        100% { background-position-x: 0; }
+    }
+
+    /* --- PREMIUM PROFILE CARD POPUP CSS --- */
+    .premium-profile-card {
+        position: fixed;
+        top: 145px; 
+        right: 25px; 
+        width: 420px; /* INCREASED SIZE: Pazhaya mari side-la nalla perusa aakiyachu */
+        background: #ffffff;
+        border-radius: 12px; 
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
+        z-index: 99999; 
+        border: 1px solid #e2e8f0;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
+        overflow: hidden; 
+        
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-20px);
+        transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .premium-profile-card.show-card {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    /* --- PREMIUM BLUE HEADER --- */
+    .premium-header-bg {
+        background: linear-gradient(135deg, #009EE3 0%, #006b99 100%);
+        padding: 22px 25px;
+        position: relative;
+        overflow: hidden; 
+    }
+
+    /* --- WATER WAVE 1 (Back Layer - Slower & Light) --- */
+    .premium-header-bg::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 75%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.25' d='M0,160L48,170.7C96,181,192,203,288,197.3C384,192,480,160,576,149.3C672,139,768,149,864,170.7C960,192,1056,224,1152,229.3C1248,235,1344,213,1392,202.7L1440,192L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        background-size: 1440px auto; 
+        background-position: 0 bottom;
+        z-index: 1;
+        animation: waveFlow 15s linear infinite;
+    }
+
+    /* --- WATER WAVE 2 (Front Layer - Faster & High Opacity for Heavy Effect) --- */
+    .premium-header-bg::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 65%;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 320'%3E%3Cpath fill='%23ffffff' fill-opacity='0.45' d='M0,224L48,213.3C96,203,192,181,288,181.3C384,181,480,203,576,213.3C672,224,768,224,864,208C960,192,1056,160,1152,149.3C1248,139,1344,149,1392,154.7L1440,160L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z'%3E%3C/path%3E%3C/svg%3E");
+        background-size: 1440px auto; 
+        background-position: 0 bottom;
+        z-index: 1;
+        animation: waveFlowReverse 10s linear infinite;
+    }
+
+    /* --- ALIGNMENT FIX (Avatar & Text Side-by-Side) --- */
+    .premium-header-content {
+        display: flex;
+        align-items: center; 
+        gap: 15px;
+        position: relative;
+        z-index: 2; 
+    }
+
+    .premium-close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 22px;
+        cursor: pointer;
+        line-height: 1;
+        transition: 0.2s;
+        z-index: 2; /* Ensure close button is clickable above waves */
+    }
+
+    .premium-close-btn {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 22px;
+        cursor: pointer;
+        line-height: 1;
+        transition: 0.2s;
+        z-index: 2;
+    }
+
+    .premium-close-btn:hover {
+        color: #ffffff;
+    }
+
+    .premium-avatar {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: #004d73;
+        border: 2px solid rgba(255, 255, 255, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+        flex-shrink: 0; 
+    }
+
+    .premium-header-text {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    
+    .premium-user-title-white {
+        color: #ffffff; 
+        font-size: 17px;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        margin-bottom: 3px;
+    }
+    
+    .premium-user-role-white {
+        color: rgba(255, 255, 255, 0.9); 
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+    .premium-user-dept-white {
+        color: rgba(255, 255, 255, 0.7); 
+        font-size: 13px;
+        font-weight: 400;
+    }
+
+    /* --- BODY SECTION --- */
+    .premium-body-section {
+        padding: 15px 25px;
+    }
+
+    .premium-list-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 0;
+        font-size: 14px;
+        border-bottom: 1px solid #f1f5f9; 
+    }
+
+    .premium-list-item:last-child {
+        border-bottom: none;
+    }
+
+    .premium-icon {
+        color: #475569; 
+        width: 26px;
+        font-size: 15px;
+    }
+
+    .premium-label {
+        color: #64748b; 
+        width: 140px; 
+        font-weight: 500;
+    }
+
+    .premium-value {
+        color: #0f172a; 
+        font-weight: 600;
+        flex: 1;
+    }
+
+   /* --- PREMIUM FOOTER LOGO --- */
+    .premium-footer-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 25px; /* Slight padding adjust for bigger logo */
+        border-top: 1px solid #f1f5f9;
+        background: #f8fafc;
+    }
+
+    .premium-motto {
+        font-family: 'Brush Script MT', 'Comic Sans MS', cursive; 
+        color: #cbd5e1;
+        font-size: 19px; /* Konjam perusa aakiyachu */
+    }
+
+    .premium-logo img {
+        height: 70px; /* 35px la irunthu 55px ku increase panniyachu */
+        width: auto;
+    }
 </style>
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <div style="margin:-200px;">
-    <a href="user_profile.php" style="text-decoration: none;">
-        <i class="fa fa-user fa-fw" style="color:#FBC710"></i>
-        <b style="color:#009EE3;"><?php echo $name . '-' . $username; ?></b>
-    </a>
-</div>
-    <!-- Left navbar links -->
-    <!--<ul class="navbar-nav">
-<li class="nav-item">
-<a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
-</li>
-</ul>-->
-
+    <div style="margin:-200px; position: relative; z-index: 1000;">
+        <a href="#" class="username-trigger" onclick="togglePremiumProfile(event)" style="text-decoration: none; cursor: pointer;">
+            <i class="fa fa-user fa-fw" style="color:#FBC710"></i>
+            <b style="color:#009EE3;"><?php echo $name . '-' . $username; ?></b>
+        </a>
+    </div>
+    
     <ul class="navbar-nav ml-auto">
         <a href="index.php">
             <img src="qvision/images/logo123.jpg" alt="Aeronero Solutions Private Limited" style="width:auto;height:75px;">
@@ -87,21 +367,119 @@ $name = $_SESSION['fullname'];
     <ul class="navbar-nav ml-auto">
         <li class="dropdown">
             <a href="login/login.php" style="font-size:17px;"><img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;">Logout</a>
-
         </li>
     </ul>
 </nav>
 
+<!-- ======================================================= -->
+<!-- PREMIUM PROFILE CARD HTML (EXACT 1ST IMAGE UI)          -->
+<!-- ======================================================= -->
+<div id="premiumProfile" class="premium-profile-card">
+    
+    <!-- TOP HEADER: Blue Gradient with Avatar -->
+    <div class="premium-header-bg">
+        <span class="premium-close-btn" onclick="togglePremiumProfile(event)">&times;</span>
+        <div class="premium-header-content">
+            <!-- Circular Initials Avatar -->
+            <div class="premium-avatar">
+                <?php 
+                    // Automatically get initials (e.g. "Demo HR" -> "DH")
+                    $n = trim($_SESSION['fullname']);
+                    $parts = explode(' ', $n);
+                    $initials = strtoupper(substr($n, 0, 1));
+                    if(count($parts) > 1) {
+                        $initials .= strtoupper(substr($parts[count($parts)-1], 0, 1));
+                    }
+                    echo $initials;
+                ?>
+            </div>
+            
+            <div class="premium-header-text">
+                <div class="premium-user-title-white">
+                    <?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : ''; ?>-<?php echo $username; ?>
+                </div>
+                <div class="premium-user-role-white">
+                    <?php echo $display_role; ?>
+                </div>
+                <div class="premium-user-dept-white">
+                    <?php echo $display_dept; ?> Department
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LIST OF DETAILS -->
+    <div class="premium-body-section">
+        <div class="premium-list-item">
+            <i class="fa fa-user premium-icon"></i>
+            <span class="premium-label">Employee ID</span>
+            <span class="premium-value"><?php echo $username; ?></span>
+        </div>
+        
+        <div class="premium-list-item">
+            <i class="fa fa-user premium-icon"></i>
+            <span class="premium-label">Full Name</span>
+            <span class="premium-value"><?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : '-'; ?></span>
+        </div>
+        
+        <div class="premium-list-item">
+            <i class="fa fa-envelope premium-icon"></i>
+            <span class="premium-label">Email</span>
+            <span class="premium-value"><?php echo $display_email; ?></span>
+        </div>
+        
+        <div class="premium-list-item">
+            <i class="fa fa-phone premium-icon"></i>
+            <span class="premium-label">Mobile</span>
+            <span class="premium-value"><?php echo $display_mobile; ?></span>
+        </div>
+        
+        <div class="premium-list-item">
+            <i class="fa fa-building premium-icon"></i>
+            <span class="premium-label">Department</span>
+            <span class="premium-value"><?php echo $display_dept; ?></span>
+        </div>
+        
+        <div class="premium-list-item">
+            <i class="fa fa-briefcase premium-icon"></i>
+            <span class="premium-label">Designation</span>
+            <span class="premium-value"><?php echo $display_role; ?></span>
+        </div>
+        
+        <div class="premium-list-item">
+            <i class="fa fa-map-marker-alt premium-icon"></i>
+            <span class="premium-label">Location</span>
+            <span class="premium-value"><?php echo $display_location; ?></span>
+        </div>
+        
+        <div class="premium-list-item">
+            <i class="fa fa-calendar-alt premium-icon"></i>
+            <span class="premium-label">Date of Joining</span>
+            <span class="premium-value"><?php echo $display_doj; ?></span>
+        </div>
+    </div>
+
+    <!-- FOOTER WITH MOTTO AND LOGO -->
+    <div class="premium-footer-section">
+        <div class="premium-motto">People Power Progress</div>
+        <div class="premium-logo">
+            <!-- Using your navbar logo path -->
+            <img src="login/assets/background_img.png" alt="Aeronero Solutions">
+        </div>
+    </div>
+
+</div>
+<!-- ======================================================= -->
 <div class="header-menu">
     <?php
     $userrole = $_SESSION['userrole'];
     $sql = $con->query("SELECT zmsm.id,zmsm.menu_name,zmsm.call_method FROM z_masters_menu zmsm join z_role_detail zrd on zrd.menu_id=zmsm.id WHERE zrd.code='$userrole'  and zrd.view_only='1' AND zrd.edit_only='1' AND zrd.all_only='1'group by menu_name ORDER BY zmsm.id");
-    //echo"SELECT zmsm.id,zmsm.menu_name,zmsm.call_method FROM z_masters_menu zmsm join z_role_detail zrd on zrd.menu_id=zmsm.id WHERE zrd.code='$userrole'  and zrd.view_only='1' AND zrd.edit_only='1' AND zrd.all_only='1'group by menu_name ORDER BY zmsm.id";
+    
     while ($row = $sql->fetch(PDO::FETCH_ASSOC)) {
         $menuid = $row['id'];
     ?>
         <div class="menu-item">
-            <span class="menu-title" onclick="setActiveMenu(this);loadSubMenu('<?php echo $row['menu_name']; ?>','<?php echo $menuid; ?>','<?php echo $userrole; ?>')" style="color:white;font-family: helvetica;font-size: x-large;">
+            <span class="menu-title" onclick="setActiveMenu(this);loadSubMenu('<?php echo $row['menu_name']; ?>','<?php echo $menuid; ?>','<?php echo $userrole; ?>')" style="color:white;font-family: helvetica;font-size: x-large; cursor:pointer;">
                 <?php echo $row['menu_name']; ?>
             </span>
             <i class="menu-arrow"></i>
@@ -109,22 +487,35 @@ $name = $_SESSION['fullname'];
         <input type="hidden" id="menuid" name="menuid" value="">
     <?php
     } ?>
-
 </div>
 
-<style>
-    .navv {
-        list-style-type: none;
-        /* Remove the marker */
-    }
-</style>
 <nav class="sidebarr" id="sidebar" style="display: none;margin: -17px -42px;">
     <ul class="navv">
         <div id="submenuContainer" style="width:240px; background-color: #009EE3; position: absolute; height:100vh; overflow: auto;">
     </ul>
 </nav>
-</div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function togglePremiumProfile(event) {
+        event.preventDefault(); 
+        event.stopPropagation(); 
+        
+        const profileCard = document.getElementById('premiumProfile');
+        profileCard.classList.toggle('show-card');
+    }
+
+    document.addEventListener('click', function(event) {
+        const profileCard = document.getElementById('premiumProfile');
+        const triggerBtn = document.querySelector('.username-trigger');
+        
+        if (profileCard.classList.contains('show-card')) {
+            if (!profileCard.contains(event.target) && !triggerBtn.contains(event.target)) {
+                profileCard.classList.remove('show-card');
+            }
+        }
+    });
+</script>
 
 <script>
     // function loadSubMenu(menuName, menuid, userrole) {

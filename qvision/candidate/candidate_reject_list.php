@@ -9,10 +9,10 @@ $userrole=$_SESSION['userrole'];
 	background-color:#009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header a {
-	color: black;
+	color: white;
 }
 .card-primary:not(.card-outline)>.card-header{
-	color: black !important;
+	color: white !important;
 }
 </style>
 	<div id="table_view">

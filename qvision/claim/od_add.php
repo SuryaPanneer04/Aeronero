@@ -47,28 +47,8 @@ $candidateid = $_SESSION['candidateid'];
                 <td colspan="5"><input type="date" class="form-control" id="date" name="date" max="" min=""></td>
             </tr>
             <tr>
-                <td>Travel Type</td>
-                <td>
-                    <select name="travel" id="travel" onchange="travelstatus(this.value)" class="form-control">
-                        <option value="">Select Travel Type</option>
-                        <?php
-                        $emp_sql = $con->query("SELECT * FROM travel_master");
-                        while ($emp_res = $emp_sql->fetch(PDO::FETCH_ASSOC)) {
-                        ?>
-                            <option value="<?php echo $emp_res['id']; ?>"><?php echo $emp_res['travel_type']; ?></option>
-                        <?php
-                        }
-                        ?>
-                    </select>
-                </td>
-            </tr>
-            <tr id="dep1">
-                <td>Kms</td>
-                <td colspan="5"><input type="text" class="form-control" placeholder="Enter Kms" id="kms" onChange="kms_cal(this.value)" name="kms"></td>
-            </tr>
-            <tr>
-                <td>Customer Name</td>
-                <td colspan="5"><input type="text" class="form-control" placeholder="Enter Customer Name" id="Customer_name" name="Customer_name"></td>
+                <td>Claim Type</td>
+                <td colspan="5"><input type="text" class="form-control" placeholder="Enter Claim Type" id="travel" name="travel"></td>
             </tr>
             <tr>
                 <td>Location</td>
@@ -80,11 +60,25 @@ $candidateid = $_SESSION['candidateid'];
             </tr>
             <tr>
                 <td>Amount</td>
-                <td colspan="5"><input type="text" class="form-control" placeholder="Enter Amount" id="amount" name="amount" readonly></td>
+                <td colspan="5"><input type="text" class="form-control" placeholder="Enter Amount" id="amount" name="amount"></td>
             </tr>
             <tr>
-                <td>Attach File</td>
-                <td colspan="5"><input type="file" class="form-control" id="attachfile_1" name="attachfile[]"></td>
+                <td>Attach File(s)</td>
+                <td colspan="5">
+                    <table id="document_table" style="width: 100%; border: none;">
+                        <tr>
+                            <td style="border: none; padding-left: 0; padding-right: 10px;">
+                                <input type="text" class="form-control" name="doc_titles[]" placeholder="Document Name (e.g. Bill, Ticket)">
+                            </td>
+                            <td style="border: none; padding-left: 0;">
+                                <input type="file" class="form-control" name="attachfile[]">
+                            </td>
+                            <td style="border: none; width: 50px;">
+                                <button type="button" class="btn btn-primary" onclick="add_document_row()"><i class="fa fa-plus"></i>Add</button>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
             </tr>
             <tr>
                 <td colspan="6"><center><input type="submit" name="submit" class="btn btn-success submitBtn" value="Save"></center></td>
@@ -140,30 +134,17 @@ function back_od() {
     });
 }
 
-function travelstatus(value) {
-    if (value == '1' || value == '4') {
-        document.getElementById('dep1').style.visibility = "visible";
-         document.getElementById('amount').setAttribute('readonly', 'readonly');
-         alert  
-    } else {
-        document.getElementById('dep1').style.visibility = "collapse";
-         document.getElementById('amount').removeAttribute('readonly');
-    }
+function add_document_row() {
+    var tr = '<tr>' +
+             '<td style="border: none; padding-left: 0; padding-right: 10px;"><input type="text" class="form-control" name="doc_titles[]" placeholder="Document Name"></td>' +
+             '<td style="border: none; padding-left: 0;"><input type="file" class="form-control" name="attachfile[]"></td>' +
+             '<td style="border: none; width: 50px;"><button type="button" class="btn btn-danger" onclick="remove_document_row(this)"><i class="fa fa-minus"></i></button></td>' +
+             '</tr>';
+    $('#document_table').append(tr);
 }
 
-
-
-function kms_cal(b) {
-    var typeoftravel = document.getElementById('travel').value;
-    if (typeoftravel == 1) {
-        var a = 2.5;
-        var result = a * b;
-        document.getElementById("amount").value = result;
-    } else if (typeoftravel == 4) {
-        var a = 7;
-        var result = a * b;
-        document.getElementById("amount").value = result;
-    }
+function remove_document_row(btn) {
+    $(btn).closest('tr').remove();
 }
 
 </script>

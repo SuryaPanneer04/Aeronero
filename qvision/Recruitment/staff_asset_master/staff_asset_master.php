@@ -4,10 +4,6 @@ include("../../../user.php");
 $userrole = $_SESSION['userrole'];
 ?>
 <style>
-    #page-wrapper {
-        margin-left: 117px !important;
-    }
-
     .btn-warning {
         padding-top: 0px !important;
         background-color: #337ab7 !important;
@@ -24,29 +20,19 @@ $userrole = $_SESSION['userrole'];
     }
 </style>
 
-<div class="content-wrapper" id="page-wrapper">
+<div id="page-wrapper">
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-12"></div>
-        </div>
-
-        <div class="row">
             <div class="col-lg-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        Staff Asset Master
+                <div class="card mb-3">
+                    <div class="card-header">
+                        <i class="fa fa-table"></i> STAFF ASSET MASTER
+                        <a onclick="add_staff_asset()" style="float: right; color: white; cursor: pointer;" class="btn btn-primary btn-sm btn-flat">
+                            <i class="fa fa-plus"></i> ADD
+                        </a>
                     </div>
 
-                    <div class="row" style="margin:10px;">
-                        <div class="col-lg-12">
-                            <a onclick="add_staff_asset()" style="float: right;" class="btn btn-primary btn-sm btn-flat">
-                                <i class="fa fa-plus"></i> ADD
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- THIS CONTENT DIV IS IMPORTANT -->
-                    <div class="panel-body content">
+                    <div class="card-body">
                         <div class="table-responsive">
                             <table class="dataTables-example table table-striped table-bordered table-hover" id="example1">
                                 <thead>
@@ -101,7 +87,7 @@ $userrole = $_SESSION['userrole'];
             type: "POST",
             url: "qvision/Recruitment/staff_asset_master/new_staff_asset_master.php",
             success: function(data) {
-                $(".content").html(data);
+                $("#main_content").html(data);
             },
             error: function(xhr, status, error) {
                 alert("Add page load error: " + error);
@@ -119,7 +105,7 @@ $userrole = $_SESSION['userrole'];
                 id: id
             },
             success: function(data) {
-                $(".content").html(data);
+                $("#main_content").html(data);
             },
             error: function(xhr, status, error) {
                 alert("Edit page load error: " + error);
@@ -136,7 +122,7 @@ $userrole = $_SESSION['userrole'];
             type: "POST",
             url: "qvision/Recruitment/staff_asset_master/staff_asset_master.php",
             success: function(data) {
-                $(".content").html(data);
+                $("#main_content").html(data);
                 // setTimeout(function() {
                 //     if ($.fn.DataTable.isDataTable('#example1')) {
                 //         $('#example1').DataTable().destroy();
@@ -163,7 +149,7 @@ $(document).off('click', '#btn_back_new_staff_asset').on('click', '#btn_back_new
         type: "POST",
         url: "qvision/Recruitment/staff_asset_master/staff_asset_master.php",
         success: function(data) {
-            $(".content").html(data);
+            $("#main_content").html(data);
         },
         error: function(xhr, status, error) {
             alert("Back Error : " + error);

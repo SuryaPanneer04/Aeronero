@@ -350,25 +350,28 @@ try {
     }
 </style>
 
-<nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <div style="margin:-200px; position: relative; z-index: 1000;">
-        <a href="#" class="username-trigger" onclick="togglePremiumProfile(event)" style="text-decoration: none; cursor: pointer;">
-            <i class="fa fa-user fa-fw" style="color:#FBC710"></i>
-            <b style="color:#009EE3;"><?php echo $name . '-' . $username; ?></b>
+<nav class="main-header" style="margin-left: 0 !important; display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #fff; border-bottom: 1px solid #dee2e6;">
+    <!-- Left Section -->
+    <div style="display: flex; align-items: center; flex: 1; justify-content: flex-start;">
+        <a href="#" class="username-trigger" onclick="togglePremiumProfile(event)" style="text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+            <i class="fa fa-user fa-fw" style="color:#FBC710; font-size: 1.2rem;"></i>
+            <b style="color:#009EE3; font-size: 1.1rem;"><?php echo $name . '-' . $username; ?></b>
         </a>
     </div>
-    
-    <ul class="navbar-nav ml-auto">
-        <a href="index.php">
-            <img src="qvision/images/logo123.jpg" alt="Aeronero Solutions Private Limited" style="width:auto;height:75px;">
-        </a>
-    </ul>
 
-    <ul class="navbar-nav ml-auto">
-        <li class="dropdown">
-            <a href="login/login.php" style="font-size:17px;"><img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;">Logout</a>
-        </li>
-    </ul>
+    <!-- Center Section -->
+    <div style="display: flex; justify-content: center; align-items: center; flex: 1;">
+        <a href="index.php">
+            <img src="qvision/images/logo123.jpg" alt="Aeronero Solutions Private Limited" style="width:auto; height:75px;">
+        </a>
+    </div>
+
+    <!-- Right Section -->
+    <div style="display: flex; align-items: center; flex: 1; justify-content: flex-end;">
+        <a href="login/login.php" style="font-size:17px; color: #333; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+            <img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;"> Logout
+        </a>
+    </div>
 </nav>
 
 <!-- ======================================================= -->
@@ -482,19 +485,52 @@ try {
             <span class="menu-title" onclick="setActiveMenu(this);loadSubMenu('<?php echo $row['menu_name']; ?>','<?php echo $menuid; ?>','<?php echo $userrole; ?>')" style="color:white;font-family: helvetica;font-size: x-large; cursor:pointer;">
                 <?php echo $row['menu_name']; ?>
             </span>
-            <i class="menu-arrow"></i>
         </div>
         <input type="hidden" id="menuid" name="menuid" value="">
     <?php
     } ?>
 </div>
 
-<nav class="sidebarr" id="sidebar" style="display: none;margin: -17px -42px;">
-    <ul class="navv">
-        <div id="submenuContainer" style="width:240px; background-color: #009EE3; position: absolute; height:100vh; overflow: auto;">
+<style>
+    .navv {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    .sidebarr {
+        display: none;
+        width: 240px;
+        position: absolute; /* Using absolute so it can float over or be left-aligned */
+        left: 0;
+        background-color: #009EE3;
+        height: calc(100vh - 130px);
+        overflow-y: auto;
+        z-index: 1000;
+        box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    }
+    .nav-item .nav-link.submenu {
+        padding: 12px 20px !important;
+        display: block !important;
+        cursor: pointer !important;
+        font-family: helvetica;
+        font-size: 16px !important;
+        color: white !important;
+        border-bottom: 1px solid rgba(255,255,255,0.1) !important;
+        transition: all 0.3s ease !important;
+    }
+    .nav-item .nav-link.submenu:hover,
+    .nav-item .nav-link.submenu.active-submenu {
+        background-color: rgba(255, 255, 255, 0.1) !important;
+        color: #FBC710 !important;
+        border-left: 4px solid #FBC710 !important;
+        padding-left: 16px !important; 
+    }
+</style>
+
+<nav class="sidebarr" id="sidebar">
+    <ul class="navv" id="submenuContainer">
     </ul>
 </nav>
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script>
     function togglePremiumProfile(event) {

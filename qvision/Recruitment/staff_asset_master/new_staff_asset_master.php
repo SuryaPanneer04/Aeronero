@@ -4,21 +4,17 @@ include("../../../user.php");
 $userrole = $_SESSION['userrole'];
 ?>
 <div class="card mb-3">
-
-    <form id="new_staff_asset_form">
-        <input type="hidden" name="userrole" id="userrole" value="<?php echo  $userrole; ?>">
-        <table class="table table-bordered">
-            <tr>
-                <div class="row">
-                    <a href="javascript:void(0)"
-   id="btn_back_new_staff_asset"
-   class="btn btn-primary btn-sm btn-flat"
-   style="float:right;">
-    Back
-</a>
-                </div>
-</div>
-</tr>
+    <div class="card-header">
+        <i class="fa fa-table"></i> NEW STAFF ASSET MASTER
+        <a href="javascript:void(0)"
+           id="btn_back_new_staff_asset"
+           style="float: right; color: white; cursor: pointer;"
+           class="btn btn-primary btn-sm btn-flat">Back</a>
+    </div>
+    <div class="card-body">
+        <form id="new_staff_asset_form">
+            <input type="hidden" name="userrole" id="userrole" value="<?php echo  $userrole; ?>">
+            <table class="table table-bordered">
 <tr>
     <td>
         <center><img src="qvision\images\logo123.jpg" alt="quadsel" style="width:100px;height:50px;"></center>
@@ -48,6 +44,8 @@ $userrole = $_SESSION['userrole'];
 </table>
 <input type="button" id="btn_submit_new_staff_asset" name="submit" class="btn btn-primary btn-md" style="float:right;" value="Submit">
 </form>
+</div> <!-- card-body -->
+</div> <!-- card -->
 <script>
     
     $(document).off('click', '#btn_submit_new_staff_asset').on('click', '#btn_submit_new_staff_asset', function() {
@@ -62,7 +60,7 @@ $userrole = $_SESSION['userrole'];
     type: "POST",
     url: "qvision/Recruitment/staff_asset_master/staff_asset_master.php",
     success: function(data) {
-        $(".content").html(data);
+        $("#main_content").html(data);
     }
 });
             },

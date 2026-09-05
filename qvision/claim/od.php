@@ -36,7 +36,7 @@ if (isset($_SESSION['candidateid'])) {
                 <th>Emp Code</th>
                 <th>Emp Name</th>
                 <th>Date </th>
-                <th>Customer Name</th>
+                <th>Claim Type</th>
                 <th>Location</th>
                 <th>Purpose</th>
                 <th>Status</th>
@@ -47,7 +47,7 @@ if (isset($_SESSION['candidateid'])) {
 <?php
 try {
     if ($userrole == 'R016') {
-        $holiday = $con->query("SELECT a.candidate_id as candidate_id,b.emp_code as emp_code,b.emp_name as emp_name,a.date as date,a.customer_name as customer_name,a.location as c_loc,a.purpose as purpose,a.id as mid,a.location as c_loc,a.status as status FROM claim_request a LEFT JOIN staff_master b on a.candidate_id=b.candid_id where a.status='2' or a.status=1");
+        $holiday = $con->query("SELECT a.candidate_id as candidate_id,b.emp_code as emp_code,b.emp_name as emp_name,a.date as date,a.travel_type,a.location as c_loc,a.purpose as purpose,a.id as mid,a.location as c_loc,a.status as status FROM claim_request a LEFT JOIN staff_master b on a.candidate_id=b.candid_id where a.status='2' or a.status=1");
         
         if (!$holiday) { die("<tr><td colspan='10'><b>Error in R016 query:</b> " . print_r($con->errorInfo(), true) . "</td></tr>"); }
 
@@ -60,7 +60,7 @@ try {
                 <td><?php echo $holiday_masterr['emp_code']; ?></td>
                 <td><?php echo $holiday_masterr['emp_name']; ?></td>
                 <td><?php echo $holiday_masterr['date']; ?></td>
-                <td><?php echo $holiday_masterr['customer_name'];?></td>
+                <td><?php echo $holiday_masterr['travel_type'];?></td>
                 <td><?php echo $holiday_masterr['c_loc']; ?></td>
                 <td><?php echo $holiday_masterr['purpose']; ?></td>
                 <td>
@@ -106,7 +106,7 @@ try {
                 <td><?php echo isset($showemmmpcode['emp_code']) ? $showemmmpcode['emp_code'] : ''; ?></td>
                 <td><?php echo isset($employiecode['full_name']) ? $employiecode['full_name'] : ''; ?></td>
                 <td><?php echo $holiday_masterr['date']; ?></td>
-                <td><?php echo $holiday_masterr['customer_name'];?></td>
+                <td><?php echo $holiday_masterr['travel_type'];?></td>
                 <td><?php echo $holiday_masterr['location']; ?></td>
                 <td><?php echo $holiday_masterr['purpose']; ?></td>
                 <td>

@@ -23,14 +23,13 @@
     </div>
 </section>
 <style>
-
 .card-body {
     max-width: 100% !important;
     overflow-x: scroll !important;
 	overflow-y: scroll !important;
 }
 .content {
-    max-width: 85% !important; 
-    margin-left:17%!important; 
+    max-width: calc(100% - 240px) !important; 
+    margin-left: 240px !important; 
 }
 </style>

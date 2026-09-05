@@ -93,7 +93,7 @@ if (isset($_SESSION['user'])) {
                 </div>
 
                 <div class="left-footer">
-                    &copy; 2026 Aeronero Solutions Private Limited | Powered by QVision ERP
+                    &copy; 2026 Aeronero Solutions Private Limited | Powered by Aeronero ERP
                 </div>
             </div>
         </section>

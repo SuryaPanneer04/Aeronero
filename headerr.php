@@ -2,12 +2,15 @@
 $username = $_SESSION['username'];
 $name = $_SESSION['fullname'];
 
+// Initialize default values
 $display_doj = '-';
 $display_dept = '-';
 $display_email = '-';
 $display_role = '-';
 $display_mobile = '-';
 $display_location = '-'; 
+$display_resume = '';
+$cand_form_id = '';
 
 try {
     $profile_query = "
@@ -17,34 +20,40 @@ try {
             d.dept_name,
             u.email_id,
             u.mobile_no,
-            r.role_name
+            dm.designation_name,
+            c.resume,
+            c.id AS cand_form_id
         FROM staff_master s 
         LEFT JOIN z_department_master d ON s.dep_id = d.id 
+        LEFT JOIN designation_master dm ON s.design_id = dm.id
         LEFT JOIN z_user_master u ON s.emp_code = u.user_name 
-        LEFT JOIN z_role_master r ON u.user_group_code = r.code 
-        WHERE s.emp_code = '$username'
+        LEFT JOIN candidate_form_details c ON s.candid_id = c.id
+        WHERE s.emp_code = :username
     ";
                       
-    $sql_profile = $con->query($profile_query);
+    $stmt = $con->prepare($profile_query);
+    $stmt->bindParam(':username', $username, PDO::PARAM_STR);
     
-    if ($sql_profile) {
-        $employeeData = $sql_profile->fetch(PDO::FETCH_ASSOC);
+    if ($stmt->execute()) {
+        $employeeData = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($employeeData) {
             $display_doj = !empty($employeeData['DOJ']) ? $employeeData['DOJ'] : '-';
             $display_dept = !empty($employeeData['dept_name']) ? $employeeData['dept_name'] : '-';
             $display_email = !empty($employeeData['email_id']) ? $employeeData['email_id'] : '-';
-            $display_role = !empty($employeeData['role_name']) ? $employeeData['role_name'] : '-';
+            $display_role = !empty($employeeData['designation_name']) ? $employeeData['designation_name'] : '-';
             $display_mobile = !empty($employeeData['mobile_no']) ? $employeeData['mobile_no'] : '-';
             
             $display_location = !empty($employeeData['location']) ? $employeeData['location'] : '-';
+            
+            $display_resume = !empty($employeeData['resume']) ? $employeeData['resume'] : '';
+            $cand_form_id = !empty($employeeData['cand_form_id']) ? $employeeData['cand_form_id'] : '';
         }
     }
 } catch(PDOException $e) {
     echo "<script>console.log('DB Fetch Error: " . addslashes($e->getMessage()) . "');</script>";
 }
 ?>
-
 <style>
     .header-menu {
         display: flex;
@@ -111,14 +120,17 @@ try {
         position: fixed;
         top: 152px; 
         right: 25px; 
-        width: 460px;
+        width: 400px; /* Reduced width slightly for better elegance */
+        max-width: 90vw; /* Responsive max width */
+        max-height: calc(100vh - 170px); /* Prevents cutting off at the bottom */
         background: #ffffff;
         border-radius: 12px; 
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
         z-index: 99999; 
         border: 1px solid #e2e8f0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
-        overflow: hidden; 
+        overflow-y: auto; /* Allow scrolling if it overflows */
+        overflow-x: hidden;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
@@ -376,9 +388,9 @@ try {
                 <div class="premium-user-title-white">
                     <?php echo isset($_SESSION['fullname']) ? $_SESSION['fullname'] : ''; ?>-<?php echo $username; ?>
                 </div>
-                <div class="premium-user-role-white">
+                <!-- <div class="premium-user-role-white">
                     <?php echo $display_role; ?>
-                </div>
+                </div> -->
                 <div class="premium-user-dept-white">
                     <?php echo $display_dept; ?> Department
                 </div>
@@ -438,6 +450,24 @@ try {
             <i class="fa fa-calendar-alt premium-icon"></i>
             <span class="premium-label">Date of Joining</span>
             <span class="premium-value"><?php echo $display_doj; ?></span>
+        </div>
+
+        <div class="premium-list-item">
+            <i class="fa fa-file-pdf premium-icon" style="color:#d9534f;"></i>
+            <span class="premium-label">Resume</span>
+            <span class="premium-value">
+                <?php if($cand_form_id != '') { ?>
+                    <?php if($display_resume != '') { ?>
+                        <a href="qvision/Resource/Resource_form/resume_upload/<?php echo $display_resume; ?>" target="_blank" class="btn btn-xs btn-success" style="padding: 2px 5px; font-size: 11px; color: white; text-decoration:none;"><i class="fa fa-eye"></i> View</a>
+                        <button class="btn btn-xs btn-danger" style="padding: 2px 5px; font-size: 11px; margin-left: 5px;" onclick="removeResume('<?php echo $cand_form_id; ?>')"><i class="fa fa-times"></i> Replace</button>
+                    <?php } else { ?>
+                        <input type="file" id="resume_upload_file" style="display:inline-block; width:130px; font-size: 11px;">
+                        <button class="btn btn-xs btn-primary" style="padding: 2px 5px; font-size: 11px;" onclick="uploadResume('<?php echo $cand_form_id; ?>')"><i class="fa fa-upload"></i></button>
+                    <?php } ?>
+                <?php } else { ?>
+                    <span style="font-size:11px; color:#999;">Not Available</span>
+                <?php } ?>
+            </span>
         </div>
     </div>
 
@@ -2681,6 +2711,53 @@ try {
                 $("#main_content").html(data);
             }
         })
+    }
+
+    function uploadResume(candId) {
+        var fileInput = document.getElementById('resume_upload_file');
+        var file = fileInput.files[0];
+        
+        if(!file) {
+            alert('Please select a file to upload.');
+            return;
+        }
+        
+        var formData = new FormData();
+        formData.append('resume', file);
+        formData.append('candid_id', candId);
+        formData.append('action', 'upload');
+        
+        $.ajax({
+            url: 'qvision/profile_resume_handler.php',
+            type: 'POST',
+            data: formData,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                alert(response);
+                location.reload();
+            },
+            error: function() {
+                alert('Upload failed.');
+            }
+        });
+    }
+
+    function removeResume(candId) {
+        if(!confirm('Are you sure you want to replace this resume? The existing file will be removed.')) return;
+        
+        $.ajax({
+            url: 'qvision/profile_resume_handler.php',
+            type: 'POST',
+            data: { candid_id: candId, action: 'remove' },
+            success: function(response) {
+                alert(response);
+                location.reload();
+            },
+            error: function() {
+                alert('Remove failed.');
+            }
+        });
     }
 
     function setActiveMenu(element) {

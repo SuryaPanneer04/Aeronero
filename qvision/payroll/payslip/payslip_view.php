@@ -55,54 +55,54 @@ hr{
 	$monthName = $dateObj->format('F'); 
 	
     switch ($m) {
-      case "1":
-       $pay_period = "16th Jan".' '.$y." – 15th Feb".' '.$y;
+    case "1":
+      $pay_period = "1st Jan" . ' ' . $y . " – 31st Jan" . ' ' . $y;
       break;
-	  
-      case "2":
-       $pay_period = "15th Feb".' '.$y." – 16th Mar".' '.$y;
+
+    case "2":
+      $pay_period = "1st Feb" . ' ' . $y . " – 28th Feb" . ' ' . $y;
       break;
-	  
-      case "3":
-       $pay_period = "16th Mar".' '.$y." – 15th Apr".' '.$y;
+
+    case "3":
+      $pay_period = "1st Mar" . ' ' . $y . " – 31st Mar" . ' ' . $y;
       break;
-	  
-	  case "4":
-       $pay_period = "16th Apr".' '.$y." – 15th May".' '.$y;
+
+    case "4":
+      $pay_period = "1st Apr" . ' ' . $y . " – 30th Apr" . ' ' . $y;
       break;
-	  
-	  case "5":
-       $pay_period = "16th May".' '.$y." – 15th Jun".' '.$y;
+
+    case "5":
+      $pay_period = "1st May" . ' ' . $y . " – 31st May" . ' ' . $y;
       break;
-	  
-	  case "6":
-       $pay_period = "16th Jun".' '.$y."- 15th Jul".' '.$y;
+
+    case "6":
+      $pay_period = "1st Jun" . ' ' . $y . "- 30th Jun" . ' ' . $y;
       break;
-	  
-	  case "7":
-       $pay_period = "16th Jul".' '.$y." – 15th Aug".' '.$y;
+
+    case "7":
+      $pay_period = "1st Jul" . ' ' . $y . " – 31st Jul" . ' ' . $y;
       break;
-	  
-	  case "8":
-       $pay_period = "16th Aug".' '.$y." – 15th Sep".' '.$y;
+
+    case "8":
+      $pay_period = "1st Aug" . ' ' . $y . " – 31st Aug" . ' ' . $y;
       break;
-	  
-	  case "9":
-       $pay_period = "16th Sep".' '.$y." – 15th Oct".' '.$y;
+
+    case "9":
+      $pay_period = "1st Sep" . ' ' . $y . " – 30th Sep" . ' ' . $y;
       break;
-	  
-	  case "10":
-       $pay_period = "16th Oct".' '.$y." – 15th Nov".' '.$y;
+
+    case "10":
+      $pay_period = "1st Oct" . ' ' . $y . " – 31st Oct" . ' ' . $y;
       break;
-	  
-	  case "11":
-       $pay_period = "16th Nov".' '.$y." – 15th Dec".' '.$y;
+
+    case "11":
+      $pay_period = "1st Nov" . ' ' . $y . " – 30th Nov" . ' ' . $y;
       break;
-	  
-	  case "12":
-       $pay_period = "16th Dec".' '.$y." – 15th Jan".' '.$y;
+
+    case "12":
+      $pay_period = "1st Dec" . ' ' . $y . " – 31st Dec" . ' ' . $y;
       break;
-	  
+  
      default:
        $pay_period = $monthName .' '. $y ;
     }
@@ -139,7 +139,7 @@ hr{
 		}
 
 		$pan_no = $staff_sql_res['pan_number'];
-		$pf_no = $staff_sql_res['pf_number'];
+		// $pf_no = $staff_sql_res['pf_number'];
 		$esi_no = $staff_sql_res['esic_number'];
 		$uan_no = $staff_sql_res['uan_number'];
 		$acc_number = $staff_sql_res['account_no'];
@@ -338,15 +338,16 @@ hr{
   </tr>
   
   <tr>
-    <td class="left remove_border" style="font-weight:bold;"> PF Number </td>
-    <td class="left remove_border">:  <?php echo $pf_no;?></td>
+    <!-- <td class="left remove_border" style="font-weight:bold;"> PF Number </td>
+    <td class="left remove_border">:  <?php echo $pf_no;?></td> -->
     <td class="left remove_border" style="font-weight:bold;"> Location </td>
     <td class="left remove_border">:  <?php echo $loc;?></td>
+    <td class="left remove_border" style="font-weight:bold;"> Days Worked </td>
+    <td class="left remove_border">:  <?php echo $work_days;?></td>
   </tr>
   
    <tr>
-    <td class="left remove_border" style="font-weight:bold;"> Days Worked </td>
-    <td class="left remove_border">:  <?php echo $work_days;?></td>
+    
     <td class="left remove_border" style="font-weight:bold;"> Total Number of Days </td>
     <td class="left remove_border">:  <?php echo $month_days;?></td>
   </tr>
@@ -388,16 +389,11 @@ if($is_payroll_ready && !empty($earned_salaries)) {
     $basicdasal = ($month_days > 0) ? ($getdetails['basic_month'] / $month_days * $work_days) : 0;
 }
 ?>
-  <tr>
-    <td class="left">Basic & DA </td>
-    <td class="right"><?php echo round($basicdasal,2); ?></td> 
-
-    <td class="left">PF Employee </td>
-    <td class="right"><?php 
+<?php 
+    // PF Calculation logic (kept intact, but shifted outside the <td> so it doesn't break the HTML table)
     if($is_payroll_ready && !empty($ded_amount)) {
         $pfamount = floatval($ded_amount['PF'] ?? 0);
     } else {
-        // Fallback calculation if not generated
         $finalbasic = round($basicdasal, 2); 
         $otherallowance = ($month_days > 0) ? ($getdetails['otherallowances_permonth'] / $month_days * $work_days) : 0;
         $pfcalc = $finalbasic + $otherallowance;
@@ -411,8 +407,27 @@ if($is_payroll_ready && !empty($earned_salaries)) {
             }
         }
     }
-    echo round($pfamount, 2);
+?>
+  <tr>
+    <td class="left">Basic & DA </td>
+    <td class="right"><?php echo round($basicdasal,2); ?></td> 
+
+    <td class="left">ESIC Employee</td>
+    <td class="right"><?php	
+    if($is_payroll_ready && !empty($ded_amount)) {
+        $esicamount = floatval($ded_amount['ESIC'] ?? $ded_amount['ESI'] ?? 0);
+    } else {
+        $otherallowance_calc = ($month_days > 0) ? ($getdetails['otherallowances_permonth'] / $month_days * $work_days) : 0;
+        $hra_calc = ($month_days > 0) ? ($getdetails['HRA_month'] / $month_days * $work_days) : 0;
+        $gross_sal_calc = $basicdasal + $hra_calc + $otherallowance_calc;
+        $esicamount = 0; 
+        if ($gross_sal_calc <= 21000) {
+            $esicamount = floatval($getdetails['employee_ESIC_month'] ?? 0);
+        }
+    }
+    echo round($esicamount, 2);
 	?></td>
+
   <?php
   if($reamrkofarrear)
   {
@@ -429,7 +444,6 @@ if($is_payroll_ready && !empty($earned_salaries)) {
     }?>
   </tr>
   
-
    <tr>
     <td class="left">HRA</td>
     <td class="right"><?php 
@@ -440,20 +454,15 @@ if($is_payroll_ready && !empty($earned_salaries)) {
     }
     echo round($HRA,2);
     ?></td>
-    <td class="left">ESIC Employee</td>
-    <td class="right"><?php	
+    <td class="left">Professional Tax</td>
+    <td class="right"><?php 
     if($is_payroll_ready && !empty($ded_amount)) {
-        $esicamount = floatval($ded_amount['ESIC'] ?? $ded_amount['ESI'] ?? 0);
+        $ptamount = floatval($ded_amount['PT'] ?? 0);
     } else {
-        $otherallowance = ($month_days > 0) ? ($getdetails['otherallowances_permonth'] / $month_days * $work_days) : 0;
-        $gross_salary = $basicdasal + $HRA + $otherallowance;
-        $esicamount = 0; 
-        if ($gross_salary <= 21000) {
-            $esicamount = floatval($getdetails['employee_ESIC_month'] ?? 0);
-        }
+        $ptamount = floatval($getdetails['professionaltax_permonth'] ?? 0);
     }
-    echo round($esicamount, 2);
-	?></td>
+    echo round($ptamount,2); 	
+    ?></td>
   </tr>
 
    <tr>
@@ -468,7 +477,6 @@ if($is_payroll_ready && !empty($earned_salaries)) {
                 break;
             }
         }
-        // Fallback to exact match just in case
         if($otherallowance == 0) {
             $otherallowance = floatval($earned_salaries['Other Allowances'] ?? $earned_salaries['Other Allowance'] ?? 0);
         }
@@ -477,20 +485,6 @@ if($is_payroll_ready && !empty($earned_salaries)) {
     }
     echo round($otherallowance,2); 	
     ?></td>
-    <td class="left">Professional Tax</td>
-    <td class="right"><?php 
-    if($is_payroll_ready && !empty($ded_amount)) {
-        $ptamount = floatval($ded_amount['PT'] ?? 0);
-    } else {
-        $ptamount = floatval($getdetails['professionaltax_permonth'] ?? 0);
-    }
-    echo round($ptamount,2); 	
-    ?></td>
-  </tr>
-
-   <tr>
-    <td class="left"></td>
-    <td class="right"></td>
     <td class="left">Loss Of Pay</td>
     <td class="right"><?php 
         $lop_amount = floatval($ded_amount['Loss Of Pay'] ?? $ded_amount['loss of pay'] ?? 0);
@@ -507,7 +501,6 @@ if($is_payroll_ready && !empty($earned_salaries)) {
         echo number_format($adv_amount, 2);
     ?></td>
   </tr>
-
   
   
   

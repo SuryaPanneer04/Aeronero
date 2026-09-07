@@ -173,7 +173,7 @@ if(isset($_POST['action'])) {
 // 2. FRONTEND UI LOGIC
 // =========================================================================
 ?>
-<div class="card" style="box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2); margin-left: -30px; width: calc(100% + 30px);">
+<div class="card" style="box-shadow: 0 0 1px rgba(0,0,0,.125), 0 1px 3px rgba(0,0,0,.2); margin-left: 0px; width: calc(100%px);">
     <div class="card-header" style="background-color:#009EE3  !important; color: #333 !important; border-radius: 4px 4px 0 0;">
         <h3 class="card-title" style="font-size: 1.1rem; margin: 0; font-weight: 500;">Document View</h3>
     </div>

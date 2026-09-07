@@ -4,25 +4,21 @@ $name = $_SESSION['fullname'];
 ?>
 
 <style>
-	.header-menu {
-        display: flex;
+    .header-menu {
+        display: flex !important;
         justify-content: center;
         align-items: center;
-        background-color: #0191dc;
-        color: white;
-        padding: 10px;
+        background-color: #009EE3 !important; 
+        color: white !important;
+        padding: 0px 10px !important; 
+        height: 40px !important;      
+        max-height: 40px !important;  
+        overflow: hidden !important;  
     }
-
-  .header-menu {
-       align-items: center;
-       background-color: #009EE3; /* Changed to Aeronero Blue */
-       color: white;
-       padding: 10px;
-   }
 
     .menu-item {
         margin-right: 20px;
-		position: static;
+        position: static;
     }
 
     .menu-item:last-child {
@@ -32,9 +28,60 @@ $name = $_SESSION['fullname'];
     .menu-item a {
         color: white;
         text-decoration: none;
+        padding: 2px 10px !important; 
+    }
+    .sidebarr div {
+        background-color: #009EE3 !important;
+        height: calc(100vh - 40px) !important; 
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15) !important; 
+        border-right: 1px solid rgba(255,255,255,0.1) !important;
+    }
+    .sidebarr ::-webkit-scrollbar,
+    .sidebarr::-webkit-scrollbar {
+        width: 6px !important;
+        background-color: transparent !important;
+    }
+    .sidebarr ::-webkit-scrollbar-track,
+    .sidebarr::-webkit-scrollbar-track {
+        background: #009EE3 !important;
+    }
+    .sidebarr ::-webkit-scrollbar-thumb,
+    .sidebarr::-webkit-scrollbar-thumb {
+        background: #FBC710 !important; 
+        border-radius: 10px !important;
+    }
+    .sidebarr ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .sidebarr li {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
     }
 
-	</style>
+    .sidebarr a {
+        padding: 2px 10px !important;
+        color: #ffffff !important;
+        display: block !important;
+        text-decoration: none !important;
+        font-size: 11px !important; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-left: 4px solid transparent !important; 
+        transition: all 0.3s ease !important;
+        box-sizing: border-box !important;
+    }
+
+   .sidebarr a:hover {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        color: #FBC710 !important; 
+        padding-left: 16px !important;
+        border-left: 4px solid #FBC710 !important; 
+    }
+</style>
 <!-- Navbar -->
 
 <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -82,14 +129,16 @@ $name = $_SESSION['fullname'];
 
 <style>
     .navv {
-        list-style-type: none; /* Remove the marker */
+        list-style-type: none; 
     }
 </style>
-<nav class="sidebarr" id="sidebar" style="display: none;margin: -17px -42px;">
-    <ul class="navv">
-<div id="submenuContainer" style="width:240px; background-color: #009EE3; position: absolute; height:100vh; overflow: auto;">    </ul>
+<nav class="sidebarr" id="sidebar" style="display: none; margin: -17px -42px; position: relative; z-index: 999;">
+    <div id="submenuContainer" class="smart-sidebar"> 
+        <ul class="navv" style="list-style: none; padding: 0; margin: 0;">
+        
+        </ul>
+    </div>
 </nav>
-</div>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 <script>

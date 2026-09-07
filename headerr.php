@@ -1,8 +1,6 @@
 <?php
 $username = $_SESSION['username'];
 $name = $_SESSION['fullname'];
-
-// Initialize default values
 $display_emp_code = '-';
 $display_emp_name = '-';
 $display_doj = '-';
@@ -65,13 +63,70 @@ try {
 }
 ?>
 <style>
+    .sidebarr div {
+        background-color: #009EE3 !important;
+        height: calc(100vh - 45px) !important; 
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        box-shadow: 4px 0 15px rgba(0, 0, 0, 0.15) !important; 
+        border-right: 1px solid rgba(255,255,255,0.1) !important;
+    }
+
+    .sidebarr ::-webkit-scrollbar,
+    .sidebarr::-webkit-scrollbar {
+        width: 6px !important;
+        background-color: transparent !important;
+    }
+    .sidebarr ::-webkit-scrollbar-track,
+    .sidebarr::-webkit-scrollbar-track {
+        background: #009EE3 !important;
+    }
+    .sidebarr ::-webkit-scrollbar-thumb,
+    .sidebarr::-webkit-scrollbar-thumb {
+        background: #ffffff !important; 
+        border-radius: 10px !important;
+    }
+
+    .sidebarr ul {
+        list-style: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+    .sidebarr li {
+        padding: 0 !important;
+        margin: 0 !important;
+        border: none !important;
+    }
+
+   .sidebarr a {
+        padding: 2px 10px !important; 
+        color: #ffffff !important;
+        display: block !important;
+        text-decoration: none !important;
+        font-size: 11px !important; 
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-left: 4px solid transparent !important; 
+        transition: all 0.3s ease !important;
+        box-sizing: border-box !important;
+    }
+
+    .sidebarr a:hover {
+        background-color: rgba(255, 255, 255, 0.15) !important;
+        color: #FBC710 !important; 
+        padding-left: 16px !important; 
+        border-left: 4px solid #FBC710 !important; 
+    }
     .header-menu {
-        display: flex;
+        display: flex !important;
         justify-content: center;
         align-items: center;
-        background-color: #009EE3; 
-        padding: 4px 10px; 
-        min-height: 38px; 
+        background-color: #009EE3 !important; 
+        color: white !important;
+        padding: 0px 10px !important; 
+        height: 40px !important;      
+        max-height: 40px !important;  
+        overflow: hidden !important;  
     }
 
     .menu-item {
@@ -86,7 +141,7 @@ try {
     .menu-item a, .menu-title {
         color: white;
         text-decoration: none;
-        padding: 5px 10px; 
+        padding: 2px 10px !important; 
         font-weight: 500;
         border-radius: 4px;
         transition: all 0.3s ease;
@@ -152,6 +207,7 @@ try {
         visibility: visible;
         transform: translateY(0);
     }
+
     @keyframes ultraSlowBreatheNormal {
         0% { transform: scale(1); }
         50% { transform: scale(1.10); } 
@@ -163,6 +219,7 @@ try {
         50% { transform: scaleX(-1) scale(1.10); } 
         100% { transform: scaleX(-1) scale(1); }
     }
+
     .premium-header-bg {
         padding: 25px 40px 30px 40px; 
         position: relative;
@@ -228,6 +285,7 @@ try {
         flex-direction: column;
         gap: 2px;
     }
+
     .premium-user-title-white {
         color: #ffffff; 
         font-size: 17px;
@@ -260,9 +318,7 @@ try {
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     }
 
-    /* --- BODY SECTION --- */
     .premium-body-section {
-        /* Top: 15px, Right: 25px, Bottom: 5px, Left: 25px */
         padding: 15px 25px 5px 25px; 
         overflow: hidden; 
         flex: 1; 
@@ -311,6 +367,7 @@ try {
         font-weight: 600;
         flex: 1;
     }
+
     .premium-footer-section {
         display: flex;
         justify-content: space-between;
@@ -323,6 +380,7 @@ try {
         background: #f8fafc;
         flex-shrink: 0;
     }
+
     .premium-footer-section::before {
         content: "";
         position: absolute;

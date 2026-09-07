@@ -3,19 +3,24 @@ require '../../../connect.php';
 require '../../../user.php';
 $userrole=$_SESSION['userrole'];
 
-// Filter variables
+
 $f_from_date = isset($_POST['from_date']) ? $_POST['from_date'] : '';
 $f_to_date = isset($_POST['to_date']) ? $_POST['to_date'] : '';
 $f_dept = isset($_POST['dept_id']) ? $_POST['dept_id'] : '';
 
 ?>
-<div  class="card card-primary">
-    <div class="card-header" style="background-color: #009EE3 ;">
-        <h3 class="card-title" ><font size="5">Time Sheet Report</font></h3>
+<div class="card card-primary">
+    <div class="card-header" style="background-color: #009EE3; overflow: hidden; padding: 10px 15px;">
+        <h3 class="card-title" style="margin: 0; float: left; padding-top: 3px;"><font size="5">Time Sheet Report</font></h3>
+        
+       
+        <button type="button" onclick="export_ts_excel()" class="btn btn-success btn-sm" style="float: right; font-weight: bold; background-color: #28a745; border-color: #28a745;">
+            <i class="fa fa-file-excel-o"></i> Export Excel
+        </button>
     </div>
     
     <div class="card-body">
-        <!-- Filter Form -->
+        
         <form id="ts_filter_form" style="margin-bottom: 20px; padding: 15px; border: 1px solid #ccc; background: #f9f9f9;">
             <div class="row">
                 <div class="col-md-3">
@@ -61,7 +66,7 @@ $f_dept = isset($_POST['dept_id']) ? $_POST['dept_id'] : '';
         </thead>
         <tbody>
 <?php
-// Get logged-in user's staff details
+
 $user_id = $_SESSION['userid'];
 $logged_in_staff_id = 0;
 $logged_in_dep_id = 0;
@@ -74,7 +79,7 @@ if($row = $staff_id_query->fetch(PDO::FETCH_ASSOC)) {
     $logged_in_head_status = $row['head_status'];
 }
 
-// 1. Build reporting tree for recursive lookup
+
 $all_staff_q = $con->query("SELECT id, candid_id, reporting_person, emp_name FROM staff_master");
 $direct_reports = [];
 $manager_names = [];
@@ -86,7 +91,7 @@ while($st = $all_staff_q->fetch(PDO::FETCH_ASSOC)) {
 
 $allowed_candid_ids = [];
 
-// Recursive function to get all descendant candid_ids
+
 function get_all_descendants($manager_id, $direct_reports, &$allowed_candid_ids) {
     if(isset($direct_reports[$manager_id])) {
         foreach($direct_reports[$manager_id] as $staff) {
@@ -98,26 +103,21 @@ function get_all_descendants($manager_id, $direct_reports, &$allowed_candid_ids)
     }
 }
 
-// 2. Build Base Query and Apply Filters
 $where_clauses = ["1=1"];
 
 if($f_from_date != '') { $where_clauses[] = "a.date >= '$f_from_date'"; }
 if($f_to_date != '') { $where_clauses[] = "a.date <= '$f_to_date'"; }
 if($f_dept != '') { $where_clauses[] = "b.dep_id = '$f_dept'"; }
 
-// Apply Role-based filtering (Head Status & Recursive Hierarchy)
-if($userrole == 'R001' || $userrole == '1' || $userrole == 'Admin') {
-    // Admin sees all
+if($userrole == 'R001' || $userrole == 'R003' || $userrole == 'Admin') {
+   
 } else {
-    // Manager/Head filtering
     get_all_descendants($logged_in_staff_id, $direct_reports, $allowed_candid_ids);
     $ids_str = empty($allowed_candid_ids) ? "-1" : implode(',', $allowed_candid_ids);
     
     if($logged_in_head_status == '1') {
-        // Head sees all in their department OR their specific descendants
         $where_clauses[] = "(b.dep_id = '$logged_in_dep_id' OR a.staff_id IN ($ids_str))";
     } else {
-        // Normal manager sees only their descendants
         $where_clauses[] = "a.staff_id IN ($ids_str)";
     }
 }
@@ -133,7 +133,6 @@ $emp_sql = $con->query("
     ORDER BY b.reporting_person DESC, a.date DESC, a.id DESC
 ");
 
-// 3. Display Data (Flat Table for perfect Pagination and Sorting)
 $i=1;
 while($emp_res = $emp_sql->fetch(PDO::FETCH_ASSOC)) {
     $rep_id = (int)$emp_res['reporting_person'];
@@ -220,5 +219,14 @@ function report_view(v) {
             $("#main_content").html(data);
         }
     });
+}
+
+function export_ts_excel() {
+    var from_date = $("#from_date").val();
+    var to_date = $("#to_date").val();
+    var dept_id = $("#filter_dept").val();
+    var export_url = "qvision/Recruitment/project_management/export_timesheet_excel.php?from_date=" + from_date + "&to_date=" + to_date + "&dept_id=" + dept_id;
+    
+    window.location.href = export_url;
 }
 </script>

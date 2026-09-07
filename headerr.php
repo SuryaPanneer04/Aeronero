@@ -129,7 +129,7 @@ try {
         position: absolute; 
         top: 80px; 
         right: 25px; 
-        width: 450px; 
+        width: 400px; 
         max-width: 90vw; 
         background: #ffffff;
         border-radius: 12px; 
@@ -260,9 +260,11 @@ try {
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     }
 
+    /* --- BODY SECTION --- */
     .premium-body-section {
-        padding: 15px 40px;
-        overflow: hidden;
+        /* Top: 15px, Right: 25px, Bottom: 5px, Left: 25px */
+        padding: 15px 25px 5px 25px; 
+        overflow: hidden; 
         flex: 1; 
     }
 
@@ -283,8 +285,8 @@ try {
     .premium-list-item {
         display: flex;
         align-items: center;
-        padding: 10px 0;
-        font-size: 14px;
+        padding: 5px 0;
+        font-size: 13px; 
         border-bottom: 1px solid #f1f5f9; 
     }
 
@@ -313,7 +315,7 @@ try {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 30px; 
+        padding: 5px 30px;
         border-top: 1px solid #f1f5f9;
         border-radius: 0 0 12px 12px;
         position: relative;

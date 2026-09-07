@@ -1033,6 +1033,16 @@ try {
         })
     }
 
+    function staff_password() {
+        $.ajax({
+            type: "POST",
+            url: "qvision/password/staff_password_master/main.php",
+            success: function(data) {
+                $("#main_content").html(data);
+            }
+        })
+    }
+
     function leave_management() {
         $.ajax({
             type: "POST",

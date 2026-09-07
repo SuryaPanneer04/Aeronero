@@ -3,8 +3,11 @@ $username = $_SESSION['username'];
 $name = $_SESSION['fullname'];
 
 // Initialize default values
+$display_emp_code = '-';
+$display_emp_name = '-';
 $display_doj = '-';
 $display_dept = '-';
+$display_div = '-';
 $display_email = '-';
 $display_role = '-';
 $display_mobile = '-';
@@ -15,19 +18,24 @@ $cand_form_id = '';
 try {
     $profile_query = "
         SELECT 
+            s.emp_code,
+            s.emp_name,
             s.DOJ, 
             s.location, 
             d.dept_name,
+            divi.div_name,
             u.email_id,
             u.mobile_no,
             dm.designation_name,
-            c.resume,
+            r.resume,
             c.id AS cand_form_id
         FROM staff_master s 
         LEFT JOIN z_department_master d ON s.dep_id = d.id 
-        LEFT JOIN designation_master dm ON s.design_id = dm.id
+        LEFT JOIN division_master divi ON s.div_id = divi.id
+        LEFT JOIN designation_master dm ON s.dep_id = dm.dep_id AND s.design_id = dm.id
         LEFT JOIN z_user_master u ON s.emp_code = u.user_name 
         LEFT JOIN candidate_form_details c ON s.candid_id = c.id
+        LEFT JOIN resource_form_detail r ON c.resource_id = r.id
         WHERE s.emp_code = :username
     ";
                       
@@ -38,12 +46,14 @@ try {
         $employeeData = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($employeeData) {
+            $display_emp_code = !empty($employeeData['emp_code']) ? $employeeData['emp_code'] : '-';
+            $display_emp_name = !empty($employeeData['emp_name']) ? $employeeData['emp_name'] : '-';
             $display_doj = !empty($employeeData['DOJ']) ? $employeeData['DOJ'] : '-';
             $display_dept = !empty($employeeData['dept_name']) ? $employeeData['dept_name'] : '-';
+            $display_div = !empty($employeeData['div_name']) ? $employeeData['div_name'] : '-';
             $display_email = !empty($employeeData['email_id']) ? $employeeData['email_id'] : '-';
             $display_role = !empty($employeeData['designation_name']) ? $employeeData['designation_name'] : '-';
             $display_mobile = !empty($employeeData['mobile_no']) ? $employeeData['mobile_no'] : '-';
-            
             $display_location = !empty($employeeData['location']) ? $employeeData['location'] : '-';
             
             $display_resume = !empty($employeeData['resume']) ? $employeeData['resume'] : '';
@@ -60,7 +70,8 @@ try {
         justify-content: center;
         align-items: center;
         background-color: #009EE3; 
-        padding: 10px;
+        padding: 4px 10px; 
+        min-height: 38px; 
     }
 
     .menu-item {
@@ -114,27 +125,26 @@ try {
     .navv {
         list-style-type: none; 
     }
-
-    /* --- PREMIUM PROFILE CARD POPUP CSS --- */
     .premium-profile-card {
-        position: fixed;
-        top: 152px; 
+        position: absolute; 
+        top: 80px; 
         right: 25px; 
-        width: 400px; /* Reduced width slightly for better elegance */
-        max-width: 90vw; /* Responsive max width */
-        max-height: calc(100vh - 170px); /* Prevents cutting off at the bottom */
+        width: 450px; 
+        max-width: 90vw; 
         background: #ffffff;
         border-radius: 12px; 
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15); 
         z-index: 99999; 
         border: 1px solid #e2e8f0;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; 
-        overflow-y: auto; /* Allow scrolling if it overflows */
-        overflow-x: hidden;
+        overflow: hidden;
         opacity: 0;
         visibility: hidden;
         transform: translateY(-20px);
         transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        display: flex;
+        flex-direction: column;
+        height: auto;
     }
 
     .premium-profile-card.show-card {
@@ -142,30 +152,26 @@ try {
         visibility: visible;
         transform: translateY(0);
     }
-
-    /* Top Image - No Flip (Water drop on Right) */
     @keyframes ultraSlowBreatheNormal {
         0% { transform: scale(1); }
         50% { transform: scale(1.10); } 
         100% { transform: scale(1); }
     }
 
-    /* Bottom Image - Flipped (Earth on Left) */
     @keyframes ultraSlowBreatheFlipped {
         0% { transform: scaleX(-1) scale(1); }
         50% { transform: scaleX(-1) scale(1.10); } 
         100% { transform: scaleX(-1) scale(1); }
     }
-    /* --- PREMIUM BLUE HEADER --- */
     .premium-header-bg {
         padding: 25px 40px 30px 40px; 
         position: relative;
         border-radius: 12px 12px 0 0;
         overflow: hidden; 
         background-color: #006b99;
+        flex-shrink: 0;
     }
 
-    /* --- HEADER IMAGE FIX (Top Image) --- */
     .premium-header-bg::before {
         content: "";
         position: absolute;
@@ -173,7 +179,6 @@ try {
         background-image: url('qvision/images/Dashboard_img1.png');
         background-size: cover; 
         background-position: center;
-        /* transform: scaleX(-1); <-- Idha thookiyachu, so water drop Right side poidum */
         z-index: 0;
         animation: ultraSlowBreatheNormal 18s ease-in-out infinite; 
     }
@@ -223,19 +228,17 @@ try {
         flex-direction: column;
         gap: 2px;
     }
-    
-    /* --- TEXT READABILITY FIX (Shadow & Colors) --- */
     .premium-user-title-white {
         color: #ffffff; 
         font-size: 17px;
         font-weight: 700;
         letter-spacing: 0.3px;
         margin-bottom: 3px;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9); /* Dark shadow for visibility */
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.9);
     }
     
     .premium-user-role-white {
-        color: #FBC710; /* Yellow color for designation to pop out */
+        color: #FBC710; 
         font-size: 14px;
         font-weight: 600;
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
@@ -257,9 +260,24 @@ try {
         text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.9);
     }
 
-    /* --- BODY SECTION --- */
     .premium-body-section {
         padding: 15px 40px;
+        overflow: hidden;
+        flex: 1; 
+    }
+
+    .premium-body-section::-webkit-scrollbar {
+        width: 6px;
+    }
+    .premium-body-section::-webkit-scrollbar-track {
+        background: transparent; 
+    }
+    .premium-body-section::-webkit-scrollbar-thumb {
+        background: #cbd5e1; 
+        border-radius: 10px;
+    }
+    .premium-body-section::-webkit-scrollbar-thumb:hover {
+        background: #94a3b8; 
     }
 
     .premium-list-item {
@@ -291,21 +309,18 @@ try {
         font-weight: 600;
         flex: 1;
     }
-
-   /* --- FIX: PREMIUM FOOTER CUT-OFF --- */
     .premium-footer-section {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 20px 40px; /* Padding increase panniyachu height-kaaga */
+        padding: 15px 30px; 
         border-top: 1px solid #f1f5f9;
         border-radius: 0 0 12px 12px;
         position: relative;
         overflow: hidden;
         background: #f8fafc;
+        flex-shrink: 0;
     }
-
-   /* --- FOOTER IMAGE FIX (Bottom Image) --- */
     .premium-footer-section::before {
         content: "";
         position: absolute;
@@ -313,12 +328,11 @@ try {
         background-image: url('qvision/images/dashboard_img.png');
         background-size: cover; 
         background-position: center; 
-        transform: scaleX(-1); /* Ithu ippadiye irukkanum, appo thaan Earth Left-la varum */
+        transform: scaleX(-1); 
         z-index: 0;
         animation: ultraSlowBreatheFlipped 18s ease-in-out infinite; 
     }
 
-    /* Keep Motto and Logo above the animated background */
     .premium-motto, .premium-logo {
         position: relative;
         z-index: 2;
@@ -326,9 +340,9 @@ try {
 
     .premium-motto {
         font-family: 'Brush Script MT', 'Comic Sans MS', cursive; 
-        color: #64748b; /* Konjam darker text for better visibility on Earth background */
+        color: #64748b;
         font-size: 19px; 
-        text-shadow: 1px 1px 3px rgba(255,255,255,0.7); /* Adds slight readability over water/earth */
+        text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
     }
 
     .premium-logo img {
@@ -338,40 +352,45 @@ try {
 </style>
 
 <nav class="main-header" style="margin-left: 0 !important; display: flex; flex-wrap: nowrap; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #fff; border-bottom: 1px solid #dee2e6;">
-    <!-- Left Section -->
     <div style="display: flex; align-items: center; flex: 1; justify-content: flex-start;">
-        <a href="#" class="username-trigger" onclick="togglePremiumProfile(event)" style="text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 5px;">
+        <div style="display: flex; align-items: center; gap: 5px;">
             <i class="fa fa-user fa-fw" style="color:#FBC710; font-size: 1.2rem;"></i>
             <b style="color:#009EE3; font-size: 1.1rem;"><?php echo $name . '-' . $username; ?></b>
-        </a>
+        </div>
     </div>
 
-    <!-- Center Section -->
     <div style="display: flex; justify-content: center; align-items: center; flex: 1;">
         <a href="index.php">
             <img src="qvision/images/logo123.jpg" alt="Aeronero Solutions Private Limited" style="width:auto; height:75px;">
         </a>
     </div>
-
-    <!-- Right Section -->
-    <div style="display: flex; align-items: center; flex: 1; justify-content: flex-end;">
-        <a href="login/login.php" style="font-size:17px; color: #333; text-decoration: none; display: flex; align-items: center; gap: 5px;">
+    <div style="display: flex; align-items: center; flex: 1; justify-content: flex-end; gap: 15px;">
+        <a href="#" id="profileTriggerBtn" onclick="togglePremiumProfile(event)" style="text-decoration: none; cursor: pointer; display: flex; align-items: center; gap: 10px; background-color: #f4f9ff; padding: 4px 14px 4px 4px; border-radius: 40px; box-shadow: 0 4px 10px rgba(0,0,0,0.06); border: 1px solid #e2e8f0; transition: all 0.2s ease-in-out;">
+            <div style="width: 36px; height: 36px; border-radius: 50%; background-color: #003a5c; color: white; display: flex; justify-content: center; align-items: center; font-weight: bold; font-size: 15px;">
+                <?php echo strtoupper(substr(trim($_SESSION['fullname']), 0, 1)); ?>
+            </div>
+            <span style="color: #1e293b; font-weight: 600; font-size: 14px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;">
+                <?php 
+                    $nameParts = explode(' ', trim($_SESSION['fullname']));
+                    echo htmlspecialchars($nameParts[0]); 
+                ?>
+            </span>
+            <i class="fa fa-angle-down" style="color: #475569; font-size: 15px; font-weight: bold;"></i>
+        </a>
+        <div style="height: 25px; width: 1px; background-color: #d1d5db; margin: 0 5px;"></div>
+        
+        <a href="login/login.php" style="font-size:17px; color: #333; text-decoration: none; display: flex; align-items: center; gap: 5px; margin-left: 10px;">
             <img src="qvision/images/logoutbtn.png" style="width:35px; height:35px;"> Logout
         </a>
     </div>
 </nav>
 
-<!-- ======================================================= -->
-<!-- PREMIUM PROFILE CARD HTML (IMAGE BACKGROUND)            -->
-<!-- ======================================================= -->
 <div id="premiumProfile" class="premium-profile-card">
     
-    <!-- 1. TOP HEADER -->
     <div class="premium-header-bg">
         <span class="premium-close-btn" onclick="togglePremiumProfile(event)">&times;</span>
         
         <div class="premium-header-content">
-            <!-- Circular Initials Avatar -->
             <div class="premium-avatar">
                 <?php 
                     $n = trim($_SESSION['fullname']);
@@ -394,7 +413,6 @@ try {
                 <div class="premium-user-dept-white">
                     <?php echo $display_dept; ?> Department
                 </div>
-                <!-- SUBTITLE -->
                 <div class="premium-subtitle">
                     Clean Water | Sustainable Tomorrow
                 </div>
@@ -402,7 +420,6 @@ try {
         </div>
     </div>
 
-    <!-- 2. LIST OF DETAILS (BODY SECTION) -->
     <div class="premium-body-section">
         <div class="premium-list-item">
             <i class="fa fa-user premium-icon"></i>
@@ -457,8 +474,15 @@ try {
             <span class="premium-label">Resume</span>
             <span class="premium-value">
                 <?php if($cand_form_id != '') { ?>
-                    <?php if($display_resume != '') { ?>
-                        <a href="qvision/Resource/Resource_form/resume_upload/<?php echo $display_resume; ?>" target="_blank" class="btn btn-xs btn-success" style="padding: 2px 5px; font-size: 11px; color: white; text-decoration:none;"><i class="fa fa-eye"></i> View</a>
+                    <?php if($display_resume != '') { 
+                        $resume_path = "qvision/Resource/Resource_form/resume_upload/" . $display_resume;
+                    ?>
+                        <?php if(file_exists($resume_path)) { ?>
+                            <a href="<?php echo $resume_path; ?>" target="_blank" class="btn btn-xs btn-success" style="padding: 2px 5px; font-size: 11px; color: white; text-decoration:none;"><i class="fa fa-eye"></i> View</a>
+                        <?php } else { ?>
+                            <a href="#" onclick="showCustomAlert(); return false;" class="btn btn-xs btn-warning" style="padding: 2px 5px; font-size: 11px; color: white; text-decoration:none; background-color: #f59e0b; border-color: #f59e0b;"><i class="fa fa-exclamation-triangle"></i> Missing</a>
+                        <?php } ?>
+                        
                         <button class="btn btn-xs btn-danger" style="padding: 2px 5px; font-size: 11px; margin-left: 5px;" onclick="removeResume('<?php echo $cand_form_id; ?>')"><i class="fa fa-times"></i> Replace</button>
                     <?php } else { ?>
                         <input type="file" id="resume_upload_file" style="display:inline-block; width:130px; font-size: 11px;">
@@ -470,18 +494,14 @@ try {
             </span>
         </div>
     </div>
-
-    <!-- 3. FOOTER WITH MOTTO AND LOGO -->
     <div class="premium-footer-section">
         <div class="premium-motto">People Power Progress</div>
         <div class="premium-logo">
-            <!-- Puthusa Add Panna Top Logo (Bottom Right) -->
             <img src="login\assets\background_img.png" alt="Aeronero Solutions">
         </div>
     </div>
 
 </div>
-<!-- ======================================================= -->
 <div class="header-menu">
     <?php
     $userrole = $_SESSION['userrole'];
@@ -509,7 +529,7 @@ try {
     .sidebarr {
         display: none;
         width: 240px;
-        position: absolute; /* Using absolute so it can float over or be left-aligned */
+        position: absolute; 
         left: 0;
         background-color: #009EE3;
         height: calc(100vh - 130px);
@@ -560,6 +580,85 @@ try {
             }
         }
     });
+
+    document.addEventListener('click', function(event) {
+        var profileCard = document.getElementById('premiumProfile');
+        var triggerBtn = document.getElementById('profileTriggerBtn');
+        
+        if (profileCard && profileCard.classList.contains('show-card')) {
+            if (!profileCard.contains(event.target) && !triggerBtn.contains(event.target)) {
+                profileCard.classList.remove('show-card');
+            }
+        }
+    });
+
+    function togglePremiumProfile(event) {
+        event.preventDefault();
+        var profileCard = document.getElementById('premiumProfile');
+        if (profileCard) {
+            profileCard.classList.toggle('show-card');
+        }
+    }
+
+    
+</script>
+<style>
+.custom-alert-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(15, 23, 42, 0.6); z-index: 999999;
+        display: flex; justify-content: center; align-items: center;
+        opacity: 0; visibility: hidden; transition: all 0.3s ease;
+        backdrop-filter: blur(3px); /* Modern blur effect */
+    }
+    .custom-alert-overlay.show-alert {
+        opacity: 1; visibility: visible;
+    }
+    .custom-alert-box {
+        background: #ffffff; padding: 30px 25px; border-radius: 12px;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2); text-align: center;
+        width: 350px; max-width: 90%; transform: translateY(-40px);
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+    }
+    .custom-alert-overlay.show-alert .custom-alert-box {
+        transform: translateY(0);
+    }
+    .custom-alert-icon {
+        font-size: 50px; color: #ef4444; margin-bottom: 15px;
+        text-shadow: 0 4px 10px rgba(239, 68, 68, 0.3);
+    }
+    .custom-alert-title {
+        font-size: 19px; font-weight: 700; color: #1e293b; margin-bottom: 8px;
+    }
+    .custom-alert-text {
+        font-size: 14px; color: #64748b; margin-bottom: 25px; line-height: 1.5;
+    }
+    .custom-alert-btn {
+        background: #009EE3; color: white; border: none; padding: 10px 30px;
+        border-radius: 6px; font-weight: 600; cursor: pointer; transition: 0.2s;
+        font-size: 14px; box-shadow: 0 4px 10px rgba(0, 158, 227, 0.3);
+    }
+    .custom-alert-btn:hover {
+        background: #007bb5; box-shadow: 0 6px 15px rgba(0, 158, 227, 0.4); transform: translateY(-1px);
+    }
+</style>
+
+<div id="customAlertModal" class="custom-alert-overlay">
+    <div class="custom-alert-box">
+        <div class="custom-alert-icon"><i class="fa fa-exclamation-circle"></i></div>
+        <div class="custom-alert-title">Document Not Found</div>
+        <div class="custom-alert-text">The requested resume file is currently missing from the server directory. Please ask the candidate to re-upload it.</div>
+        <button class="custom-alert-btn" onclick="closeCustomAlert()">Acknowledge</button>
+    </div>
+</div>
+
+<script>
+    function showCustomAlert() { 
+        document.getElementById('customAlertModal').classList.add('show-alert'); 
+    }
+    function closeCustomAlert() { 
+        document.getElementById('customAlertModal').classList.remove('show-alert'); 
+    }
 </script>
 
 <script>
@@ -2713,52 +2812,71 @@ try {
         })
     }
 
-    function uploadResume(candId) {
-        var fileInput = document.getElementById('resume_upload_file');
-        var file = fileInput.files[0];
-        
-        if(!file) {
-            alert('Please select a file to upload.');
-            return;
-        }
-        
-        var formData = new FormData();
-        formData.append('resume', file);
-        formData.append('candid_id', candId);
-        formData.append('action', 'upload');
-        
-        $.ajax({
-            url: 'qvision/profile_resume_handler.php',
-            type: 'POST',
-            data: formData,
-            contentType: false,
-            processData: false,
-            success: function(response) {
-                alert(response);
-                location.reload();
-            },
-            error: function() {
-                alert('Upload failed.');
-            }
-        });
+    
+
+   function uploadResume(cand_form_id) {
+    var fileInput = document.getElementById('resume_upload_file');
+    var file = fileInput.files[0];
+    
+    if (!file) {
+        alert("Please choose a file to upload first!");
+        return;
     }
 
-    function removeResume(candId) {
-        if(!confirm('Are you sure you want to replace this resume? The existing file will be removed.')) return;
-        
-        $.ajax({
-            url: 'qvision/profile_resume_handler.php',
-            type: 'POST',
-            data: { candid_id: candId, action: 'remove' },
-            success: function(response) {
-                alert(response);
-                location.reload();
-            },
-            error: function() {
-                alert('Remove failed.');
-            }
-        });
+    var formData = new FormData();
+    formData.append('resume_file', file);
+    formData.append('cand_form_id', cand_form_id);
+    formData.append('action', 'upload'); // Explicitly say this is an upload
+
+    // Send to the unified PHP file
+    fetch('upload_resume_action.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        if(data.trim() === 'success') {
+            alert("Resume uploaded and updated successfully!");
+            location.reload(); 
+        } else {
+            alert("Upload Error: " + data);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Server connection failed.");
+    });
+}
+
+// ---------- REMOVE / REPLACE RESUME ----------
+function removeResume(cand_form_id) {
+    if (!confirm("Are you sure you want to delete the current resume to upload a new one?")) {
+        return; 
     }
+
+    var formData = new FormData();
+    formData.append('cand_form_id', cand_form_id);
+    formData.append('action', 'delete'); // Explicitly say this is a delete
+
+    // Send to the SAME unified PHP file
+    fetch('upload_resume_action.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        if(data.trim() === 'success') {
+            alert("Old resume removed successfully! You can now upload the updated one.");
+            location.reload(); 
+        } else {
+            alert("Error: " + data);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert("Server connection failed.");
+    });
+}
 
     function setActiveMenu(element) {
         // Remove active class from all menu titles

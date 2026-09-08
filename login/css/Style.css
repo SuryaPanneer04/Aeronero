@@ -1,7 +1,3 @@
-/* ==========================================================================
-   Exact Match UI: Aeronero Smart ERP (Reference Image Style)
-   ========================================================================== */
-
 :root {
     --brand-blue: #009EE3;
     --brand-yellow: #FBC710;
@@ -30,7 +26,6 @@ body {
     overflow: hidden;
 }
 
-/* --- Layout --- */
 .login-page {
     display: flex;
     height: 100vh;
@@ -38,14 +33,13 @@ body {
     position: relative;
 }
 
-/* PERFECTED SLANTED BACKGROUND (Matches your red line exactly) */
 .left-bg-container {
     position: absolute;
     top: 0; 
     left: 0; 
     bottom: 0;
-    width: 100%; /* Set to 100% so we can cut it precisely across the whole screen */
-    clip-path: polygon(0 0, 78% 0, 63% 100%, 0% 100%); /* Top edge further right, bottom edge cuts exactly into the card */
+    width: 100%; 
+    clip-path: polygon(0 0, 80% 0, 56% 100%, 0% 100%); 
     z-index: 0;
     overflow: hidden;
     background: var(--dark-bg);
@@ -63,7 +57,6 @@ body {
     100% { transform: scale(1.15) translate(-3%, 2%); }
 }
 
-/* --- LEFT PANEL --- */
 .left-panel {
     flex: 1.1; 
     position: relative;
@@ -78,8 +71,6 @@ body {
 .left-top, .left-bottom, .orbit-container {
     position: relative;
 }
-
-/* Logo Size */
 .left-logo {
     height: 75px; 
     width: auto;
@@ -92,12 +83,11 @@ body {
 .yellow-dash { width: 45px; height: 4px; background: var(--brand-yellow); margin-bottom: 1.5rem; }
 .hero-desc { font-size: 1.1rem; line-height: 1.6; color: rgba(255,255,255,0.85); }
 
-/* Orbit Graphic Positioning (Pushed further Right!) */
 .orbit-container {
     position: absolute;
-    right: -24%; /* Pushed right so it sits behind the login box beautifully */
+    right: -20%; 
     top: 45%;
-    transform: translateY(-50%);
+    transform: translateY(-50%) scale(0.75);
     width: 350px;
     height: 350px;
 }
@@ -162,7 +152,6 @@ body {
 @keyframes spin { 100% { transform: translate(-50%, -50%) rotate(360deg); } }
 @keyframes counterSpin { 100% { transform: rotate(360deg); } }
 
-/* Stats Row - Grouped to stay at the bottom */
 .stats-row { display: flex; gap: 3.5rem; margin-bottom: 2rem; } 
 .stat-item { display: flex; align-items: center; gap: 1.2rem; }
 .stat-icon { width: 48px; height: 48px; border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; color: var(--brand-blue); background: rgba(255,255,255,0.05); }
@@ -170,8 +159,6 @@ body {
 .stat-text p { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
 .left-footer { font-size: 0.85rem; color: rgba(255,255,255,0.5); }
 
-
-/* --- RIGHT PANEL (Form) --- */
 .right-panel {
     flex: 0.9;
     display: flex;
@@ -182,19 +169,18 @@ body {
     z-index: 10; 
 }
 
-/* Form Styling */
 .form-card {
     background: var(--text-white);
     width: 100%;
-    max-width: 450px;
-    padding: 3rem 3rem;
-    border-radius: 20px;
+    max-width: 390px;
+    padding: 2.5rem 2.5rem; 
+    border-radius: 20px; 
     position: relative;
-    box-shadow: 0px 10px 40px rgba(0, 0, 0, 0.1);
+    box-shadow: -10px 15px 40px rgba(0, 0, 0, 0.12); 
     margin: auto;
 }
 
-.lang-selector { text-align: right; font-size: 0.85rem; color: var(--text-gray); cursor: pointer; margin-bottom: 2rem; }
+.lang-selector { text-align: right; font-size: 0.85rem; color: var(--text-gray); cursor: pointer; margin-bottom: 1.5rem; }
 .lang-selector .text-small { font-size: 0.7rem; margin-left: 5px; }
 
 .form-header { text-align: center; margin-bottom: 2rem; }
@@ -208,8 +194,14 @@ body {
 .input-icon { position: absolute; left: 16px; color: #9CA3AF; font-size: 0.9rem; }
 
 .field-group input {
-    width: 100%; padding: 0.8rem 1rem 0.8rem 2.8rem; border: 1px solid var(--border-light);
-    border-radius: 8px; font-size: 0.9rem; color: var(--text-dark); transition: all 0.2s; font-family: inherit;
+    width: 100%; 
+    padding: 0.8rem 1rem 0.8rem 2.8rem; 
+    border: 1px solid var(--border-light);
+    border-radius: 8px; 
+    font-size: 0.9rem; 
+    color: var(--text-dark); 
+    transition: all 0.2s; 
+    font-family: inherit;
 }
 .field-group input:focus { border-color: var(--brand-blue); outline: none; box-shadow: 0 0 0 3px rgba(0, 158, 227, 0.15); }
 .toggle-icon { position: absolute; right: 16px; color: #9CA3AF; cursor: pointer; font-size: 0.9rem; }
@@ -226,7 +218,9 @@ body {
 .forgot-link:hover { text-decoration: underline; }
 
 .btn-signin {
-    width: 100%; padding: 0.9rem; background: linear-gradient(to right, #1D4ED8, #009EE3);
+    width: 100%; 
+    padding: 1.2rem; 
+    background: linear-gradient(to right, #1D4ED8, #009EE3);
     color: white; border: none; border-radius: 8px; font-size: 1rem; font-weight: 600;
     cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 8px;
     transition: transform 0.2s, box-shadow 0.2s;
@@ -237,7 +231,6 @@ body {
 .signup-text a { color: var(--brand-blue); text-decoration: none; font-weight: 500; }
 .signup-text a:hover { text-decoration: underline; }
 
-/* Responsive */
 @media (max-width: 1024px) {
     .left-panel { padding: 3rem 2rem; }
     .hero-title { font-size: 2.5rem; }

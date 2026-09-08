@@ -49,7 +49,7 @@ $over_time=$row['over_time'];
 
 	<table class="table table-bordered">
 		<tr>
-			<td><center><img src="qvision/images/logo123.jpg"  alt="quadsel" style="width:100px;height:100px;"></center></td>
+			<td><center><img src="qvision/images/logo123.jpg"  alt="profile photo" style="width:100px;height:50px;"></center></td>
 			<td colspan="5"><center><b>Aeronero Solutions Private Limited</b></center></td>
 		</tr>
 		<tr>

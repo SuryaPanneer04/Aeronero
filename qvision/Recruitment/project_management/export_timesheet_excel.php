@@ -16,7 +16,19 @@ $f_dept = isset($_GET['dept_id']) ? $_GET['dept_id'] : '';
 $spreadsheet = new Spreadsheet();
 $sheet = $spreadsheet->getActiveSheet();
 
-$headers = ['SL.No', 'Emp Code', 'Employee Name', 'Reporting Person', 'Date', '9 AM - 10 AM', '10 AM - 11 AM', '11 AM - 12 PM', '12 PM - 1 PM', '1 PM - 2 PM', '2 PM - 3 PM', '3 PM - 4 PM', '4 PM - 5 PM', '5 PM - 6 PM', 'Over Time'];
+$headers = [
+    'SL.No', 'Emp Code', 'Employee Name', 'Reporting Person', 'Date', 'In Time',
+    '9.30-10.30 (Plan)', '9.30-10.30 (Actual)',
+    '10.30-11.30 (Plan)', '10.30-11.30 (Actual)',
+    '11.30-12.30 (Plan)', '11.30-12.30 (Actual)',
+    '12.30-01.30 (Plan)', '12.30-01.30 (Actual)',
+    '01.30-02.30 (Plan)', '01.30-02.30 (Actual)',
+    '02.30-03.30 (Plan)', '02.30-03.30 (Actual)',
+    '03.30-04.30 (Plan)', '03.30-04.30 (Actual)',
+    '04.30-05.30 (Plan)', '04.30-05.30 (Actual)',
+    '05.30-06.30 (Plan)', '05.30-06.30 (Actual)',
+    'Over Time'
+];
 
 $col = 'A';
 foreach ($headers as $header) {
@@ -95,28 +107,44 @@ while($row = $query->fetch(PDO::FETCH_ASSOC)) {
     $rep_id = (int)$row['reporting_person'];
     $m_name = isset($manager_names[$rep_id]) ? $manager_names[$rep_id] : 'Direct / Admin';
 
-    $sheet->setCellValue('A' . $rowNum, $i);
-    $sheet->setCellValue('B' . $rowNum, $row['emp_code']);
-    $sheet->setCellValue('C' . $rowNum, $row['emp_name']);
-    $sheet->setCellValue('D' . $rowNum, $m_name); 
-    $sheet->setCellValue('E' . $rowNum, $row['date']);
-    $sheet->setCellValue('F' . $rowNum, $row['one']);
-    $sheet->setCellValue('G' . $rowNum, $row['two']);
-    $sheet->setCellValue('H' . $rowNum, $row['three']);
-    $sheet->setCellValue('I' . $rowNum, $row['four']);
-    $sheet->setCellValue('J' . $rowNum, $row['five']);
-    $sheet->setCellValue('K' . $rowNum, $row['six']);
-    $sheet->setCellValue('L' . $rowNum, $row['seven']);
-    $sheet->setCellValue('M' . $rowNum, $row['eight']);
-    $sheet->setCellValue('N' . $rowNum, $row['nine']);
-    $sheet->setCellValue('O' . $rowNum, $row['over_time']); 
+    $dataRow = [
+        $i, 
+        $row['emp_code'], 
+        $row['emp_name'], 
+        $m_name, 
+        $row['date'], 
+        $row['one'],
+        $row['two'], $row['a_two'],
+        $row['three'], $row['a_three'],
+        $row['four'], $row['a_four'],
+        $row['five'], $row['a_five'],
+        $row['six'], $row['a_six'],
+        $row['seven'], $row['a_seven'],
+        $row['eight'], $row['a_eight'],
+        $row['nine'], $row['a_nine'],
+        $row['ten'], $row['a_ten'],
+        $row['over_time']
+    ];
+
+    $col = 'A';
+    foreach($dataRow as $val) {
+        $sheet->setCellValue($col . $rowNum, $val);
+        $col++;
+    }
     
     $rowNum++;
     $i++;
 }
 
-foreach (range('A', 'O') as $columnID) {
-    $sheet->getColumnDimension($columnID)->setAutoSize(true);
+// Auto size columns up to the last column
+$lastCol = 'A';
+for($c=0; $c<count($headers)-1; $c++) { $lastCol++; }
+
+$curr = 'A';
+while(true) {
+    $sheet->getColumnDimension($curr)->setAutoSize(true);
+    if($curr === $lastCol) break;
+    $curr++;
 }
 
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');

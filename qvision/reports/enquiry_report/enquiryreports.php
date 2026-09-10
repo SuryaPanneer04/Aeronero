@@ -26,7 +26,7 @@
      	  $date = $_GET['candate'];
       // echo "$date";
     
-	$sql=$con->query("SELECT a.id,a.client_org,a.created_by as created_by,a.created_on as created_on,a.client_name,b.feedback,b.feedback_date,b.date,a.status FROM `crm_calls` a left join `crm_calls_feedback` b on  (a.id=b.calls_id) WHERE b.feedback_date LIKE '$date%' group by a.id  order by a.id desc");
+	$sql=$con->query("SELECT a.id,a.client_org,a.created_by as created_by,a.created_on as created_on,a.client_name,b.feedback,b.feedback_date,b.date,a.status FROM `crm_calls` a left join `crm_calls_feedback` b on  (a.id=b.calls_id) WHERE a.created_on LIKE '$date%' group by a.id  order by a.id desc");
 
 
 $cnt=1;

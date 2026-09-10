@@ -13,7 +13,9 @@
   color: #495057;
 }
 
-.fc-button:hover, .fc-button:active, .fc-button.hover {
+.fc-button:hover,
+.fc-button:active,
+.fc-button.hover {
   background-color: #e9e9e9;
 }
 
@@ -62,14 +64,17 @@
   .fc-toolbar {
     flex-direction: column;
   }
+
   .fc-toolbar .fc-left {
     order: 1;
     margin-bottom: .5rem;
   }
+
   .fc-toolbar .fc-center {
     order: 0;
     margin-bottom: .375rem;
   }
+
   .fc-toolbar .fc-right {
     order: 2;
   }
@@ -87,28 +92,28 @@
   padding: 0;
 }
 
-.fc-color-picker > li {
+.fc-color-picker>li {
   float: left;
   font-size: 30px;
   line-height: 30px;
   margin-right: 5px;
 }
 
-.fc-color-picker > li .fa,
-.fc-color-picker > li .fas,
-.fc-color-picker > li .far,
-.fc-color-picker > li .fab,
-.fc-color-picker > li .glyphicon,
-.fc-color-picker > li .ion {
+.fc-color-picker>li .fa,
+.fc-color-picker>li .fas,
+.fc-color-picker>li .far,
+.fc-color-picker>li .fab,
+.fc-color-picker>li .glyphicon,
+.fc-color-picker>li .ion {
   transition: transform linear .3s;
 }
 
-.fc-color-picker > li .fa:hover,
-.fc-color-picker > li .fas:hover,
-.fc-color-picker > li .far:hover,
-.fc-color-picker > li .fab:hover,
-.fc-color-picker > li .glyphicon:hover,
-.fc-color-picker > li .ion:hover {
+.fc-color-picker>li .fa:hover,
+.fc-color-picker>li .fas:hover,
+.fc-color-picker>li .far:hover,
+.fc-color-picker>li .fab:hover,
+.fc-color-picker>li .glyphicon:hover,
+.fc-color-picker>li .ion:hover {
   transform: rotate(30deg);
 }
 
@@ -196,16 +201,18 @@
   background-color: #dee2e6;
 }
 
-.select2-container--default .select2-results__option[aria-selected='true'], .select2-container--default .select2-results__option[aria-selected='true']:hover {
+.select2-container--default .select2-results__option[aria-selected='true'],
+.select2-container--default .select2-results__option[aria-selected='true']:hover {
   color: #1F2D3D;
 }
 
 .select2-container--default .select2-results__option--highlighted {
-  background-color: #007bff;
+  background-color: #009EE3 !important;
   color: #ffffff;
 }
 
-.select2-container--default .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
+.select2-container--default .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #0074f0;
   color: #ffffff;
 }
@@ -239,7 +246,7 @@
 }
 
 .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #007bff;
+  background-color: #009EE3 !important;
   border-color: #006fe6;
   color: #ffffff;
   padding: 0 10px;
@@ -257,11 +264,13 @@
   color: #ffffff;
 }
 
-.text-sm .select2-container--default .select2-selection--multiple .select2-search.select2-search--inline .select2-search__field, .select2-container--default .select2-selection--multiple.text-sm .select2-search.select2-search--inline .select2-search__field {
+.text-sm .select2-container--default .select2-selection--multiple .select2-search.select2-search--inline .select2-search__field,
+.select2-container--default .select2-selection--multiple.text-sm .select2-search.select2-search--inline .select2-search__field {
   margin-top: 8px;
 }
 
-.text-sm .select2-container--default .select2-selection--multiple .select2-selection__choice, .select2-container--default .select2-selection--multiple.text-sm .select2-selection__choice {
+.text-sm .select2-container--default .select2-selection--multiple .select2-selection__choice,
+.select2-container--default .select2-selection--multiple.text-sm .select2-selection__choice {
   margin-top: .4rem;
 }
 
@@ -278,12 +287,12 @@
   padding-right: 10px;
 }
 
-.input-group-prepend ~ .select2-container--default .select2-selection {
+.input-group-prepend~.select2-container--default .select2-selection {
   border-bottom-left-radius: 0;
   border-top-left-radius: 0;
 }
 
-.input-group > .select2-container--default:not(:last-child) .select2-selection {
+.input-group>.select2-container--default:not(:last-child) .select2-selection {
   border-bottom-right-radius: 0;
   border-top-right-radius: 0;
 }
@@ -292,43 +301,43 @@
   box-shadow: none;
 }
 
-select.form-control-sm ~ .select2-container--default {
+select.form-control-sm~.select2-container--default {
   font-size: 0.875rem;
 }
 
 .text-sm .select2-container--default .select2-selection--single,
-select.form-control-sm ~ .select2-container--default .select2-selection--single {
+select.form-control-sm~.select2-container--default .select2-selection--single {
   height: calc(1.8125rem + 2px);
 }
 
 .text-sm .select2-container--default .select2-selection--single .select2-selection__rendered,
-select.form-control-sm ~ .select2-container--default .select2-selection--single .select2-selection__rendered {
+select.form-control-sm~.select2-container--default .select2-selection--single .select2-selection__rendered {
   margin-top: -.4rem;
 }
 
 .text-sm .select2-container--default .select2-selection--single .select2-selection__arrow,
-select.form-control-sm ~ .select2-container--default .select2-selection--single .select2-selection__arrow {
+select.form-control-sm~.select2-container--default .select2-selection--single .select2-selection__arrow {
   top: -.12rem;
 }
 
 .text-sm .select2-container--default .select2-selection--multiple,
-select.form-control-sm ~ .select2-container--default .select2-selection--multiple {
+select.form-control-sm~.select2-container--default .select2-selection--multiple {
   min-height: calc(1.8125rem + 2px);
 }
 
 .text-sm .select2-container--default .select2-selection--multiple .select2-selection__rendered,
-select.form-control-sm ~ .select2-container--default .select2-selection--multiple .select2-selection__rendered {
+select.form-control-sm~.select2-container--default .select2-selection--multiple .select2-selection__rendered {
   padding: 0 0.25rem 0.25rem;
   margin-top: -0.1rem;
 }
 
 .text-sm .select2-container--default .select2-selection--multiple .select2-selection__rendered li:first-child.select2-search.select2-search--inline,
-select.form-control-sm ~ .select2-container--default .select2-selection--multiple .select2-selection__rendered li:first-child.select2-search.select2-search--inline {
+select.form-control-sm~.select2-container--default .select2-selection--multiple .select2-selection__rendered li:first-child.select2-search.select2-search--inline {
   margin-left: 0.25rem;
 }
 
 .text-sm .select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search.select2-search--inline .select2-search__field,
-select.form-control-sm ~ .select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search.select2-search--inline .select2-search__field {
+select.form-control-sm~.select2-container--default .select2-selection--multiple .select2-selection__rendered .select2-search.select2-search--inline .select2-search__field {
   margin-top: 6px;
 }
 
@@ -336,11 +345,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   z-index: 9999;
 }
 
-.select2-primary + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-primary+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #80bdff;
 }
 
-.select2-primary + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-primary+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #80bdff;
 }
 
@@ -355,11 +364,12 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .select2-primary .select2-results__option--highlighted,
 .select2-primary .select2-container--default .select2-results__option--highlighted {
-  background-color: #007bff;
+  background-color: #009EE3 !important;
   color: #ffffff;
 }
 
-.select2-container--default .select2-primary .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-primary .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-primary .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-primary .select2-results__option--highlighted[aria-selected]:hover,
 .select2-primary .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-primary .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #0074f0;
@@ -373,7 +383,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .select2-primary .select2-selection--multiple .select2-selection__choice,
 .select2-primary .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #007bff;
+  background-color: #009EE3 !important;
   border-color: #006fe6;
   color: #ffffff;
 }
@@ -393,11 +403,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #80bdff;
 }
 
-.select2-secondary + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-secondary+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #afb5ba;
 }
 
-.select2-secondary + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-secondary+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #afb5ba;
 }
 
@@ -416,7 +426,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-secondary .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-secondary .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-secondary .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-secondary .select2-results__option--highlighted[aria-selected]:hover,
 .select2-secondary .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-secondary .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #656d75;
@@ -450,11 +461,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #afb5ba;
 }
 
-.select2-success + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-success+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #71dd8a;
 }
 
-.select2-success + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-success+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #71dd8a;
 }
 
@@ -473,7 +484,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-success .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-success .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-success .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-success .select2-results__option--highlighted[aria-selected]:hover,
 .select2-success .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-success .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #259b40;
@@ -507,11 +519,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #71dd8a;
 }
 
-.select2-info + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-info+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #63d9ec;
 }
 
-.select2-info + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-info+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #63d9ec;
 }
 
@@ -530,7 +542,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-info .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-info .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-info .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-info .select2-results__option--highlighted[aria-selected]:hover,
 .select2-info .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-info .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #1596aa;
@@ -564,11 +577,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #63d9ec;
 }
 
-.select2-warning + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-warning+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #ffe187;
 }
 
-.select2-warning + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-warning+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #ffe187;
 }
 
@@ -587,7 +600,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1F2D3D;
 }
 
-.select2-container--default .select2-warning .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-warning .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-warning .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-warning .select2-results__option--highlighted[aria-selected]:hover,
 .select2-warning .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-warning .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f7b900;
@@ -621,11 +635,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #ffe187;
 }
 
-.select2-danger + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-danger+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #efa2a9;
 }
 
-.select2-danger + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-danger+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #efa2a9;
 }
 
@@ -644,7 +658,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-danger .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-danger .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-danger .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-danger .select2-results__option--highlighted[aria-selected]:hover,
 .select2-danger .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-danger .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #da2839;
@@ -678,11 +693,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #efa2a9;
 }
 
-.select2-light + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-light+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: white;
 }
 
-.select2-light + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-light+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: white;
 }
 
@@ -701,7 +716,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1F2D3D;
 }
 
-.select2-container--default .select2-light .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-light .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-light .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-light .select2-results__option--highlighted[aria-selected]:hover,
 .select2-light .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-light .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #eff1f4;
@@ -735,11 +751,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: white;
 }
 
-.select2-dark + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-dark+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #6d7a86;
 }
 
-.select2-dark + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-dark+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #6d7a86;
 }
 
@@ -758,7 +774,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-dark .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-dark .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-dark .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-dark .select2-results__option--highlighted[aria-selected]:hover,
 .select2-dark .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-dark .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2d3238;
@@ -792,11 +809,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6d7a86;
 }
 
-.select2-lightblue + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-lightblue+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #99c5de;
 }
 
-.select2-lightblue + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-lightblue+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #99c5de;
 }
 
@@ -815,7 +832,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-lightblue .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-lightblue .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-lightblue .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-lightblue .select2-results__option--highlighted[aria-selected]:hover,
 .select2-lightblue .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-lightblue .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #3884b0;
@@ -849,11 +867,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #99c5de;
 }
 
-.select2-navy + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-navy+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #005ebf;
 }
 
-.select2-navy + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-navy+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #005ebf;
 }
 
@@ -872,7 +890,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-navy .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-navy .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-navy .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-navy .select2-results__option--highlighted[aria-selected]:hover,
 .select2-navy .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-navy .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #001730;
@@ -906,11 +925,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #005ebf;
 }
 
-.select2-olive + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-olive+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #87cfaf;
 }
 
-.select2-olive + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-olive+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #87cfaf;
 }
 
@@ -929,7 +948,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-olive .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-olive .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-olive .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-olive .select2-results__option--highlighted[aria-selected]:hover,
 .select2-olive .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-olive .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #398e68;
@@ -963,11 +983,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #87cfaf;
 }
 
-.select2-lime + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-lime+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #81ffb8;
 }
 
-.select2-lime + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-lime+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #81ffb8;
 }
 
@@ -986,7 +1006,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1F2D3D;
 }
 
-.select2-container--default .select2-lime .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-lime .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-lime .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-lime .select2-results__option--highlighted[aria-selected]:hover,
 .select2-lime .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-lime .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #00f169;
@@ -1020,11 +1041,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #81ffb8;
 }
 
-.select2-fuchsia + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-fuchsia+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #f88adf;
 }
 
-.select2-fuchsia + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-fuchsia+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #f88adf;
 }
 
@@ -1043,7 +1064,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-fuchsia .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-fuchsia .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-fuchsia .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-fuchsia .select2-results__option--highlighted[aria-selected]:hover,
 .select2-fuchsia .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-fuchsia .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #e40eb4;
@@ -1077,11 +1099,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f88adf;
 }
 
-.select2-maroon + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-maroon+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #f083ab;
 }
 
-.select2-maroon + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-maroon+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #f083ab;
 }
 
@@ -1100,7 +1122,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-maroon .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-maroon .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-maroon .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-maroon .select2-results__option--highlighted[aria-selected]:hover,
 .select2-maroon .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-maroon .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #ca195a;
@@ -1134,11 +1157,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f083ab;
 }
 
-.select2-blue + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-blue+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #80bdff;
 }
 
-.select2-blue + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-blue+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #80bdff;
 }
 
@@ -1153,11 +1176,12 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .select2-blue .select2-results__option--highlighted,
 .select2-blue .select2-container--default .select2-results__option--highlighted {
-  background-color: #007bff;
+  background-color: #009EE3 !important;
   color: #ffffff;
 }
 
-.select2-container--default .select2-blue .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-blue .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-blue .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-blue .select2-results__option--highlighted[aria-selected]:hover,
 .select2-blue .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-blue .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #0074f0;
@@ -1171,7 +1195,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .select2-container--default .select2-blue .select2-selection--multiple .select2-selection__choice,
 .select2-blue .select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: #007bff;
+  background-color: #009EE3 !important;
   border-color: #006fe6;
   color: #ffffff;
 }
@@ -1191,11 +1215,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #80bdff;
 }
 
-.select2-indigo + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-indigo+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #b389f9;
 }
 
-.select2-indigo + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-indigo+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #b389f9;
 }
 
@@ -1214,7 +1238,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-indigo .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-indigo .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-indigo .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-indigo .select2-results__option--highlighted[aria-selected]:hover,
 .select2-indigo .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-indigo .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #5f0de6;
@@ -1248,11 +1273,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #b389f9;
 }
 
-.select2-purple + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-purple+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #b8a2e0;
 }
 
-.select2-purple + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-purple+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #b8a2e0;
 }
 
@@ -1271,7 +1296,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-purple .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-purple .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-purple .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-purple .select2-results__option--highlighted[aria-selected]:hover,
 .select2-purple .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-purple .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #683cb8;
@@ -1305,11 +1331,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #b8a2e0;
 }
 
-.select2-pink + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-pink+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #f6b0d0;
 }
 
-.select2-pink + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-pink+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #f6b0d0;
 }
 
@@ -1328,7 +1354,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-pink .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-pink .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-pink .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-pink .select2-results__option--highlighted[aria-selected]:hover,
 .select2-pink .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-pink .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #e63084;
@@ -1362,11 +1389,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f6b0d0;
 }
 
-.select2-red + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-red+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #efa2a9;
 }
 
-.select2-red + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-red+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #efa2a9;
 }
 
@@ -1385,7 +1412,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-red .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-red .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-red .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-red .select2-results__option--highlighted[aria-selected]:hover,
 .select2-red .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-red .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #da2839;
@@ -1419,11 +1447,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #efa2a9;
 }
 
-.select2-orange + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-orange+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #fec392;
 }
 
-.select2-orange + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-orange+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #fec392;
 }
 
@@ -1442,7 +1470,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1F2D3D;
 }
 
-.select2-container--default .select2-orange .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-orange .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-orange .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-orange .select2-results__option--highlighted[aria-selected]:hover,
 .select2-orange .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-orange .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #fd7605;
@@ -1476,11 +1505,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #fec392;
 }
 
-.select2-yellow + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-yellow+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #ffe187;
 }
 
-.select2-yellow + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-yellow+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #ffe187;
 }
 
@@ -1499,7 +1528,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1F2D3D;
 }
 
-.select2-container--default .select2-yellow .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-yellow .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-yellow .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-yellow .select2-results__option--highlighted[aria-selected]:hover,
 .select2-yellow .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-yellow .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f7b900;
@@ -1533,11 +1563,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #ffe187;
 }
 
-.select2-green + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-green+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #71dd8a;
 }
 
-.select2-green + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-green+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #71dd8a;
 }
 
@@ -1556,7 +1586,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-green .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-green .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-green .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-green .select2-results__option--highlighted[aria-selected]:hover,
 .select2-green .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-green .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #259b40;
@@ -1590,11 +1621,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #71dd8a;
 }
 
-.select2-teal + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-teal+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #7eeaca;
 }
 
-.select2-teal + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-teal+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #7eeaca;
 }
 
@@ -1613,7 +1644,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-teal .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-teal .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-teal .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-teal .select2-results__option--highlighted[aria-selected]:hover,
 .select2-teal .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-teal .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #1ebc8d;
@@ -1647,11 +1679,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #7eeaca;
 }
 
-.select2-cyan + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-cyan+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #63d9ec;
 }
 
-.select2-cyan + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-cyan+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #63d9ec;
 }
 
@@ -1670,7 +1702,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-cyan .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-cyan .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-cyan .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-cyan .select2-results__option--highlighted[aria-selected]:hover,
 .select2-cyan .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-cyan .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #1596aa;
@@ -1704,11 +1737,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #63d9ec;
 }
 
-.select2-white + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-white+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: white;
 }
 
-.select2-white + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-white+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: white;
 }
 
@@ -1727,7 +1760,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #1F2D3D;
 }
 
-.select2-container--default .select2-white .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-white .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-white .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-white .select2-results__option--highlighted[aria-selected]:hover,
 .select2-white .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-white .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #f7f7f7;
@@ -1761,11 +1795,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: white;
 }
 
-.select2-gray + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-gray+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #afb5ba;
 }
 
-.select2-gray + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-gray+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #afb5ba;
 }
 
@@ -1784,7 +1818,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-gray .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-gray .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-gray .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-gray .select2-results__option--highlighted[aria-selected]:hover,
 .select2-gray .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-gray .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #656d75;
@@ -1818,11 +1853,11 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #afb5ba;
 }
 
-.select2-gray-dark + .select2-container--default.select2-container--open .select2-selection--single {
+.select2-gray-dark+.select2-container--default.select2-container--open .select2-selection--single {
   border-color: #6d7a86;
 }
 
-.select2-gray-dark + .select2-container--default.select2-container--focus .select2-selection--single {
+.select2-gray-dark+.select2-container--default.select2-container--focus .select2-selection--single {
   border-color: #6d7a86;
 }
 
@@ -1841,7 +1876,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   color: #ffffff;
 }
 
-.select2-container--default .select2-gray-dark .select2-results__option--highlighted[aria-selected], .select2-container--default .select2-gray-dark .select2-results__option--highlighted[aria-selected]:hover,
+.select2-container--default .select2-gray-dark .select2-results__option--highlighted[aria-selected],
+.select2-container--default .select2-gray-dark .select2-results__option--highlighted[aria-selected]:hover,
 .select2-gray-dark .select2-container--default .select2-results__option--highlighted[aria-selected],
 .select2-gray-dark .select2-container--default .select2-results__option--highlighted[aria-selected]:hover {
   background-color: #2d3238;
@@ -1888,7 +1924,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .slider-primary .slider .slider-selection {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .slider-secondary .slider .slider-selection {
@@ -1944,7 +1980,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .slider-blue .slider .slider-selection {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .slider-indigo .slider .slider-selection {
@@ -1995,434 +2031,434 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   background: #343a40;
 }
 
-.icheck-primary > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-primary > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
-  border-color: #007bff;
+.icheck-primary>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-primary>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
+  border-color: #009EE3;
 }
 
-.icheck-primary > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-primary > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
-  border-color: #007bff;
+.icheck-primary>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-primary>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
+  border-color: #009EE3;
 }
 
-.icheck-primary > input:first-child:checked + label::before,
-.icheck-primary > input:first-child:checked + input[type="hidden"] + label::before {
-  background-color: #007bff;
-  border-color: #007bff;
+.icheck-primary>input:first-child:checked+label::before,
+.icheck-primary>input:first-child:checked+input[type="hidden"]+label::before {
+  background-color: #009EE3 !important;
+  border-color: #009EE3;
 }
 
-.icheck-secondary > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-secondary > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-secondary>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-secondary>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #6c757d;
 }
 
-.icheck-secondary > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-secondary > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-secondary>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-secondary>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #6c757d;
 }
 
-.icheck-secondary > input:first-child:checked + label::before,
-.icheck-secondary > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-secondary>input:first-child:checked+label::before,
+.icheck-secondary>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #6c757d;
   border-color: #6c757d;
 }
 
-.icheck-success > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-success > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-success>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-success>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #28a745;
 }
 
-.icheck-success > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-success > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-success>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-success>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #28a745;
 }
 
-.icheck-success > input:first-child:checked + label::before,
-.icheck-success > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-success>input:first-child:checked+label::before,
+.icheck-success>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #28a745;
   border-color: #28a745;
 }
 
-.icheck-info > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-info > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-info>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-info>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #17a2b8;
 }
 
-.icheck-info > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-info > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-info>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-info>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #17a2b8;
 }
 
-.icheck-info > input:first-child:checked + label::before,
-.icheck-info > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-info>input:first-child:checked+label::before,
+.icheck-info>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #17a2b8;
   border-color: #17a2b8;
 }
 
-.icheck-warning > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-warning > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-warning>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-warning>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #ffc107;
 }
 
-.icheck-warning > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-warning > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-warning>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-warning>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #ffc107;
 }
 
-.icheck-warning > input:first-child:checked + label::before,
-.icheck-warning > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-warning>input:first-child:checked+label::before,
+.icheck-warning>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #ffc107;
   border-color: #ffc107;
 }
 
-.icheck-danger > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-danger > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-danger>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-danger>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #dc3545;
 }
 
-.icheck-danger > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-danger > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-danger>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-danger>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #dc3545;
 }
 
-.icheck-danger > input:first-child:checked + label::before,
-.icheck-danger > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-danger>input:first-child:checked+label::before,
+.icheck-danger>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #dc3545;
   border-color: #dc3545;
 }
 
-.icheck-light > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-light > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-light>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-light>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #f8f9fa;
 }
 
-.icheck-light > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-light > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-light>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-light>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #f8f9fa;
 }
 
-.icheck-light > input:first-child:checked + label::before,
-.icheck-light > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-light>input:first-child:checked+label::before,
+.icheck-light>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #f8f9fa;
   border-color: #f8f9fa;
 }
 
-.icheck-dark > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-dark > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-dark>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-dark>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #343a40;
 }
 
-.icheck-dark > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-dark > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-dark>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-dark>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #343a40;
 }
 
-.icheck-dark > input:first-child:checked + label::before,
-.icheck-dark > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-dark>input:first-child:checked+label::before,
+.icheck-dark>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #343a40;
   border-color: #343a40;
 }
 
-.icheck-lightblue > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-lightblue > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-lightblue>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-lightblue>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #3c8dbc;
 }
 
-.icheck-lightblue > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-lightblue > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-lightblue>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-lightblue>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #3c8dbc;
 }
 
-.icheck-lightblue > input:first-child:checked + label::before,
-.icheck-lightblue > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-lightblue>input:first-child:checked+label::before,
+.icheck-lightblue>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #3c8dbc;
   border-color: #3c8dbc;
 }
 
-.icheck-navy > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-navy > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-navy>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-navy>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #001f3f;
 }
 
-.icheck-navy > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-navy > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-navy>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-navy>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #001f3f;
 }
 
-.icheck-navy > input:first-child:checked + label::before,
-.icheck-navy > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-navy>input:first-child:checked+label::before,
+.icheck-navy>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #001f3f;
   border-color: #001f3f;
 }
 
-.icheck-olive > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-olive > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-olive>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-olive>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #3d9970;
 }
 
-.icheck-olive > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-olive > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-olive>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-olive>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #3d9970;
 }
 
-.icheck-olive > input:first-child:checked + label::before,
-.icheck-olive > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-olive>input:first-child:checked+label::before,
+.icheck-olive>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #3d9970;
   border-color: #3d9970;
 }
 
-.icheck-lime > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-lime > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-lime>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-lime>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #01ff70;
 }
 
-.icheck-lime > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-lime > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-lime>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-lime>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #01ff70;
 }
 
-.icheck-lime > input:first-child:checked + label::before,
-.icheck-lime > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-lime>input:first-child:checked+label::before,
+.icheck-lime>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #01ff70;
   border-color: #01ff70;
 }
 
-.icheck-fuchsia > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-fuchsia > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-fuchsia>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-fuchsia>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #f012be;
 }
 
-.icheck-fuchsia > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-fuchsia > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-fuchsia>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-fuchsia>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #f012be;
 }
 
-.icheck-fuchsia > input:first-child:checked + label::before,
-.icheck-fuchsia > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-fuchsia>input:first-child:checked+label::before,
+.icheck-fuchsia>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #f012be;
   border-color: #f012be;
 }
 
-.icheck-maroon > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-maroon > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-maroon>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-maroon>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #d81b60;
 }
 
-.icheck-maroon > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-maroon > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-maroon>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-maroon>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #d81b60;
 }
 
-.icheck-maroon > input:first-child:checked + label::before,
-.icheck-maroon > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-maroon>input:first-child:checked+label::before,
+.icheck-maroon>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #d81b60;
   border-color: #d81b60;
 }
 
-.icheck-blue > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-blue > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
-  border-color: #007bff;
+.icheck-blue>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-blue>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
+  border-color: #009EE3;
 }
 
-.icheck-blue > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-blue > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
-  border-color: #007bff;
+.icheck-blue>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-blue>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
+  border-color: #009EE3;
 }
 
-.icheck-blue > input:first-child:checked + label::before,
-.icheck-blue > input:first-child:checked + input[type="hidden"] + label::before {
-  background-color: #007bff;
-  border-color: #007bff;
+.icheck-blue>input:first-child:checked+label::before,
+.icheck-blue>input:first-child:checked+input[type="hidden"]+label::before {
+  background-color: #009EE3 !important;
+  border-color: #009EE3;
 }
 
-.icheck-indigo > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-indigo > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-indigo>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-indigo>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #6610f2;
 }
 
-.icheck-indigo > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-indigo > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-indigo>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-indigo>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #6610f2;
 }
 
-.icheck-indigo > input:first-child:checked + label::before,
-.icheck-indigo > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-indigo>input:first-child:checked+label::before,
+.icheck-indigo>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #6610f2;
   border-color: #6610f2;
 }
 
-.icheck-purple > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-purple > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-purple>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-purple>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #6f42c1;
 }
 
-.icheck-purple > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-purple > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-purple>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-purple>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #6f42c1;
 }
 
-.icheck-purple > input:first-child:checked + label::before,
-.icheck-purple > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-purple>input:first-child:checked+label::before,
+.icheck-purple>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #6f42c1;
   border-color: #6f42c1;
 }
 
-.icheck-pink > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-pink > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-pink>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-pink>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #e83e8c;
 }
 
-.icheck-pink > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-pink > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-pink>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-pink>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #e83e8c;
 }
 
-.icheck-pink > input:first-child:checked + label::before,
-.icheck-pink > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-pink>input:first-child:checked+label::before,
+.icheck-pink>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #e83e8c;
   border-color: #e83e8c;
 }
 
-.icheck-red > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-red > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-red>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-red>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #dc3545;
 }
 
-.icheck-red > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-red > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-red>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-red>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #dc3545;
 }
 
-.icheck-red > input:first-child:checked + label::before,
-.icheck-red > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-red>input:first-child:checked+label::before,
+.icheck-red>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #dc3545;
   border-color: #dc3545;
 }
 
-.icheck-orange > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-orange > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-orange>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-orange>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #fd7e14;
 }
 
-.icheck-orange > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-orange > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-orange>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-orange>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #fd7e14;
 }
 
-.icheck-orange > input:first-child:checked + label::before,
-.icheck-orange > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-orange>input:first-child:checked+label::before,
+.icheck-orange>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #fd7e14;
   border-color: #fd7e14;
 }
 
-.icheck-yellow > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-yellow > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-yellow>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-yellow>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #ffc107;
 }
 
-.icheck-yellow > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-yellow > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-yellow>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-yellow>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #ffc107;
 }
 
-.icheck-yellow > input:first-child:checked + label::before,
-.icheck-yellow > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-yellow>input:first-child:checked+label::before,
+.icheck-yellow>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #ffc107;
   border-color: #ffc107;
 }
 
-.icheck-green > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-green > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-green>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-green>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #28a745;
 }
 
-.icheck-green > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-green > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-green>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-green>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #28a745;
 }
 
-.icheck-green > input:first-child:checked + label::before,
-.icheck-green > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-green>input:first-child:checked+label::before,
+.icheck-green>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #28a745;
   border-color: #28a745;
 }
 
-.icheck-teal > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-teal > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-teal>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-teal>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #20c997;
 }
 
-.icheck-teal > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-teal > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-teal>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-teal>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #20c997;
 }
 
-.icheck-teal > input:first-child:checked + label::before,
-.icheck-teal > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-teal>input:first-child:checked+label::before,
+.icheck-teal>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #20c997;
   border-color: #20c997;
 }
 
-.icheck-cyan > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-cyan > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-cyan>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-cyan>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #17a2b8;
 }
 
-.icheck-cyan > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-cyan > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-cyan>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-cyan>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #17a2b8;
 }
 
-.icheck-cyan > input:first-child:checked + label::before,
-.icheck-cyan > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-cyan>input:first-child:checked+label::before,
+.icheck-cyan>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #17a2b8;
   border-color: #17a2b8;
 }
 
-.icheck-white > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-white > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-white>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-white>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #ffffff;
 }
 
-.icheck-white > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-white > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-white>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-white>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #ffffff;
 }
 
-.icheck-white > input:first-child:checked + label::before,
-.icheck-white > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-white>input:first-child:checked+label::before,
+.icheck-white>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #ffffff;
   border-color: #ffffff;
 }
 
-.icheck-gray > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-gray > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-gray>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-gray>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #6c757d;
 }
 
-.icheck-gray > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-gray > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-gray>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-gray>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #6c757d;
 }
 
-.icheck-gray > input:first-child:checked + label::before,
-.icheck-gray > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-gray>input:first-child:checked+label::before,
+.icheck-gray>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #6c757d;
   border-color: #6c757d;
 }
 
-.icheck-gray-dark > input:first-child:not(:checked):not(:disabled):hover + label::before,
-.icheck-gray-dark > input:first-child:not(:checked):not(:disabled):hover + input[type="hidden"] + label::before {
+.icheck-gray-dark>input:first-child:not(:checked):not(:disabled):hover+label::before,
+.icheck-gray-dark>input:first-child:not(:checked):not(:disabled):hover+input[type="hidden"]+label::before {
   border-color: #343a40;
 }
 
-.icheck-gray-dark > input:first-child:not(:checked):not(:disabled):focus + label::before,
-.icheck-gray-dark > input:first-child:not(:checked):not(:disabled):focus + input[type="hidden"] + label::before {
+.icheck-gray-dark>input:first-child:not(:checked):not(:disabled):focus+label::before,
+.icheck-gray-dark>input:first-child:not(:checked):not(:disabled):focus+input[type="hidden"]+label::before {
   border-color: #343a40;
 }
 
-.icheck-gray-dark > input:first-child:checked + label::before,
-.icheck-gray-dark > input:first-child:checked + input[type="hidden"] + label::before {
+.icheck-gray-dark>input:first-child:checked+label::before,
+.icheck-gray-dark>input:first-child:checked+input[type="hidden"]+label::before {
   background-color: #343a40;
   border-color: #343a40;
 }
@@ -2484,7 +2520,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   width: 16px;
 }
 
-.mapael .zoomButton:hover, .mapael .zoomButton:active, .mapael .zoomButton.hover {
+.mapael .zoomButton:hover,
+.mapael .zoomButton:active,
+.mapael .zoomButton.hover {
   background-color: #e9ecef;
   color: #2b2b2b;
 }
@@ -2512,7 +2550,9 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   width: 15px;
 }
 
-.jqvmap-zoomin:hover, .jqvmap-zoomin:active, .jqvmap-zoomin.hover,
+.jqvmap-zoomin:hover,
+.jqvmap-zoomin:active,
+.jqvmap-zoomin.hover,
 .jqvmap-zoomout:hover,
 .jqvmap-zoomout:active,
 .jqvmap-zoomout.hover {
@@ -2554,7 +2594,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 #toast-container .toast {
-  background-color: #007bff;
+  background-color: #009EE3 !important;
 }
 
 #toast-container .toast-success {
@@ -2591,7 +2631,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-primary .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-barber-shop-primary .pace {
@@ -2599,7 +2639,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-barber-shop-primary .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-barber-shop-primary .pace .pace-activity {
@@ -2611,7 +2651,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-bounce-primary .pace .pace-activity {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-center-atom-primary .pace-progress {
@@ -2620,7 +2660,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-center-atom-primary .pace-progress::before {
-  background: #007bff;
+  background: #009EE3;
   color: #ffffff;
   font-size: .8rem;
   line-height: .7rem;
@@ -2628,11 +2668,12 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-center-atom-primary .pace-activity {
-  border-color: #007bff;
+  border-color: #009EE3;
 }
 
-.pace-center-atom-primary .pace-activity::after, .pace-center-atom-primary .pace-activity::before {
-  border-color: #007bff;
+.pace-center-atom-primary .pace-activity::after,
+.pace-center-atom-primary .pace-activity::before {
+  border-color: #009EE3;
 }
 
 .pace-center-circle-primary .pace .pace-progress {
@@ -2641,28 +2682,28 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-center-radar-primary .pace .pace-activity {
-  border-color: #007bff transparent transparent;
+  border-color: #009EE3 transparent transparent;
 }
 
 .pace-center-radar-primary .pace .pace-activity::before {
-  border-color: #007bff transparent transparent;
+  border-color: #009EE3 transparent transparent;
 }
 
 .pace-center-simple-primary .pace {
   background: #ffffff;
-  border-color: #007bff;
+  border-color: #009EE3;
 }
 
 .pace-center-simple-primary .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-material-primary .pace {
-  color: #007bff;
+  color: #009EE3;
 }
 
 .pace-corner-indicator-primary .pace .pace-activity {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-corner-indicator-primary .pace .pace-activity::after,
@@ -2685,31 +2726,31 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-flash-primary .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-flash-primary .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #007bff, 0 0 5px #007bff;
+  box-shadow: 0 0 10px #009EE3, 0 0 5px #009EE3;
 }
 
 .pace-flash-primary .pace .pace-activity {
-  border-top-color: #007bff;
-  border-left-color: #007bff;
+  border-top-color: #009EE3;
+  border-left-color: #009EE3;
 }
 
 .pace-loading-bar-primary .pace .pace-progress {
-  background: #007bff;
-  color: #007bff;
+  background: #009EE3;
+  color: #009EE3;
   box-shadow: 120px 0 #ffffff, 240px 0 #ffffff;
 }
 
 .pace-loading-bar-primary .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #007bff, inset 0 0 0 7px #ffffff;
+  box-shadow: inset 0 0 0 2px #009EE3, inset 0 0 0 7px #ffffff;
 }
 
 .pace-mac-osx-primary .pace .pace-progress {
-  background-color: #007bff;
-  box-shadow: inset -1px 0 #007bff, inset 0 -1px #007bff, inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  background-color: #009EE3 !important;
+  box-shadow: inset -1px 0 #009EE3, inset 0 -1px #009EE3, inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
 }
 
 .pace-mac-osx-primary .pace .pace-activity {
@@ -2718,7 +2759,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-progress-color-primary .pace-progress {
-  color: #007bff;
+  color: #009EE3;
 }
 
 .pace-secondary .pace .pace-progress {
@@ -2762,7 +2803,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6c757d;
 }
 
-.pace-center-atom-secondary .pace-activity::after, .pace-center-atom-secondary .pace-activity::before {
+.pace-center-atom-secondary .pace-activity::after,
+.pace-center-atom-secondary .pace-activity::before {
   border-color: #6c757d;
 }
 
@@ -2893,7 +2935,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #28a745;
 }
 
-.pace-center-atom-success .pace-activity::after, .pace-center-atom-success .pace-activity::before {
+.pace-center-atom-success .pace-activity::after,
+.pace-center-atom-success .pace-activity::before {
   border-color: #28a745;
 }
 
@@ -3024,7 +3067,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #17a2b8;
 }
 
-.pace-center-atom-info .pace-activity::after, .pace-center-atom-info .pace-activity::before {
+.pace-center-atom-info .pace-activity::after,
+.pace-center-atom-info .pace-activity::before {
   border-color: #17a2b8;
 }
 
@@ -3155,7 +3199,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #ffc107;
 }
 
-.pace-center-atom-warning .pace-activity::after, .pace-center-atom-warning .pace-activity::before {
+.pace-center-atom-warning .pace-activity::after,
+.pace-center-atom-warning .pace-activity::before {
   border-color: #ffc107;
 }
 
@@ -3286,7 +3331,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #dc3545;
 }
 
-.pace-center-atom-danger .pace-activity::after, .pace-center-atom-danger .pace-activity::before {
+.pace-center-atom-danger .pace-activity::after,
+.pace-center-atom-danger .pace-activity::before {
   border-color: #dc3545;
 }
 
@@ -3417,7 +3463,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f8f9fa;
 }
 
-.pace-center-atom-light .pace-activity::after, .pace-center-atom-light .pace-activity::before {
+.pace-center-atom-light .pace-activity::after,
+.pace-center-atom-light .pace-activity::before {
   border-color: #f8f9fa;
 }
 
@@ -3548,7 +3595,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #343a40;
 }
 
-.pace-center-atom-dark .pace-activity::after, .pace-center-atom-dark .pace-activity::before {
+.pace-center-atom-dark .pace-activity::after,
+.pace-center-atom-dark .pace-activity::before {
   border-color: #343a40;
 }
 
@@ -3679,7 +3727,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #3c8dbc;
 }
 
-.pace-center-atom-lightblue .pace-activity::after, .pace-center-atom-lightblue .pace-activity::before {
+.pace-center-atom-lightblue .pace-activity::after,
+.pace-center-atom-lightblue .pace-activity::before {
   border-color: #3c8dbc;
 }
 
@@ -3810,7 +3859,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #001f3f;
 }
 
-.pace-center-atom-navy .pace-activity::after, .pace-center-atom-navy .pace-activity::before {
+.pace-center-atom-navy .pace-activity::after,
+.pace-center-atom-navy .pace-activity::before {
   border-color: #001f3f;
 }
 
@@ -3941,7 +3991,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #3d9970;
 }
 
-.pace-center-atom-olive .pace-activity::after, .pace-center-atom-olive .pace-activity::before {
+.pace-center-atom-olive .pace-activity::after,
+.pace-center-atom-olive .pace-activity::before {
   border-color: #3d9970;
 }
 
@@ -4072,7 +4123,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #01ff70;
 }
 
-.pace-center-atom-lime .pace-activity::after, .pace-center-atom-lime .pace-activity::before {
+.pace-center-atom-lime .pace-activity::after,
+.pace-center-atom-lime .pace-activity::before {
   border-color: #01ff70;
 }
 
@@ -4203,7 +4255,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #f012be;
 }
 
-.pace-center-atom-fuchsia .pace-activity::after, .pace-center-atom-fuchsia .pace-activity::before {
+.pace-center-atom-fuchsia .pace-activity::after,
+.pace-center-atom-fuchsia .pace-activity::before {
   border-color: #f012be;
 }
 
@@ -4334,7 +4387,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #d81b60;
 }
 
-.pace-center-atom-maroon .pace-activity::after, .pace-center-atom-maroon .pace-activity::before {
+.pace-center-atom-maroon .pace-activity::after,
+.pace-center-atom-maroon .pace-activity::before {
   border-color: #d81b60;
 }
 
@@ -4425,7 +4479,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-blue .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-barber-shop-blue .pace {
@@ -4433,7 +4487,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-barber-shop-blue .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-barber-shop-blue .pace .pace-activity {
@@ -4445,7 +4499,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-bounce-blue .pace .pace-activity {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-center-atom-blue .pace-progress {
@@ -4454,7 +4508,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-center-atom-blue .pace-progress::before {
-  background: #007bff;
+  background: #009EE3;
   color: #ffffff;
   font-size: .8rem;
   line-height: .7rem;
@@ -4462,11 +4516,12 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-center-atom-blue .pace-activity {
-  border-color: #007bff;
+  border-color: #009EE3;
 }
 
-.pace-center-atom-blue .pace-activity::after, .pace-center-atom-blue .pace-activity::before {
-  border-color: #007bff;
+.pace-center-atom-blue .pace-activity::after,
+.pace-center-atom-blue .pace-activity::before {
+  border-color: #009EE3;
 }
 
 .pace-center-circle-blue .pace .pace-progress {
@@ -4475,28 +4530,28 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-center-radar-blue .pace .pace-activity {
-  border-color: #007bff transparent transparent;
+  border-color: #009EE3 transparent transparent;
 }
 
 .pace-center-radar-blue .pace .pace-activity::before {
-  border-color: #007bff transparent transparent;
+  border-color: #009EE3 transparent transparent;
 }
 
 .pace-center-simple-blue .pace {
   background: #ffffff;
-  border-color: #007bff;
+  border-color: #009EE3;
 }
 
 .pace-center-simple-blue .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-material-blue .pace {
-  color: #007bff;
+  color: #009EE3;
 }
 
 .pace-corner-indicator-blue .pace .pace-activity {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-corner-indicator-blue .pace .pace-activity::after,
@@ -4519,31 +4574,31 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-flash-blue .pace .pace-progress {
-  background: #007bff;
+  background: #009EE3;
 }
 
 .pace-flash-blue .pace .pace-progress-inner {
-  box-shadow: 0 0 10px #007bff, 0 0 5px #007bff;
+  box-shadow: 0 0 10px #009EE3, 0 0 5px #009EE3;
 }
 
 .pace-flash-blue .pace .pace-activity {
-  border-top-color: #007bff;
-  border-left-color: #007bff;
+  border-top-color: #009EE3;
+  border-left-color: #009EE3;
 }
 
 .pace-loading-bar-blue .pace .pace-progress {
-  background: #007bff;
-  color: #007bff;
+  background: #009EE3;
+  color: #009EE3;
   box-shadow: 120px 0 #ffffff, 240px 0 #ffffff;
 }
 
 .pace-loading-bar-blue .pace .pace-activity {
-  box-shadow: inset 0 0 0 2px #007bff, inset 0 0 0 7px #ffffff;
+  box-shadow: inset 0 0 0 2px #009EE3, inset 0 0 0 7px #ffffff;
 }
 
 .pace-mac-osx-blue .pace .pace-progress {
-  background-color: #007bff;
-  box-shadow: inset -1px 0 #007bff, inset 0 -1px #007bff, inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
+  background-color: #009EE3 !important;
+  box-shadow: inset -1px 0 #009EE3, inset 0 -1px #009EE3, inset 0 2px rgba(255, 255, 255, 0.5), inset 0 6px rgba(255, 255, 255, 0.3);
 }
 
 .pace-mac-osx-blue .pace .pace-activity {
@@ -4552,7 +4607,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 }
 
 .pace-progress-color-blue .pace-progress {
-  color: #007bff;
+  color: #009EE3;
 }
 
 .pace-indigo .pace .pace-progress {
@@ -4596,7 +4651,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6610f2;
 }
 
-.pace-center-atom-indigo .pace-activity::after, .pace-center-atom-indigo .pace-activity::before {
+.pace-center-atom-indigo .pace-activity::after,
+.pace-center-atom-indigo .pace-activity::before {
   border-color: #6610f2;
 }
 
@@ -4727,7 +4783,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6f42c1;
 }
 
-.pace-center-atom-purple .pace-activity::after, .pace-center-atom-purple .pace-activity::before {
+.pace-center-atom-purple .pace-activity::after,
+.pace-center-atom-purple .pace-activity::before {
   border-color: #6f42c1;
 }
 
@@ -4858,7 +4915,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #e83e8c;
 }
 
-.pace-center-atom-pink .pace-activity::after, .pace-center-atom-pink .pace-activity::before {
+.pace-center-atom-pink .pace-activity::after,
+.pace-center-atom-pink .pace-activity::before {
   border-color: #e83e8c;
 }
 
@@ -4989,7 +5047,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #dc3545;
 }
 
-.pace-center-atom-red .pace-activity::after, .pace-center-atom-red .pace-activity::before {
+.pace-center-atom-red .pace-activity::after,
+.pace-center-atom-red .pace-activity::before {
   border-color: #dc3545;
 }
 
@@ -5120,7 +5179,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #fd7e14;
 }
 
-.pace-center-atom-orange .pace-activity::after, .pace-center-atom-orange .pace-activity::before {
+.pace-center-atom-orange .pace-activity::after,
+.pace-center-atom-orange .pace-activity::before {
   border-color: #fd7e14;
 }
 
@@ -5251,7 +5311,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #ffc107;
 }
 
-.pace-center-atom-yellow .pace-activity::after, .pace-center-atom-yellow .pace-activity::before {
+.pace-center-atom-yellow .pace-activity::after,
+.pace-center-atom-yellow .pace-activity::before {
   border-color: #ffc107;
 }
 
@@ -5382,7 +5443,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #28a745;
 }
 
-.pace-center-atom-green .pace-activity::after, .pace-center-atom-green .pace-activity::before {
+.pace-center-atom-green .pace-activity::after,
+.pace-center-atom-green .pace-activity::before {
   border-color: #28a745;
 }
 
@@ -5513,7 +5575,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #20c997;
 }
 
-.pace-center-atom-teal .pace-activity::after, .pace-center-atom-teal .pace-activity::before {
+.pace-center-atom-teal .pace-activity::after,
+.pace-center-atom-teal .pace-activity::before {
   border-color: #20c997;
 }
 
@@ -5644,7 +5707,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #17a2b8;
 }
 
-.pace-center-atom-cyan .pace-activity::after, .pace-center-atom-cyan .pace-activity::before {
+.pace-center-atom-cyan .pace-activity::after,
+.pace-center-atom-cyan .pace-activity::before {
   border-color: #17a2b8;
 }
 
@@ -5775,7 +5839,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #ffffff;
 }
 
-.pace-center-atom-white .pace-activity::after, .pace-center-atom-white .pace-activity::before {
+.pace-center-atom-white .pace-activity::after,
+.pace-center-atom-white .pace-activity::before {
   border-color: #ffffff;
 }
 
@@ -5906,7 +5971,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #6c757d;
 }
 
-.pace-center-atom-gray .pace-activity::after, .pace-center-atom-gray .pace-activity::before {
+.pace-center-atom-gray .pace-activity::after,
+.pace-center-atom-gray .pace-activity::before {
   border-color: #6c757d;
 }
 
@@ -6037,7 +6103,8 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   border-color: #343a40;
 }
 
-.pace-center-atom-gray-dark .pace-activity::after, .pace-center-atom-gray-dark .pace-activity::before {
+.pace-center-atom-gray-dark .pace-activity::after,
+.pace-center-atom-gray-dark .pace-activity::before {
   border-color: #343a40;
 }
 
@@ -6189,7 +6256,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-primary,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-primary {
-  background: #007bff;
+  background: #009EE3;
   color: #ffffff;
 }
 
@@ -6273,7 +6340,7 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
 
 .bootstrap-switch .bootstrap-switch-handle-on.bootstrap-switch-blue,
 .bootstrap-switch .bootstrap-switch-handle-off.bootstrap-switch-blue {
-  background: #007bff;
+  background: #009EE3;
   color: #ffffff;
 }
 
@@ -6395,15 +6462,19 @@ select.form-control-sm ~ .select2-container--default .select2-selection--multipl
   padding: .3rem .5rem;
 }
 
-.bootstrap-switch.bootstrap-switch-disabled, .bootstrap-switch.bootstrap-switch-readonly, .bootstrap-switch.bootstrap-switch-indeterminate {
+.bootstrap-switch.bootstrap-switch-disabled,
+.bootstrap-switch.bootstrap-switch-readonly,
+.bootstrap-switch.bootstrap-switch-indeterminate {
   cursor: default;
 }
 
 .bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-handle-on,
 .bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-handle-off,
-.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-label, .bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-handle-on,
+.bootstrap-switch.bootstrap-switch-disabled .bootstrap-switch-label,
+.bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-handle-on,
 .bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-handle-off,
-.bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-label, .bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-handle-on,
+.bootstrap-switch.bootstrap-switch-readonly .bootstrap-switch-label,
+.bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-handle-on,
 .bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-handle-off,
 .bootstrap-switch.bootstrap-switch-indeterminate .bootstrap-switch-label {
   cursor: default;

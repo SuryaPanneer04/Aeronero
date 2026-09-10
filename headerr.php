@@ -789,7 +789,7 @@ try {
 
                 var submenusArray = JSON.parse(submenus);
 
-                if (Array.isArray(submenusArray)) {
+                if (Array.isArray(submenusArray) && submenusArray.length > 0) {
 
                     for (var i = 0; i < submenusArray.length; i++) {
 
@@ -822,6 +822,10 @@ try {
                     }
 
                     document.getElementById("sidebar").style.display = "block";
+                    document.getElementById("page_loader").style.marginLeft = "240px";
+                } else {
+                    document.getElementById("sidebar").style.display = "none";
+                    document.getElementById("page_loader").style.marginLeft = "0px";
                 }
             }
         });
@@ -1097,6 +1101,26 @@ try {
         $.ajax({
             type: "POST",
             url: "qvision/password/staff_password_master/main.php",
+            success: function(data) {
+                $("#main_content").html(data);
+            }
+        })
+    }
+
+    function add_referral() {
+        $.ajax({
+            type: "POST",
+            url: "qvision/HR/referral/add_referral.php",
+            success: function(data) {
+                $("#main_content").html(data);
+            }
+        })
+    }
+
+    function referral_list() {
+        $.ajax({
+            type: "POST",
+            url: "qvision/HR/referral/referral_list.php",
             success: function(data) {
                 $("#main_content").html(data);
             }

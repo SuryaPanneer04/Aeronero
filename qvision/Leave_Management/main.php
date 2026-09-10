@@ -162,6 +162,8 @@ function leave_reject_list()
 				else if($userrole=="R005" || $userrole == "R001"){
 					?>					
 					<input class="btn button1" type="button" value="Staff Leave Approve" onclick="leave_app()">
+					<input class="btn button4" type="button" value="Leave Approve List" onclick="leave_app_list()"> 
+					<input class="btn button5" type="button" value="Leave Rejected List" onclick="leave_reject_list()">
 					<?php } ?>
 				</div>
 			</div>

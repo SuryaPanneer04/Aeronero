@@ -53,7 +53,7 @@ $username=$_SESSION['username'];
 
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrappererrr" id="page_loader" style="margin-left:0px;min-height:100vh !important;">
+  <div class="content-wrappererrr" id="page_loader" style="margin-left:0px; min-height:100vh !important; transition: margin-left 0.3s ease;">
     <!-- Content Header (Page header) -->
     <div class="content-header" style="padding: 6px .5rem !important;">
       <div class="container-fluid">

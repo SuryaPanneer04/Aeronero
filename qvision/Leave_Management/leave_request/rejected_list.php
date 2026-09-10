@@ -29,6 +29,9 @@ $userrole = $_SESSION['userrole'];
 	<th>Emp_Code</th>
 	<th>Emp_name</th>
 	<th>Requested Date</th>
+	<th>From Date</th>
+	<th>To Date</th>
+	<th>No of Days</th>
 	<th>Reason</th>
 	<th>Action</th>
 	
@@ -53,6 +56,9 @@ $userrole = $_SESSION['userrole'];
      $leave_type=$emp['leave_type'];
      $emp_code=$emp['emp_code'];
      $leave_reason=$emp['leave_reason'];
+	 $from_date =$emp['from_date'];
+	 $to_date = $emp['to_date'];
+	 $no_of_days=$emp['no_of_days'];
      
 	 
 	 ?>
@@ -61,6 +67,9 @@ $userrole = $_SESSION['userrole'];
 	<td><?php echo $emp_code; ?></td>
 	<td><?php echo $emp_name; ?></td>		
 	<td><?php echo $req_date; ?></td>
+	<td><?php echo $from_date; ?></td>
+	<td><?php echo $to_date; ?></td>
+	<td><?php echo $no_of_days; ?></td>
 	<td><?php echo $leave_reason; ?></td>
 	<td><?php 
 	echo '<span style="color:red;text-align:center;"><b>Leave Rejected</b></span>'; ?></td>

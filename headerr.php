@@ -500,10 +500,10 @@ try {
         </div>
         
         <div class="premium-list-item">
-            <i class="fa fa-phone premium-icon"></i>
-            <span class="premium-label">Mobile</span>
-            <span class="premium-value"><?php echo $display_mobile; ?></span>
-        </div>
+    <i class="fa fa-phone fa-flip-horizontal fa-fw premium-icon" style="position: relative; left: -5px;"></i>
+    <span class="premium-label">Mobile</span>
+    <span class="premium-value"><?php echo $display_mobile; ?></span>
+</div>
         
         <div class="premium-list-item">
             <i class="fa fa-building premium-icon"></i>

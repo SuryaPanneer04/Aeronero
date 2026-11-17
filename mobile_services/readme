@@ -1,0 +1,16 @@
+//new changes
+06/02/2026
+change the leave_apply_masters table id to auto increment
+
+22/02/2026
+Web site to insert the reporting person id
+ALTER TABLE `leave_apply_masters` ADD `reporting_person_id` INT NOT NULL AFTER `id`;
+
+//Completed (17/02/2026)
+
+//new changes
+18/02/2026
+ALTER TABLE `claim_request` CHANGE `id` `id` INT NOT NULL AUTO_INCREMENT;
+
+
+

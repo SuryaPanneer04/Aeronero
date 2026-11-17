@@ -13,8 +13,12 @@ $userrole=$_SESSION['userrole'];
 	.card-primary:not(.card-outline)>.card-header{
 		background-color: #009EE3 !important;
 	}
-	</style>
-<div class="content-wrapper" style="padding-left: 100px;">
+	.content-wrapper {
+		margin-left: 0 !important;
+		padding: 10px 15px !important;
+	}
+</style>
+<div class="content-wrapper" style="padding-left: 10px; margin-left: 0 !important;">
 	<div  class="card card-primary">
 <div class="card-header">
 	 <h1 class="card-title"><font size="5">QUOTATION LIST</font> </h1></div>

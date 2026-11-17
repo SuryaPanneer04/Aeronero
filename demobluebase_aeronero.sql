@@ -167198,7 +167198,7 @@ CREATE TABLE `z_distributors` (
   `created_on` datetime DEFAULT CURRENT_TIMESTAMP,
   `modified_by` int DEFAULT NULL,
   `modified_on` datetime DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `z_distributors`

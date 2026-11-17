@@ -1,4 +1,5 @@
 <?php
+
 /**
  * CEO Executive Dashboard
  * Accessible exclusively to Managing Director / CEO (Role R001)
@@ -28,8 +29,7 @@ $due_soon_projects = 0;
 $safe_projects = 0;
 
 try {
-    $p_stmt = $con->query("
-        SELECT p.*, c.collaborator_name, c.collab_type 
+    $p_stmt = $con->query("SELECT p.*, c.collaborator_name, c.collab_type 
         FROM z_projects p 
         LEFT JOIN z_collaborations c ON p.collab_id = c.id 
         ORDER BY 
@@ -94,7 +94,8 @@ try {
         }
         $total_csr_visits += intval($c['visits_completed'] ?? 0);
     }
-} catch (Exception $e) {}
+} catch (Exception $e) {
+}
 
 // ---------------------------------------------------------
 // 3. COLLABORATIONS METRICS
@@ -116,7 +117,8 @@ try {
             $collab_ndas++;
         }
     }
-} catch (Exception $e) {}
+} catch (Exception $e) {
+}
 
 // ---------------------------------------------------------
 // 4. LABORATORY REQUIREMENTS METRICS
@@ -137,7 +139,8 @@ try {
             $lab_pending++;
         }
     }
-} catch (Exception $e) {}
+} catch (Exception $e) {
+}
 
 // ---------------------------------------------------------
 // 5. INTELLECTUAL PROPERTY & GRANTS METRICS
@@ -156,7 +159,8 @@ try {
     $total_patents = intval($con->query("SELECT count(*) FROM patents_master")->fetchColumn());
     $total_publications = intval($con->query("SELECT count(*) FROM publications_master")->fetchColumn());
     $total_awards = intval($con->query("SELECT count(*) FROM awards_master")->fetchColumn());
-} catch (Exception $e) {}
+} catch (Exception $e) {
+}
 
 $total_ipr = $total_grants + $total_patents + $total_publications + $total_awards;
 
@@ -209,308 +213,348 @@ try {
             'action' => 'grants()'
         ];
     }
-} catch (Exception $e) {}
+} catch (Exception $e) {
+}
 
 // Sort Radar items: Overdue first, then nearest upcoming
-usort($critical_radar, function($a, $b) {
+usort($critical_radar, function ($a, $b) {
     return $a['diff'] <=> $b['diff'];
 });
 ?>
 
 <!-- CEO Dashboard Custom Styles -->
 <style>
-.ceo-dashboard-container {
-    font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    color: #2c3e50;
-    padding-bottom: 50px;
-}
+    .ceo-dashboard-container {
+        font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        color: #2c3e50;
+        padding-bottom: 50px;
+    }
 
-/* Executive Banner */
-.ceo-hero-banner {
-    background: linear-gradient(135deg, #0b2545 0%, #134074 50%, #009EE3 100%);
-    border-radius: 14px;
-    padding: 24px 28px;
-    color: #ffffff;
-    box-shadow: 0 8px 24px rgba(11, 37, 69, 0.18);
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 24px;
-}
-.ceo-hero-banner::after {
-    content: '';
-    position: absolute;
-    top: -50px;
-    right: -50px;
-    width: 220px;
-    height: 220px;
-    background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0) 70%);
-    border-radius: 50%;
-    pointer-events: none;
-}
-.ceo-badge-role {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(4px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    color: #fff;
-    padding: 5px 14px;
-    border-radius: 20px;
-    font-size: 13px;
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    display: inline-flex;
-    align-items: center;
-}
+    /* Executive Banner */
+    .ceo-hero-banner {
+        background: linear-gradient(135deg, #0b2545 0%, #134074 50%, #009EE3 100%);
+        border-radius: 14px;
+        padding: 24px 28px;
+        color: #ffffff;
+        box-shadow: 0 8px 24px rgba(11, 37, 69, 0.18);
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 24px;
+    }
 
-/* Quick Navigation Toolbar */
-.ceo-nav-pill {
-    background: rgba(255, 255, 255, 0.15);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    border-radius: 8px;
-    padding: 7px 14px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    display: inline-flex;
-    align-items: center;
-    margin-right: 8px;
-    margin-top: 6px;
-    text-decoration: none !important;
-}
-.ceo-nav-pill:hover {
-    background: #ffffff;
-    color: #0b2545;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+    .ceo-hero-banner::after {
+        content: '';
+        position: absolute;
+        top: -50px;
+        right: -50px;
+        width: 220px;
+        height: 220px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 70%);
+        border-radius: 50%;
+        pointer-events: none;
+    }
 
-/* Stat Cards */
-.ceo-stat-card {
-    background: #ffffff;
-    border-radius: 12px;
-    padding: 20px 18px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    border: 1px solid #edf2f7;
-    transition: all 0.25s ease;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    overflow: hidden;
-}
-.ceo-stat-card:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
-    border-color: #cbd5e1;
-}
-.ceo-stat-card.alert-border {
-    border-left: 5px solid #dc3545;
-}
-.ceo-stat-card.warning-border {
-    border-left: 5px solid #f59e0b;
-}
-.ceo-stat-card.success-border {
-    border-left: 5px solid #10b981;
-}
-.ceo-stat-card.primary-border {
-    border-left: 5px solid #009EE3;
-}
-.ceo-stat-card.purple-border {
-    border-left: 5px solid #8b5cf6;
-}
-.ceo-stat-card.cyan-border {
-    border-left: 5px solid #06b6d4;
-}
+    .ceo-badge-role {
+        background: rgba(255, 255, 255, 0.2);
+        backdrop-filter: blur(4px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        padding: 5px 14px;
+        border-radius: 20px;
+        font-size: 13px;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+        display: inline-flex;
+        align-items: center;
+    }
 
-.ceo-stat-icon-wrapper {
-    width: 48px;
-    height: 48px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
-}
-.ceo-stat-number {
-    font-size: 28px;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-top: 10px;
-    margin-bottom: 2px;
-}
-.ceo-stat-title {
-    font-size: 13px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #64748b;
-    margin: 0;
-}
-.ceo-stat-meta {
-    font-size: 12px;
-    color: #64748b;
-    margin-top: 10px;
-    padding-top: 10px;
-    border-top: 1px dashed #e2e8f0;
-}
+    /* Quick Navigation Toolbar */
+    .ceo-nav-pill {
+        background: rgba(255, 255, 255, 0.15);
+        color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 8px;
+        padding: 7px 14px;
+        font-size: 13px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        display: inline-flex;
+        align-items: center;
+        margin-right: 8px;
+        margin-top: 6px;
+        text-decoration: none !important;
+    }
 
-/* Charts & Section Cards */
-.ceo-card {
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
-    border: 1px solid #edf2f7;
-    margin-bottom: 24px;
-    overflow: hidden;
-}
-.ceo-card-header {
-    background: #ffffff;
-    border-bottom: 1px solid #f1f5f9;
-    padding: 16px 22px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-.ceo-card-title {
-    font-size: 16px;
-    font-weight: 700;
-    color: #ed5d00;
-    margin: 0;
-    display: flex;
-    align-items: center;
-}
-.ceo-card-body {
-    padding: 20px 22px;
-}
+    .ceo-nav-pill:hover {
+        background: #ffffff;
+        color: #0b2545;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
 
-/* Employee / Resource Badge Styling */
-.emp-resource-badge {
-    background: #f1f5f9;
-    color: #334155;
-    border: 1px solid #e2e8f0;
-    padding: 4px 9px;
-    border-radius: 14px;
-    font-size: 11.5px;
-    font-weight: 600;
-    display: inline-flex;
-    align-items: center;
-    margin: 2px 3px 2px 0;
-    transition: all 0.2s;
-}
-.emp-resource-badge:hover {
-    background: #e2e8f0;
-    color: #0f172a;
-}
-.emp-resource-badge i {
-    color: #009EE3;
-    margin-right: 4px;
-}
+    /* Stat Cards */
+    .ceo-stat-card {
+        background: #ffffff;
+        border-radius: 12px;
+        padding: 20px 18px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        border: 1px solid #edf2f7;
+        transition: all 0.25s ease;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        overflow: hidden;
+    }
 
-/* Urgency Deadlines Badge */
-.badge-urgent-overdue {
-    background-color: #fee2e2;
-    color: #b91c1c;
-    border: 1px solid #fca5a5;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 12px;
-    display: inline-flex;
-    align-items: center;
-}
-.badge-urgent-soon {
-    background-color: #fef3c7;
-    color: #b45309;
-    border: 1px solid #fcd34d;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 12px;
-    display: inline-flex;
-    align-items: center;
-}
-.badge-urgent-safe {
-    background-color: #dcfce7;
-    color: #15803d;
-    border: 1px solid #86efac;
-    padding: 6px 12px;
-    border-radius: 20px;
-    font-weight: 700;
-    font-size: 12px;
-    display: inline-flex;
-    align-items: center;
-}
+    .ceo-stat-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.09);
+        border-color: #cbd5e1;
+    }
 
-/* Modern Table */
-.ceo-table {
-    margin-bottom: 0;
-    font-size: 13.5px;
-}
-.ceo-table thead th {
-    background-color: #f8fafc;
-    color: #475569;
-    font-weight: 700;
-    text-transform: uppercase;
-    font-size: 11.5px;
-    letter-spacing: 0.5px;
-    border-top: none;
-    border-bottom: 2px solid #e2e8f0;
-    padding: 12px 14px;
-    vertical-align: middle;
-}
-.ceo-table tbody td {
-    padding: 14px;
-    vertical-align: middle;
-    border-top: 1px solid #f1f5f9;
-}
-.ceo-table tbody tr:hover {
-    background-color: #f8fafc;
-}
+    .ceo-stat-card.alert-border {
+        border-left: 5px solid #dc3545;
+    }
 
-/* Radar item in deadline watchlist */
-.radar-item {
-    border-left: 4px solid #cbd5e1;
-    padding: 12px 14px;
-    background: #f8fafc;
-    border-radius: 0 8px 8px 0;
-    margin-bottom: 10px;
-    transition: all 0.2s;
-    cursor: pointer;
-}
-.radar-item:hover {
-    background: #f1f5f9;
-    transform: translateX(3px);
-}
-.radar-item.radar-overdue {
-    border-left-color: #ef4444;
-    background: #fff5f5;
-}
-.radar-item.radar-soon {
-    border-left-color: #f59e0b;
-    background: #fffbeb;
-}
-.radar-item.radar-safe {
-    border-left-color: #10b981;
-}
+    .ceo-stat-card.warning-border {
+        border-left: 5px solid #f59e0b;
+    }
 
-/* Pulse Animation for Critical Alerts */
-.pulse-red {
-    display: inline-block;
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #ef4444;
-    box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
-    animation: pulseRedAnim 1.6s infinite;
-    margin-right: 6px;
-}
-@keyframes pulseRedAnim {
-    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7); }
-    70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(239, 68, 68, 0); }
-    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(239, 68, 68, 0); }
-}
+    .ceo-stat-card.success-border {
+        border-left: 5px solid #10b981;
+    }
+
+    .ceo-stat-card.primary-border {
+        border-left: 5px solid #009EE3;
+    }
+
+    .ceo-stat-card.purple-border {
+        border-left: 5px solid #8b5cf6;
+    }
+
+    .ceo-stat-card.cyan-border {
+        border-left: 5px solid #06b6d4;
+    }
+
+    .ceo-stat-icon-wrapper {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+    }
+
+    .ceo-stat-number {
+        font-size: 28px;
+        font-weight: 700;
+        line-height: 1.2;
+        margin-top: 10px;
+        margin-bottom: 2px;
+    }
+
+    .ceo-stat-title {
+        font-size: 13px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        color: #64748b;
+        margin: 0;
+    }
+
+    .ceo-stat-meta {
+        font-size: 12px;
+        color: #64748b;
+        margin-top: 10px;
+        padding-top: 10px;
+        border-top: 1px dashed #e2e8f0;
+    }
+
+    /* Charts & Section Cards */
+    .ceo-card {
+        background: #ffffff;
+        border-radius: 12px;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+        border: 1px solid #edf2f7;
+        margin-bottom: 24px;
+        overflow: hidden;
+    }
+
+    .ceo-card-header {
+        background: #ffffff;
+        border-bottom: 1px solid #f1f5f9;
+        padding: 16px 22px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .ceo-card-title {
+        font-size: 16px;
+        font-weight: 700;
+        color: #ed5d00;
+        margin: 0;
+        display: flex;
+        align-items: center;
+    }
+
+    .ceo-card-body {
+        padding: 20px 22px;
+    }
+
+    /* Employee / Resource Badge Styling */
+    .emp-resource-badge {
+        background: #f1f5f9;
+        color: #334155;
+        border: 1px solid #e2e8f0;
+        padding: 4px 9px;
+        border-radius: 14px;
+        font-size: 11.5px;
+        font-weight: 600;
+        display: inline-flex;
+        align-items: center;
+        margin: 2px 3px 2px 0;
+        transition: all 0.2s;
+    }
+
+    .emp-resource-badge:hover {
+        background: #e2e8f0;
+        color: #0f172a;
+    }
+
+    .emp-resource-badge i {
+        color: #009EE3;
+        margin-right: 4px;
+    }
+
+    /* Urgency Deadlines Badge */
+    .badge-urgent-overdue {
+        background-color: #fee2e2;
+        color: #b91c1c;
+        border: 1px solid #fca5a5;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .badge-urgent-soon {
+        background-color: #fef3c7;
+        color: #b45309;
+        border: 1px solid #fcd34d;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .badge-urgent-safe {
+        background-color: #dcfce7;
+        color: #15803d;
+        border: 1px solid #86efac;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 12px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    /* Modern Table */
+    .ceo-table {
+        margin-bottom: 0;
+        font-size: 13.5px;
+    }
+
+    .ceo-table thead th {
+        background-color: #f8fafc;
+        color: #475569;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 11.5px;
+        letter-spacing: 0.5px;
+        border-top: none;
+        border-bottom: 2px solid #e2e8f0;
+        padding: 12px 14px;
+        vertical-align: middle;
+    }
+
+    .ceo-table tbody td {
+        padding: 14px;
+        vertical-align: middle;
+        border-top: 1px solid #f1f5f9;
+    }
+
+    .ceo-table tbody tr:hover {
+        background-color: #f8fafc;
+    }
+
+    /* Radar item in deadline watchlist */
+    .radar-item {
+        border-left: 4px solid #cbd5e1;
+        padding: 12px 14px;
+        background: #f8fafc;
+        border-radius: 0 8px 8px 0;
+        margin-bottom: 10px;
+        transition: all 0.2s;
+        cursor: pointer;
+    }
+
+    .radar-item:hover {
+        background: #f1f5f9;
+        transform: translateX(3px);
+    }
+
+    .radar-item.radar-overdue {
+        border-left-color: #ef4444;
+        background: #fff5f5;
+    }
+
+    .radar-item.radar-soon {
+        border-left-color: #f59e0b;
+        background: #fffbeb;
+    }
+
+    .radar-item.radar-safe {
+        border-left-color: #10b981;
+    }
+
+    /* Pulse Animation for Critical Alerts */
+    .pulse-red {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #ef4444;
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+        animation: pulseRedAnim 1.6s infinite;
+        margin-right: 6px;
+    }
+
+    @keyframes pulseRedAnim {
+        0% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+        }
+
+        70% {
+            transform: scale(1);
+            box-shadow: 0 0 0 6px rgba(239, 68, 68, 0);
+        }
+
+        100% {
+            transform: scale(0.95);
+            box-shadow: 0 0 0 0 rgba(239, 68, 68, 0);
+        }
+    }
 </style>
 
 <div class="ceo-dashboard-container mt-2">
@@ -841,7 +885,8 @@ usort($critical_radar, function($a, $b) {
                             </td>
                         </tr>
                     <?php else: ?>
-                        <?php $sno = 1; foreach ($projects_list as $row): 
+                        <?php $sno = 1;
+                        foreach ($projects_list as $row):
                             // Urgency calculations
                             $deadline_display = '-';
                             $urgency_badge = '';
@@ -893,7 +938,7 @@ usort($critical_radar, function($a, $b) {
                         ?>
                             <tr class="project-table-row <?php echo $row_class; ?>">
                                 <td class="font-weight-bold text-muted"><?php echo $sno++; ?></td>
-                                
+
                                 <!-- Project Code & Name -->
                                 <td>
                                     <div class="d-flex align-items-center">
@@ -1016,10 +1061,10 @@ usort($critical_radar, function($a, $b) {
                                         <td colspan="5" class="text-center py-3 text-muted">No CSR units logged.</td>
                                     </tr>
                                 <?php else: ?>
-                                    <?php foreach (array_slice($csr_list, 0, 5) as $csr_item): 
+                                    <?php foreach (array_slice($csr_list, 0, 5) as $csr_item):
                                         $cond = trim($csr_item['condition_status'] ?? 'Working');
-                                        $cond_badge = ($cond === 'Working') 
-                                            ? '<span class="badge badge-success"><i class="fas fa-check-circle mr-1"></i>Working</span>' 
+                                        $cond_badge = ($cond === 'Working')
+                                            ? '<span class="badge badge-success"><i class="fas fa-check-circle mr-1"></i>Working</span>'
                                             : '<span class="badge badge-danger"><i class="fas fa-tools mr-1"></i>Service Req</span>';
                                     ?>
                                         <tr>
@@ -1077,7 +1122,7 @@ usort($critical_radar, function($a, $b) {
                             All deliverables and milestones are currently on track!
                         </div>
                     <?php else: ?>
-                        <?php foreach (array_slice($critical_radar, 0, 8) as $item): 
+                        <?php foreach (array_slice($critical_radar, 0, 8) as $item):
                             $r_class = 'radar-safe';
                             $r_badge = '';
                             if ($item['diff'] < 0) {
@@ -1124,33 +1169,33 @@ usort($critical_radar, function($a, $b) {
 
 <!-- Chart.js & Dashboard Interactivity Scripts -->
 <script>
-function initCeoDashboard() {
-    // 1. Live Filter for Projects & Staff Table
-    $('#filterProjectInput').off('keyup').on('keyup', function() {
-        var value = $(this).val().toLowerCase();
-        $('#ceoProjectsTable tbody tr').filter(function() {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+    function initCeoDashboard() {
+        // 1. Live Filter for Projects & Staff Table
+        $('#filterProjectInput').off('keyup').on('keyup', function() {
+            var value = $(this).val().toLowerCase();
+            $('#ceoProjectsTable tbody tr').filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+            });
         });
-    });
 
-    // 2. Initialize Charts when Chart.js is ready
-    if (typeof Chart !== 'undefined') {
-        initCeoCharts();
-    } else {
-        var chartInterval = setInterval(function() {
-            if (typeof Chart !== 'undefined') {
-                clearInterval(chartInterval);
-                initCeoCharts();
-            }
-        }, 200);
+        // 2. Initialize Charts when Chart.js is ready
+        if (typeof Chart !== 'undefined') {
+            initCeoCharts();
+        } else {
+            var chartInterval = setInterval(function() {
+                if (typeof Chart !== 'undefined') {
+                    clearInterval(chartInterval);
+                    initCeoCharts();
+                }
+            }, 200);
+        }
     }
-}
 
-if (document.readyState === 'loading') {
-    $(document).ready(initCeoDashboard);
-} else {
-    initCeoDashboard();
-}
+    if (document.readyState === 'loading') {
+        $(document).ready(initCeoDashboard);
+    } else {
+        initCeoDashboard();
+    }
 
     function initCeoCharts() {
         // Chart 1: Project Urgency (Doughnut)
@@ -1162,9 +1207,9 @@ if (document.readyState === 'loading') {
                     labels: ['Overdue', 'Due <= 7 Days', 'On Track', 'Completed'],
                     datasets: [{
                         data: [
-                            <?php echo $overdue_projects; ?>, 
-                            <?php echo $due_soon_projects; ?>, 
-                            <?php echo $safe_projects; ?>, 
+                            <?php echo $overdue_projects; ?>,
+                            <?php echo $due_soon_projects; ?>,
+                            <?php echo $safe_projects; ?>,
                             <?php echo $completed_projects; ?>
                         ],
                         backgroundColor: ['#ef4444', '#f59e0b', '#10b981', '#0ea5e9'],
@@ -1177,7 +1222,11 @@ if (document.readyState === 'loading') {
                     responsive: true,
                     legend: {
                         position: 'bottom',
-                        labels: { boxWidth: 12, fontSize: 11, fontColor: '#475569' }
+                        labels: {
+                            boxWidth: 12,
+                            fontSize: 11,
+                            fontColor: '#475569'
+                        }
                     },
                     cutoutPercentage: 65
                 }
@@ -1203,7 +1252,11 @@ if (document.readyState === 'loading') {
                     responsive: true,
                     legend: {
                         position: 'bottom',
-                        labels: { boxWidth: 12, fontSize: 11, fontColor: '#475569' }
+                        labels: {
+                            boxWidth: 12,
+                            fontSize: 11,
+                            fontColor: '#475569'
+                        }
                     },
                     cutoutPercentage: 65
                 }
@@ -1220,12 +1273,12 @@ if (document.readyState === 'loading') {
                     datasets: [{
                         label: 'Total Assets / Records',
                         data: [
-                            <?php echo $total_projects; ?>, 
-                            <?php echo $total_csr; ?>, 
-                            <?php echo $total_collab; ?>, 
-                            <?php echo $total_grants; ?>, 
-                            <?php echo $total_patents; ?>, 
-                            <?php echo $total_publications; ?>, 
+                            <?php echo $total_projects; ?>,
+                            <?php echo $total_csr; ?>,
+                            <?php echo $total_collab; ?>,
+                            <?php echo $total_grants; ?>,
+                            <?php echo $total_patents; ?>,
+                            <?php echo $total_publications; ?>,
                             <?php echo $total_awards; ?>
                         ],
                         backgroundColor: [
@@ -1246,7 +1299,9 @@ if (document.readyState === 'loading') {
                 options: {
                     maintainAspectRatio: false,
                     responsive: true,
-                    legend: { display: false },
+                    legend: {
+                        display: false
+                    },
                     scales: {
                         yAxes: [{
                             ticks: {
@@ -1264,7 +1319,9 @@ if (document.readyState === 'loading') {
                                 fontColor: '#64748b',
                                 fontSize: 11
                             },
-                            gridLines: { display: false }
+                            gridLines: {
+                                display: false
+                            }
                         }]
                     }
                 }

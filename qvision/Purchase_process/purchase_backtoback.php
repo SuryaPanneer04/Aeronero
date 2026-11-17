@@ -124,7 +124,7 @@ $cost = $con->query("select * from cost_sheet_entry where id='$cs_no'");
           </tr>
           <tr>
             <td>
-              <select class="form-control" id="vendor_name" name="vendor_name">
+              <select class="form-control" id="vendor_name" name="vendor_name" required>
                 <option value="">Choose Type</option>
                 <?php $stmt = $con->query("SELECT * FROM doller_vendor_mastor ");
                 while ($row = $stmt->fetch()) { ?>

@@ -6,7 +6,7 @@ $candidateid = $_SESSION['candidateid'];
 
 $staff = $con->query("select * from staff_master where candid_id='$candidateid'");
 $sfet = $staff->fetch();
-$staff_id = $sfet['id'];
+$staff_id = $sfet ? $sfet['id'] : " ";
 ?>
 
 <head>

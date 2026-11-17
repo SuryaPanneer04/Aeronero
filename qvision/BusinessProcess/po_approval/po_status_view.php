@@ -1,22 +1,22 @@
 <?php
 require '../../../connect.php';
 $quoteid=$_REQUEST['id'];
-$stmt=$con->prepare("SELECT distinct a.cost_sheet_no,a.enquiry_id,a.business_id,b.*,c.* FROM cost_sheet_entry a 
-left join new_client_master c on (a.client_id=c.id)
-left join po_generate b on (a.cost_sheet_no=b.cost_sheet_no) where b.id='$quoteid'"); 
+$stmt=$con->prepare("SELECT distinct b.cost_sheet_no,a.enquiry_id,a.business_id,b.*,c.* FROM po_generate b 
+left join cost_sheet_entry a on (b.cost_sheet_no=a.cost_sheet_no)
+left join new_client_master c on (a.client_id=c.id) where b.id='$quoteid'"); 
 //("select * from po_generate where id='$quoteid'");
 $stmt->execute(); 
 $fet = $stmt->fetch();
 //$fet=$sql->fetch();
- $fstatus=$fet['finance_status'];
- //$sstatus=$fet['service_status'];
- $mstatus=$fet['marketing_status'];
- $mdstatus=$fet['md_status'];
+ $fstatus=$fet['finance_status'] ?? '';
+ //$sstatus=$fet['service_status'] ?? '';
+ $mstatus=$fet['marketing_status'] ?? '';
+ $mdstatus=$fet['md_status'] ?? '';
 ?>
 
 <style>
 .card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .btn-danger{
 	background-color: #ed5d00 !important;
@@ -44,35 +44,35 @@ $fet = $stmt->fetch();
         </tr>
 	  <tr >
 			<td>Client Name</td>
-			<td colspan="5"><input type="text" class="form-control" name="client_id" id="client_id" value="<?php echo $fet['org_name'];?>" readonly>
+			<td colspan="5"><input type="text" class="form-control" name="client_id" id="client_id" value="<?php echo $fet['org_name'] ?? '';?>" readonly>
 			</td>
 		</tr>
 		<tr >
 
 			<td>Quote Number</td>
-			<td colspan="5"><input type="text" class="form-control" name="quote_no" id="quote_no" value="<?php echo $fet['quote_no'];?>" readonly>
+			<td colspan="5"><input type="text" class="form-control" name="quote_no" id="quote_no" value="<?php echo $fet['quote_no'] ?? '';?>" readonly>
 			</td>
 		</tr>
 		<tr>
 			<td>Cost Sheet No</td>
-			<td colspan="5"><input type="text" class="form-control" name="cost_sheet_no" id="cost_sheet_no" value="<?php echo $fet['cost_sheet_no']; ?>" readonly>
+			<td colspan="5"><input type="text" class="form-control" name="cost_sheet_no" id="cost_sheet_no" value="<?php echo $fet['cost_sheet_no'] ?? ''; ?>" readonly>
 			</td>
 		</tr>
 		<tr>
 			<td>SO Number</td>
-			<td colspan="5"><input type="text" class="form-control" name="so_number" id="so_number" value="<?php echo $fet['so_number']; ?>" readonly>
+			<td colspan="5"><input type="text" class="form-control" name="so_number" id="so_number" value="<?php echo $fet['so_number'] ?? ''; ?>" readonly>
 			</td>
 		</tr>
 		<tr>
 			<td>PO</td>
-			<td colspan="5"><a href="qvision/BusinessProcess/po_approval/uploads/<?php echo $fet['po_upload'];?>" target="_blank"><?php echo $fet['po_upload'];?></a>
+			<td colspan="5"><a href="qvision/BusinessProcess/po_approval/uploads/<?php echo $fet['po_upload'] ?? '';?>" target="_blank"><?php echo $fet['po_upload'] ?? '';?></a>
 			
 			</td>
 		</tr>
 		<tr>
 			<td>Finance Person</td>
 			<?php 
-			$fperso=$fet['finance_approved_by'];
+			$fperso=$fet['finance_approved_by'] ?? '';
 			if($fperso!=''){
 			$sta=$con->query("select * from staff_master where candid_id='$fperso'");
 			
@@ -149,7 +149,7 @@ $fet = $stmt->fetch();
 	<!--tr>
 			<td>Service Person</td>
 			<!?php 
-			$sperso=$fet['service_approved_by'];
+			$sperso=$fet['service_approved_by'] ?? '';
 			$ssta=$con->query("select * from staff_master where candid_id='$sperso'");			
 			$sefet=$ssta->fetch();
 			?>
@@ -171,7 +171,7 @@ $fet = $stmt->fetch();
 		<tr>
 			<td>Marketing Person</td>
 			<?php 
-			$sperso=$fet['marketing_approved_by'];
+			$sperso=$fet['marketing_approved_by'] ?? '';
 			if($sperso!=''){
 			$ssta=$con->query("select * from staff_master where candid_id='$sperso'");			
 			$sefet=$ssta->fetch();
@@ -203,7 +203,7 @@ $fet = $stmt->fetch();
 	<tr>
 			<td>MD</td>
 			<?php 
-			$sdperso=$fet['md_approved_by'];
+			$sdperso=$fet['md_approved_by'] ?? '';
 			if($sdperso!=''){
 			$ssta=$con->query("select * from staff_master where candid_id='$sdperso'");			
 			$sefet=$ssta->fetch();
@@ -233,7 +233,16 @@ $fet = $stmt->fetch();
 		$cno=$fet['cost_sheet_no'];
 		$cost=$con->query("select * from cost_sheet_entry where cost_sheet_no='$cno'");
 		?>
-		<table class="table table-bordered table-striped">
+		 <table class="table table-bordered table-striped">
+		 <?php if($fet['business_id'] == 4) { ?>
+		 <th>SOFTWARE NAME</th>
+		 <th>NO OF MAN HRS</th>
+		 <th>PER HRS</th>
+		 <th formula="cost*qty" summary="sum">AMOUNT</th>
+		 <th colspan='2'>SERVICE COST</th>
+		 <th colspan='2'>MARGIN</th>
+		 <th>TOTAL AMOUNT</th>
+		 <?php } else { ?>
 		 <th>Product ID</th>
 		 <th>Product Name</th>
 		 <th>Description</th>
@@ -241,10 +250,13 @@ $fet = $stmt->fetch();
 		  <th>UNIT</th>
 		  <th>UNIT RATE</th>
 		  <th formula="cost*qty" summary="sum">AMOUNT</th>
+		  <?php if($fet['business_id'] == 1 || $fet['business_id'] == 3) { ?>
 		  <th colspan='2'>LOGISTIC</th>
+		  <?php } ?>
 		  <th colspan='2'>ENGINEER</th>
 		  <th colspan='2'>MARGIN</th>
 		  <th>TOTAL ITEMS</th>
+		  <?php } ?>
 		<tbody>
 		<?php 
 		$i=1;
@@ -252,6 +264,19 @@ $fet = $stmt->fetch();
 		{
 			?>
 			<tr>
+			<?php if($fet['business_id'] == 4) { ?>
+			 <td>
+		     <INPUT type="hidden" id="cost_sheet_no" name="cost_sheet_no" class="form-control" value="<?php echo $dis['cost_sheet_no']; ?>" readonly="readonly">
+			 <?php echo $dis['specification']; ?></td>
+			  <td><?php echo $dis['qty']; ?></td>
+			  <td><?php echo $dis['unit_rate']; ?></td>
+			  <td><?php echo $dis['total_price']; ?></td>
+			  <td><?php echo $dis['eng_per']; ?></td>
+			  <td><?php echo $dis['eng_amt']; ?></td> 
+			  <td><?php echo $dis['com_per']; ?></td>
+			  <td><?php echo $dis['com_amt']; ?></td>
+			  <td><?php echo $dis['total_amt']; ?></td>
+			<?php } else { ?>
 			 <td>
 		     <INPUT type="hidden" id="cost_sheet_no" name="cost_sheet_no" class="form-control" value="<?php echo $dis['cost_sheet_no']; ?>" readonly="readonly">
 			 <?php echo $dis['product_id']; ?></td>
@@ -262,14 +287,16 @@ $fet = $stmt->fetch();
 				
 			  <td><?php echo $dis['unit_rate']; ?></td>
 			  <td><?php echo $dis['total_price']; ?></td>
+			  <?php if($fet['business_id'] == 1 || $fet['business_id'] == 3) { ?>
 			  <td><?php echo $dis['log_per']; ?></td>
 			  <td><?php echo $dis['log_amt']; ?></td>
+			  <?php } ?>
 			  <td><?php echo $dis['eng_per']; ?></td>
 			  <td><?php echo $dis['eng_amt']; ?></td> 
 			  <td><?php echo $dis['com_per']; ?></td>
 			  <td><?php echo $dis['com_amt']; ?></td>
 			  <td><?php echo $dis['total_amt']; ?></td>
-			
+			<?php } ?>
 			</tr>
 			<?php
 		$i++;
@@ -278,35 +305,55 @@ $fet = $stmt->fetch();
 		
 		<?php 
 		$cost1=$con->query("select * from cost_sheet_entry where cost_sheet_no='$cno'");
-		$cfet=$cost1->fetch()?>
+		$cfet=$cost1->fetch();
+		if (!$cfet) $cfet = [];
+		
+		if(isset($fet['business_id']) && $fet['business_id'] == 4) {
+			$cs1 = 5;
+			$cs2 = 4;
+		} else {
+			$cs1 = ($fet['business_id'] == 1 || $fet['business_id'] == 3) ? 7 : 6;
+			$cs2 = ($fet['business_id'] == 1 || $fet['business_id'] == 3) ? 7 : 6;
+		}
+		?>
 		<tr>
-		  <td colspan="6" align="center"><b>Net Amount</b></td>
+		  <td colspan="<?php echo $cs1; ?>" align="center"><b>Net Amount</b></td>
 		 
-		  <td colspan="6"align="right">
-		    <INPUT type="text" id="total_item" name="total_item" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['net_amt']; ?>" readonly="readonly">
+		  <td colspan="<?php echo $cs2; ?>"align="right">
+		    <INPUT type="text" id="total_item" name="total_item" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['net_amt'] ?? ''; ?>" readonly="readonly">
 		  </td>
 		</tr>
 		<tr>
-		  <td colspan="6" align="center"><b>GST Percentage <?php echo $cfet['gst_per']; ?>%</b></td>
-		  <td colspan="6" align="right">
-		    <INPUT type="text" id="gst_per" name="gst_per" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['gst_amt']; ?>" readonly="readonly">
+		  <td colspan="<?php echo $cs1; ?>" align="center"><b>GST Percentage <?php echo $cfet['gst_per'] ?? ''; ?>%</b></td>
+		  <td colspan="<?php echo $cs2; ?>" align="right">
+		    <INPUT type="text" id="gst_per" name="gst_per" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['gst_amt'] ?? ''; ?>" readonly="readonly">
 		  </td>
 		</tr>
 		<tr>
 
-		  <td colspan="6" align="center"><b>IGST Percentage <?php echo $cfet['igst_per']; ?>%</b></td>
+		  <td colspan="<?php echo $cs1; ?>" align="center"><b>IGST Percentage <?php echo $cfet['igst_per'] ?? ''; ?>%</b></td>
 
-		  <td colspan="6" align="right">
-		    <INPUT type="text" id="gst_per" name="igst_per" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['igst_amount']; ?>" readonly="readonly">
+		  <td colspan="<?php echo $cs2; ?>" align="right">
+		    <INPUT type="text" id="gst_per" name="igst_per" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['igst_amount'] ?? ''; ?>" readonly="readonly">
 		  </td>
 		</tr>
 		
 		<tr>
-		  <td colspan="6" align="center"><b>Grand Total</b></td>
-		  <td colspan="6" align="right">
-		    <INPUT type="text" id="grand_total" name="grand_total" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['grand_amt']; ?>" readonly="readonly">
+		  <td colspan="<?php echo $cs1; ?>" align="center"><b>Grand Total</b></td>
+		  <td colspan="<?php echo $cs2; ?>" align="right">
+		    <INPUT type="text" id="grand_total" name="grand_total" class="form-control" style="width:40% !important;" placeholder="0.00" value="<?php echo $cfet['grand_amt'] ?? ''; ?>" readonly="readonly">
 		  </td>
 		</tr>
+        <?php 
+        // Software-ku (business_id = 4) AND cost_sheet_entry status = 11 irundha mattum Assign Employee button show aaganum
+        if(isset($fet['business_id']) && $fet['business_id'] == 4 && isset($cfet['status']) && $cfet['status'] == 11) { 
+        ?>
+        <tr>
+          <td colspan="<?php echo $cs1 + $cs2; ?>" align="right">
+             <input type="button" class="btn btn-primary" name="assign_emp_btn" id="<?php echo $quoteid; ?>" onclick="assign_software_emp(this.id)" value="Assign Employee">
+          </td>
+        </tr>
+        <?php } ?>
 		</tbody>
 		
       </table>
@@ -391,6 +438,15 @@ function approve_po(v)
 			}
 		}
 	})
+}
+function assign_software_emp(v) {
+    $.ajax({
+        type: "POST",
+        url: "qvision/CRM/assign_emp_form.php?id=" + v,
+        success: function(data) {
+            $("#main_content").html(data);
+        }
+    });
 }
 </script>
 

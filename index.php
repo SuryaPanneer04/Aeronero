@@ -4,14 +4,10 @@ ini_set('display_errors', 1);
 session_start();
 include("connect.php");
 include("user.php");
-
 $username=$_SESSION['username'];
 ?>
-
 <!DOCTYPE html>
 <style>
-
- 
 </style>
 <html>
 <head>
@@ -43,15 +39,9 @@ $username=$_SESSION['username'];
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">  
-
 <div class="wrapper">
-
 	<!-- Main Sidebar Container -->
   <?php require('headerr.php'); ?>
- 
-
-
-
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrappererrr" id="page_loader" style="margin-left:0px; min-height:100vh !important; transition: margin-left 0.3s ease;">
     <!-- Content Header (Page header) -->
@@ -62,14 +52,12 @@ $username=$_SESSION['username'];
       </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
-
     <!-- Main content -->
     <?php require('main.php'); ?>
     <!-- /.content -->
   </div>
   <!-- /.content-wrapper -->
   <?php require('footer.php'); ?>
-
   <!-- Control Sidebar -->
   <aside class="control-sidebar control-sidebar-dark">
     <!-- Control sidebar content goes here -->
@@ -77,7 +65,6 @@ $username=$_SESSION['username'];
   <!-- /.control-sidebar -->
 </div>
 <!-- ./wrapper -->
-
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <!-- jQuery UI 1.11.4 -->

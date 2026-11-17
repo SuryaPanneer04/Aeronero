@@ -7,10 +7,14 @@
 <section class="content" style="margin: 0; padding: 0;">
     <div class="container-fluid" id="main_content" style="position: relative; min-height: 85vh; overflow-x: hidden;">
         
-        <!-- Background Image -->
-        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.15; z-index: 0; pointer-events: none; width: 100%; text-align: center;">
-            <img src="login/assets/background_img.png" style="width: 80vw; max-width: 900px;" alt="background">
-        </div>
+        <?php if (isset($_SESSION['userrole']) && $_SESSION['userrole'] === 'R001'): ?>
+            <?php include __DIR__ . '/qvision/ceo_dashboard.php'; ?>
+        <?php else: ?>
+            <!-- Background Image -->
+            <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); opacity: 0.15; z-index: 0; pointer-events: none; width: 100%; text-align: center;">
+                <img src="login/assets/background_img.png" style="width: 80vw; max-width: 900px;" alt="background">
+            </div>
+        <?php endif; ?>
 
         <!-- Sliding Calendar Panel (Fixed off-canvas style) -->
         <div id="calendarSlideWrapper" style="position: fixed; right: 0; top: 50%; z-index: 1050; display: flex; align-items: center; transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); transform: translate(550px, -50%);">

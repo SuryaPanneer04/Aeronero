@@ -15,7 +15,7 @@ $costno=$cofet['cost_sheet_no']; */
     </head>
 <style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div class="card card-primary">
@@ -37,9 +37,23 @@ $costno=$cofet['cost_sheet_no']; */
       <?php
 	  
 	 
-	  
-	  $emp_sql=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,b.quote_no as qquote,b.*,c.id as enq_id,c.created_by FROM cost_sheet_entry a left join quote_generate b on (a.cost_sheet_no=b.cost_sheet_no) left join enquiry c on (a.enquiry_id=c.id)where a.status=3 and c.id='$enquiry_id' and a.edit_status=0 group by a.cost_sheet_no" );
-	  
+	  $enq_filter = !empty($enquiry_id) ? " and c.id='$enquiry_id'" : "";
+	  $emp_sql = $con->query("
+    SELECT 
+        a.cost_sheet_no, 
+        MIN(a.id) as id, 
+        MAX(a.approved_by) as approved_by, 
+        MAX(a.status) as cs_status, 
+        MAX(b.quote_no) as qquote, 
+        MAX(b.po) as po, 
+        MAX(c.id) as enq_id, 
+        MAX(c.created_by) as created_by 
+    FROM cost_sheet_entry a 
+    LEFT JOIN quote_generate b ON a.cost_sheet_no = b.cost_sheet_no 
+    LEFT JOIN enquiry c ON a.enquiry_id = c.id 
+    WHERE a.status=3 $enq_filter AND a.edit_status=0 
+    GROUP BY a.cost_sheet_no
+");
 
       $cnt=1;
       while($emp_res = $emp_sql->fetch(PDO::FETCH_ASSOC))
@@ -50,7 +64,7 @@ $costno=$cofet['cost_sheet_no']; */
 		 //echo "SELECT emp_name from staff_master where candid_id ='$approved_id'";
 		 $stmt->execute(); 
 		 $row = $stmt->fetch();
-		 $emp_name = $row['emp_name'];
+		 $emp_name = $row ? $row['emp_name'] : '';
        ?>
       <tr>
       <td><?php echo $cnt; ?>.</td>

@@ -187,7 +187,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 				?>
         <td colspan="5"><input type="text" value="<?php echo $Product_value; ?>" name="Product" class="form-control" id="Product" readonly></td>
         </tr>
-		<tr>
+		<!-- <tr>
 		<td></td>
 		<?php
 		$list=$fet['services'];
@@ -196,10 +196,10 @@ body {font-family: Arial, Helvetica, sans-serif;}
 		 <td colspan="5"><input type="text" value="<?php echo $rowl ['name'] ?? "Solution"; ?>" class="form-control" name="services" id="services" readonly>		
 		</td>
         </tr>
-     
-    <tr>
+      -->
+            <tr>
                 <td>File</td>
-                <td colspan="5"><a href="/KerliERP/CRM/calls/uploads/<?php echo $fet['image']; ?>" download="<?php echo $fet['image']; ?>"><?php echo $fet['image']; ?></a>
+                <td colspan="5"><a href="/Aeronero/qvision/CRM/calls/uploads/<?php echo $fet['image']; ?>" download="<?php echo $fet['image']; ?>"><?php echo $fet['image']; ?></a>
                 </td>
             </tr>
 			<tr>
@@ -552,9 +552,7 @@ $cnt=$cnt+1;
 
     <label for="psw"><b>Requirement</b></label>
 	<input type="hidden" name="idd" id="idd" value="<?php echo $id;   ?>" class="btn btn-success submitBtn" >
-   <textarea id="sco" name="sco" class="form-control" style="height:168px" required>
-
-                            </textarea>
+   <textarea id="sco" name="sco" class="form-control" style="height:168px" required></textarea>
 <input type="submit" class="btn btn-success" name="save" value="Generate Costsheet">
   
     <button type="button" class="btn cancel" onclick="closeForm33()">Close</button>
@@ -569,9 +567,7 @@ $cnt=$cnt+1;
 
     <label for="psw"><b>Requirement</b></label>
 	<input type="hidden" name="idd" id="idd" value="<?php echo $id;   ?>" class="btn btn-success submitBtn" >
-   <textarea id="sco" name="sco" class="form-control" style="height:168px" required>
-
-                            </textarea><br>
+   <textarea id="sco" name="sco" class="form-control" style="height:168px" required></textarea><br>
 <input type="submit" class="btn btn-success" name="save" value="Generate Client">
   
     <button type="button" class="btn cancel" onclick="closeForm22()">Close</button>
@@ -947,22 +943,23 @@ var formData = new FormData(this);
 </script>
 <script>
  $("form[name='fupForm11']").on("submit", function(ev) {
-		 ev.preventDefault();
-var formData = new FormData(this);
-$.ajax({  
-                 url:"qvision/CRM/Calls/enquiry_insertuhh.php",
-                method:"POST",  
-                data:formData, 
-				cache: false,
-				contentType: false,
-				processData: false,
-                success:function(data)  
-                {  
-                    alert('Costsheet Generated Successfully'); 
-                  
-				  costsheet_add()
-                }  
-           });   
-           
-      });  
+     ev.preventDefault();
+     var formData = new FormData(this);
+     $.ajax({  
+         url: "qvision/CRM/Calls/enquiry_insertuhh.php",
+         method: "POST",  
+         data: formData, 
+         cache: false,
+         contentType: false,
+         processData: false,
+         success: function(data) {  
+             if (data.trim() == "1") {
+                 alert('Costsheet Generated Successfully'); 
+                 costsheet_add();
+             } else {
+                 alert('Error generating costsheet: ' + data);
+             }
+         }  
+     });   
+ });  
 </script>

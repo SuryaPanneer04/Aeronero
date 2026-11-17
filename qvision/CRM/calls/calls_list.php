@@ -8,22 +8,24 @@ $userrole = $_SESSION['userrole'];
 
  $user_id = $_SESSION['userid'];
  
-$sel=$con->query("select a.department,b.head_status from z_user_master a left join staff_master b on (a.candidate_id=b.candid_id) where a.user_id='$user_id'");
+$sel = $con->query("select a.department,b.head_status from z_user_master a left join staff_master b on (a.candidate_id=b.candid_id) where a.user_id='$user_id'");
+$fet = $sel ? $sel->fetch() : false;
 
-$fet=$sel->fetch();
-$head_status=$fet['head_status'];
-if($head_status==1){
-	$vel=$con->query("select a.department,a.user_group_code,b.head_status from z_user_master a left join staff_master b on (a.candidate_id=b.candid_id) where a.user_id='$user_id'");
-	$vet=$vel->fetch();
-	$user_group_code=$vet['user_group_code'];
-	$department=$vet['department'];
+$head_status = $fet ? $fet['head_status'] : 0;
+
+if($head_status == 1){
+	$vel = $con->query("select a.department,a.user_group_code,b.head_status from z_user_master a left join staff_master b on (a.candidate_id=b.candid_id) where a.user_id='$user_id'");
+	$vet = $vel ? $vel->fetch() : false;
 	
-	$del=$con->query("select user_group_code,department,user_id from z_user_master where department='$department' and user_group_code='$user_group_code'");
-
-	$det=$del->fetch();
-	$check_userid=$det['user_id'];
-}else{
-	$check_userid=990;
+	$user_group_code = $vet ? $vet['user_group_code'] : '';
+	$department = $vet ? $vet['department'] : '';
+	
+	$del = $con->query("select user_group_code,department,user_id from z_user_master where department='$department' and user_group_code='$user_group_code'");
+	$det = $del ? $del->fetch() : false;
+	
+	$check_userid = $det ? $det['user_id'] : 990;
+} else {
+	$check_userid = 990;
 }
 
 ?>
@@ -55,17 +57,18 @@ if($head_status==1){
 
 	</head>
 <body>
-<div  class="card card-primary" style="margin-left:5% !important;">
-    <div class="card-header" style="background-color:#009EE3  !important;">
+<div  class="card card-primary">
+    <div class="card-header" style="background-color: #009EE3 !important;">
         <h3 class="card-title"><font size="5">Enquiry List</font></h3>
-		<!-- <a onclick="call_upload()"  style="float: right;    background-color: #da542e;" data-toggle="modal" class="btn btn-default"><i class="fa fa-upload"></i> Upload</a>-->
+		<!-- <a onclick="call_upload()"  style="float: right;    background-color: #009EE3;" data-toggle="modal" class="btn btn-default"><i class="fa fa-upload"></i> Upload</a>-->
 		 
-       <a onclick="add()" style="float: right;background:black;border:1px solid black;" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i> ADD</a>
+       <a onclick="add()" style="float: right;background:#009EE3;border:1px solid black;" data-toggle="modal" class="btn btn-primary"><i class="fa fa-plus"></i> ADD</a>
 
     </div>
 
     <div class="card-body">
-<table id="example" class="display nowrap" style="width:100%">
+	<div class="table-responsive">
+<table id="example" class="table table-bordered table-striped display nowrap" style="width:100%">
         <thead>
            <tr>
                     <th>#</th>
@@ -113,11 +116,25 @@ $cnt=1;
 <td><?php echo $products_master['feedback'];?></td>
 <td><?php echo $products_master['feedback_date'];?></td>
 <td><?php echo $products_master['date'];?></td>
-<td><?php  $created_by = $products_master['created_by'];
-$cc = $con->query("select * from z_user_master where user_id='$created_by'");
-$cc1 = $cc->fetch();
-echo $cc1['full_name'];?></td>
 
+<td>
+    <?php
+    $created_by = $products_master['created_by'];
+
+    $cc = $con->prepare(
+        "SELECT full_name FROM z_user_master WHERE user_id = :user_id"
+    );
+
+    $cc->execute(['user_id' => $created_by]);
+    $cc1 = $cc->fetch(PDO::FETCH_ASSOC);
+
+    if ($cc1 && !empty($cc1['full_name'])) {
+        echo htmlspecialchars($cc1['full_name']);
+    } else {
+        echo 'Unknown User';
+    }
+    ?>
+</td>
 <td>
 	  <?php 
 	  if($products_master['status'] ==1)
@@ -149,18 +166,21 @@ echo $cc1['full_name'];?></td>
 <td>
 
 							<button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $products_master['id']; ?>" onclick="calls_feedback(<?php echo $products_master['id']; ?>)"><i class="fa fa-edit"></i> Feedback</button>
-</td>
-    
-<!--<td>
+<button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $products_master['id']; ?>" onclick="calls_edit(<?php echo $products_master['id']; ?>)"><i class="fa fa-edit"></i> Edit</button>
 
-							<button class="btn btn-default btn-sm edit btn-flat" data-id="<?php echo $products_master['id']; ?>" onclick="calls_edit(<?php echo $products_master['id']; ?>)"><i class="fa fa-edit"></i> Edit</button>
-</td>
 
+						</td>
+  <!--  
 <td>
 
-							<button class="btn btn-danger btn-sm edit btn-flat" data-id="<?php echo $products_master['id']; ?>" onclick="calls_delete(<?php echo $products_master['id']; ?>)"><i class="fa fa-edit"></i> Delete</button>
-</td>-->
+							<button class="btn btn-success btn-sm edit btn-flat" data-id="<?php echo $products_master['id']; ?>" onclick="calls_edit(<?php echo $products_master['id']; ?>)"><i class="fa fa-edit"></i> Edit</button>
+</td>
 
+  <td>
+
+							<button class="btn btn-danger btn-sm edit btn-flat" data-id="<?php echo $products_master['id']; ?>" onclick="calls_delete(<?php echo $products_master['id']; ?>)"><i class="fa fa-edit"></i> Delete</button>
+</td>
+-->
 </tr>
 <?php 
 $cnt=$cnt+1;
@@ -169,6 +189,7 @@ $cnt=$cnt+1;
 </tbody>
         
     </table>
+	</div>
   <script>
   $(document).ready(function() {
     $('#example').DataTable( {

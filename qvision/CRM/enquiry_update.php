@@ -23,8 +23,9 @@ $Follup=$_REQUEST['Follup'];
 $Department=$_REQUEST['Department'];
 $employee=$_REQUEST['employee'];
 
+$enq_status = ($Client_type == '1') ? 3 : 2;
 
- $sql11=$con->query("UPDATE `enquiry` SET `Call_type`='$Call_type',`date`='$date',`Client_type`='$Client_type',`Company_name`='$Company_name',`Location`='$Location',`Address`='$Address',`Client`='$Client',`Designation`='$Designation',`Mobile`='$Number',`mail`='$mail',`Product`='$Product',`list`='$list',`Feedback`='$Feedback',`Follup`='$Follup',`Department`='$Department',`employee`='$employee',`Modified_by`='$candidateid',`modified_on`=now() WHERE id='$get_id'"); 
+ $sql11=$con->query("UPDATE `enquiry` SET `Call_type`='$Call_type',`date`='$date',`Client_type`='$Client_type',`Company_name`='$Company_name',`Location`='$Location',`Address`='$Address',`Client`='$Client',`Designation`='$Designation',`Mobile`='$Number',`mail`='$mail',`Product`='$Product',`list`='$list',`Feedback`='$Feedback',`Follup`='$Follup',`Department`='$Department',`employee`='$employee',`status`='$enq_status',`Modified_by`='$candidateid',`modified_on`=now() WHERE id='$get_id'"); 
 
 echo "UPDATE `enquiry` SET `Call_type`='$Call_type',`date`='$date',`Client_type`='$Client_type',`Company_name`='$Company_name',`Location`='$Location',`Address`='$Address',`Client`='$Client',`Designation`='$Designation',`Mobile`='$Number',`mail`='$mail',`Product`='$Product',`list`='$list',`Feedback`='$Feedback',`Follup`='$Follup',`Department`='$Department',`employee`='$employee',`Modified_by`='$candidateid',`modified_on`=now() WHERE id='$get_id'";
 

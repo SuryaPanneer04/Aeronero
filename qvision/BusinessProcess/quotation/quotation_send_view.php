@@ -228,9 +228,9 @@ function AmountInWords($amount)
                         <tr>
                             <td colspan='12' style="padding:10px;">
                                 <h4>
-                                    <b>QUADSEL SYSTEMS PRIVATE LIMITED</b><br /><br />
-                                    No.118, MANIKKAM LANE, ANNASALAI,<br>
-                                    GUINDY, CHENNAI - 600032
+                                    <b>Aeronero Solutions Private Limited</b><br /><br />
+                                    No.15, 1st Cross St, Sriram Avenue, Natesan Colony,<br>
+                                     Kottivakkam, Chennai, Tamil Nadu 600041
                             </td>
                         </tr>
                         <tr>
@@ -447,7 +447,7 @@ function AmountInWords($amount)
                         </tr>
 						<?php
 						$queryd =  $con->prepare("SELECT cost_sheet_no, SUM(gst_amt) as gst_score,SUM(igst_amount) as igst_score from cost_sheet_entry where cost_sheet_no='$cost_sheet_no'");
-
+                        
                             $queryd->execute();
                             $rowd = $queryd->fetch();
                             $gst_score=$rowd['gst_score'];
@@ -490,7 +490,7 @@ function AmountInWords($amount)
                                             <h5 style="font-weight: bold;margin-left: 10px; width: 130px;"> Tax Amount :
                                         </div>
                                         <div class="col-md-3" style="padding-left: 65px;"><?php echo number_format($total_score, 2); ?>
-                                            <h5/>
+                                        </h5>
                                         </div>
                                     </div>
                                     ....................................................................................... <br />
@@ -507,16 +507,31 @@ function AmountInWords($amount)
                     <br>
 
                     <?php
-                    $stmt = $con->query("select * from terms_and_condition where cost_sheet_no='$cost_sheet_no'");
-                    //echo "select * from terms_and_condition where cost_sheet_no ='$cost_sheet_no'";
+                    $cst_parts = explode('/', trim($cost_sheet_no));
+                    $base_cst_no = (count($cst_parts) >= 2) ? $cst_parts[0] . '/' . $cst_parts[1] . '%' : trim($cost_sheet_no) . '%';
+                    
+                    $stmt = $con->prepare("SELECT * FROM terms_and_condition WHERE cost_sheet_no LIKE :cst_no ORDER BY id DESC LIMIT 1");
+                    $stmt->bindParam(':cst_no', $base_cst_no);
                     $stmt->execute();
-                    $row_fetch = $stmt->fetch();
-
-
+                    $row_fetch = $stmt->fetch(PDO::FETCH_ASSOC);
+                    if(!$row_fetch) {
+                        $row_fetch = array(
+                            'validity' => '',
+                            'important' => '',
+                            'delivery' => '',
+                            'warrenty' => '',
+                            'payment' => '',
+                            'acc_holder_name' => '',
+                            'bank_name' => '',
+                            'branch_name' => '',
+                            'account_no' => '',
+                            'ifsc_code' => ''
+                        );
+                    }
                     ?>
                     <br>
                     <div style="text-align:left;">
-                        <img src="..\qvision\images\logo123.jpg" alt="qvision" style="width:240px; height:70px;">
+                        <img src="qvision\images\logo123.jpg" alt="qvision" style="width:240px; height:70px;">
                     </div>
                     <div style="text-align:center;font-weight:bold;"><b><u>QUOTATION</u></b></div><br />
                     <div style="font-size:15px;min-width:708px;min-height:500px;border-top: 1px solid black;border-left: 1px solid black; border-right: 1px solid black;border-bottom: 1px solid black;">
@@ -649,7 +664,7 @@ function AmountInWords($amount)
                         </div>
                         <div style="margin-left:65%;justify-content: center;">
                             <br />
-                            <?php $query1 =  $con->prepare("select a.*,b.*,c.*,f.position as desg from staff_master a left join designation_master b on 
+                            <?php $query1 =  $con->prepare("select a.*,b.*,c.*,b.designation_name as desg from staff_master a left join designation_master b on 
 		                  (a.design_id=b.id) left join z_user_master c on (a.id=c.candidate_id) left join candidate_form_details f on (a.candid_id=f.id) where a.id = '$acc_manager'");
                             /* echo "select a.*,b.*,c.* from staff_master a inner join designation_master b on 
 		                  (b.id = a.design_id) inner join z_user_master c on (c.candidate_id=a.id) where a.id = '$acc_manager'"; */

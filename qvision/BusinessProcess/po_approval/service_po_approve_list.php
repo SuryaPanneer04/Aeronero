@@ -26,7 +26,7 @@ else
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div  class="card card-primary">

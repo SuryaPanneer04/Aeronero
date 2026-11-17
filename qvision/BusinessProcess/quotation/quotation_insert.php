@@ -162,8 +162,19 @@ for($i=0; $i<$row_count; $i++)
     }
 }
 
+$safe_cs_id = trim($cost_sheet_id);
+$get_cs_no = $con->query("SELECT cost_sheet_no FROM cost_sheet_entry WHERE id='$safe_cs_id'");
+$cs_row = $get_cs_no->fetch();
+$cost_sheet_no_val = $cs_row['cost_sheet_no'];
 
+$insert_qg = $con->query("INSERT INTO quote_generate (quote_no, quote_date, cost_sheet_id, cost_sheet_no, status) VALUES ('$QUOTE_NO', '$quote_date', '$safe_cs_id', '$cost_sheet_no_val', '1')");
 
+if($insert_qg) {
+    echo "<br>Quote successfully generated in quote_generate table!<br>";
+} else {
+    echo "<br>Error in quote_generate: ";
+    print_r($con->errorInfo());
+}
 
 
 ?>

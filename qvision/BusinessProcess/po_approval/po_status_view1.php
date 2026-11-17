@@ -15,7 +15,7 @@ $fet = $stmt->fetch();
 
 <style>
 .card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .btn-danger{
 	background-color: #ed5d00 !important;

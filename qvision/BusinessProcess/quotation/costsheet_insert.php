@@ -87,7 +87,7 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
     // Get the submitted form data 
 	$business_ids = $_POST['mapping_id'];
  $business_id = $data['Product']; 	
-	if($business_id==1 || $business_id==3){
+	if($business_id==1 || $business_id==3 || $business_id==4){
      $tot_item_get = $_POST['tot_item'];
 	 if($tot_item_get)
 	 {
@@ -130,7 +130,9 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
       $unit_rate     = isset($_REQUEST['cost']) ? $_REQUEST['cost'] : array();
       $total         = isset($_REQUEST['price']) ? $_REQUEST['price'] : array();
 	 
-		$row_count= is_array($total) ? count($total) : 0;
+		// BUG FIX: Ensure correct row count mapping from product_names if software, to prevent duplicate looping.
+		$row_count = (isset($_REQUEST['product_name']) && is_array($_REQUEST['product_name'])) ? count($_REQUEST['product_name']) : (is_array($total) ? count($total) : 0);
+
 	  $sel_amt   = isset($_REQUEST['sel_amt']) ? $_REQUEST['sel_amt'] : array();
 	  $dist_per   = isset($_REQUEST['dist_per']) ? $_REQUEST['dist_per'] : array();
 	  $dist_amt   = isset($_REQUEST['dist_amt']) ? $_REQUEST['dist_amt'] : array();
@@ -155,21 +157,21 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
 	//vendor selection
 	  $vendor_name = isset($_REQUEST['vendor_name']) ? $_REQUEST['vendor_name'] : array();
 
-	 if($business_id==1 || $business_id==3){
+	 if($business_id==1 || $business_id==3 || $business_id==4){
       $costsheet_date = date('Y-m-d', strtotime($costsheet_date_str));
 	 }
     //Terms and conditions
-	  $validity   = $_REQUEST['validity'];
-      $payment   = $_REQUEST['payment'];
-      $bank_name   = $_REQUEST['bank_name'];
-      $account_no  = $_REQUEST['account_no'];
+	  $validity   = addslashes($_REQUEST['validity'] ?? '');
+      $payment   = addslashes($_REQUEST['payment'] ?? '');
+      $bank_name   = addslashes($_REQUEST['bank_name'] ?? '');
+      $account_no  = addslashes($_REQUEST['account_no'] ?? '');
  
-      $ifsc_code   = $_REQUEST['ifsc_code'];
-      $important   = $_REQUEST['important'];
-      $delivery   = $_REQUEST['delivery'];
-      $warrenty   = $_REQUEST['warrenty'];
-      $acc_hold_name   = $_REQUEST['acc_hold_name'];
-      $branch_name   = $_REQUEST['branch_name'];
+      $ifsc_code   = addslashes($_REQUEST['ifsc_code'] ?? '');
+      $important   = addslashes($_REQUEST['important'] ?? '');
+      $delivery   = addslashes($_REQUEST['delivery'] ?? '');
+      $warrenty   = addslashes($_REQUEST['warrenty'] ?? '');
+      $acc_hold_name   = addslashes($_REQUEST['acc_hold_name'] ?? '');
+      $branch_name   = addslashes($_REQUEST['branch_name'] ?? '');
     //Business id create	
 	if($business_id =='1'){
 	 //$bussiness_type ="QSPLPR";
@@ -180,6 +182,8 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
     }elseif($business_id =='3'){
 	// $bussiness_type ="QSPLSL";
 	 $bussiness_type ="SSSL";//solution
+    }elseif($business_id =='4'){
+	 $bussiness_type ="SSSW";//software
     }
     //echo  $bussiness_type;
     //$vendor_id     = $_REQUEST['vendor_id'];
@@ -191,7 +195,6 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
        $query = $con->query($row_query);
        $query->execute();
        $count = $query->rowCount();
-
        $row_val = $query->fetch();
  
 	if($count == 0)
@@ -318,7 +321,7 @@ if (is_numeric($find_fs)) {
 	    }
 							   
 	}  
-if($business_id==1){  //product quotation
+if($business_id==1 || $business_id==4){  //product & software quotation
 			for($i=0;$i<$row_count;$i++)
 					
 			{
@@ -360,8 +363,8 @@ if($business_id==1){  //product quotation
 					 $dist_pers  ='0';
 			}
 
-					 $log_perss   = $log_per[$i];
-					 $vendor=$vendor_name[$i];
+					 $log_perss   = isset($log_per[$i]) ? $log_per[$i] : '';
+					 $vendor = isset($vendor_name[$i]) ? $vendor_name[$i] : '';
 
 				  if($log_perss!=''){
 					 $log_pers  = $log_per[$i];
@@ -369,17 +372,17 @@ if($business_id==1){  //product quotation
 					 $log_pers  ='0';
 			}
 			   //echo $log_pers;exit;
-					 $eng_perss   = $eng_per[$i];
+					 $eng_perss   = isset($eng_per[$i]) ? $eng_per[$i] : '';
 				  if($eng_perss!=''){
 					 $eng_pers  = $eng_per[$i];
 			}else{
 					 $eng_pers  ='0';
 			}
-					 $log_amts   = $log_amt[$i];
-					 $eng_amts   = $eng_amt[$i];
+					 $log_amts   = isset($log_amt[$i]) ? $log_amt[$i] : '0';
+					 $eng_amts   = isset($eng_amt[$i]) ? $eng_amt[$i] : '0';
 			   //$log_eng_amts   = $log_eng_amt[$i];
 			  
-					 $com_perss   = $com_per[$i];
+					 $com_perss   = isset($com_per[$i]) ? $com_per[$i] : '';
 				   if($com_perss!=''){
 					 $com_pers = $com_per[$i];
 			}else{
@@ -546,8 +549,8 @@ if($business_id==1){  //product quotation
 					 $dist_pers  ='0';
 			}
 
-					 $log_perss   = $log_per[$i];
-					 $vendor=$vendor_name[$i];
+					 $log_perss   = isset($log_per[$i]) ? $log_per[$i] : '';
+					 $vendor = isset($vendor_name[$i]) ? $vendor_name[$i] : '';
 
 				  if($log_perss!=''){
 					 $log_pers  = $log_per[$i];
@@ -555,17 +558,17 @@ if($business_id==1){  //product quotation
 					 $log_pers  ='0';
 			}
 			   //echo $log_pers;exit;
-					 $eng_perss   = $eng_per[$i];
+					 $eng_perss   = isset($eng_per[$i]) ? $eng_per[$i] : '';
 				  if($eng_perss!=''){
 					 $eng_pers  = $eng_per[$i];
 			}else{
 					 $eng_pers  ='0';
 			}
-					 $log_amts   = $log_amt[$i];
-					 $eng_amts   = $eng_amt[$i];
+					 $log_amts   = isset($log_amt[$i]) ? $log_amt[$i] : '0';
+					 $eng_amts   = isset($eng_amt[$i]) ? $eng_amt[$i] : '0';
 			   //$log_eng_amts   = $log_eng_amt[$i];
 			  
-					 $com_perss   = $com_per[$i];
+					 $com_perss   = isset($com_per[$i]) ? $com_per[$i] : '';
 				   if($com_perss!=''){
 					 $com_pers = $com_per[$i];
 			}else{

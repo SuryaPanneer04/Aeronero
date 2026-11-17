@@ -37,7 +37,7 @@ $userrole=$_SESSION['userrole'];
       <tbody>
       <?php
 	  
-	  $emp_sql=$con->query("SELECT id,cost_sheet_no,quote_no,so_number,po_date FROM po_generate where po_upload_status=2 and finance_status=1 and md_status=1 and marketing_status=1 order by id desc" );
+	  $emp_sql=$con->query("SELECT a.id, a.cost_sheet_no, a.quote_no, a.so_number, a.po_date FROM po_generate a LEFT JOIN cost_sheet_entry b ON a.cost_sheet_no = b.cost_sheet_no WHERE a.po_upload_status=2 AND a.finance_status=1 AND a.md_status=1 AND a.marketing_status=1 AND b.business_id != '4' ORDER BY a.id DESC" );
 	 /* echo "SELECT id,cost_sheet_no,quote_no,so_number,po_date FROM po_generate where po_upload_status=2 and finance_status=1 and md_status=1 and marketing_status=1 order by id desc"; */
      
       $cnt=1;

@@ -62,78 +62,78 @@ if (!empty($_FILES['attachfile']['name'][0])) {
    ONLY ONE PATH WILL EXECUTE BELOW
    ======================================================= */
 
-/* COMPANY EXISTING */
-if ($Client_type == 1) {
+if ($cust_type == 1) { // Corporate
+    if ($Client_type == 1) {
+        /* COMPANY EXISTING */
+        $Company_name = $_POST['client_orgg'] ?? '';
+        if (!$Company_name) fail("Company required");
 
-    $Company_name = $_POST['client_orgg'] ?? '';
-    if (!$Company_name) fail("Company required");
+        [$client_org_id, $client_org_name] = explode('-', $Company_name);
 
-    [$client_org_id, $client_org_name] = explode('-', $Company_name);
+        $con->exec("
+            INSERT INTO crm_calls
+            (cust_type,call_type,client_type,client_org,client_id,client_name,role_id,
+            contact,whatsapp,email,alternative_mail,website,address,Product,services,
+            created_by,created_on,status,flag,image,remarks)
+            VALUES
+            ('$cust_type','$Call_type','1','$client_org_name','$client_org_id',
+            '$client_name','$role_id','$contact','$whatsapp','$email','$mail',
+            '$website','$address','$Product','$services',
+            '$user',NOW(),1,'$flag','$uploadedFile','$remarks')
+        ");
+        $call_id = $con->lastInsertId();
+    } elseif ($Client_type == 2) {
+        /* COMPANY NEW */
+        $client_org_name = $_POST['client_org1'] ?? '';
+        if (!$client_org_name) fail("Company name required");
+        if (!$client_name) fail("Contact person name required");
 
-    $con->exec("
-        INSERT INTO crm_calls
-        (cust_type,call_type,client_type,client_org,client_id,client_name,role_id,
-        contact,whatsapp,email,alternative_mail,website,address,Product,services,
-        created_by,created_on,status,flag,image,remarks)
-        VALUES
-        ('$cust_type','$Call_type','1','$client_org_name','$client_org_id',
-        '$client_name','$role_id','$contact','$whatsapp','$email','$mail',
-        '$website','$address','$Product','$services',
-        '$user',NOW(),1,'$flag','$uploadedFile','$remarks')
-    ");
-
-    $call_id = $con->lastInsertId();
-}
-
-/* COMPANY NEW */
-elseif ($Client_type == 2) {
-
-    if (!$client_name) fail("Company name required");
-
-    $con->exec("
-        INSERT INTO crm_calls
-        (cust_type,call_type,client_type,client_org,client_name,role_id,
-        contact,whatsapp,email,alternative_mail,website,address,Product,services,
-        created_by,created_on,status,flag,image,remarks)
-        VALUES
-        ('$cust_type','$Call_type','2','Prospect Company',
-        '$client_name','$role_id','$contact','$whatsapp','$email','$mail',
-        '$website','$address','$Product','$services',
-        '$user',NOW(),1,'$flag','$uploadedFile','$remarks')
-    ");
-
-    $call_id = $con->lastInsertId();
-}
-
-/* INDIVIDUAL */
-elseif ($client_type1 == 3 || $client_type1 == 4) {
-
-    $Company_name = 'Individual Customer';
-    $ind_client_id = 0;
-
-    if ($client_type1 == 4) {
-        $client_org = $_POST['client_org'] ?? '';
-        if (!$client_org) fail("Individual required");
-
-        $stmt = $con->query("SELECT id FROM individual_form WHERE client_name='$client_org'");
-        $row = $stmt->fetch(PDO::FETCH_ASSOC);
-        $ind_client_id = $row['id'] ?? 0;
-        $client_name = $client_org;
+        $con->exec("
+            INSERT INTO crm_calls
+            (cust_type,call_type,client_type,client_org,client_name,role_id,
+            contact,whatsapp,email,alternative_mail,website,address,Product,services,
+            created_by,created_on,status,flag,image,remarks)
+            VALUES
+            ('$cust_type','$Call_type','2','$client_org_name',
+            '$client_name','$role_id','$contact','$whatsapp','$email','$mail',
+            '$website','$address','$Product','$services',
+            '$user',NOW(),1,'$flag','$uploadedFile','$remarks')
+        ");
+        $call_id = $con->lastInsertId();
+    } else {
+        fail("Corporate Client Type missing");
     }
+} elseif ($cust_type == 2) { // Individual
+    if ($client_type1 == 3 || $client_type1 == 4) {
+        /* INDIVIDUAL */
+        $Company_name = 'Individual Customer';
+        $ind_client_id = 0;
 
-    $con->exec("
-        INSERT INTO crm_calls
-        (client_org,cust_type,call_type,client_type,client_name,role_id,
-        contact,whatsapp,email,alternative_mail,address,Product,services,
-        created_by,created_on,status,flag,ind_client_id,image,remarks)
-        VALUES
-        ('$Company_name','$cust_type','$Call_type','$client_type1',
-        '$client_name','$role_id','$contact','$whatsapp','$email','$mail',
-        '$address','$Product','$services',
-        '$user',NOW(),1,'$flag','$ind_client_id','$uploadedFile','$remarks')
-    ");
+        if ($client_type1 == 4) {
+            $client_org = $_POST['client_org'] ?? '';
+            if (!$client_org) fail("Individual required");
 
-    $call_id = $con->lastInsertId();
+            $stmt = $con->query("SELECT id FROM individual_form WHERE client_name='$client_org'");
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            $ind_client_id = $row['id'] ?? 0;
+            $client_name = $client_org;
+        }
+
+        $con->exec("
+            INSERT INTO crm_calls
+            (client_org,cust_type,call_type,client_type,client_name,role_id,
+            contact,whatsapp,email,alternative_mail,address,Product,services,
+            created_by,created_on,status,flag,ind_client_id,image,remarks)
+            VALUES
+            ('$Company_name','$cust_type','$Call_type','$client_type1',
+            '$client_name','$role_id','$contact','$whatsapp','$email','$mail',
+            '$address','$Product','$services',
+            '$user',NOW(),1,'$flag','$ind_client_id','$uploadedFile','$remarks')
+        ");
+        $call_id = $con->lastInsertId();
+    } else {
+        fail("Individual Customer Type missing");
+    }
 }
 
 if ($call_id == 0) fail("Insert failed");

@@ -25,10 +25,10 @@ $call_type = $fet['call_type'];
     <!-- Post -->
     <table class="table table-bordered">
       <?php
-                        $stmt = $con->query("SELECT b.id as idc,b.name as name FROM crm_calls a join calls_master b where b.id='$call_type'");
+                        $stmt = $con->query("SELECT id as idc, name FROM calls_master where id='$call_type'");
                        $row1 = $stmt->fetch(); 
-					   $nid = $row1['idc'];
-					   $name = $row1['name'];
+					   $nid = $row1['idc'] ?? '';
+					   $name = $row1['name'] ?? 'Choose Source';
 					   
                             ?>
       
@@ -61,10 +61,28 @@ $call_type = $fet['call_type'];
         <td>Client Name</td>
         <td colspan="5"><input type="text" class="form-control" id="client_name1" name="client_name1" value="<?php echo $fet['client_name'];?>"></td>
         </tr>
+      <?php
+        $contact_full = $fet['contact'];
+        $country_code = '';
+        $contact_number = $contact_full;
+        if (strpos($contact_full, '+') === 0) {
+            $parts = preg_split('/[\s\-]/', $contact_full, 2);
+            if (count($parts) > 1) {
+                $country_code = str_replace('+', '', $parts[0]);
+                $contact_number = substr($contact_full, strlen($parts[0]) + 1);
+            }
+        }
+      ?>
       <tr>
         <td>Contact Number</td>
-        <td colspan="5"><input type="text" class="form-control"id="contact1" name="contact1" value="<?php echo $fet['contact'];?>"></td>
-        </tr>
+        <td colspan="5">
+            <div style="display: flex; align-items: center;">
+                <span style="padding: 0 10px; border: 1px solid #ccc; background: #eee; height: 38px; display: flex; align-items: center; border-right: 0;">+</span>
+                <input type="text" class="form-control" name="country_code1" style="width: 70px; margin-right: 5px; border-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0;" placeholder="Code" value="<?php echo $country_code; ?>">
+                <input type="text" class="form-control mob" id="contact1" name="contact1" value="<?php echo $contact_number; ?>" style="width: 100%;">
+            </div>
+        </td>
+      </tr>
 		<tr>
         <td>Whatsapp Number</td>
         <td colspan="5"><input type="text" class="form-control"id="whatsapp1" name="whatsapp1" value="<?php echo $fet['whatsapp'];?>"></td>
@@ -89,13 +107,14 @@ $call_type = $fet['call_type'];
         </tr>
      <?php 
 	 
-					     $stmt1 = $con->query("SELECT b.id as id2,b.name as name2 FROM crm_calls a join services b where b.id='$call_type'");
+					   $srv = $fet['services'];
+					   $stmt1 = $con->query("SELECT id as id2, name as name2 FROM services where id='$srv'");
                        $row2 = $stmt1->fetch(); 
-					   $id2 = $row2['id2'];
-					   $name2 = $row2['name2'];
+					   $id2 = $row2['id2'] ?? '';
+					   $name2 = $row2['name2'] ?? 'Choose Services';
 					   ?>
       <tr>
-        <td>Services</td>
+        <!-- <td>Services</td>
        <td colspan="5">
                     <select class="form-control" id="services" name="services">
 					 <option value="<?php echo $id2; ?>"> <?php echo $name2; ?> </option>
@@ -107,7 +126,7 @@ $call_type = $fet['call_type'];
                             <option value="<?php echo $row['id']; ?>"> <?php echo $row['name']; ?> </option>
 <?php } ?>
                     </select></td>
-        </tr>
+        </tr> -->
       
       
       </table>
@@ -158,7 +177,7 @@ $cnt=$cnt+1;
                
 <td>
 
-							<button class="btn btn-primary btn-sm edit btn-flat" data-id="<?php echo $id; ?>" onclick="update_calls(<?php echo $id; ?>)"> Update</button>
+							<button type="button" class="btn btn-primary btn-sm edit btn-flat" data-id="<?php echo $id; ?>" onclick="update_calls(<?php echo $id; ?>)"> Update</button>
 </td>
 			   <?php
         }
@@ -182,10 +201,23 @@ $cnt=$cnt+1;
    function update_calls(v)
 {
 	//alert(v);
-	 var id=v;
+	var id=v;
+	var cc = $('input[name="country_code1"]').val();
+	var contact = $('#contact1').val();
+	if (cc && contact && !contact.startsWith('+')) {
+		var cleanCc = cc.replace('+', '');
+		$('#contact1').val('+' + cleanCc + '-' + contact);
+	}
+	
 	var data=$('form').serialize();
+	
+	// Restore the input back so it looks correct
+	if (cc && contact && !contact.startsWith('+')) {
+		$('#contact1').val(contact);
+	}
+	
 	$.ajax({
-		type:"GET",
+		type:"POST",
 		data: data + "&" + "id="+id,
 		url:"qvision/CRM/calls/calls_update.php",
 		success:function(data)

@@ -16,6 +16,10 @@ $uploadDir = 'uploads/';
 //echo $vendor_amt  = $_REQUEST['vendor_amt'];
 //exit;
 $item          = $_REQUEST['item'] ?? [];
+$product_id    = $_REQUEST['product_id'] ?? [];
+$product_name  = $_REQUEST['product_name'] ?? [];
+$description   = $_REQUEST['description'] ?? [];
+$hsn           = $_REQUEST['hsn'] ?? [];
 //echo $row_count= count($specification);
 $qty           = $_REQUEST['qty'] ?? [];
 //$unit          = $_REQUEST['unit'] ?? [];
@@ -47,6 +51,10 @@ $costsheet_date = date('Y-m-d', strtotime($costsheet_date_str));
  }elseif($business_id ==3){
 	 //$bussiness_type ="QSPLSL";
 	 $bussiness_type ="SSSL";//solution
+ }elseif($business_id ==4){
+     $bussiness_type ="SSSW";//software
+ }else{
+     $bussiness_type ="SSPR";//product
  }
 file_put_contents('debug.txt', "Line 50\n", FILE_APPEND);
 //$vendor_id     = $_REQUEST['vendor_id'];
@@ -139,7 +147,7 @@ $row_val = $query->fetch();
 	        $find_fs = substr($row['cost_sheet_no'], 7, 4);
 	        $bussiness_type ; 
 	  // echo  $a = sprintf("%05d", $find_fs);
-	    $final_cost_no = str_pad($find_fs + 1, 5, 0, STR_PAD_LEFT); 
+	    $final_cost_no = str_pad((int)$find_fs + 1, 5, 0, STR_PAD_LEFT); 
 	    $CS_NO = $no.''.'/'.$no2.'/'.$newchar;
 	  //echo $CS_NO = $bussiness_type.''.$final_cost_no.'/'.$finyear.'/'.$newchar;	
 	 }
@@ -180,25 +188,28 @@ file_put_contents('debug.txt', "Inside loop i=$i.\n", FILE_APPEND);
  $unit_rates     = $unit_rate[$i];
  $totalPrices    = $total[$i]; */
  
- 
  $items          = $item[$i];
+ $product_ids    = $product_id[$i] ?? '';
+ $product_names  = $product_name[$i] ?? '';
+ $descriptions   = $description[$i] ?? '';
+ $hsns           = $hsn[$i] ?? '';
  $qtys           = $qty[$i];
  //$units          = $unit[$i];
  $unit_rates     = $unit_rate[$i];
  $totalPrices    = $total[$i];//qty*cost
  $total_amts     = $total_amt[$i];//items total
  //$net_amts       = $net_amt[$i];//netamount
-$vendor=$vendor_id[$i];
+ $vendor = isset($vendor_id[$i]) ? $vendor_id[$i] : '';
 
- $log_pers   = $log_per[$i];
- $eng_pers   = $eng_per[$i];
- $log_amts   = $log_amt[$i];
- $eng_amts   = $eng_amt[$i];
+ $log_pers   = isset($log_per[$i]) ? $log_per[$i] : '0';
+ $eng_pers   = isset($eng_per[$i]) ? $eng_per[$i] : '0';
+ $log_amts   = isset($log_amt[$i]) ? $log_amt[$i] : '0';
+ $eng_amts   = isset($eng_amt[$i]) ? $eng_amt[$i] : '0';
  //$log_eng_amts   = $log_eng_amt[$i];
  
  
- $com_pers   = $com_per[$i];
- $com_amts   = $com_amt[$i];
+ $com_pers   = isset($com_per[$i]) ? $com_per[$i] : '0';
+ $com_amts   = isset($com_amt[$i]) ? $com_amt[$i] : '0';
  
  
  // Safe check for image
@@ -241,13 +252,13 @@ if(!empty($fileNames1)) {
  $query3->execute();
  $count = $query3->rowCount();
  $row = $query3->fetch();
- $quote_no = $row['quote_no'];
+ $quote_no = $row ? $row['quote_no'] : '';
 if($quote_no!=''){
-   $insert_query=$con->query("insert into cost_sheet_entry(cost_sheet_no,specification,qty,unit,unit_rate,log_per,log_amt,eng_per,eng_amt,com_per,com_amt,
+   $insert_query=$con->query("insert into cost_sheet_entry(cost_sheet_no,specification,product_id,product_name,description,hsn,qty,unit,unit_rate,log_per,log_amt,eng_per,eng_amt,com_per,com_amt,
                               total_price,total_amt,net_amt,grand_amt,gst_per,gst_amt,igst_per,igst_amount,enquiry_id,client_id,quote_type,
 						      business_id,vendor_id,candid_id,costsheet_date,status,old_quote_no,flag,created_by,created_on) 
                         
-					    values('$CS_NO','$items','$qtys','0','$unit_rates','$log_pers','$log_amts','$eng_pers','$eng_amts','$com_pers','$com_amts',
+					    values('$CS_NO','$items','$product_ids','$product_names','$descriptions','$hsns','$qtys','0','$unit_rates','$log_pers','$log_amts','$eng_pers','$eng_amts','$com_pers','$com_amts',
 							'$totalPrices','$total_amts','$net_amt','$grand_amt','$gst_per','$gst_amt','$igst_per','$igst_amt','$enquiry_id','$client_id','$quote_type',
 							'$business_id','$vendor','$candid_id','$costsheet_date','1','$quote_no','0','$candidateid',NOW())");  
 
@@ -260,7 +271,7 @@ if($quote_no!=''){
 							'$business_id','$candid_id','$costsheet_date','2','$quote_no','0','$candidateid',NOW())"; */
 
 
-  $update_query =$con->query("update cost_sheet_entry set status ='0',flag ='1' where cost_sheet_no= '$costsheetno_old'");
+  $update_query =$con->query("update cost_sheet_entry set flag ='1' where cost_sheet_no= '$costsheetno_old'");
   //echo "update cost_sheet_entry set status ='0',flag ='1' where cost_sheet_no= '$costsheetno_old'";
    
     $insert_query2= $con->query("Update enquiry set status='4' where id='$enquiry_id'");
@@ -270,11 +281,11 @@ if($quote_no!=''){
 else
 {
 	$insert_query=$con->query(
-							"insert into cost_sheet_entry(cost_sheet_no,specification,qty,unit,unit_rate,log_per,log_amt,eng_per,eng_amt,
+							"insert into cost_sheet_entry(cost_sheet_no,specification,product_id,product_name,description,hsn,qty,unit,unit_rate,log_per,log_amt,eng_per,eng_amt,
 	                          com_per,com_amt,total_price,total_amt,net_amt,grand_amt,gst_per,gst_amt,igst_per,igst_amount,enquiry_id,client_id,quote_type,
 							  business_id,vendor_id,candid_id,costsheet_date,status,flag,created_by,created_on) 
                             
-							values('$CS_NO','$items','$qtys','0','$unit_rates','$log_pers','$log_amts','$eng_pers','$eng_amts',
+							values('$CS_NO','$items','$product_ids','$product_names','$descriptions','$hsns','$qtys','0','$unit_rates','$log_pers','$log_amts','$eng_pers','$eng_amts',
 							'$com_pers','$com_amts','$totalPrices','$total_amts','$net_amt','$grand_amt','$gst_per','$gst_amt','$igst_per','$igst_amt','$enquiry_id','$client_id','$quote_type',
 							'$business_id','$vendor','$candid_id','$costsheet_date','1','0','$candidateid',NOW())");  
 			
@@ -287,7 +298,7 @@ else
 							'$com_pers','$com_amts','$totalPrices','$total_amts','$net_amt','$grand_amt','$gst_per','$gst_amt','$enquiry_id','$client_id','$quote_type',
 							'$business_id','$candid_id','$costsheet_date','1','0','$candidateid',NOW())"; */
 			
-   $update_query =$con->query("update cost_sheet_entry set status ='0',flag ='1' where cost_sheet_no= '$costsheetno_old'");
+   $update_query =$con->query("update cost_sheet_entry set flag ='1' where cost_sheet_no= '$costsheetno_old'");
   
   
  //echo "update cost_sheet_entry set status ='0',flag ='1' where cost_sheet_no= '$costsheetno_old'";

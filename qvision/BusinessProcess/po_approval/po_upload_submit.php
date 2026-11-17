@@ -8,9 +8,10 @@ require '../../../PHPMailer/src/Exception.php';
 require '../../../PHPMailer/src/PHPMailer.php';
 require '../../../PHPMailer/src/SMTP.php';
 
-$candidateid=$_SESSION['candidateid'];	echo $candidateid;
-$uploadDir = 'uploads/'; echo $uploadDir;
-$allowTypes = array('pdf', 'doc', 'docx', 'jpg', 'png', 'jpeg'); 
+$candidateid=$_SESSION['candidateid'];
+$userid=$_SESSION['userid'];
+$uploadDir = 'uploads/'; 
+file_put_contents('debug.txt', "Script hit! POST: " . print_r($_POST, true) . "\n", FILE_APPEND);
 $response = array( 
     //'status' => 0, 
     //'message' => 'Form submission failed, please try again.' 
@@ -21,14 +22,14 @@ if( isset($_POST['get_id']) ||  isset($_POST['quote_no']) || isset($_POST['quote
 $qid=$_POST['get_id'];
 $quote_no=$_POST['quote_no'];
 $po_date=$_POST['po_date'];
-$enquiry_id=$_POST['enquiry_id'];echo $enquiry_id;
+$enquiry_id=$_POST['enquiry_id'];
 
 $business_id=$_POST['business_id'];
 $cost_sheet_no=$_POST['cost_sheet_no'];
 $filesArr3 = $_FILES["attachment"];
 
 //$row_query = "SELECT * FROM po_generate";
-$row_query = "SELECT DISTINCT e.id,e.company_name,e.client,e.mail as email,e.created_by,cse.cost_sheet_no,zud.full_name,zud.user_name as mail,pg.cost_sheet_no FROM enquiry e 
+$row_query = "SELECT DISTINCT e.id,e.company_name,e.mail as email,e.created_by,cse.cost_sheet_no,zud.full_name,zud.user_name as mail,pg.cost_sheet_no FROM enquiry e 
 left JOIN z_user_master zud ON (zud.candidate_id=e.created_by) 
 left JOIN cost_sheet_entry cse ON (cse.enquiry_id=e.id) 
 left JOIN po_generate pg ON (pg.cost_sheet_no= cse.cost_sheet_no) WHERE e.created_by='$candidateid' and e.id='$enquiry_id'";
@@ -37,11 +38,10 @@ left JOIN po_generate pg ON (pg.cost_sheet_no= cse.cost_sheet_no) WHERE e.create
  $query = $con->query($row_query);
  $query->execute();
   $counts   = $query->rowCount();
- $row_val = $query->fetch();echo '%99*99%';
- $username=$row_val['full_name'];echo $username; echo '&&';
- $mailerID=$row_val['mail']; echo $mailerID;
-    //$user_name=$row_val['user_name']; echo $user_name;
-	$client_name=$row_val['client'];echo $client_name;
+ $row_val = $query->fetch();
+ $username=$row_val['full_name'];
+ $mailerID=$row_val['mail'];
+    //$user_name=$row_val['user_name'];
  
  
  $row_query = "SELECT * FROM po_generate";
@@ -118,21 +118,28 @@ if($count == 0)
         
 		     //$sql=$con->query("update quote_generate set po='$fileName',status='3',po_date='$po_date',po_upload_status='1',finance_status='0',service_status='0',marketing_status='0' where id='$qid'");
 		     //echo "update po_generate set po='$fileName',status=4,po_date='$po_date',po_upload_status='1' where id='$qid'";
-		     $insert_query1= $con->query("Update enquiry set status='5',approved_by ='$candidateid' where id='$enquiry_id'");
-           echo"Update enquiry set status='5',approved_by ='$candidateid' where id='$enquiry_id'";
+		     $insert_query1= $con->query("Update enquiry set status='5',approved_by ='$userid' where id='$enquiry_id'");
 		  
              			 
 		     $insert_query=$con->query("insert into po_generate (so_number,quote_no,cost_sheet_no,po_date,po_upload,po_upload_status,finance_status,service_status,marketing_status,md_status,created_by,created_on) 
-		     values ('$SO_NO','$quote_no','$cost_sheet_no','$po_date','$uploadedFile','1','0','0','0','0','$candidateid',NOW())");
+		     values ('$SO_NO','$quote_no','$cost_sheet_no','$po_date','$uploadedFile','1','0','0','0','0','$userid',NOW())");
 		
 		/* echo "insert into po_generate (so_number,quote_no,cost_sheet_no,po_date,po_upload,po_upload_status,finance_status,service_status,marketing_status,created_by,created_on) 
 		     values ('$SO_NO','$quote_no','$cost_sheet_no','$po_date','$uploadedFile','1','0','0','0','$candidateid',NOW())"; */
 			 
-		    $update_query =$con->query("update po_generate set po_upload_status ='1' where quote_no ='$quote_no'");
-		     $update_query2 = $con->query("update cost_sheet_entry set status ='4', modified_by ='$candidateid' WHERE cost_sheet_no= '$cost_sheet_no'");  
+		     $update_query =$con->query("update po_generate set po_upload_status ='1' where quote_no ='$quote_no'");
+		     $update_query2 = $con->query("update cost_sheet_entry set status ='7', modified_by ='$userid' WHERE cost_sheet_no= '$cost_sheet_no'");  
 		    $insert_query2= $con->query("Update enquiry set status='7' where id='$enquiry_id'");
-			echo "Update enquiry set status='7' where id='$enquiry_id'";
 			 
+             // LOG ERRORS TO FILE FOR DEBUGGING
+             $err = "";
+             if(!$insert_query1) $err .= "insert1 error: " . print_r($con->errorInfo(), true) . "\n";
+             if(!$insert_query) $err .= "insert error: " . print_r($con->errorInfo(), true) . "\n";
+             if(!$update_query) $err .= "update error: " . print_r($con->errorInfo(), true) . "\n";
+             if(!$update_query2) $err .= "update2 error: " . print_r($con->errorInfo(), true) . "\n";
+             if(!$insert_query2) $err .= "insert2 error: " . print_r($con->errorInfo(), true) . "\n";
+             if($err) file_put_contents('debug.txt', $err, FILE_APPEND);
+
 			 if ($insert_query1 && $insert_query && $update_query && $update_query2 && $insert_query2)
 			 {
 				 $response ['status']= 1;
@@ -146,18 +153,17 @@ if($count == 0)
 		//echo json_encode($response);
  				
 //		echo json_encode($response);
-$row_query = "SELECT DISTINCT e.id,e.company_name,e.client,e.mail as email,e.created_by,cse.cost_sheet_no,zud.full_name,zud.user_name as mail,pg.cost_sheet_no FROM enquiry e 
+$row_query = "SELECT DISTINCT e.id,e.company_name,e.mail as email,e.created_by,cse.cost_sheet_no,zud.full_name,zud.user_name as mail,pg.cost_sheet_no FROM enquiry e 
 left JOIN z_user_master zud ON (zud.candidate_id=e.created_by) 
 left JOIN cost_sheet_entry cse ON (cse.enquiry_id=e.id)
 left JOIN po_generate pg ON (pg.cost_sheet_no= cse.cost_sheet_no) WHERE e.created_by='$candidateid' and e.id='$enquiry_id'";
  $query = $con->query($row_query);
  $query->execute();
   //$count   = $query->rowCount();
- $row_val = $query->fetch();echo '%99*99%';
- $username=$row_val['full_name'];echo $username; echo '&&';
- $mailerID=$row_val['mail']; echo $mailerID;
-    //$user_name=$row_val['user_name']; echo $user_name;
-	$client_name=$row_val['client'];echo $client_name;
+ $row_val = $query->fetch();
+ $username=$row_val['full_name'];
+ $mailerID=$row_val['mail'];
+    //$user_name=$row_val['user_name'];
 //$date=$_REQUEST['date'];
 $mail = new PHPMailer;
 $mail->SMTPDebug = 2; 

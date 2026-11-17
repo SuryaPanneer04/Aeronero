@@ -36,7 +36,7 @@ $userrole = $_SESSION['userrole'];
 				</thead>
 				<tbody>
 					<?php
-					$emp_sql = $con->query("SELECT * from purchase_vendor_master   order by id desc"); //where status='5'
+					$emp_sql = $con->query("SELECT a.* FROM purchase_vendor_master a LEFT JOIN cost_sheet_entry b ON a.cost_sheet_no = b.cost_sheet_no WHERE b.business_id != '4' ORDER BY a.id DESC"); //where status='5'
 
 					//echo "select a.*,b.* from purchase_vendor_master a left join grn_generate b on (a.id=b.purchase_id) where='2'";
 					/* echo "SELECT p.*,d.vendor_name from purchase_vendor_master p left join doller_vendor_mastor d on p.vendor_id=d.id where p.status='2' order by p.id desc"; */

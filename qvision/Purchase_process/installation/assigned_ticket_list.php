@@ -9,7 +9,7 @@ $candidateid=$_SESSION['candidateid'];
 </head>
 <style>
 .card-primary:not(.card-outline)>.card-header {
-    background-color:#009EE3 !important;
+    background-color: #009EE3 !important;
 }
 </style>
 <div class="card card-primary">
@@ -31,7 +31,7 @@ $candidateid=$_SESSION['candidateid'];
             </thead>
             <tbody>
                 <?php      
-                    $roll_query =$con->prepare("Select a.*,e.full_name from initiate_installation a LEFT JOIN z_user_master e ON (a.employee=e.candidate_id) WHERE a.employee='$candidateid' order by a.id desc");                
+                    $roll_query =$con->prepare("SELECT a.*, e.full_name FROM initiate_installation a LEFT JOIN z_user_master e ON (a.employee=e.candidate_id) LEFT JOIN po_generate p ON (a.so_number = p.so_number) LEFT JOIN cost_sheet_entry c ON (p.cost_sheet_no = c.cost_sheet_no) WHERE a.employee='$candidateid' AND c.business_id != '4' ORDER BY a.id DESC");                
                     $roll_query->execute(); 
                     $i = 1;
                     while($row = $roll_query->fetch()){

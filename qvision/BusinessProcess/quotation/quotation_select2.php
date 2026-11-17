@@ -631,7 +631,7 @@ function AmountInWords($amount)
                         </div>
                         <div style="margin-left:65%;justify-content: center;">
                             <br />
-                            <?php $query1 =  $con->prepare("select a.*,b.*,c.*,f.position as desg from staff_master a left join designation_master b on 
+                            <?php $query1 =  $con->prepare("select a.*,b.*,c.*,b.designation_name as desg from staff_master a left join designation_master b on 
 		                  (a.design_id=b.id) left join z_user_master c on (a.id=c.candidate_id) left join candidate_form_details f on (a.candid_id=f.id) where a.id = '$acc_manager'");
                             /* echo "select a.*,b.*,c.* from staff_master a inner join designation_master b on 
 		                  (b.id = a.design_id) inner join z_user_master c on (c.candidate_id=a.id) where a.id = '$acc_manager'"; */

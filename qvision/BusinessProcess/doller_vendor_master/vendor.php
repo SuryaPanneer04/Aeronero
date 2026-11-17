@@ -9,11 +9,11 @@ $userrole=$_SESSION['userrole'];
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div  class="card card-primary">
-              <div class="card-header" style="background-color:#009EE3  !important;">
+              <div class="card-header" style="background-color:#009EE3 !important;">
                 <h3 class="card-title"><font size="5">VENDOR LIST</font></h3>
 				<?php
 				if($userrole!='R001')

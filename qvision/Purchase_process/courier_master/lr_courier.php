@@ -55,7 +55,7 @@ $userrole = $_SESSION['userrole'];
       </thead>
       <tbody>
         <?php
-        $emp_sql = $con->query("SELECT * FROM challan_entry");
+        $emp_sql = $con->query("SELECT a.* FROM challan_entry a LEFT JOIN cost_sheet_entry b ON a.customer_name = b.id WHERE b.business_id != '4'");
         $i = 1;
         while ($emp_res = $emp_sql->fetch(PDO::FETCH_ASSOC)) {
         ?>

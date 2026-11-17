@@ -38,10 +38,10 @@ $Call_type=$row['Call_type'];
 	padding: .8rem !important;
 }
 .card-primary:not(.card-outline)>.card-header {
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .card-body{
 	max-width: 100% !important;
@@ -58,7 +58,7 @@ sbar {
 	
 <section class="wage_content">
 <div class="card card-primary">
-              <div class="card-header" style="background-color:#009EE3 !important;">
+              <div class="card-header" style="background:#009EE3 !important;">
                 
 				              <center><h3 class="card-title" style="color:white !important;"><font size="5">COST SHEET ENTRY DETAILS</font></h3></center>
 <?php if($page_id == "0" ){ ?>
@@ -88,6 +88,10 @@ sbar {
 		 else if($product==3)
 			 {
 				 $name="Product&Service";
+			 }
+		 else if($product==4)
+			 {
+				 $name="Software";
 			 }
 			 ?>				
 				<select name="pro_ser_id" class="form-control" style="width: 94%;" id="pro_ser_id" onchange="typeofproduct(<?php echo $product;?>)" >
@@ -131,8 +135,8 @@ sbar {
 
 				   //echo $fetchemname['first_name'];
 						?>
-					<input type="text" class="form-control" id="client_ids" value="<?php echo $fetchemname['first_name']; ?>" name="client_ids" readonly>
-					<input type="hidden" class="form-control" id="client_id" value="<?php echo $row['Client_id']; ?>" name="client_id" readonly>
+					<input type="text" class="form-control" id="client_ids" value="<?php echo $fetchemname ? $fetchemname['first_name'] : " "; ?>" name="client_ids" readonly>
+					<input type="hidden" class="form-control" id="client_id" value="<?php echo $row ? $row['Client_id'] : " "; ?>" name="client_id" readonly>
 
 			</div>
 			<div class="col-sm-2" style="max-width: 234%;"><b>Quote Currency Type</b>
@@ -146,6 +150,25 @@ sbar {
 		  </div>
 		  </div>
 
+          <?php if($product == 4) { 
+              $sof_stmt = $con->prepare("SELECT scope_text, command_text FROM software_quotation_flow WHERE enquiry_id = :id ORDER BY id DESC LIMIT 1");
+              $sof_stmt->execute([":id" => $enquiry_id]);
+              $sof_row = $sof_stmt->fetch();
+              if($sof_row) {
+          ?>
+          <div class="card-body" style="padding-top:0;">
+              <div class="form-group row">
+                  <div class="col-sm-6">
+                      <b>Software Scope</b>
+                      <textarea class="form-control" rows="4" readonly><?php echo htmlspecialchars($sof_row['scope_text']); ?></textarea>
+                  </div>
+                  <div class="col-sm-6">
+                      <b>Command</b>
+                      <textarea class="form-control" rows="4" readonly><?php echo htmlspecialchars($sof_row['command_text']); ?></textarea>
+                  </div>
+              </div>
+          </div>
+          <?php } } ?>
                    
 			<div id="productdivv">
 					 <input type="button" class="delete-row btn btn-danger" value="Delete" style="float:right;" onclick="deleteRow('new_tab')"/>&nbsp;&nbsp;&nbsp;&nbsp;
@@ -160,19 +183,28 @@ sbar {
 			    <input type="checkbox" name="select-all" id="select-all" onclick="toggle(this); required" >
 		      </th>
 		     
+          <?php if($product == 4) { ?>
+		       <th style=" WIDTH: 6%;">SOFTWARE NAME</th>
+		       <th style=" WIDTH: 6%;">SOFTWARE ID</th>
+			   <th style=" WIDTH: 3%;">DESCRIPTION</th>
+		       <th style=" WIDTH: 3%;">NO OF MAN HRS</th>
+		       <th style=" WIDTH: 4%;">PER HRS</th>
+		       <Th style=" WIDTH: 5%;" formula="cost*qty" summary="sum" >Sub Total</th>
+          <?php } else { ?>
 		       <th style=" WIDTH: 6%;">PRODUCT NAME</th>
 		       <th style=" WIDTH: 6%;">PRODUCT ID</th>
 			   <th style=" WIDTH: 3%;">DESCRIPTION</th>
 		       <th style=" WIDTH: 3%;">QTY</th>
-		       
-		       <!--th style=" WIDTH: 6%;">UNIT</th-->
 		       <th style=" WIDTH: 4%;">UNIT RATE</th>
 		       <Th style=" WIDTH: 5%;" formula="cost*qty" summary="sum" >Purchase Amount</th>
+          <?php } ?>
 			   <th colspan='2'  style=" WIDTH: 9%;">Dist Margin %</th>
 			   <th colspan='2' style=" WIDTH: 8%;">Overall Margin</th>
 			   <th  style=" WIDTH: 5%;">Selling Price</th>
 			    
+          <?php if($product != 4) { ?>
 		       <th colspan='2' style=" WIDTH: 9%;">Logistics %</th>
+          <?php } ?>
 		      <th colspan='2'  style=" WIDTH: 9%;">Service Cost %</th>
 			  <th style="WIDTH:4%;">Total Amount</th>
 		      <th colspan='2'  style=" WIDTH: 8%;">GST Cost %</th>
@@ -186,15 +218,19 @@ sbar {
 		     <td>
 			     <input type="checkbox" name="chk[]">
 		     </td>
-			 <td>
-			<select class="form-control" onchange="prodcutname(this.value); desname(1, this.value); hsncode(1, this.value)" id="product_name1" name="product_name[]">
-        <option value="" disabled selected>Select Product Name</option>
-        <?php 
-        $query = $con->query("SELECT id, name, hsn_code FROM product_master");
-        while ($row_fetch = $query->fetch()) {?>
-            <option value="<?php echo $row_fetch['name'] . '-' . $row_fetch['id']; ?>"><?php echo $row_fetch['name']; ?></option>
-        <?php } ?>
-    </select>
+			 <td style="width: 15%;">
+			<select class="form-control" onchange="prodcutname(1, this.value); hsncode(1, this.value)" id="product_name1" name="product_name[]">
+          <option value="" disabled selected>Select <?php echo ($product == 4) ? 'Software' : 'Product'; ?> Name</option>
+          <?php 
+          if($product == 4) {
+              $query = $con->query("SELECT software_id as id, software_name as name FROM software_master_list");
+          } else {
+              $query = $con->query("SELECT id, name, hsn_code FROM product_master");
+          }
+          while ($row_fetch = $query->fetch()) {?>
+              <option value="<?php echo $row_fetch['name'] . '-' . $row_fetch['id']; ?>"><?php echo $row_fetch['name']; ?></option>
+          <?php } ?>
+      </select>
 	<input type="hidden" name="hsn_code[]" id="hsn_code1" >
 					
 				 </td>
@@ -233,12 +269,18 @@ sbar {
 			 <INPUT type="text" id="sel_amt1" name="sel_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly>
 		     </td>
 
-		     <td>
+          <?php if($product != 4) { ?>
+  		     <td>
 			     <input type="text" id="log_per1"  name="log_per[]" style="width:100%" class="form-control log_per " onchange="totalIt()" placeholder="%" >
 		     </td>
 		     <td>
 			     <input type="text" id="log_amt1" name="log_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly>
 		     </td>		
+          <?php } else { ?>
+             <input type="hidden" id="log_per1" name="log_per[]" value="0">
+             <input type="hidden" id="log_amt1" name="log_amt[]" value="0">
+          <?php } ?>
+
 		     <td> 
 		         <INPUT type="text" id="eng_per1" name="eng_per[]" style="width:100%" class="form-control eng_per"  onchange="totalIt()" placeholder="%">
 		     </td>		  
@@ -375,11 +417,11 @@ sbar {
 		<table class="table table-bordered">
 	   <tr>
          <td><b>VALIDITY :</b></td>
-         <td colspan="4"><textarea name="validity" class="form-control" rows="2" cols="150">ONE WEEK FROM THE DATE OF QUOTE. PRICES PREVAILING AT THE TIME OF SUPPLY & BILLING WILL ONLY APPLY</textarea></td>
+         <td colspan="4"><textarea name="validity" class="form-control" rows="2" cols="150"><?php echo ($product == 4) ? "ONE WEEK FROM THE DATE OF QUOTE. PRICES PREVAILING AT THE TIME OF SUPPLY & BILLING WILL ONLY APPLY" : "ONE WEEK FROM THE DATE OF QUOTE. PRICES PREVAILING AT THE TIME OF SUPPLY & BILLING WILL ONLY APPLY"; ?></textarea></td>
 		 
        </tr><tr>
          <td><b>PAYMENT :</b></td>
-         <td colspan="4"><textarea name="payment" class="form-control" rows="2" cols="150">100% IN ADVANCE ALONG WITH FORMAL PURCHASE ORDER.PAYMENTS SHOULD BE MADE EITHER BY CHEQUE, DD, RTGS AND NEFT IN FAVOUR OF QUADSEL SYSTEMS PVT LTD, PAYABLE AT CHENNAI. CASH PAYMENTS WILL BE NULL & VOID</textarea></td>
+         <td colspan="4"><textarea name="payment" class="form-control" rows="2" cols="150"><?php echo ($product == 4) ? "AS PER SOFTWARE DEVELOPMENT MILESTONES DEFINED IN THE PROPOSAL / PURCHASE ORDER." : "100% IN ADVANCE ALONG WITH FORMAL PURCHASE ORDER.PAYMENTS SHOULD BE MADE EITHER BY CHEQUE, DD, RTGS AND NEFT IN FAVOUR OF QUADSEL SYSTEMS PVT LTD, PAYABLE AT CHENNAI. CASH PAYMENTS WILL BE NULL & VOID"; ?></textarea></td>
 		 
        </tr>
 	   <tr>
@@ -414,12 +456,12 @@ sbar {
        </tr>
 	   <tr>
          <td><b>DELIVERY :</b></td>
-         <td colspan="4"><textarea name="delivery" class="form-control" rows="2" cols="150">AS FOR THE OEM WITHIN 1 - 2 WEEKS , WITHIN 2 - 3 WEEKS , WITHIN 3 - 4 WEEKS, WITHIN 4 - 5 WEEKS  FROM THE DATE OF RECEIPT OF PAYMENT.SHIPPING COSTS WILL BE LEVIED IN FINAL INVOICE AS MAY BECOME APPLICABLE.</textarea></td>
+         <td colspan="4"><textarea name="delivery" class="form-control" rows="2" cols="150"><?php echo ($product == 4) ? "AS PER AGREED SOFTWARE IMPLEMENTATION TIMELINE." : "AS FOR THE OEM WITHIN 1 - 2 WEEKS , WITHIN 2 - 3 WEEKS , WITHIN 3 - 4 WEEKS, WITHIN 4 - 5 WEEKS  FROM THE DATE OF RECEIPT OF PAYMENT.SHIPPING COSTS WILL BE LEVIED IN FINAL INVOICE AS MAY BECOME APPLICABLE."; ?></textarea></td>
 		 
        </tr>
 	   <tr>
          <td><b>WARRANTY :</b></td>
-         <td colspan="4"><textarea name="warrenty" class="form-control" rows="2" cols="150">AS PER OEM.</textarea></td>
+         <td colspan="4"><textarea name="warrenty" class="form-control" rows="2" cols="150"><?php echo ($product == 4) ? "AS PER SOFTWARE MAINTENANCE CONTRACT / SLA." : "AS PER OEM."; ?></textarea></td>
 		 
        </tr>
 	  	  
@@ -501,10 +543,18 @@ function appendfun()
     {  
 
 	var lenz=$('#new_tab tr').length;
-    len=lenz+0; 
-	
-	
-	$('#new_tab').append('<tr><td><input type="checkbox" name="chk[]"></td><td><input type="text" class="form-control" onchange="prodcutname('+len+',this.value);desname('+len+',this.value);hsncode('+len+',this.value)"  list="clientz_name" autocomplete="off" id="product_name'+len+'" name="product_name[]" placeholder="select Prodcut Name"><datalist id="clientz_name'+len+'"><?php $query = $con->query("SELECT name,hsn_code FROM product_master");while ($row_fetch = $query->fetch()) { ?><option value="<?php echo $row_fetch['name']; ?>"><?php echo $row_fetch['name']; ?></option><?php } ?></datalist><input type="hidden" name="hsn_code[]" id="hsn_code'+len+'" ></td><td><select name="product_id[]" id="product_id'+len+'" class="form-control"></select></td><td><select name="description[]" id="description'+len+'" style="height:200px;width:300px;white-space:normal;"class="form-control"></select></td><td><input type="text" id="qty'+len+'" name="qty[]" style="width:77%" onchange="totalIt()" class="form-control" ></td><td><input type="text" id="cost'+len+'" name="cost[]" style="width:100%" onchange="totalIt()" class="form-control" ></td><td><input type="text" id="price'+len+'" name="price[]"  style="width:100%" onchange="totalIt()" readonly value="0.00" class="form-control"></td><td><INPUT type="text" id="dist_per'+len+'" name="dist_per[]" style="width:100%" class="form-control dist_per"  onchange="totalIt()" placeholder="%"></td><td><INPUT type="text" id="dist_amt'+len+'" name="dist_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><INPUT type="text" id="com_per'+len+'" name="com_per[]" style="width:100%" class="form-control com_per"  onchange="totalIt()" placeholder="%"></td><td><INPUT type="text" id="com_amt'+len+'" name="com_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><INPUT type="text" id="sel_amt'+len+'" name="sel_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><input type="text" id="log_per'+len+'"  name="log_per[]" style="width:100%" class="form-control log_per " onchange="totalIt()" placeholder="%" ></td><td><input type="text" id="log_amt'+len+'" name="log_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><INPUT type="text" id="eng_per'+len+'" name="eng_per[]" style="width:100%" class="form-control eng_per"  onchange="totalIt()" placeholder="%"></td><td><INPUT type="text" id="eng_amt'+len+'" name="eng_amt[]" style="width:100%" class="form-control " placeholder="0.00" readonly></td><td><INPUT type="text" id="col_item'+len+'" name="col_item[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><select class="form-control" id="gst_per'+len+'" name="gst_per[]" onchange="grandtotal();totalIt();" style="float:left; width: 80%" required><option value="">----- Choose GST % -----</option><option value="3">3 %</option><option value="5">5 %</option><option value="12">12 %</option><option value="18">18 %</option><option value="28">28 %</option></select></td><td><INPUT type="text" id="gst_amt'+len+'" name="gst_amt[]" style="width:100%" class="form-control " placeholder="0.00" readonly></td><td><INPUT type="text" id="igst_per'+len+'" name="igst_per[]" style="width:100%" class="form-control"  onchange="grandtotal();totalIt();" placeholder="%" required></td><td><INPUT type="text" id="igst_amt'+len+'" name="igst_amt[]" style="width:100%" class="form-control " placeholder="0.00" readonly required></td><td><INPUT type="text" id="tot_item'+len+'" name="tot_item[]" style="width:106%" class="form-control"  placeholder="0.00" readonly></td><td align="left"><b><select class="form-control" id="vendor_name'+len+'" name="vendor_name[]" style="width:76%;" required><option disabled selected>-- Select vendor --</option><?php $stmt = $con->query("SELECT id,vendor_name FROM doller_vendor_mastor");while ($row = $stmt->fetch()) { ?><option value="<?php  echo $row['id'];?>"> <?php echo $row['vendor_name']; ?> </option><?php } ?></select></td><td style="width:69%;"><INPUT type="file" id="image'+len+'" name="image[]" class="form-control"></td></tr>'); } 
+	var product_type = <?php echo $product; ?>;
+    var datalistOptions = '';
+    var logisticsCells = '';
+    <?php if($product == 4) { ?>
+        datalistOptions = '<?php $query = $con->query("SELECT software_name as name FROM software_master_list");while ($row_fetch = $query->fetch()) { ?><option value="<?php echo $row_fetch['name']; ?>"><?php echo $row_fetch['name']; ?></option><?php } ?>';
+        logisticsCells = '<input type="hidden" id="log_per'+len+'" name="log_per[]" value="0"><input type="hidden" id="log_amt'+len+'" name="log_amt[]" value="0">';
+    <?php } else { ?>
+        datalistOptions = '<?php $query = $con->query("SELECT name,hsn_code FROM product_master");while ($row_fetch = $query->fetch()) { ?><option value="<?php echo $row_fetch['name']; ?>"><?php echo $row_fetch['name']; ?></option><?php } ?>';
+        logisticsCells = '<td><input type="text" id="log_per'+len+'"  name="log_per[]" style="width:100%" class="form-control log_per " onchange="totalIt()" placeholder="%" ></td><td><input type="text" id="log_amt'+len+'" name="log_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td>';
+    <?php } ?>
+
+	$('#new_tab').append('<tr><td><input type="checkbox" name="chk[]"></td><td><input type="text" class="form-control" onchange="prodcutname('+len+',this.value);hsncode('+len+',this.value)"  list="clientz_name'+len+'" autocomplete="off" id="product_name'+len+'" name="product_name[]" placeholder="select Prodcut Name"><datalist id="clientz_name'+len+'">'+datalistOptions+'</datalist><input type="hidden" name="hsn_code[]" id="hsn_code'+len+'" ></td><td><select name="product_id[]" id="product_id'+len+'" class="form-control"></select></td><td><select name="description[]" id="description'+len+'" style="height:200px;width:300px;white-space:normal;"class="form-control"></select></td><td><input type="text" id="qty'+len+'" name="qty[]" style="width:77%" onchange="totalIt()" class="form-control" ></td><td><input type="text" id="cost'+len+'" name="cost[]" style="width:100%" onchange="totalIt()" class="form-control" ></td><td><input type="text" id="price'+len+'" name="price[]"  style="width:100%" onchange="totalIt()" readonly value="0.00" class="form-control"></td><td><INPUT type="text" id="dist_per'+len+'" name="dist_per[]" style="width:100%" class="form-control dist_per"  onchange="totalIt()" placeholder="%"></td><td><INPUT type="text" id="dist_amt'+len+'" name="dist_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><INPUT type="text" id="com_per'+len+'" name="com_per[]" style="width:100%" class="form-control com_per"  onchange="totalIt()" placeholder="%"></td><td><INPUT type="text" id="com_amt'+len+'" name="com_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><INPUT type="text" id="sel_amt'+len+'" name="sel_amt[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td>'+logisticsCells+'<td><INPUT type="text" id="eng_per'+len+'" name="eng_per[]" style="width:100%" class="form-control eng_per"  onchange="totalIt()" placeholder="%"></td><td><INPUT type="text" id="eng_amt'+len+'" name="eng_amt[]" style="width:100%" class="form-control " placeholder="0.00" readonly></td><td><INPUT type="text" id="col_item'+len+'" name="col_item[]" style="width:100%" class="form-control"  placeholder="0.00" readonly></td><td><select class="form-control" id="gst_per'+len+'" name="gst_per[]" onchange="grandtotal();totalIt();" style="float:left; width: 80%" required><option value="">----- Choose GST % -----</option><option value="3">3 %</option><option value="5">5 %</option><option value="12">12 %</option><option value="18">18 %</option><option value="28">28 %</option></select></td><td><INPUT type="text" id="gst_amt'+len+'" name="gst_amt[]" style="width:100%" class="form-control " placeholder="0.00" readonly></td><td><INPUT type="text" id="igst_per'+len+'" name="igst_per[]" style="width:100%" class="form-control"  onchange="grandtotal();totalIt();" placeholder="%" required></td><td><INPUT type="text" id="igst_amt'+len+'" name="igst_amt[]" style="width:100%" class="form-control " placeholder="0.00" readonly required></td><td><INPUT type="text" id="tot_item'+len+'" name="tot_item[]" style="width:106%" class="form-control"  placeholder="0.00" readonly></td><td align="left"><b><select class="form-control" id="vendor_name'+len+'" name="vendor_name[]" style="width:76%;" required><option disabled selected>-- Select vendor --</option><?php $stmt = $con->query("SELECT id,vendor_name FROM doller_vendor_mastor");while ($row = $stmt->fetch()) { ?><option value="<?php  echo $row['id'];?>"> <?php echo $row['vendor_name']; ?> </option><?php } ?></select></td><td style="width:69%;"><INPUT type="file" id="image'+len+'" name="image[]" class="form-control"></td></tr>'); }
 </script>
 <script>
 
@@ -1206,8 +1256,7 @@ $('.com_per').keyup(function () {
 
 </script>
 <script>
-function prodcutname(c){
-
+function prodcutname(v, c){
 //alert(v)
 $.ajax({
 				  url: "qvision/BusinessProcess/quotation/quotation_productid.php?name="+c,
@@ -1215,8 +1264,8 @@ $.ajax({
 					success: function(data){
                     var datas=data.split("||");
 				
-					var select = $('#product_id1');
-					var select1 = $('#description1');
+					var select = $('#product_id' + v);
+					var select1 = $('#description' + v);
 					  select.empty();
 										  select1.empty();
 							select.append($('<option value="' + datas[0] + '">' + datas[0] + '</option>'));

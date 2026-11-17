@@ -31,7 +31,20 @@ function record_fetch(a){
 					$.each(value, function(index, element)
 					{
 						$('#client_name').val(element.it_name);
-						$('#contact').val(element.it_mob1);
+						
+						var mob = element.it_mob1 || '';
+						if(mob.startsWith('+')) {
+							var parts = mob.split(/[\s\-]/, 2);
+							if(parts.length > 1) {
+								$('input[name="country_code"]').val(parts[0].replace('+', ''));
+								$('#contact').val(mob.substring(parts[0].length + 1));
+							} else {
+								$('#contact').val(mob);
+							}
+						} else {
+							$('#contact').val(mob);
+						}
+						
 						$('#email').val(element.it_mail1);
 						$('#mail').val(element.it_mail2);
 						$('#address').val(element.address);
@@ -44,7 +57,7 @@ function record_fetch(a){
 }
 function productstatus(value)
 {
-if(value=='3')
+if(value=='3' || value=='4')
 {
 document.getElementById('services').style.visibility = "hidden";
 
@@ -59,7 +72,15 @@ document.getElementById('services').style.visibility = "visible";
                 ev.preventDefault();
                 var formData = new FormData(this);
 
-                 $.ajax({
+                // Combine country code and contact number if it doesn't already have one
+                var countryCode = formData.get('country_code');
+                var contactNo = formData.get('contact');
+                if (countryCode && contactNo && !contactNo.startsWith('+')) {
+                    var cc = countryCode.replace('+', ''); // strip any + they might have typed
+                    formData.set('contact', '+' + cc + '-' + contactNo);
+                }
+
+                 $.ajax({   
                     url: "qvision/CRM/calls/calls_submit.php",
                     method: "POST",
                     data: formData,
@@ -166,7 +187,7 @@ function cusstatus(value)
 			  document.getElementById("ind1").style.display = "revert";
              document.getElementById("comp1").style.display = "none";
              document.getElementById("comp2").style.display = "none";
-            
+            document.getElementById("cor3").style.display = "revert";
 			  
         } else
         {
@@ -232,20 +253,22 @@ function clientstatus(value)
         });
     });
 	
-  //Mobile Number Validation      
+ //Mobile Number Validation      
 $(".mob").change(function () {      
-var inputvalues = $(this).val();      
-  var regex = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;    
+  var inputvalues = $(this).val();      
+  // Allow numbers, hyphens, plus, spaces
+  var regex = /^[0-9\-\+\s]{4,20}$/;    
   if(!regex.test(inputvalues)){      	
-  $(".mob").val("");    
-  alert("Please Enter Valid Mobile Number");    
-  return regex.test(inputvalues);    
+    $(".mob").val("");    
+    alert("Please Enter Valid Contact Number");    
+    return regex.test(inputvalues);    
   }    
 });
 
 $(".wmob").change(function () {      
 var inputvalues = $(this).val();      
-  var regex = /^\+?([0-9]{2})\)?[-. ]?([0-9]{4})[-. ]?([0-9]{4})$/;    
+  // Allow numbers, hyphens, plus, spaces for whatsapp too
+  var regex = /^[0-9\-\+\s]{4,20}$/;    
   if(!regex.test(inputvalues)){      	
   $(".wmob").val("");    
   alert("Please Enter Valid Mobile Number");    
@@ -393,16 +416,22 @@ var inputvalues = $(this).val();
 				</tr>
       <tr>
         <td>Contact Number*</td>
-        <td colspan="5"><input type="text" class="form-control mob" maxlength="10" id="contact" placeholder="Enter Contact No" name="contact" required></td>
+        <td colspan="5">
+            <div style="display: flex; align-items: center;">
+                <span style="padding: 0 10px; border: 1px solid #ccc; background: #eee; height: 38px; display: flex; align-items: center; border-right: 0;">+</span>
+                <input type="text" class="form-control" name="country_code" style="width: 70px; margin-right: 5px; border-left: 0; border-top-left-radius: 0; border-bottom-left-radius: 0;" placeholder="Code" required>
+                <input type="text" class="form-control mob" maxlength="15" id="contact" placeholder="Enter Contact No" name="contact" required style="width: 100%;">
+            </div>
+        </td>
         </tr>
 		<tr>
         <td>Whatsapp Number</td>
         <td colspan="5"><input type="text" maxlength="10" class="form-control wmob"id="whatsapp" placeholder="Enter Whatsapp No" name="whatsapp"></td>
         </tr>
 		  <tr>
-        <td>Email Id*</td>
+        <td>Email Id</td>
 		
-        <td colspan="5"><input type="mail" class="form-control finmail" id="email" placeholder="Enter Email" name="email"  required autocomplete="off"></td>
+        <td colspan="5"><input type="mail" class="form-control finmail" id="email" placeholder="Enter Email" name="email"  autocomplete="off"></td>
         </tr>
 		
 		 <tr>
@@ -417,8 +446,8 @@ var inputvalues = $(this).val();
         <td colspan="5"><input type="text" class="form-control" id="pan" placeholder="Enter Pan" name="pan"></td>
         </tr>-->
 			<tr>
-        <td>Address*</td>
-        <td colspan="5"><input type="text" class="form-control" id="address" placeholder="Enter Address" name="address" required></td>
+        <td>Address</td>
+        <td colspan="5"><input type="text" class="form-control" id="address" placeholder="Enter Address" name="address" ></td>
         </tr>
 		
 			  <tr id="cor3">
@@ -433,16 +462,17 @@ var inputvalues = $(this).val();
 							<option>Select</option>
 							<option value="1">Product</option>
 							<option value="2">Services</option>
-							<option value="3">Solution</option>
+							<!--<option value="3">Solution</option>
+                                <option value="4">Software</option> -->
 						</select>
 					</td>
 				</tr>
-				<tr>
+				<!-- <tr>
 					<td></td>
 					<td colspan="5">
 					 <select class="form-control" name="services" id="services" ></select>				
 					</td>
-				</tr>
+				</tr> -->
 				 <tr>
 		<td>Attach File</td>
 		<td colspan="5">

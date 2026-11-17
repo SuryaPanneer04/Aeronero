@@ -6,7 +6,7 @@ $userrole=$_SESSION['userrole'];
 ?>
 <style>
   .card-primary:not(.card-outline)>.card-header {
-    background-color:#009EE3 !important;
+    background-color: #009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
     color: #e95a16 !important;
@@ -23,7 +23,7 @@ $userrole=$_SESSION['userrole'];
     border-color: #df8459;
 }
 .page-link:hover {
-    color: #f1cc61;
+    color: #009EE3;
 }
   </style>
 <div  class="card card-primary">
@@ -98,9 +98,9 @@ $userrole=$_SESSION['userrole'];
 		  <?php 
 		  if($enquiry['companys']==1)
 		  {
-			  echo "Aeronero solutions private limited";
+			  echo "Bluebase Software Services Pvt Ltd";
 	  } else {
-		  echo "Aeronero solutions private limited";
+		  echo "Bluebase Software Services Private Limited";
 	  }
 		  ?>
 		  

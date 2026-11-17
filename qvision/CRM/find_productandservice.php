@@ -67,7 +67,7 @@ $Product = $_REQUEST["Product"];
 			     <input type="checkbox" name="chk[]">
 		     </td>
 			 <td>
-			<select class="form-control" onchange="prodcutname(this.value); desname(1, this.value); hsncode(1, this.value)" id="product_name1" name="product_name[]">
+			<select class="form-control" onchange="prodcutname(1, this.value); hsncode(1, this.value)" id="product_name1" name="product_name[]">
         <option value="" disabled selected>Select Product Name</option>
         <?php 
         $query = $con->query("SELECT id, name, hsn_code FROM product_master");

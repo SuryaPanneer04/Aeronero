@@ -27,7 +27,7 @@ else
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div class="card card-primary">
@@ -48,13 +48,15 @@ else
       </thead>
       <tbody>
       <?php
-	
+	 
      $cnt=1;
 	 if($count==1)
 {
 	//$quote=$con->query("select * from po_generate where po_upload_status ='1' order by id desc");
-	$quotez=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,a.business_id,c.*,p.*,e.* FROM cost_sheet_entry a 
-left join new_client_master c on (a.client_id=c.id)left join new_plant_master p on (c.id=p.client_id) left join po_generate e on(a.cost_sheet_no=e.cost_sheet_no)
+	$quotez=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,a.business_id,c.*,p.*,e.*, enq.Company_name as enq_company, enq.it_name as enq_contact FROM cost_sheet_entry a 
+left join new_client_master c on (a.client_id=c.id)
+left join enquiry enq on (a.enquiry_id=enq.id)
+left join new_plant_master p on (c.id=p.client_id) left join po_generate e on(a.cost_sheet_no=e.cost_sheet_no)
 where (e.po_upload_status ='1' || e.po_upload_status ='2') order by e.id desc");
 
  
@@ -74,7 +76,7 @@ else
 		
 		 $mtmtf->execute(); 
 		 $rowm = $mtmtf->fetch();
-		 $market_emp_name = $rowm['emp_name'];
+		 $market_emp_name = $rowm ? $rowm['emp_name']: " ";
 }
 
 $md_status=$quote_list['md_status'];
@@ -87,7 +89,7 @@ else{
 		 
 		 $mdtmtf->execute(); 
 		 $rowmd = $mdtmtf->fetch();
-		 $md_emp_name = $rowmd['emp_name'];	
+		 $md_emp_name = $rowmd ?  $rowmd['emp_name'] : " ";	
 }
 
 $finance_status=$quote_list['finance_status'];
@@ -101,14 +103,14 @@ else{
 		 //echo "SELECT emp_name from staff_master where candid_id ='$approved_id'";
 		 $stmtf->execute(); 
 		 $rowf = $stmtf->fetch();
-		 $finance_emp_name = $rowf['emp_name'];
+		 $finance_emp_name = $rowf ? $rowf['emp_name'] : " ";
 }	
 		 
 		  ?>
       <tr>
 	  <td><?php echo $cnt;?>.</td>
-      <td><?php echo $quote_list['org_name']; ?></td>
-      <td><?php echo $quote_list['contact_person']; ?></td>
+      <td><?php echo !empty($quote_list['org_name']) ? $quote_list['org_name'] : $quote_list['enq_company']; ?></td>
+      <td><?php echo !empty($quote_list['contact_person']) ? $quote_list['contact_person'] : $quote_list['enq_contact']; ?></td>
       <td><?php echo $quote_list['quote_no']; ?></td>
       <td><?php echo $quote_list['cost_sheet_no']; ?></td>	
       <td><?php echo $quote_list['so_number']; ?></td>	
@@ -120,12 +122,17 @@ $finance_status=$quote_list['finance_status'];
  
  if($mstatus==1)
 {
-	if($mstatus==1 && $md_status==0){
-		 
-	echo '<span style="color:green;text-align:center;"><b>Marketing Level-1 Approved By <b/></span>';
-	echo $market_emp_name;
-	echo '<span style="color:red;text-align:center;"><b><br> And Waiting For Marketing Level-2 Approvel<b/></span>';
-	}elseif($mstatus==1 && $md_status==1 && $finance_status==0){
+    if($quote_list['business_id'] == '4') {
+        echo '<span style="color:green;text-align:center;"><b>Software SOF Approved By <b/></span>';
+        echo $market_emp_name;
+        echo '<span style="color:red;text-align:center;"></span>';
+    } else {
+        if($mstatus==1 && $md_status==0){
+             
+        echo '<span style="color:green;text-align:center;"><b>Marketing Level-1 Approved By <b/></span>';
+        echo $market_emp_name;
+        echo '<span style="color:red;text-align:center;"><b><br> And Waiting For Marketing Level-2 Approvel<b/></span>';
+        }elseif($mstatus==1 && $md_status==1 && $finance_status==0){
 		 echo '<span style="color:green;text-align:center;"><b>Marketing Level-1 Approved By <b/></span>';
 	    echo $market_emp_name;
 		echo '<span style="color:green;text-align:center;"><b><br> And Marketing Level-2 Approved By <b/></span>';
@@ -152,6 +159,7 @@ $finance_status=$quote_list['finance_status'];
 	echo '<span style="color:red;text-align:center;"><b><br> Marketing Level-2 Rejected By<b/></span>'; 
 	echo $md_emp_name;
 	}
+}
 }
 else if($mstatus==2){
 	echo '<span style="color:red;text-align:center;"><b>Marketing Level-1 Rejected By<b/></span>';

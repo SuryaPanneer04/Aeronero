@@ -3,7 +3,7 @@ require '../../connect.php';
 ?>
 <style>
   .card-primary:not(.card-outline)>.card-header {
-    background-color:#009EE3 !important;
+    background-color: #009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
     color: #e95a16 !important;
@@ -20,7 +20,7 @@ require '../../connect.php';
     border-color: #df8459;
 }
 .page-link:hover {
-    color: #f1cc61;
+    color: #009EE3;
 }
 .btn-success {
     background-color: #f76621;
@@ -47,8 +47,8 @@ require '../../connect.php';
 		<!-- Post -->
 			<table class="table table-bordered">
 				<tr>
-					<td><center><img src="qvision/images/logo123.jpg" alt="Aeronero solutions" style="width:100px;height:50px;"></center></td>
-					<td colspan="5"><center><b>Aeronero solutions private limited</b></center></td>
+					<td><center><img src="qvision/images/logo123.jpg" alt="bluebase" style="width:100px;height:50px;"></center></td>
+					<td colspan="5"><center><b>Bluebase Software Services Private Limited</b></center></td>
 				</tr>			  
 				<tr>
 					<td colspan="6"><center><b>Add Enquiries</b></center></td>

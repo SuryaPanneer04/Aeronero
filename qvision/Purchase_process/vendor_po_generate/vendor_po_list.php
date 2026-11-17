@@ -12,7 +12,7 @@ $candidateid=$_SESSION['candidateid'];
 $userrole=$_SESSION['userrole'];
 ?>
 <div  class="card card-primary">
-     <div class="card-header" style="background-color:#009EE3 !important;">
+     <div class="card-header" style="background-color: #009EE3 !important;">
 	 <h1 class="card-title"><font size="5"><b>Vendor PO	List</b></font> </h1></div>
     <div class="card-body">
      <table id="example1" class="table table-bordered table-striped">
@@ -27,7 +27,7 @@ $userrole=$_SESSION['userrole'];
       <tbody>
 	
       <?php
-		 $datas=$con->query( "select distinct a.id as vo_id,a.status as vo_status,a.vendor_id,a.specification,a.so_number,a.cost_sheet_id,a.finance_status,a.service_status,a.marketing_status, b.cost_sheet_no,b.id as cost_id,c.id as vendors_id,c.vendor_name from purchase_vendor_master a left join cost_sheet_entry b on (a.cost_sheet_id=b.id) left join doller_vendor_mastor c on (a.vendor_id=c.id)where a.status='2' || a.status='4' || a.status='5' || a.status='6' group by a.vendor_id order by a.id desc ");
+		 $datas=$con->query( "SELECT distinct a.id as vo_id,a.status as vo_status,a.vendor_id,a.specification,a.so_number,a.cost_sheet_id,a.finance_status,a.service_status,a.marketing_status, b.cost_sheet_no,b.id as cost_id,c.id as vendors_id,c.vendor_name FROM purchase_vendor_master a LEFT JOIN cost_sheet_entry b ON (a.cost_sheet_id=b.id) LEFT JOIN doller_vendor_mastor c ON (a.vendor_id=c.id) WHERE a.status IN ('2','4','5','6') AND b.business_id != '4' GROUP BY a.id ORDER BY a.id DESC");
 
 
 	 /* echo "select distinct a.id as vo_id,a.status as vo_status,a.vendor_id,a.specification,a.so_number,a.cost_sheet_id,a.finance_status,

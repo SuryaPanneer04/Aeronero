@@ -21,7 +21,7 @@ else
     </head>
 <style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div  class="card card-primary">
@@ -63,18 +63,19 @@ a.md_status,
 a.md_approved_by,
 a.finance_status,
 a.finance_approved_by,
-b.cost_sheet_no,
 b.enquiry_id,
 c.id AS enqs_id,
 c.Company_name,
-d.client_name AS Client,
-a.purchase_invoice_sts AS pi_sts
+d.org_name AS Client,
+a.purchase_invoice_sts AS pi_sts,
+c.status AS enquiry_status,
+c.Product AS prod_type
 FROM po_generate a
 LEFT JOIN cost_sheet_entry b
     ON a.cost_sheet_no = b.cost_sheet_no
 LEFT JOIN enquiry c
     ON b.enquiry_id = c.id
-LEFT JOIN client_master d
+LEFT JOIN new_client_master d
     ON c.Client_id = d.id
 WHERE a.po_upload_status IN ('1','2')
 ORDER BY a.id DESC
@@ -102,7 +103,7 @@ if($mstatus=='1')
 {
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$mstatus_approved'");
 $fet1=$sql1->fetch();
-$empm_name=$fet1['full_name'];
+$empm_name= $fet1 ? $fet1['full_name'] : '';
 	echo '<span style="color:green;text-align:center;"><b>SOF Approved By </b></span>';?>
 				<?php echo $empm_name;
 }
@@ -110,7 +111,7 @@ elseif($mstatus=='2')
 {
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$mstatus_approved'");
 $fet1=$sql1->fetch();
-$empm_name=$fet1['full_name'];
+$empm_name= $fet1 ? $fet1['full_name'] : '';
 
 	echo '<span style="color:red;text-align:center;"><b>SOF Rejected by <b/></span>';
 	 echo $empm_name;
@@ -121,13 +122,17 @@ $empm_name=$fet1['full_name'];
 </td>	
 
 	<td>
-		<?php $sstatus=$quote_list['md_status'];
+		<?php 
+if($quote_list['prod_type'] == '4' || strtolower((string)$quote_list['prod_type']) == 'software') {
+    echo '<span style="text-align:center;"><b> - </b></span>';
+} else {
+    $sstatus=$quote_list['md_status'];
 	$md_approved=$quote_list['md_approved_by'];
 if($sstatus=='1')
 {
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$md_approved'");
 $fet1=$sql1->fetch();
-$emps_name=$fet1['full_name'];
+$emps_name= $fet1 ? $fet1['full_name'] : '';
 	echo '<span style="color:green;text-align:center;"><b>SOF Approved By </b></span>';?>
 				<?php echo $emps_name;
 }
@@ -135,37 +140,40 @@ elseif($sstatus=='2')
 {
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$md_approved'");
 $fet1=$sql1->fetch();
-$emps_name=$fet1['full_name'];
+$emps_name= $fet1 ? $fet1['full_name'] : '';
 	echo '<span style="color:red;text-align:center;"><b>SOF Rejected By </b></span>';?>
 				<?php echo $emps_name;
 }else{
 	echo '<span style="color:red;text-align:center;"><b> Waiting For Approval<b/></span>';
+}
 }
 ?>
 </td>
 
 <td>
 	<?php 
+if($quote_list['prod_type'] == '4' || strtolower((string)$quote_list['prod_type']) == 'software') {
+    echo '<span style="text-align:center;"><b> - </b></span>';
+} else {
 $fstatus=$quote_list['finance_status'];
 $finance_approved=$quote_list['finance_approved_by'];
 
-if($quote_list['pi_sts']==1){
+if($quote_list['pi_sts']==1 || $quote_list['enquiry_status']=='11'){
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$finance_approved'");
 $fet1=$sql1->fetch();
-$empd_name=$fet1['full_name'];
+$empd_name= $fet1 ? $fet1['full_name'] : '';
 
 	echo '<span style="color:green;text-align:center;"><b>SOF Approved By </b></span>', $empd_name; 
 
 }	
 else{
 
-
 if($fstatus=='1')
 {
 	
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$finance_approved'");
 $fet1=$sql1->fetch();
-$empd_name=$fet1['full_name'];
+$empd_name= $fet1 ? $fet1['full_name'] : '';
 	echo '<span style="color:green;text-align:center;"><b>SOF Approved By </b></span>';?>
 				<?php echo $empd_name; echo '<span style="color:red;text-align:center;"><b>"And Waiting For Purchase"</b></span>';
 }
@@ -173,11 +181,12 @@ elseif($fstatus=='2')
 {
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$finance_approved'");
 $fet1=$sql1->fetch();
-$empd_name=$fet1['full_name'];
+$empd_name= $fet1 ? $fet1['full_name'] : '';
 	echo '<span style="color:red;text-align:center;"><b>SOF Rejected By </b></span>';?>
 				<?php echo $empd_name;
 }else{
 	echo '<span style="color:red;text-align:center;"><b> Waiting For Approval<b/></span>';
+}
 }
 }
 ?>
@@ -185,7 +194,15 @@ $empd_name=$fet1['full_name'];
 
 <td>
 	<?php  
-if($quote_list['pi_sts']==1){
+if($quote_list['prod_type'] == '4' || strtolower((string)$quote_list['prod_type']) == 'software') {
+    // BUG FIX: Check if status is updated to 30 (Assigned) or above
+    if($quote_list['enquiry_status'] >= 30) {
+        echo '<span style="color:green;text-align:center;"><b> Employee Assigned</b></span>';
+    } else {
+        echo '<span style="color:red;text-align:center;"><b> Waiting for Employee Assign </b></span>';
+    }
+}
+elseif($quote_list['pi_sts']==1 || $quote_list['enquiry_status']=='11'){
 
 	echo '<span style="color:green;text-align:center;"><b> Purchased Successfully</b></span>';
 
@@ -198,16 +215,16 @@ if($fstatus=='1')
 {
 	
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$finance_approved'");
-$fet1=$sql1->fetch();
-$empd_name=$fet1['full_name'];
+$fet1=$sql1->fetch(PDO::FETCH_ASSOC);
+$empd_name=($fet1 && isset($fet1['full_name'])) ? $fet1['full_name'] : '-';
 	echo '<span style="color:green;text-align:center;"><b>In-Process</b></span>';
 
 }
 elseif($fstatus=='2')
 {
 	$sql1=$con->query("SELECT full_name,candidate_id FROM z_user_master  where candidate_id='$finance_approved'");
-$fet1=$sql1->fetch();
-$empd_name=$fet1['full_name'];
+$fet1=$sql1->fetch(PDO::FETCH_ASSOC);
+$empd_name=($fet1 && isset($fet1['full_name'])) ? $fet1['full_name'] : '-';
 	echo '<span style="color:red;text-align:center;"><b>SOF Rejected By </b></span>';?>
 				<?php echo $empd_name;
 }

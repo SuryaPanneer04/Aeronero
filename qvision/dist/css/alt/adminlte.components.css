@@ -383,7 +383,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-dark .custom-control-input~.custom-control-label::before {
-  background: #343a40;
+  background: #ed5d00;
   border-color: #060708;
 }
 
@@ -396,7 +396,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-dark .custom-control-input:checked~.custom-control-label::before {
-  background: #343a40;
+  background: #ed5d00;
   border-color: #060708;
 }
 
@@ -877,7 +877,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-off-gray-dark .custom-control-input~.custom-control-label::before {
-  background: #343a40;
+  background: #ed5d00;
   border-color: #060708;
 }
 
@@ -890,7 +890,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-switch.custom-switch-on-gray-dark .custom-control-input:checked~.custom-control-label::before {
-  background: #343a40;
+  background: #ed5d00;
   border-color: #060708;
 }
 
@@ -1199,7 +1199,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-dark::-webkit-slider-thumb {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .custom-range.custom-range-dark::-webkit-slider-thumb:active {
@@ -1207,7 +1207,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-dark::-moz-range-thumb {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .custom-range.custom-range-dark::-moz-range-thumb:active {
@@ -1215,7 +1215,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-dark::-ms-thumb {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .custom-range.custom-range-dark::-ms-thumb:active {
@@ -1959,7 +1959,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-gray-dark::-webkit-slider-thumb {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .custom-range.custom-range-gray-dark::-webkit-slider-thumb:active {
@@ -1967,7 +1967,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-gray-dark::-moz-range-thumb {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .custom-range.custom-range-gray-dark::-moz-range-thumb:active {
@@ -1975,7 +1975,7 @@ textarea.form-control.is-warning {
 }
 
 .custom-range.custom-range-gray-dark::-ms-thumb {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .custom-range.custom-range-gray-dark::-ms-thumb:active {
@@ -2534,7 +2534,7 @@ textarea.form-control.is-warning {
 }
 
 .card-dark:not(.card-outline)>.card-header {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .card-dark:not(.card-outline)>.card-header,
@@ -2547,7 +2547,7 @@ textarea.form-control.is-warning {
 }
 
 .card-dark.card-outline {
-  border-top: 3px solid #343a40;
+  border-top: 3px solid #ed5d00;
 }
 
 .card-dark.card-outline-tabs>.card-header a:hover {
@@ -2555,7 +2555,7 @@ textarea.form-control.is-warning {
 }
 
 .card-dark.card-outline-tabs>.card-header a.active {
-  border-top: 3px solid #343a40;
+  border-top: 3px solid #ed5d00;
 }
 
 .bg-dark .btn-tool,
@@ -3883,7 +3883,7 @@ textarea.form-control.is-warning {
 }
 
 .card-gray-dark:not(.card-outline)>.card-header {
-  background-color: #343a40;
+  background-color: #ed5d00;
 }
 
 .card-gray-dark:not(.card-outline)>.card-header,
@@ -3896,7 +3896,7 @@ textarea.form-control.is-warning {
 }
 
 .card-gray-dark.card-outline {
-  border-top: 3px solid #343a40;
+  border-top: 3px solid #ed5d00;
 }
 
 .card-gray-dark.card-outline-tabs>.card-header a:hover {
@@ -3904,7 +3904,7 @@ textarea.form-control.is-warning {
 }
 
 .card-gray-dark.card-outline-tabs>.card-header a.active {
-  border-top: 3px solid #343a40;
+  border-top: 3px solid #ed5d00;
 }
 
 .bg-gray-dark .btn-tool,
@@ -4350,7 +4350,7 @@ html.maximized-card {
 }
 
 .todo-list .dark {
-  border-left-color: #343a40;
+  border-left-color: #ed5d00;
 }
 
 .todo-list .lightblue {
@@ -4426,7 +4426,7 @@ html.maximized-card {
 }
 
 .todo-list .gray-dark {
-  border-left-color: #343a40;
+  border-left-color: #ed5d00;
 }
 
 .todo-list .handle {
@@ -4457,7 +4457,7 @@ html.maximized-card {
 
 .modal-content.bg-warning .modal-header,
 .modal-content.bg-warning .modal-footer {
-  border-color: #343a40;
+  border-color: #ed5d00;
 }
 
 .modal-content.bg-primary .close,
@@ -5157,7 +5157,7 @@ html.maximized-card {
 
 .alert-dark {
   color: #ffffff;
-  background: #343a40;
+  background: #ed5d00;
   border-color: #292d32;
 }
 

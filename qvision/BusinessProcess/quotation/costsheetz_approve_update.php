@@ -194,7 +194,7 @@ if($count == 0)
 			 //echo  $QUOTE_NO = $no2.'/'.$final_quote_no.'/'.$char;
 			  echo  $QUOTE_NO =  $char.''.$current_month.'/'.$finyear.'/'.$final_quote_no.'/'.$char_str;
 			 } 
-			 } else {
+			  else {
     // DB-la entha quote-um illana, first quote number generate panna
     $char = 'QOT';
     $current_month = date('m');
@@ -219,13 +219,13 @@ if($count == 0)
 }
 }
 
-
+	}
 
 
  $date = date('Y-m-d');
 
-// Removed the count() and for loop. Directly updating the cost_sheet_no
-$update_query = $con->query("update cost_sheet_entry set approved_by ='$candidateid', status ='2',modified_by ='$candidateid',modified_on =NOW() WHERE cost_sheet_no= '$cost_sheet_no'");
+// Updating using the primary key ID to avoid revision conflicts
+$update_query = $con->query("update cost_sheet_entry set approved_by ='$candidateid', status ='2',modified_by ='$candidateid',modified_on =NOW() WHERE id= '$costsheet_id'");
 
 $insert_query2= $con->query("Update enquiry set status='5',approved_by ='$candidateid' where id='$enquiry_id'");
 echo "Update enquiry set status='5',approved_by ='$candidateid' where id='$enquiry_id'";
@@ -244,13 +244,14 @@ JOIN z_user_master zum WHERE zum.candidate_id = e.created_by and qg.cost_sheet_n
  $row = $query2->fetch();
  
  
- if($quote_count!=="")
+ // REPLACE WITH THIS CODE:
+ if($quote_count > 0)
  
  {
-  $insert_query=$con->query("insert into quote_generate(quote_no,cost_sheet_no,quote_date,status,created_by,created_on) 
-  values('$QUOTE_NO','$cost_sheet_no','$date','1','$candidateid',NOW())");     
-   echo "insert into quote_generate(quote_no,cost_sheet_no,quote_date,status,created_by,created_on) 
-  values('$QUOTE_NO','$cost_sheet_no','$date','1','$candidateid',NOW())";
+  $insert_query=$con->query("insert into quote_generate(quote_no,cost_sheet_no,cost_sheet_id,quote_date,status,created_by,created_on) 
+  values('$QUOTE_NO','$cost_sheet_no','$costsheet_id','$date','1','$candidateid',NOW())");     
+   echo "insert into quote_generate(quote_no,cost_sheet_no,cost_sheet_id,quote_date,status,created_by,created_on) 
+  values('$QUOTE_NO','$cost_sheet_no','$costsheet_id','$date','1','$candidateid',NOW())";
    $update_query =$con->query("update quote_generate set status ='3' where quote_no ='$old_quote_no'");
    echo "update quote_generate set status ='3' where quote_no ='$old_quote_no'";
   
@@ -258,8 +259,8 @@ JOIN z_user_master zum WHERE zum.candidate_id = e.created_by and qg.cost_sheet_n
 
 
  else{
-	   $insert_query=$con->query("insert into quote_generate(quote_no,cost_sheet_no,quote_date,status,created_by,created_on) 
-  values('$QUOTE_NO','$cost_sheet_no','$date','2','$candidateid',NOW())"); 
+	   $insert_query=$con->query("insert into quote_generate(quote_no,cost_sheet_no,cost_sheet_id,quote_date,status,created_by,created_on) 
+  values('$QUOTE_NO','$cost_sheet_no','$costsheet_id','$date','2','$candidateid',NOW())"); 
 	
  } 
  
@@ -313,10 +314,3 @@ else {
 }
 
 ?>  
-
-
-
-
-
-
-

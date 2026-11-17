@@ -4,12 +4,12 @@ include("../../../user.php");
 $costsheet_id=$_REQUEST['id'];
 $userrole = $_SESSION['userrole'];
 $candidateid=$_SESSION['candidateid'];
-$stmt = $con->prepare("SELECT a.id as costsheet_id,a.*,b.*,e.*,f.*,g.*,b.org_name as company_name from cost_sheet_entry a 
-		 inner join new_client_master b on(b.id=a.client_id) 
-		 inner join product_services f on (f.id = a.business_id)
-		INNER JOIN staff_master e ON e.candid_id=a.candid_id 
-		inner join z_user_master g ON (g.candidate_id = e.id)
-		where a.id='$costsheet_id' and a.status ='1' ");
+$stmt = $con->prepare("SELECT a.id as costsheet_id, a.enquiry_id as safe_enquiry_id, a.*, b.*, e.*, f.*, g.*, b.org_name as company_name from cost_sheet_entry a 
+		 LEFT JOIN new_client_master b on(b.id=a.client_id) 
+		 LEFT JOIN product_services f on (f.id = a.business_id)
+		 LEFT JOIN staff_master e ON e.candid_id=a.candid_id 
+		 LEFT JOIN z_user_master g ON (g.candidate_id = e.id)
+		where a.id='$costsheet_id' ");
  //echo "SELECT a.list,a.Product,a.Client,a.id as enquiry_id ,b.id as business_id, b.mapping_id,b.name FROM Enquiry a join `product/services` b on (b.mapping_id = a.Product) WHERE a.id='$enquiry_id'";
 
 $stmt->execute(); 
@@ -22,6 +22,8 @@ if($row['business_id'] =='1'){
 	  $pro_ser_type = "Service";
    }else if($row['business_id'] =='3'){
 	  $pro_ser_type = "Solution";
+   }else if($row['business_id'] =='4'){
+	  $pro_ser_type = "Software";
    }
  
 $name = $row['name'];
@@ -47,10 +49,10 @@ $row['emp_name'];
 	padding: .8rem !important;
 }
 .card-primary:not(.card-outline)>.card-header {
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 	
 .card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .card-body{
 	max-width: 100% !important;
@@ -81,13 +83,13 @@ $row['emp_name'];
 	 	 <div class="form-group row">
 		    <div class="col-sm-3">
 			    <b>Product / Service / Solution </b>
-			   <input type="hidden" class="form-control" id="enquiry_id" name="enquiry_id" value="<?php echo $row['enquiry_id']; ?>" readonly>
+			   <input type="hidden" class="form-control" id="enquiry_id" name="enquiry_id" value="<?php echo $row['safe_enquiry_id']; ?>" readonly>
 	           <input type="text" class="form-control" id="pro_ser_id" name="pro_ser_id" value="<?php echo $pro_ser_type; ?>- <?php echo $name;?>" readonly>
-			   <input type="hidden" class="form-control" id="mapping_id" name="mapping_id" value="<?php echo $row['mapping_id']; ?>" readonly>
+			   <input type="hidden" class="form-control" id="mapping_id" name="mapping_id" value="<?php echo $row['business_id']; ?>" readonly>
 			</div>
 			
 			<!--<div class="col-sm-4"> 
-			    <input type="hidden" class="form-control" id="mapping_id" name="mapping_id" value=" <?php echo $row['mapping_id']; ?>" readonly>
+			    <input type="hidden" class="form-control" id="mapping_id" name="mapping_id" value=" <?php echo $row['business_id']; ?>" readonly>
 				<select class="form-control" id="company_id" name="company_id" required> 
 					<option value="0"> --- Select Company Name ---</option>
 					<?php $query = $con->query("SELECT * FROM company_master");
@@ -138,12 +140,19 @@ $row['emp_name'];
 		  <th>
 			    <input type="checkbox" name="select-all" id="select-all" onclick="toggle(this); required">
 		      </th>
+		  <?php if($row['business_id'] == '4') { ?>
+		  <th style=" WIDTH: 11%;">SOFTWARE SPECIFICATION</th>
+		  <th style=" WIDTH: 6%;">NO OF MAN HRS</th>
+		  <th style=" WIDTH: 8%;">PER HRS</th>
+		  <Th style=" WIDTH: 10%;" formula="cost*qty" summary="sum" >Sub Total</th>
+		  <?php } else { ?>
 		  <th style=" WIDTH: 11%;">SPECIFICATION</th>
 		       <th style=" WIDTH: 6%;">QTY</th>
 		       <!--th style=" WIDTH: 6%;">UNIT</th-->
 		       <th style=" WIDTH: 8%;">UNIT RATE</th>
 		       <Th style=" WIDTH: 10%;" formula="cost*qty" summary="sum" >Amount</th>
 		       <th colspan='2' style=" WIDTH: 11%;">Logistics %</th>
+		  <?php } ?>
 		      <th colspan='2'  style=" WIDTH: 11%;">Service Cost %</th>
 		       <th colspan='2' style=" WIDTH: 11%;">Overall Margin</th>
 		       <th>Total Amount</th>
@@ -152,9 +161,9 @@ $row['emp_name'];
 		</tr>
 		<?php  
 		 $query= $con->query("SELECT a.id as costsheet_id,a.*,b.*,e.* from cost_sheet_entry a 
-				 inner join new_client_master b on(b.id=a.client_id) 
-				 inner join staff_master e ON e.candid_id=a.candid_id
-				 where a.status ='1' and a.cost_sheet_no='$cost_sheet_no' order by a.id desc"); 
+				 LEFT JOIN new_client_master b on(b.id=a.client_id) 
+				 LEFT JOIN staff_master e ON e.candid_id=a.candid_id
+				 where a.cost_sheet_no='$cost_sheet_no' order by a.id desc"); 
 		    /*  echo "SELECT a.id as costsheet_id,a.*,b.*,e.* from cost_sheet_entry a 
 				 inner join client_master b on(b.id=a.client_id) 
 				 inner join staff_master e ON e.candid_id=a.candid_id
@@ -166,7 +175,7 @@ $row['emp_name'];
 			 echo "SELECT a.id as costsheet_id,a.*,b.*,e.* from cost_sheet_entry a 
 				 inner join client_master b on(b.id=a.client_id) 
 				 inner join staff_master e ON e.candid_id=a.candid_id
-				 where a.status ='1' and a.cost_sheet_no='$cost_sheet_no'"; */
+				 where a.cost_sheet_no='$cost_sheet_no'"; */
 				 
 				//echo  $cnt;  	
             				
@@ -177,6 +186,10 @@ $row['emp_name'];
 		  </td>
 		  <td>
 		     <INPUT type="hidden" id="cost_sheet_no" name="cost_sheet_no" class="form-control" value="<?php echo $cost['cost_sheet_no']; ?>" readonly="readonly">
+		     <input type="hidden" name="product_id[]" value="<?php echo $cost['product_id']; ?>">
+		     <input type="hidden" name="product_name[]" value="<?php echo $cost['product_name']; ?>">
+		     <input type="hidden" name="description[]" value="<?php echo $cost['description']; ?>">
+		     <input type="hidden" name="hsn[]" value="<?php echo $cost['hsn']; ?>">
 			<input type="text" id="item<?php echo $cnt; ?>" name="item[]" class="form-control" value="<?php echo $cost['specification']; ?>"></td>
 		  <td>
 			<input type="text" id="qty<?php echo $cnt; ?>" name="qty[]" onchange="totalIt()" class="form-control" value="<?php echo $cost['qty']; ?>"></td>
@@ -187,12 +200,17 @@ $row['emp_name'];
 		  <td>
 			<input type="text" id="price<?php echo $cnt; ?>" name="price[]" onchange="totalIt()" readonly="readonly" value="<?php echo $cost['total_price']; ?>" class="form-control">
 		</td>
+		<?php if($row['business_id'] != '4') { ?>
 		<td>
 			<input type="text" id="log_per<?php echo $cnt; ?>" name="log_per[]" class="form-control log_per " onchange="totalIt()" placeholder="%"  value="<?php echo $cost['log_per']; ?>">
 		</td>
 		<td>
 			<input type="text" id="log_amt<?php echo $cnt; ?>" name="log_amt[]" class="form-control"  placeholder="0.00" readonly value="<?php echo $cost['log_amt']; ?>">
 		</td>
+		<?php } else { ?>
+		<input type="hidden" id="log_per<?php echo $cnt; ?>" name="log_per[]" value="<?php echo $cost['log_per']; ?>">
+		<input type="hidden" id="log_amt<?php echo $cnt; ?>" name="log_amt[]" value="<?php echo $cost['log_amt']; ?>">
+		<?php } ?>
 		
 		<td> 
 		    <INPUT type="text" id="eng_per<?php echo $cnt; ?>" name="eng_per[]" class="form-control eng_per"  onchange="totalIt()" placeholder="%" value="<?php echo $cost['eng_per']; ?>">
@@ -213,13 +231,14 @@ $row['emp_name'];
 		   <INPUT type="text" id="col_item<?php echo $cnt; ?>" name="col_item[]" class="form-control"  placeholder="0.00" readonly value="<?php echo $cost['total_amt']; ?>">
 		</td>
 		  <td align="left">
-		     <b><select class="form-control" id="vendor_name1" name="vendor_name[]" style="width:100%;" required>
-    <option disabled selected>-- Select vendor --</option>
-	
-				
-				 <?php $stmt = $con->query("SELECT id,vendor_name FROM doller_vendor_mastor where status='1'");
-				while ($row2 = $stmt->fetch()) {?>
-				 <option value="<?php  echo $row2['id'];?>"> <?php echo $row2['vendor_name']; ?> </option>
+		     <b><select class="form-control" id="vendor_name<?php echo $cnt; ?>" name="vendor_name[]" style="width:100%;" required>
+    <option disabled value="">-- Select vendor --</option>
+				 <?php 
+                 $vendor_stmt = $con->query("SELECT id,vendor_name FROM doller_vendor_mastor where status='1'");
+				 while ($row2 = $vendor_stmt->fetch()) { 
+                     $selected = ($cost['vendor_id'] == $row2['id']) ? 'selected' : '';
+                 ?>
+				 <option value="<?php echo $row2['id'];?>" <?php echo $selected; ?>> <?php echo $row2['vendor_name']; ?> </option>
 			<?php } ?>
 		</select> 
 
@@ -261,9 +280,9 @@ $row['emp_name'];
 			</tr>
 		</table-->
 		<?php  $query1= $con->query("SELECT a.id as costsheet_id,a.*,b.*,e.* from cost_sheet_entry a 
-				 inner join new_client_master b on(b.id=a.client_id) 
-				 inner join staff_master e ON e.candid_id=a.candid_id
-				 where a.status ='1' and a.cost_sheet_no='$cost_sheet_no' order by a.id desc"); 
+				 LEFT JOIN new_client_master b on(b.id=a.client_id) 
+				 LEFT JOIN staff_master e ON e.candid_id=a.candid_id
+				 where a.cost_sheet_no='$cost_sheet_no' order by a.id desc"); 
 				 $query1->execute(); 
                  $row1 = $query1->fetch();
 				  $costsheet_date_str  = $row1['costsheet_date'];

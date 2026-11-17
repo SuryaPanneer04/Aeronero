@@ -10,7 +10,7 @@ if (!isset($_SESSION['username']))
 else
 {
   $now = time(); // Checking the time now when home page starts.
-   if ($now > $_SESSION['expire']) 
+   if (isset($_SESSION['expire']) && $now > $_SESSION['expire']) 
     {
       // header('Location:../login/lockscreen.php'); 
     }

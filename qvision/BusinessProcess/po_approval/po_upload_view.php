@@ -2,10 +2,10 @@
 require '../../../connect.php';
 include("../../../user.php");
 $id=$_REQUEST['id'];
-$stmt = $con->prepare("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id as const,a.business_id,b.*,c.*,p.* FROM cost_sheet_entry a 
+$stmt = $con->prepare("SELECT distinct b.*,c.*,p.*,a.id as id,a.cost_sheet_no as cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id as const,a.business_id FROM cost_sheet_entry a 
 left join new_client_master c on (a.client_id=c.id)
 left join new_plant_master p on c.org_name=p.client_org_name
-left join quote_generate b on (a.cost_sheet_no=b.cost_sheet_no) where b.id='$id'"); 
+left join quote_generate b on (a.cost_sheet_no=b.cost_sheet_no) where a.id='$id'");
 
 
 $stmt->execute(); 
@@ -13,7 +13,7 @@ $row = $stmt->fetch();
 ?>
 <style>
 .card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header{
 color: black !important;
@@ -44,13 +44,13 @@ background-color: rgb(237, 93, 0) !important;
 				   <div class="form-group row">
 				  <label for="inputname" class="col-sm-2 col-form-label">Client Name</label>
 				  <div class="col-sm-5">
-                      <input type="text" class="form-control" name="cost_sheet_no" id="cost_sheet_no" value="<?php echo  $row['org_name'];?>"readonly>
+                      <input type="text" class="form-control" name="org_name" id="org_name" value="<?php echo  $row['org_name'];?>"readonly>
                     </div>
 					</div>
 					<div class="form-group row">
 				  <label for="inputname" class="col-sm-2 col-form-label">Contact Person Name</label>
 				  <div class="col-sm-5">
-                      <input type="text" class="form-control" name="cost_sheet_no" id="cost_sheet_no" value="<?php echo  $row['contact_person'];?>"readonly>
+                      <input type="text" class="form-control" name="contact_person" id="contact_person" value="<?php echo  $row['contact_person'];?>"readonly>
                     </div>
 					</div>
                     <div class="form-group row">

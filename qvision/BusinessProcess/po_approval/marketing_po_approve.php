@@ -10,7 +10,7 @@ $fet=$sql->fetch();
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 
@@ -167,7 +167,10 @@ $fet=$sql->fetch();
 	 {
 		 ?>
 		 <tr>  
-        <td colspan="11"><input type="button" class="btn btn-success" name="save" id="<?php echo $quoteid; ?>" onclick="approve_po(this.id)" style="float:right;margin: 5px;" value="Approve"></td>
+        <td colspan="11">
+            <input type="button" class="btn btn-success" name="save" id="<?php echo $quoteid; ?>" onclick="approve_po(this.id)" style="float:right;margin: 5px;" value="Approve">
+            <img id="btnLoader" src="qvision/images/images/load3.gif" style="display:none; width:35px; height:35px; float:right; margin: 5px;">
+        </td>
          <td colspan="11"><input type="button" class="btn btn-danger" name="reject" id="<?php echo $quoteid;?>" onclick="reject_po(this.id)" style="float:right;margin: 5px;" value="Reject"></td>
         </tr> 
 	 <?php
@@ -235,22 +238,28 @@ function submit_po(c,v)
 
 function approve_po(v)
 {
-	//alert(v);
 	var enquiry_id  = document.getElementById("enquiry_id").value;
 	var cost_sheet_no  = document.getElementById("cost_sheet_no").value;
 	$.ajax({
 		type:"post",
 		data:"id="+v+'&cost_sheet_no='+cost_sheet_no+'&enquiry_id='+enquiry_id,
 		url:"qvision/BusinessProcess/po_approval/marketing_po_submit.php?id="+v+'&cost_sheet_no='+cost_sheet_no+'&enquiry_id='+enquiry_id,
+        beforeSend: function() {
+            $('#' + v).prop('disabled', true).val('Approving...');
+            $('#btnLoader').show();
+        },
 		success:function(data)
 		{
+            $('#btnLoader').hide();
 			alert("Approved Successfully");
-				
-				marketing_po_mail();
-				
-				marketing_po_approve();
-			
-		}
+			marketing_po_mail();
+			marketing_po_approve();
+		},
+        error: function() {
+            $('#btnLoader').hide();
+            $('#' + v).prop('disabled', false).val('Approve');
+            alert("Network Error! Try again.");
+        }
 	})
 }
 </script>

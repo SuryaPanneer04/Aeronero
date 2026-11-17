@@ -27,7 +27,7 @@ else
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div class="card card-primary">
@@ -53,9 +53,11 @@ else
 	 if($count==1)
 {
 	//$quote=$con->query("select * from po_generate where po_upload_status ='1' order by id desc");
-$quote=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,a.business_id,c.*,p.*,e.* FROM cost_sheet_entry a 
-left join new_client_master c on (a.client_id=c.id)left join new_plant_master p on (c.id=p.client_id) left join po_generate e on(a.cost_sheet_no=e.cost_sheet_no)
-where (e.po_upload_status ='1' || e.po_upload_status ='2') order by e.id desc");
+$quote=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,a.business_id,c.*,p.*,e.*, enq.Company_name as enq_company, enq.it_name as enq_contact FROM cost_sheet_entry a 
+left join new_client_master c on (a.client_id=c.id)
+left join enquiry enq on (a.enquiry_id=enq.id)
+left join new_plant_master p on (c.id=p.client_id) left join po_generate e on(a.cost_sheet_no=e.cost_sheet_no)
+where (e.po_upload_status ='1' || e.po_upload_status ='2') AND a.business_id != '4' order by e.id desc");
       while($quote_list = $quote->fetch(PDO::FETCH_ASSOC))
 	  {
 		  		$mstatus = $quote_list['marketing_status'];
@@ -104,8 +106,8 @@ else
 		  ?>
       <tr>
 	  <td><?php echo $cnt;?>.</td>
-      <td><?php echo $quote_list['org_name']; ?></td>
-      <td><?php echo $quote_list['contact_person']; ?></td>
+      <td><?php echo !empty($quote_list['org_name']) ? $quote_list['org_name'] : $quote_list['enq_company']; ?></td>
+      <td><?php echo !empty($quote_list['contact_person']) ? $quote_list['contact_person'] : $quote_list['enq_contact']; ?></td>
       <td><?php echo $quote_list['quote_no']; ?></td>
       <td><?php echo $quote_list['cost_sheet_no']; ?></td>	
       <td><?php echo $quote_list['so_number']; ?></td>
@@ -126,7 +128,12 @@ else if($fstatus==2){
     echo '<span style="color:green;text-align:center;"><b> Service Approved By ';  ?><?php echo $service_emp_name;?>/<?php  echo '<span style="color:red;text-align:center;"><b>And Waiting For Marketing Approval <b/></span>'; 
 	} */
  
- if($md_status==1)
+ if($quote_list['business_id'] == '4' && $mstatus >= 1) {
+     echo '<span style="color:green;text-align:center;"><b>Software SOF Approved By <b/></span>';
+     echo $market_emp_name;
+     echo '<span style="color:red;text-align:center;"><b><br> / Process Completed<b/></span>';
+ }
+ elseif($md_status==1)
 {
 		if($md_status==1 && $mstatus==1 && $fstatus ==0){
 	 

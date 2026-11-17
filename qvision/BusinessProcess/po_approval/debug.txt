@@ -1,0 +1,695 @@
+Script hit! POST: Array
+(
+    [get_id] => 39
+    [quote_no] => QOT08/26-27/00038/1
+    [po_date] => 2026-08-31
+    [enquiry_id] => 46
+    [business_id] => 1
+    [cost_sheet_no] => SSSW0/26-27/1
+)
+
+Script hit! POST: Array
+(
+    [get_id] => 39
+    [quote_no] => QOT08/26-27/00038/1
+    [po_date] => 2026-08-31
+    [enquiry_id] => 46
+    [business_id] => 1
+    [cost_sheet_no] => SSSW0/26-27/1
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/1
+    [get_id] => 170
+    [enquiry_id] => 54
+    [business_id] => 4
+    [quote_no] => QOT08/26-27/00038/1
+    [quote_date] => 2026-08-28
+    [po_date] => 2026-09-01
+)
+
+Script hit! POST: Array
+(
+    [org_name] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>47</b><br />
+    [contact_person] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>53</b><br />
+    [cost_sheet_no] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>59</b><br />
+    [get_id] => <br />
+<b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>65</b><br />
+
+    [enquiry_id] => <br />
+<b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>67</b><br />
+
+    [business_id] => <br />
+<b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>70</b><br />
+
+    [quote_no] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>73</b><br />
+    [quote_date] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>81</b><br />
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>47</b><br />
+    [contact_person] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>53</b><br />
+    [cost_sheet_no] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>59</b><br />
+    [get_id] => <br />
+<b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>65</b><br />
+
+    [enquiry_id] => <br />
+<b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>67</b><br />
+
+    [business_id] => <br />
+<b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>70</b><br />
+
+    [quote_no] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>73</b><br />
+    [quote_date] => <br /><b>Warning</b>:  Trying to access array offset on value of type bool in <b>C:\xampp\htdocs\bbvision\qvision\BusinessProcess\po_approval\po_upload_view.php</b> on line <b>81</b><br />
+    [po_date] => 2026-09-22
+)
+
+Script hit! POST: Array
+(
+    [org_name] => testinfo1
+    [contact_person] => test1
+    [cost_sheet_no] => SSSW0/26-27/1
+    [get_id] => 171
+    [enquiry_id] => 62
+    [business_id] => 4
+    [quote_no] => QOT08/26-27/00038/1
+    [quote_date] => 2026-08-28
+    [po_date] => 2026-09-22
+)
+
+Script hit! POST: Array
+(
+    [org_name] => testinfo1
+    [contact_person] => test1
+    [cost_sheet_no] => 
+    [get_id] => 171
+    [enquiry_id] => 64
+    [business_id] => 2
+    [quote_no] => 
+    [quote_date] => 
+    [po_date] => 2026-09-23
+)
+
+Script hit! POST: Array
+(
+    [org_name] => testinfo1
+    [contact_person] => test1
+    [cost_sheet_no] => SSSW00001/26-27/1
+    [get_id] => 171
+    [enquiry_id] => 65
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-23
+    [po_date] => 2026-09-23
+)
+
+Script hit! POST: Array
+(
+    [org_name] => testinfo1
+    [contact_person] => test1
+    [cost_sheet_no] => 
+    [get_id] => 171
+    [enquiry_id] => 66
+    [business_id] => 2
+    [quote_no] => 
+    [quote_date] => 
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/1
+    [get_id] => 170
+    [enquiry_id] => 68
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-23
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => 
+    [get_id] => 170
+    [enquiry_id] => 69
+    [business_id] => 4
+    [quote_no] => 
+    [quote_date] => 
+    [po_date] => 2026-09-23
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 56
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 57
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 2026-09-26
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 58
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 62
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 64
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 2026-09-27
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 65
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 2026-09-26
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 66
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 67
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 69
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00002/1
+    [quote_date] => 2026-09-24
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 70
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-24
+    [po_date] => 2026-09-24
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 71
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00002/1
+    [quote_date] => 2026-09-24
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 74
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-25
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 73
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00002/1
+    [quote_date] => 2026-09-25
+    [po_date] => 2026-09-25
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 75
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-25
+    [po_date] => 2026-09-25
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 76
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-25
+    [po_date] => 2026-09-25
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSE0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 77
+    [business_id] => 2
+    [quote_no] => QOT09/26-27/00002/1
+    [quote_date] => 2026-09-25
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 78
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-26
+    [po_date] => 2026-09-26
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 80
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-26
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 81
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-26
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 82
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00002/1
+    [quote_date] => 2026-09-26
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => bluebase
+    [contact_person] => Rajeshwari
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 22
+    [enquiry_id] => 87
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00001/1
+    [quote_date] => 2026-09-26
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => bluebase
+    [contact_person] => Rajeshwari
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 22
+    [enquiry_id] => 90
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00004/1
+    [quote_date] => 2026-09-28
+    [po_date] => 2026-09-28
+)
+
+Script hit! POST: Array
+(
+    [org_name] => bluebase
+    [contact_person] => Rajeshwari
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 22
+    [enquiry_id] => 91
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => bluebase
+    [contact_person] => Rajeshwari
+    [cost_sheet_no] => SSPR00001/26-27/2
+    [get_id] => 22
+    [enquiry_id] => 93
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00006/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => bluebase
+    [contact_person] => Rajeshwari
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 22
+    [enquiry_id] => 94
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00007/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => bluebase
+    [contact_person] => Rajeshwari
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 22
+    [enquiry_id] => 95
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00007/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 109
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00006/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => bluebase1
+    [contact_person] => 
+    [cost_sheet_no] => SSPR00001/26-27/2
+    [get_id] => 
+    [enquiry_id] => 110
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00006/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 111
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW00001/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 113
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00004/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 114
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-28
+    [po_date] => 
+)
+
+Script hit! POST: Array
+(
+    [org_name] => 
+    [contact_person] => 
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 
+    [enquiry_id] => 57
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-30
+    [po_date] => 2026-10-01
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 58
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-30
+    [po_date] => 2026-10-08
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 59
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-30
+    [po_date] => 2026-10-09
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 60
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-30
+    [po_date] => 2026-10-12
+)
+
+Script hit! POST: Array
+(
+    [org_name] => Test12345
+    [contact_person] => 
+    [cost_sheet_no] => SSSW0/26-27/2
+    [get_id] => 
+    [enquiry_id] => 62
+    [business_id] => 4
+    [quote_no] => QOT09/26-27/00003/1
+    [quote_date] => 2026-09-30
+    [po_date] => 2026-10-21
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 63
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00002/1
+    [quote_date] => 2026-09-30
+    [po_date] => 2026-10-22
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 170
+    [enquiry_id] => 64
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00002/1
+    [quote_date] => 2026-09-30
+    [po_date] => 2026-10-22
+)
+
+Script hit! POST: Array
+(
+    [org_name] => suryainfo
+    [contact_person] => surya
+    [cost_sheet_no] => SSPR0/26-27/3
+    [get_id] => 170
+    [enquiry_id] => 64
+    [business_id] => 1
+    [quote_no] => QOT09/26-27/00002/2
+    [quote_date] => 2026-10-23
+    [po_date] => 2026-10-23
+)
+
+Script hit! POST: Array
+(
+    [org_name] => Aeronero
+    [contact_person] => 9876543321
+    [cost_sheet_no] => SSPR0/26-27/2
+    [get_id] => 0
+    [enquiry_id] => 5
+    [business_id] => 1
+    [quote_no] => QOT10/26-27/00002/1
+    [quote_date] => 2026-10-28
+    [po_date] => 2026-10-29
+)
+
+Script hit! POST: Array
+(
+    [org_name] => Aeronero
+    [contact_person] => 9876543321
+    [cost_sheet_no] => SSPR00001/26-27/2
+    [get_id] => 46
+    [enquiry_id] => 4
+    [business_id] => 1
+    [quote_no] => QOT10/26-27/00002/1
+    [quote_date] => 2026-10-28
+    [po_date] => 2026-10-29
+)
+
+Script hit! POST: Array
+(
+    [org_name] => Aeronero
+    [contact_person] => 9876543321
+    [cost_sheet_no] => SSPR0/26-27/1
+    [get_id] => 49
+    [enquiry_id] => 6
+    [business_id] => 1
+    [quote_no] => QOT10/26-27/00002/1
+    [quote_date] => 2026-10-30
+    [po_date] => 2026-10-30
+)
+

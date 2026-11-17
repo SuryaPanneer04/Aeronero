@@ -50,7 +50,7 @@ $rowv = $stmt->fetch();
     </head>
 		<style>
 .card-primary:not(.card-outline)>.card-header{
-background-color:#009EE3 !important;
+background-color: #009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header{
 	color: black !important;

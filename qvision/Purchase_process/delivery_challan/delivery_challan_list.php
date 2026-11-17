@@ -18,7 +18,7 @@ $userrole = $_SESSION['userrole'];
 <body>
 	<div class="card card-primary">
 
-		<div class="card-header" style="background-color:#009EE3;">
+		<div class="card-header" style="background-color: #009EE3 ;">
 			<h2 class="card-title">
 				<font size="4"><b>Delivery Challan List</b></font>
 			</h2>
@@ -38,7 +38,7 @@ $userrole = $_SESSION['userrole'];
 				<tbody>
 					<?php
 
-					$emp_sql = $con->query("SELECT * from challan_entry   group by customer_name"); //where status='1'
+					$emp_sql = $con->query("SELECT a.* FROM challan_entry a LEFT JOIN cost_sheet_entry b ON a.customer_name = b.id WHERE b.business_id != '4' GROUP BY a.customer_name"); //where status='1'
 					//echo "SELECT id,cost_sheet_no,quote_no,so_number,po_date FROM po_generate where po_upload_status=2 order by id desc";
 
 					$cnt = 1;

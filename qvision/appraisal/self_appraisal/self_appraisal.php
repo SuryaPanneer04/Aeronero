@@ -10,9 +10,9 @@ $user_candid = $_SESSION['candidateid'];
 
 $emp = $con->query("select s.id,s.emp_name,s.dep_id,z.dept_name from staff_master s LEFT JOIN z_department_master z ON s.dep_id=z.id where candid_id='$user_candid'");
 $emp_no = $emp->fetch();
-$emp_id = $emp_no['id'];
-$emp_depid = $emp_no['dep_id'];
-$emp_dep = $emp_no['dept_name'];
+$emp_id = $emp_no['id'] ?? '';
+$emp_depid = $emp_no['dep_id'] ?? '';
+$emp_dep = $emp_no['dept_name'] ?? '';
 ?>
 
 <head>

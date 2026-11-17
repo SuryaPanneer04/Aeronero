@@ -10,16 +10,14 @@ $sta = $row['status'];
 $vendor_type = $row['vendor_type'];
 ?>
 <style>
-.card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+.card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
+	background-color: #009EE3 !important;
+	color: #ffffff !important;
 }
-.card-primary:not(.card-outline)>.card-header{
-color: black !important;
-}
-.btn-dark{
-background-color: rgb(237, 93, 0) !important;
-    color: rgb(60, 8, 8) !important;
-    border-color: rgb(237, 93, 0) !important;
+.btn-dark {
+	background-color: #009EE3 !important;
+	color: #ffffff !important;
+	border-color: #009EE3 !important;
 }
 </style>
 <section class="content">
@@ -28,8 +26,8 @@ background-color: rgb(237, 93, 0) !important;
 <div class="col-md-12">
 
 <div class="card card-primary">
-<div class="card-header" style="background-color:#009EE3  !important;">
-  <center><h3 class="card-title">EDIT DOLLER VENDOR</h3></center>
+<div class="card-header" style="background-color:#009EE3 !important;">
+  <center><h3 class="card-title" style="color: #ffffff;">EDIT DOLLER VENDOR</h3></center>
 <a onclick="return back_ctc()" style="float: right;" data-toggle="modal" class="btn btn-dark"></i>Back</a>
 </div>
 <div class="card-body">

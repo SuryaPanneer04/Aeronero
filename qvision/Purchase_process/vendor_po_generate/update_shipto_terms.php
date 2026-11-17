@@ -21,7 +21,7 @@ $client_id        = $poVendorDetails['client_id'];
 ?>
 <style>
 .card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header a {
 	color: black;

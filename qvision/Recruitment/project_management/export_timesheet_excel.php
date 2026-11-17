@@ -147,6 +147,7 @@ while(true) {
     $curr++;
 }
 
+date_default_timezone_set('Asia/Kolkata');
 header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
 header('Content-Disposition: attachment;filename="Time_Sheet_Report_' . date('Y-m-d') . '.xlsx"');
 header('Cache-Control: max-age=0');

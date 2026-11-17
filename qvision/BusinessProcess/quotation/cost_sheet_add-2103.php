@@ -53,10 +53,10 @@ $row = $stmt->fetch();
 	padding: .8rem !important;
 }
 .card-primary:not(.card-outline)>.card-header {
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 	
 .card-primary:not(.card-outline)>.card-header{
-	background-color:#009EE3 !important;
+	background-color: #009EE3 !important;
 }
 .card-body{
 	max-width: 100% !important;

@@ -8,7 +8,7 @@
 
 <style>
 .border{
-	 border: 6px solid #df8459 !important;
+	 border: 6px solid #009EE3 !important;
 	 padding: 30px !important;
 	 padding-bottom: 58px !important;
 	 
@@ -19,7 +19,7 @@ hr:not([size]){
 hr{
 	margin: 1rem 0px !important;
     color: inherit !important;
-    background-color: #df8459 !important;
+    background-color: #009EE3 !important;
     opacity: 1.25 !important;
 }
 .button {
@@ -293,7 +293,7 @@ hr{
 		<hr style="width: 100%;">
 		<div class="row">
 		<div class="col-md-12">
-		<h6 style="text-align:center;font-size: 18px;">Quadsel Tower Old No 80, New No 118 Anna Salai, Manickam Ln, Guindy, Chennai, Tamil Nadu 600032]</h6>
+		<h6 style="text-align:center;font-size: 18px;">Aeronero No 15, 1st Cross St, Sriram Avenue, Natesan Colony, Kottivakkam, Chennai, Tamil Nadu 600041</h6>
 		
 		<h6 style="text-align:center;font-weight:700;font-size: 18px;">Payroll for the Month of   <?php echo $pay_period; ?></h6>
 		</div>

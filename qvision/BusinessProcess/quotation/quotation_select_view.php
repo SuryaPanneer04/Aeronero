@@ -7,15 +7,28 @@ $candidateid=$_SESSION['candidateid'];
 <head>
     <link rel="stylesheet" href="Qvision\commonstyle.css">
 	<style>
-	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+	.card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
+		background-color: #009EE3 !important;
+		color: #ffffff !important;
+	}
+	.btn-dark {
+		background-color: #009EE3 !important;
+		border-color: #009EE3 !important;
+		color: #ffffff !important;
+	}
+	.page-item.active .page-link {
+		background-color: #009EE3 !important;
+		border-color: #009EE3 !important;
+	}
+	.page-link:hover {
+		color: #009EE3;
 	}
 	</style>
     </head>
 
 <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title" style="float: left;"><font size="5">QUOTE SEND LIST</font></h3>
+              <div class="card-header" style="background-color:#009EE3 !important;">
+                <h3 class="card-title" style="float: left; color: #ffffff;"><font size="5">QUOTE SEND LIST</font></h3>
 		  
 		<!--  <a onclick="back_ctc()" style="float: right;" data-toggle="modal" class="btn btn-dark">BACK</a>-->
 		      </div>
@@ -26,7 +39,7 @@ $candidateid=$_SESSION['candidateid'];
 	  <th>#</th>
 	 
 	  <th>Quote No </th>
-      <th>Product/Service </th>
+      <th>Product/Service/Software </th>
       <th>Quote Type</th> 
 	  <th>Client Name</th>
       <th>Employee Name</th>
@@ -73,7 +86,7 @@ $candidateid=$_SESSION['candidateid'];
 		 //echo "SELECT emp_name from staff_master where candid_id ='$approved_id'";
 		 $stmt->execute(); 
 		 $row = $stmt->fetch();
-		 $emp_name = $row['emp_name'];
+		 $emp_name = $row ? $row['emp_name'] : " ";
 	  ?>
       <tr>
 		  <td><?php echo $cnt;?>.</td>
@@ -97,10 +110,12 @@ $candidateid=$_SESSION['candidateid'];
 				<?php } ?>
 		  </td>
 		  <td><?php 
-		  if($data['mapping_id'] =='1'){ echo "Product"; 
-		  }elseif($data['mapping_id'] =='2'){ echo "Service";
-		  }elseif($data['mapping_id'] =='3'){ echo "Solution";
+		  if($data['business_id'] =='1'){ echo "Product"; 
+		  }elseif($data['business_id'] =='2'){ echo "Service";
+		  }elseif($data['business_id'] =='3'){ echo "Solution";
+		  }elseif($data['business_id'] =='4'){ echo "Software";
 		  }
+	    
 		  ?></td>
 		  <td><?php if($data['quote_type']=='1'){ echo "INR"; }else{ echo "Doller";}?></td>
 		 
@@ -207,4 +222,3 @@ function back_ctc()
 	
 
     </script>
-

@@ -24,8 +24,8 @@ $vendor_district = $row['district'];
 $vendor_pincode = $row['pincode'];
 $cliint_id = $row['cid'];
 $pur_re_id = $row['pur_re_id'];
-$vendor_gst_num = $row['vendor_gst_num'];
-$stateCode = substr("$vendor_gst_num", 0, 2);
+$vendor_gst_num = isset($row['vendor_gst_num']) ? $row['vendor_gst_num'] : '';
+$stateCode = ($vendor_gst_num !== '') ? substr($vendor_gst_num, 0, 2) : '';
 
 $stmtcc = $con->prepare("select a.*,b.*,c.statename from new_client_master a left join new_plant_master b on (a.id=b.client_id) left join states c on b.state = c.id where a.id='$cliint_id'");
 
@@ -148,7 +148,7 @@ function AmountInWords($amount)
 							<table class="table-bordered" width="100%">
 
 								<tr>
-									<td colspan='1' rowspan='3' style="border-right: none;"><img src="\SSInfo1\images\ss.png" class="img1 "> </td>
+									<td colspan='1' rowspan='3' style="border-right: none;"><img src="images/logo123.jpg" class="img1 "> </td>
 									<td colspan='5' rowspan='3' style="border-left: none;">
 										<b>Invoice To </br>
 											SS Information Systems Pvt Ltd </b></br>

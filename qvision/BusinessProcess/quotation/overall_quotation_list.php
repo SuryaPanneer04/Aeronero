@@ -9,7 +9,7 @@ $candidateid=$_SESSION['candidateid'];
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div  class="card card-primary">
@@ -44,7 +44,7 @@ $row = $roll_query->fetch();
 		        left join product_services f on (a.business_id=f.id)
 		        left join staff_master e ON (a.candid_id=e.candid_id)  
 				left join quote_generate h on(a.cost_sheet_no=h.cost_sheet_no)
-				where a.status !='1' and a.status !='2' and  h.quote_no!='' group by a.cost_sheet_no  order by a.id desc");
+				where a.status ='2' and a.flag ='0' and h.quote_no!='' group by a.cost_sheet_no, a.id order by a.id desc");
 				 /* echo "SELECT a.id as costsheet_id,a.status as cs_status,a.cost_sheet_no as cs_no,a.candid_id as quote_approve_id,a.*,b.*,e.*,f.*,h.quote_no as hquote_no,h.* from cost_sheet_entry a 
 		        left join new_client_master b on(a.client_id=b.id) 
 		        left join product_services f on (a.business_id=f.id)
@@ -54,12 +54,12 @@ $row = $roll_query->fetch();
 				
 	}else{
 		
-		$datas=$con->query("SELECT a.id as costsheet_id,a.status as cs_status,a.cost_sheet_no as cs_no,a.candid_id as quote_approve_id,a.*,b.*,e.*,f.*,h.quote_no as hquote_no,h.* from cost_sheet_entry a 
+		$datas=$con->query("SELECT a.id as costsheet_id,a.status as cs_status,a.cost_sheet_no as cs_no,a.candid_id as quote_approve_id,a.enquiry_id as test,a.*,b.*,e.*,f.*,h.quote_no as hquote_no,h.* from cost_sheet_entry a 
 		        left join new_client_master b on(a.client_id=b.id) 
 		        left join product_services f on (a.business_id=f.id)
 		        left join staff_master e ON (a.candid_id=e.candid_id)  
 				left join quote_generate h on(a.cost_sheet_no=h.cost_sheet_no)
-				where (a.status !='1' or   a.status !='2') and  h.quote_no!='' group by a.cost_sheet_no  order by a.id desc");
+				where a.status ='2' and a.flag ='0' and h.quote_no!='' group by a.cost_sheet_no, a.id order by a.id desc");
 	}
 		/*  echo "SELECT a.id as costsheet_id,a.status as cs_status,a.cost_sheet_no as cs_no,a.candid_id as quote_approve_id,a.*,b.*,e.*,f.*,h.quote_no as hquote_no,h.* from cost_sheet_entry a 
 		        left join new_client_master b on(a.client_id=b.id) 
@@ -81,19 +81,19 @@ $row = $roll_query->fetch();
 		   $approved_id = $data['quote_approve_id'];
 		 
 		 $stmt = $con->prepare("SELECT emp_name from staff_master where candid_id ='$approved_id' "); 	
-		 //echo "SELECT emp_name from staff_master where candid_id ='$approved_id'";
 		 $stmt->execute(); 
-		 $row = $stmt->fetch();
-		 $emp_name = $row['emp_name'];
+		 $row = $stmt->fetch(PDO::FETCH_ASSOC);
+		 $emp_name = ($row && isset($row['emp_name'])) ? $row['emp_name'] : '-';
 	  ?>
       <tr>
 		  <td><?php echo $cnt;?>.</td>
 		  <td><?php echo $data['cs_no']; ?></td>
 		  <td><?php echo $data['hquote_no']; ?></td>
 		  <td><?php 
-		  if($data['mapping_id'] =='1'){ echo "Product"; 
-		  }elseif($data['mapping_id'] =='2'){ echo "Service";
-		  }elseif($data['mapping_id'] =='3'){ echo "Solution";
+		  if($data['business_id'] =='1'){ echo "Product"; 
+		  }elseif($data['business_id'] =='2'){ echo "Service";
+		  }elseif($data['business_id'] =='3'){ echo "Solution";
+		  }elseif($data['business_id'] =='4'){ echo "Software";
 		  }
 		  ?></td>
 		  <td><?php if($data['quote_type']=='1'){ echo "INR"; }else{ echo "Doller";}?></td>
@@ -105,15 +105,18 @@ $row = $roll_query->fetch();
 		  <?php
 		  $edit_status=$data['edit_status'];
 		  $cs_status=$data['cs_status'];
-		  if($edit_status==0){
-			  if($cs_status!=2 && $cs_status!=4 && $cs_status!=7 && $cs_status!=8 && $cs_status!=9 && $cs_status!=10 && $cs_status!=11 && $cs_status!=12 && $cs_status!=12){
 		  ?>
-			
+			  <button class="btn btn-success" data-id="<?php echo $data['test']; ?>" onclick="quotes_send_view(<?php echo $data['test']; ?>)">
+			  <i class="fa fa-eye"></i> View Quote</button>
+
+		  <?php
+		  if($edit_status==0){
+			  if($cs_status!=2 && $cs_status!=4 && $cs_status!=7 && $cs_status!=8 && $cs_status!=9 && $cs_status!=10 && $cs_status!=11 && $cs_status!=12){
+		  ?>
 			  <button class="btn btn-info" data-id="<?php echo $data['costsheet_id']; ?>" onclick="quotes_reviese(<?php echo $data['test']; ?>)">
 			Edit</button>
 		  <?php
 		  }
-		  }else{
 		  }
 		  ?>
 		  </td>

@@ -48,7 +48,7 @@ $stmtb= $con->query("SELECT a.id,a.first_name as fnames,a.phone as pphone,a.mail
 		echo $oorg_name = $rowb['oorg_name'];
 		echo $exxtra_file = $rowb['exxtra_file'];
 		
-$count = sizeof($costsheet_id);
+$count = is_array($costsheet_id) ? sizeof($costsheet_id) : 1;
 
 
 // Create a function for converting the amount in words
@@ -689,7 +689,7 @@ $mail->From = 'test1@ssinformation.in';		//Sets the From email address for the m
 	{  
      	echo "Success";
 		$message = '<label class="text-success">Quote Details has been send successfully...</label>';echo $message;
-	    $update_query = $con->query("update ax Summary_entry set flag ='1' , modified_by ='$user_id',modified_on =NOW() WHERE quote_no= '$QuoteNo'");  
+	    $update_query = $con->query("update quotation_entry set flag ='1' , modified_by ='$user_id',modified_on =NOW() WHERE quote_no= '$QuoteNo'");  
 		echo "update quotation_entry set flag ='1' , modified_by ='$user_id',modified_on =NOW() WHERE quote_no= '$QuoteNo'";
 	} elseif(!$mail->send()) {
        echo 'Message could not be sent.';
@@ -699,10 +699,10 @@ $mail->From = 'test1@ssinformation.in';		//Sets the From email address for the m
   
 
 	$update_query = $con->query("update quote_generate set status ='1', modified_by ='$candidateid',modified_on =NOW() WHERE quote_no= '$QuoteNo'");      		
-	$update_query1 = $con->query("update cost_sheet_entry set status ='2', modified_by ='$candidateid',modified_on =NOW() WHERE cost_sheet_no= '$cost_sheet_nos'");
-   echo "update cost_sheet_entry set status ='2', modified_by ='$candidateid',modified_on =NOW() WHERE cost_sheet_no= '$cost_sheet_nos'";
-		$insert_query2= $con->query("Update enquiry set status='5' where id='$enquiry_id'"); 
-		echo "Update enquiry set status='5' where id='$enquiry_id'"; 
+	$update_query1 = $con->query("update cost_sheet_entry set status ='3', modified_by ='$candidateid',modified_on =NOW() WHERE cost_sheet_no= '$cost_sheet_nos'");
+   echo "update cost_sheet_entry set status ='3', modified_by ='$candidateid',modified_on =NOW() WHERE cost_sheet_no= '$cost_sheet_nos'";
+		$insert_query2= $con->query("Update enquiry set status='6' where id='$enquiry_id'"); 
+		echo "Update enquiry set status='6' where id='$enquiry_id'"; 
 	unlink($file_name);
 
 	 $class_quote->fetch_quote_data($con,$costsheet_id,$client_name,$QuoteNo);

@@ -66,7 +66,7 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
      $tot_item = $_POST['tot_item']; 
      $Call_type = $_POST['Call_type']; 
      $business_id = $_POST['pro_ser_id']; 
-     $enquiry_idq = $_POST['enquiry_idflow']; 
+     $enquiry_idq = $_POST['enquiry_id']; 
 
      $business_ids = $_POST['mapping_id']; 
      $client_id = $_POST['client_id']; 
@@ -112,17 +112,17 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
 
 	  
     //Terms and conditions
-	  $validity   = $_REQUEST['validity'];
-      $payment   = $_REQUEST['payment'];
-      $bank_name   = $_REQUEST['bank_name'];
-      $account_no  = $_REQUEST['account_no'];
+	  $validity   = addslashes($_REQUEST['validity'] ?? '');
+      $payment   = addslashes($_REQUEST['payment'] ?? '');
+      $bank_name   = addslashes($_REQUEST['bank_name'] ?? '');
+      $account_no  = addslashes($_REQUEST['account_no'] ?? '');
  
-      $ifsc_code   = $_REQUEST['ifsc_code'];
-      $important   = $_REQUEST['important'];
-      $delivery   = $_REQUEST['delivery'];
-      $warrenty   = $_REQUEST['warrenty'];
-      $acc_hold_name   = $_REQUEST['acc_hold_name'];
-      $branch_name   = $_REQUEST['branch_name'];
+      $ifsc_code   = addslashes($_REQUEST['ifsc_code'] ?? '');
+      $important   = addslashes($_REQUEST['important'] ?? '');
+      $delivery   = addslashes($_REQUEST['delivery'] ?? '');
+      $warrenty   = addslashes($_REQUEST['warrenty'] ?? '');
+      $acc_hold_name   = addslashes($_REQUEST['acc_hold_name'] ?? '');
+      $branch_name   = addslashes($_REQUEST['branch_name'] ?? '');
     //Business id create	
 	if($business_id =='1'){
 	 //$bussiness_type ="QSPLPR";
@@ -133,6 +133,8 @@ if(isset($_POST['enquiry_idflow']) || isset($_POST['mapping_id']) || isset($_POS
     }elseif($business_id =='3'){
 	// $bussiness_type ="QSPLSL";
 	 $bussiness_type ="SSSL";//solution
+    }elseif($business_id =='4'){
+	 $bussiness_type ="SSSW";//software
     }
     //echo  $bussiness_type;
     //$vendor_id     = $_REQUEST['vendor_id'];

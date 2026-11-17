@@ -9,7 +9,7 @@ $candidateid = $_SESSION['candidateid'];
 
 <style>
 .card-primary:not(.card-outline)>.card-header {
-    background-color:#009EE3 !important;
+    background-color: #009EE3 !important;
 }
 </style>
 </head>
@@ -38,7 +38,7 @@ $candidateid = $_SESSION['candidateid'];
             ?>
             <tbody>
                 <?php      
-                    $roll_query =$con->prepare("Select a.*,b.full_name from po_ticket a LEFT JOIN z_user_master b ON (a.employee=b.candidate_id) order by a.id desc");
+                    $roll_query =$con->prepare("SELECT a.*, b.full_name FROM po_ticket a LEFT JOIN z_user_master b ON (a.employee=b.candidate_id) LEFT JOIN cost_sheet_entry c ON (a.cost_sheet_no = c.cost_sheet_no) WHERE c.business_id != '4' ORDER BY a.id DESC");
 
                    // echo "Select a.*,b.id as costsheet_id,c.Warrenty,c.Specification,c.model_name,a.status as tick_stu,e.full_name,d.work_status,d.employee as tic_emp,d.id as emp_id,d.status as e_sts,c.org_name from po_ticket a left join cost_sheet_entry b on (a.cost_sheet_id = b.id) LEFT JOIN new_client_master c ON (b.client_id=c.id) LEFT JOIN po_ticket_work_status d ON (a.id=d.ticket_id) LEFT JOIN z_user_master e ON (d.employee=e.candidate_id) WHERE a.status=1";
 

@@ -2,8 +2,7 @@
 require '../../../connect.php';
 $quoteid=$_REQUEST['id'];
 /* $sql=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,b.* FROM cost_sheet_entry a 
-inner join po_generate b on (a.cost_sheet_no=b.cost_sheet_no) where b.id='$quoteid'"); */
-$sql=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,b.*,c.*,p.* FROM cost_sheet_entry a 
+inner join po_generate b on (a.cost_sheet_no=b.cost_sheet_no) where b.id='$quoteid'"); */$sql=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id as safe_enquiry_id,b.*,c.*,p.* FROM cost_sheet_entry a 
 inner join po_generate b on (a.cost_sheet_no=b.cost_sheet_no)left join new_client_master c on (a.client_id=c.id)left join new_plant_master p on (c.org_name=p.client_org_name) where b.id='$quoteid'");
 $fet=$sql->fetch();
 ?>
@@ -12,7 +11,7 @@ $fet=$sql->fetch();
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div  class="card card-primary">
@@ -30,7 +29,7 @@ $fet=$sql->fetch();
 			
    <form method="POST" enctype="multipart/form-data">
     <!-- Post -->
-	<input type="hidden" class="form-control" id="enquiry_id" name="enquiry_id" value="<?php echo $fet['enquiry_id']; ?>" readonly>
+	<input type="hidden" class="form-control" id="enquiry_id" name="enquiry_id" value="<?php echo $fet['safe_enquiry_id']; ?>" readonly>
 	<input type="hidden" class="form-control" id="cost_sheet_no" name="cost_sheet_no" value="<?php echo $fet['cost_sheet_no']; ?>" readonly>
     <table class="table table-bordered">
         
@@ -248,7 +247,12 @@ function submit2_po(v)
 
 function approve_po_level2(v)
 {
-	//alert(v);
+	var btn = document.querySelector('input[name="save"][id="' + v + '"]');
+	if(btn) {
+		btn.value = "Approving...";
+		btn.disabled = true;
+	}
+
 	var enquiry_id  = document.getElementById("enquiry_id").value;
 	var cost_sheet_no  = document.getElementById("cost_sheet_no").value;
 	$.ajax({
@@ -262,6 +266,14 @@ function approve_po_level2(v)
 				
 				marketing_po_approve2();
 			
+		},
+		error:function() 
+		{
+			if(btn) {
+				btn.value = "Approve";
+				btn.disabled = false;
+			}
+			alert("Something went wrong. Please try again.");
 		}
 	})
 }

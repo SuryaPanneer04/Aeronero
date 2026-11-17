@@ -6,47 +6,28 @@ $userrole=$_SESSION['userrole'];
 ?>
 <style>
   .card-primary:not(.card-outline)>.card-header {
-    background-color:#009EE3 !important;
+    background-color: #009EE3 !important;
 }
 .card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
-    color: #e95a16 !important;
-}
-.card-primary:not(.card-outline)>.card-header, .card-primary:not(.card-outline)>.card-header a {
-    color: #3c0808 !important;
-    background-color: #ed5d00;
+    color: #ffffff !important;
+    background-color: #009EE3 !important;
 }
 .btn-dark {
-    border-color: #ed5d00;
+    background-color: #009EE3 !important;
+    border-color: #009EE3 !important;
+    color: #ffffff !important;
 }
 .page-item.active .page-link {
-    background-color: #d79475;
-    border-color: #df8459;
+    background-color: #009EE3 !important;
+    border-color: #009EE3 !important;
 }
 .page-link:hover {
-    color: #f1cc61;
+    color: #009EE3;
 }
-.card-primary:not(.card-outline)>.card-header{
-	background-color: #df8459 !important;
-}
-.btn-dark{
-	background-color: #ed5d00 !important;
-    border-color: #ed5d00 !important;
-}
-  </style>
-  <style>
 .card-info:not(.card-outline)>.card-header a {
-	color: #3c0808 !important;
-	background-color: #ed5d00;
+    color: #ffffff !important;
+    background-color: #009EE3 !important;
 }
-.btn-dark{
-	background-color: rgb(237, 93, 0);
-	color: rgb(60, 8, 8) !important;
-	border-color: rgb(237, 93, 0);
-}
-	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
-	}
-	
 </style>
 
 <head>
@@ -95,6 +76,39 @@ function cost_view(v){
 	$.ajax({
 	type:"POST",
 	url:"qvision/BusinessProcess/quotation/cost_sheet_add.php?id="+v+"&page_id="+ '0', //"page_id =0 " To find page for cost sheet back button action. 
+	success:function(data)
+	{
+		$("#main_content").html(data);
+	}
+	})
+}
+
+function addSoftwareScope(v){
+	$.ajax({
+	type:"POST",
+	url:"qvision/CRM/software_scope_add.php?id="+v,
+	success:function(data)
+	{
+		$("#main_content").html(data);
+	}
+	})
+}
+
+function uploadSoftwareFile(v){
+	$.ajax({
+	type:"POST",
+	url:"qvision/CRM/software_upload_add.php?id="+v,
+	success:function(data)
+	{
+		$("#main_content").html(data);
+	}
+	})
+}
+
+function generateSoftwareQuote(v){
+	$.ajax({
+	type:"POST",
+	url:"qvision/CRM/software_quotation.php?id="+v,
 	success:function(data)
 	{
 		$("#main_content").html(data);
@@ -212,9 +226,9 @@ function editcussss(v)
 		})
 }
 </script>
-	<div  class="card card-primary">
-              <div class="card-header" style="background-color:#009EE3  !important;">
-                <h3 class="card-title" style="float: left;"><font size="5">Customer LIST</font></h3>
+	<div class="card card-primary">
+              <div class="card-header" style="background-color:#009EE3 !important;">
+                <h3 class="card-title" style="float: left; color: #ffffff;"><font size="5">Customer LIST</font></h3>
 		 
 		
               </div>
@@ -249,10 +263,10 @@ $userrole=$_SESSION['userrole'];
 echo $userrole;
 	  if ($userrole=='R001' || $userrole=='R014'|| $userrole=='R007' || $userrole=='R004' || $userrole=='R006' || $userrole=='R010' ||  $userrole=='R008'){
 
-      $datas=$con->query("SELECT enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag ,enquiry.remark as enqqqremakr,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
+      $datas=$con->query("SELECT crm_calls.contact as crm_mobile, enquiry.Product as prod_type, enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag ,enquiry.remark as enqqqremakr,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
 	   left JOIN calls_master ON enquiry.Call_type=calls_master.id
 	  left join z_department_master ON enquiry.Department=z_department_master.id
-	  left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id where enquiry.status!=1 ORDER BY enquiry.id DESC");
+	  left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id LEFT JOIN crm_calls ON enquiry.id=crm_calls.enquiry_id where enquiry.status!=1 ORDER BY enquiry.id DESC");
 	  
 	   // echo "SELECT enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag ,enquiry.remark as enqqqremakr,enquiry.Client_id as client,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
 	  //  left JOIN calls_master ON enquiry.Call_type=calls_master.id
@@ -260,25 +274,25 @@ echo $userrole;
 	  // left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id where enquiry.status!=1 ORDER BY enquiry.id DESC"; 
 	 } 
 	  else if($userrole=='R002' ||$userrole=='R003' ||  $userrole=='R008' || $userrole=='R009' ){
-		 $datas=$con->query("SELECT enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag,enquiry.remark as enqqqremakr,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
+		$datas=$con->query("SELECT crm_calls.contact as crm_mobile, enquiry.Product as prod_type, enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag,enquiry.remark as enqqqremakr,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
 	   left JOIN calls_master ON enquiry.Call_type=calls_master.id
 	  left join z_department_master ON enquiry.Department=z_department_master.id
-	  left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id  where (enquiry.employee='$candidateid' or enquiry.created_by='$candidateid') and enquiry.status!=1 ORDER BY enquiry.id DESC");
-	  
+	  left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id LEFT JOIN crm_calls ON enquiry.id=crm_calls.enquiry_id where (enquiry.employee='$candidateid' or enquiry.created_by='$candidateid') and enquiry.status!=1 ORDER BY enquiry.id DESC");
 	  //  echo "SELECT enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag,enquiry.remark as enqqqremakr,enquiry.client as client,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
 	  //  left JOIN calls_master ON enquiry.Call_type=calls_master.id
 	  // left join z_department_master ON enquiry.Department=z_department_master.id
 	  // left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id  where (enquiry.employee='$candidateid' or enquiry.created_by='$candidateid') and enquiry.status!=1 ORDER BY enquiry.id DESC"; 
 	 }else{
 
-	 	$datas=$con->query("SELECT enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag,enquiry.remark as enqqqremakr,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
+	 	$datas=$con->query("SELECT crm_calls.contact as crm_mobile, enquiry.Product as prod_type, enquiry_code,enquiry.id as enquiry_id,enquiry.status as enquiry_status,enquiry.flag as enquiry_flag,enquiry.remark as enqqqremakr,enquiry.mail as enquiry_mailid,enquiry.*,calls_master.*,z_department_master.*,candidate_form_details.*  FROM `enquiry`
 	   left JOIN calls_master ON enquiry.Call_type=calls_master.id
 	  left join z_department_master ON enquiry.Department=z_department_master.id
-	  left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id  where (enquiry.employee='$candidateid' or enquiry.created_by='$candidateid') and enquiry.status!=1 ORDER BY enquiry.id DESC");
-
-
+	  left JOIN candidate_form_details ON enquiry.employee=candidate_form_details.id LEFT JOIN crm_calls ON enquiry.id=crm_calls.enquiry_id where (enquiry.employee='$candidateid' or enquiry.created_by='$candidateid') and enquiry.status!=1 ORDER BY enquiry.id DESC");
 
 	 }
+
+
+	 
      $cnt=1;
       while($enquiry = $datas->fetch(PDO::FETCH_ASSOC))
 	  {
@@ -296,7 +310,7 @@ echo $userrole;
       <td><?php echo $enyurycode; ?></td>
       <td><?php echo $enquiry['Company_name']; ?></td>
       <td><?php echo $enquiry['it_name']; ?></td>
-      <td><?php if($enquiry['Mobile'])echo $enquiry['Mobile']; else echo "NULL"; ?></td>
+      <td><?php if(!empty($enquiry['Mobile'])){ echo $enquiry['Mobile']; } elseif(!empty($enquiry['crm_mobile'])){ echo $enquiry['crm_mobile']; } else { echo "NULL"; } ?></td>
      <td><?php echo $enquiry['Follup']; ?></td>
 	<td><?php echo $enquiry['first_name']; ?></td>
 	<td><?php
@@ -318,9 +332,12 @@ if($enquiry['enquiry_status']==2 || $enquiry['enquiry_status']==20)
 	}
 elseif($enquiry['enquiry_status']==3)
 {
-
-echo '<span style="color:green;text-align:center;"><b>New Client Approved</b></span>';
-echo '<span style="color:red;text-align:center;"><b>/ And Waiting For Quote</b></span>';
+    if($enquiry['Client_type'] == 1) {
+        echo '<span style="color:green;text-align:center;"><b>Enquiry Added</b></span>';
+    } else {
+        echo '<span style="color:green;text-align:center;"><b>New Client Approved</b></span>';
+    }
+    echo '<span style="color:red;text-align:center;"><b>/ And Waiting For Quote Generate</b></span>';
 }
 elseif($enquiry['enquiry_status']==4)
 	
@@ -342,20 +359,19 @@ echo '<span style="color:red;text-align:center;"><b>/ Waiting For SOF Upload</b>
 }
 
 elseif($enquiry['enquiry_status']==7)
-	
 {
 echo '<span style="color:green;text-align:center;"><b>SOF Uploaded </b></span>';
-echo '<span style="color:red;text-align:center;"><b>/ And Waiting For SOF Approval</b></span>';
+echo '<span style="color:red;text-align:center;"><b>/ Waiting For SOF Approve Level 1</b></span>';
 }
 elseif($enquiry['enquiry_status']==8)
-	
 {
-echo '<span style="color:green;text-align:center;"><b>SOF Approved By Marketing Level-1</b></span>';
+echo '<span style="color:green;text-align:center;"><b>SOF Approved By Marketing Level-1 </b></span>';
+echo '<span style="color:red;text-align:center;"><b>/ Waiting For SOF Approve Level 2</b></span>';
 }
 elseif($enquiry['enquiry_status']==9)
-	
 {
-echo '<span style="color:green;text-align:center;"><b>SOF Approved By Marketing Level-2</b></span>';
+echo '<span style="color:green;text-align:center;"><b>SOF Approved By Marketing Level-2 </b></span>';
+echo '<span style="color:red;text-align:center;"><b>/ Waiting For Finance Approval</b></span>';
 }
 elseif($enquiry['enquiry_status']==10)
 	
@@ -364,9 +380,36 @@ echo '<span style="color:green;text-align:center;"><b>SOF Approved By Finance</b
 echo '<span style="color:red;text-align:center;"><b>/ Waiting For Purchase</b></span>';
 }
 elseif($enquiry['enquiry_status']==11) // After PO Sent.
-	
 {
-echo '<span style="color:green;text-align:center;"><b> Purchase Order Sent </b></span>';
+    if($enquiry['prod_type'] == '4' || strtolower((string)$enquiry['prod_type']) == 'software') {
+        echo '<span style="color:red;text-align:center;"><b> Waiting for Employee Assign </b></span>';
+    } else {
+        echo '<span style="color:green;text-align:center;"><b> Purchase Order Sent </b></span>';
+    }
+}
+elseif($enquiry['enquiry_status']==30)
+{
+echo '<span style="color:green;text-align:center;"><b>Software Flow Created</b></span>';
+echo '<span style="color:red;text-align:center;"><b> / Waiting for Scope Addition</b></span>';
+}
+elseif($enquiry['enquiry_status']==31)
+{
+echo '<span style="color:green;text-align:center;"><b>Software Scope Added</b></span>';
+echo '<span style="color:red;text-align:center;"><b> / Waiting for Scope Approval</b></span>';
+}
+elseif($enquiry['enquiry_status']==32)
+{
+echo '<span style="color:green;text-align:center;"><b>Software Scope Approved</b></span>';
+echo '<span style="color:red;text-align:center;"><b> / Waiting for File Upload</b></span>';
+}
+elseif($enquiry['enquiry_status']==33)
+{
+echo '<span style="color:green;text-align:center;"><b>Software File Uploaded</b></span>';
+echo '<span style="color:red;text-align:center;"><b> / Waiting for Quotation Generation</b></span>';
+}
+elseif($enquiry['enquiry_status']==34)
+{
+echo '<span style="color:green;text-align:center;"><b>Software Quotation Generated</b></span>';
 }else{}
 ?>
 </td>
@@ -377,11 +420,23 @@ echo '<span style="color:green;text-align:center;"><b> Purchase Order Sent </b><
 			$enq_value= $enquiry['enquiry_status'];
 			
 			
-			if($enquiry['enquiry_status']==3)
-			{?>
-			
+			if($enquiry['enquiry_status']==30) {
+				?>
+				<button class="btn btn-warning" data-id="<?php echo $enquiry['enquiry_id']; ?>" onclick="addSoftwareScope(<?php echo $enquiry['enquiry_id']; ?>)">Add Scope</button>
+				<?php
+			} elseif($enquiry['enquiry_status']==32) {
+				?>
+				<button class="btn btn-info" data-id="<?php echo $enquiry['enquiry_id']; ?>" onclick="uploadSoftwareFile(<?php echo $enquiry['enquiry_id']; ?>)">Upload File</button>
+				<?php
+			} elseif($enquiry['enquiry_status']==33) {
+				?>
 				<button class="btn btn-primary" data-id="<?php echo $enquiry['enquiry_id']; ?>" onclick="cost_view(<?php echo $enquiry['enquiry_id']; ?>)">Add Quotation</button>
-				<?php 
+				<?php
+			} elseif($enquiry['enquiry_status']==3)
+  			{?>
+  			
+  				<button class="btn btn-primary" data-id="<?php echo $enquiry['enquiry_id']; ?>" onclick="cost_view(<?php echo $enquiry['enquiry_id']; ?>)">Add Quotation</button>
+  				<?php 
 			}elseif($enquiry['enquiry_status']==5)
 			{?>
 				<button class="btn btn-primary" data-id="<?php echo $enquiry['enquiry_id']; ?>" onclick="costz_view(<?php echo $enquiry['enquiry_id']; ?>)">Quote Send view</button>
@@ -428,4 +483,3 @@ echo '<span style="color:green;text-align:center;"><b> Purchase Order Sent </b><
               </div>
               <!-- /.card-body -->
             </div>
-		

@@ -1,1 +1,944 @@
 Started costsheet_revise_insert.php
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+<<<<<<< Updated upstream
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=2.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=3.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=4.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=10.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Inside loop i=5.
+Reached line 254 before quote query.
+Inside loop i=6.
+Reached line 254 before quote query.
+Inside loop i=7.
+Reached line 254 before quote query.
+Inside loop i=8.
+Reached line 254 before quote query.
+Inside loop i=9.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=5.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=15.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Inside loop i=5.
+Reached line 254 before quote query.
+Inside loop i=6.
+Reached line 254 before quote query.
+Inside loop i=7.
+Reached line 254 before quote query.
+Inside loop i=8.
+Reached line 254 before quote query.
+Inside loop i=9.
+Reached line 254 before quote query.
+Inside loop i=10.
+Reached line 254 before quote query.
+Inside loop i=11.
+Reached line 254 before quote query.
+Inside loop i=12.
+Reached line 254 before quote query.
+Inside loop i=13.
+Reached line 254 before quote query.
+Inside loop i=14.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=6.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Inside loop i=5.
+Reached line 254 before quote query.
+Success! inserted.
+=======
+>>>>>>> Stashed changes
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=2.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=3.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=6.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Inside loop i=5.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=2.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=2.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=3.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=2.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=2.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=3.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=4.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=5.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=6.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Inside loop i=5.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=7.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Inside loop i=5.
+Reached line 254 before quote query.
+Inside loop i=6.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=2.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=3.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=6.
+Inside loop i=0.
+Reached line 254 before quote query.
+Inside loop i=1.
+Reached line 254 before quote query.
+Inside loop i=2.
+Reached line 254 before quote query.
+Inside loop i=3.
+Reached line 254 before quote query.
+Inside loop i=4.
+Reached line 254 before quote query.
+Inside loop i=5.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.
+Started costsheet_revise_insert.php
+Line 25
+Line 37
+Line 50
+About to start loop, count=1.
+Inside loop i=0.
+Reached line 254 before quote query.
+Success! inserted.

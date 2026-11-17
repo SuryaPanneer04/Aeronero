@@ -42,29 +42,28 @@ else
 $stmt->execute(); 
 $row = $stmt->fetch();
 
-if($row['mapping_id'] =='1'){
+if($row['business_id'] =='1'){
 	  $pro_ser_type = "Product";
-   }else if($row['mapping_id'] =='2'){
+   }else if($row['business_id'] =='2'){
 	  $pro_ser_type = "Service";
-   }else if($row['mapping_id'] =='3'){
+   }else if($row['business_id'] =='3'){
 	  $pro_ser_type = "Solution";
+   }else if($row['business_id'] =='4'){
+	  $pro_ser_type = "Software";
    }
  //if($row['list']!==''){
    // $name = $row['name'];
  //}
 
 //$company_id = $row['company_id'];
-$edit_status  = $row['edit_status'];
-$enquiry_id  = $row['enquiry_id'];
+$edit_status  = $row['edit_status'] ?? 0;
+$enquiry_id   = isset($row['eeqq']) ? $row['eeqq'] : ($row['enquiry_id'] ?? 0);
 
-	$chwck = $con->prepare("SELECT MAX(id) as las_max,edit_status,enquiry_id,cost_sheet_no from cost_sheet_entry where enquiry_id='$enquiry_id'"); 
-		
-		
+	$chwck = $con->prepare("SELECT id as las_max,edit_status,enquiry_id,cost_sheet_no from cost_sheet_entry where enquiry_id='$enquiry_id' ORDER BY id DESC LIMIT 1"); 
 $chwck->execute(); 
 $raw = $chwck->fetch();
-
-$las_max  = $raw['las_max'];
-$las_status  = $raw['edit_status'];
+$las_max      = $raw ? $raw['las_max'] : '';
+$las_status   = $raw ? $raw['edit_status'] : '0';
 
 
 
@@ -157,59 +156,96 @@ $costsheet_status = $row['costsheet_status'];
 		  
 
  <table id="dataTable" width="300px" border="1" style="border-collapse:collapse;margin-bottom: 0px !important;width: 126%;" class="table table-bordered">
+		 
+		 
 		 <thead>
 			<tr>
+			  <?php if($row['business_id'] == 4) { ?>
+			  <th>SOFTWARE NAME</th>
+			  <th>NO OF MAN HRS</th>
+			  <th>PER HRS</th>
+			  <th formula="cost*qty" summary="sum">Sub Total</th>
+			  <th colspan='2'>Dist Margin %</th>
+			  <th colspan='2'>Overall Margin</th>
+			  <th>Selling Price</th>
+			  <th colspan='2'>Service Cost</th>
+			  <th>Total AMOUNT</th>
+			  <th>Vendor</th>
+			  <?php } else { ?>
 			  <th>PRODUCT NAME</th>
 			  <th>PRODUCT ID</th>
-			  
 			  <th style="width: 157%;">DESCRIPTION</th>
 			  <th>QTY</th>
-
 			  <th>UNIT RATE</th>
 			  <th formula="cost*qty" summary="sum">Purchase Amount</th>
 			  <th colspan='2'>Dist Margin %</th>
-			   <th colspan='2'>Overall Margin</th>
-			   <th>Selling Price</th>
+			  <th colspan='2'>Overall Margin</th>
+			  <th>Selling Price</th>
 			  <th colspan='2'>Logistics</th>
 			  <th colspan='2'>Service Cost</th>
 			  <th>Total AMOUNT</th>
 			  <th colspan='2'>GST</th>
 			  <th colspan='2'>IGST</th>
-			 <th>Total AMOUNT with GST</th>
-			  
+			  <th>Total AMOUNT with GST</th>
 			  <th>Vendor</th>
+			  <?php } ?>
 			</tr>
 		 </thead>
+
+
 		  <tbody>
 		<?php  
 		 $query3= $con->query("SELECT a.id as costsheet_id,a.*,b.*,e.*,v.* from cost_sheet_entry a 
 				 left join client_master b on(b.id=a.client_id) 
-				 left join staff_master e ON e.candid_id=a.candid_id join doller_vendor_mastor v on a.vendor_id=v.id
+				 left join staff_master e ON e.candid_id=a.candid_id left join doller_vendor_mastor v on a.vendor_id=v.id
 				 where a.cost_sheet_no='$cost_sheet_no' order by a.id asc"); 
-				 
-		     /* echo "SELECT a.id as costsheet_id,a.*,b.*,e.* from cost_sheet_entry a 
-				 left join client_master b on(b.id=a.client_id) 
-				 left join staff_master e ON e.candid_id=a.candid_id
-				 where a.status ='1' or a.status ='0'  and a.cost_sheet_no='$cost_sheet_no' order by a.id desc"; */
 			   $cnt=1; 
 		 while($cost = $query3->fetch(PDO::FETCH_ASSOC)){ 
-		    
-			 /* echo "hi";
-			 echo "SELECT a.id as costsheet_id,a.*,b.*,e.* from cost_sheet_entry a 
-				 inner join client_master b on(b.id=a.client_id) 
-				 inner join staff_master e ON e.candid_id=a.candid_id
-				 where a.status ='1' and a.cost_sheet_no='$cost_sheet_no'"; */
-				 
-				//echo  $cnt;  	 
 		?>
 		<tr>
-		 
+		<?php if($row['business_id'] == 4) { ?>
+		  <td>
+		    <INPUT type="hidden" id="cost_sheet_no" name="cost_sheet_no" class="form-control" value="<?php echo $cost['cost_sheet_no']; ?>" readonly="readonly">
+			<?php echo $cost['specification']; ?></td>
+		  <td>
+			<?php echo $cost['qty']; ?></td>		
+		  <td>
+			<?php echo $cost['unit_rate']; ?></td>
+		  <td>
+			<?php echo $cost['total_price']; ?></td>
+			 <td>
+			<?php echo $cost['dist_per']; ?>
+		</td>
+		<td>
+			<?php echo $cost['dist_amt']; ?>
+		</td>
+			<td >
+		   <?php echo $cost['com_per']; ?>
+		</td>
+		<td>
+		  <?php echo $cost['com_amt']; ?>
+		</td>
+		<td>
+		  <?php echo $cost['sel_price']; ?>
+		</td>
+		<td> 
+		    <?php echo $cost['eng_per']; ?>
+		</td>
+		<td>
+		  <?php echo $cost['eng_amt']; ?>
+		</td>
+		<td >
+		  <?php echo $cost['total_amt']; ?>
+		</td>
+		<td >
+		  <?php echo $cost['vendor_name']; ?>
+		</td>
+		<?php } else { ?>
 		  <td>
 		    <INPUT type="hidden" id="cost_sheet_no" name="cost_sheet_no" class="form-control" value="<?php echo $cost['cost_sheet_no']; ?>" readonly="readonly">
 			<?php echo $cost['product_name']; ?></td>
 		  <td>
 		  <?php echo $cost['product_id']; ?></td>
-		  
 		  <td>
 		  <?php echo $cost['description']; ?></td>
 		  <td>
@@ -233,18 +269,15 @@ $costsheet_status = $row['costsheet_status'];
 		<td>
 		  <?php echo $cost['sel_price']; ?>
 		</td>
-		
 		  <td>
 			<?php echo $cost['log_per']; ?>
 		</td>
 		<td>
 			<?php echo $cost['log_amt']; ?>
 		</td>
-		
 		<td> 
 		    <?php echo $cost['eng_per']; ?>
 		</td>
-		  
 		<td>
 		  <?php echo $cost['eng_amt']; ?>
 		</td>
@@ -254,7 +287,7 @@ $costsheet_status = $row['costsheet_status'];
 		 <td>
 		  <?php echo $cost['gst_per']; ?>
 		</td> 
-	<td>
+	    <td>
 		  <?php echo $cost['gst_amt']; ?>
 		</td>
 		<td>
@@ -269,13 +302,7 @@ $costsheet_status = $row['costsheet_status'];
 		<td >
 		  <?php echo $cost['vendor_name']; ?>
 		</td>
-		
-		
-		  
-		  <!--<td>
-		    <INPUT type="button" class="btn btn-success" value="Add " onclick="addRow('dataTable')" />
-	        <INPUT type="button" class="btn btn-danger" value="Delete" onclick="deleteRow('dataTable')" />
-		   </td>-->
+		<?php } ?>
 		</tr>
 		 <?php $cnt++; } ?>
 		</tbody>
@@ -288,7 +315,7 @@ $costsheet_status = $row['costsheet_status'];
 				 
 			/* 	 echo "SELECT count(a.cost_sheet_no) as row_count, a.id as costsheet_id,sum(a.com_per) as com_per_val,a.*,b.*,e.*,v.vendor_name as vendor_name from cost_sheet_entry a 
 				 inner join client_master b on(b.id=a.client_id) 
-				 inner join doller_vendor_mastor v on a.vendor_id=v.id
+				 inner left join doller_vendor_mastor v on a.vendor_id=v.id
 				 inner join staff_master e ON e.candid_id=a.candid_id
 				 where a.status ='1' and a.cost_sheet_no='$cost_sheet_no' order by a.id desc";
 				  */
@@ -489,7 +516,7 @@ $costsheet_status = $row['costsheet_status'];
 				
 	<?php 				
 	 }
-	 elseif(($userrole =='R001') && ($costsheet_status =='20'))
+	 elseif(($userrole =='R001') && ($costsheet_status =='20' || $costsheet_status =='0'))
 	 {
 		?>
 		<!--input type="button" class="btn btn-success" id="save" name="save"  onclick="openForm()"  value="Revise Cost Sheet"-->

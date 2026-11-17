@@ -6,7 +6,7 @@ $userrole = $_SESSION['userrole'];
 ?>
 <style>
   .card-primary:not(.card-outline)>.card-header {
-    background-color:#009EE3 !important;
+    background-color: #009EE3 !important;
   }
 
   .card-primary:not(.card-outline)>.card-header,
@@ -30,7 +30,7 @@ $userrole = $_SESSION['userrole'];
   }
 
   .page-link:hover {
-    color: #f1cc61;
+    color: #009EE3;
   }
 
   .card-primary:not(.card-outline)>.card-header {
@@ -55,7 +55,7 @@ $userrole = $_SESSION['userrole'];
   }
 
   .card-primary:not(.card-outline)>.card-header {
-    background-color:#009EE3 !important;
+    background-color: #009EE3 !important;
   }
 </style>
 <div class="card card-primary">

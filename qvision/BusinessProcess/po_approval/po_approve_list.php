@@ -32,7 +32,7 @@ if($count > 0)
             ON c.id = p.client_id
         LEFT JOIN po_generate e
             ON a.cost_sheet_no = e.cost_sheet_no
-        WHERE e.po_upload_status IN ('1','2')
+        WHERE e.po_upload_status IN ('1','2') AND a.business_id != '4'
         ORDER BY e.id DESC
     ");
 }
@@ -46,7 +46,7 @@ else
     </head>
 	<style>
 	.card-primary:not(.card-outline)>.card-header{
-		background-color:#009EE3 !important;
+		background-color: #009EE3 !important;
 	}
 	</style>
 <div  class="card card-primary">
@@ -83,7 +83,7 @@ else
 	//$quote=$con->query("select * from po_generate where po_upload_status='1' order by id desc ");
 	$quote=$con->query("SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,a.business_id,c.*,p.*,e.* FROM cost_sheet_entry a 
 	left join new_client_master c on (a.client_id=c.id)left join new_plant_master p on (c.id=p.client_id) left join po_generate e on(a.cost_sheet_no=e.cost_sheet_no)
-	where (e.po_upload_status ='1' || e.po_upload_status ='2') order by e.id desc");
+	where (e.po_upload_status ='1' || e.po_upload_status ='2') AND a.business_id != '4' order by e.id desc");
 	/* echo "SELECT distinct a.cost_sheet_no,a.approved_by,a.status as cs_status,a.enquiry_id,a.business_id,c.*,p.*,e.* FROM cost_sheet_entry a 
 	left join new_client_master c on (a.client_id=c.id)left join new_plant_master p on (c.id=p.client_id) left join po_generate e on(a.cost_sheet_no=e.cost_sheet_no)
 	where e.po_upload_status ='1' order by e.id desc"; */

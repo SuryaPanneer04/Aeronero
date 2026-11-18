@@ -23,21 +23,18 @@ try {
         $imageName = '';
         $status = 1;
 
-        if (isset($_FILES['image']) && $_FILES['image']['error'] == 0) {
+        $imageName = '';
 
-            $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/qvision/claim/Uploads/';
-            if (!is_dir($uploadDir)) {
-                mkdir($uploadDir, 0777, true);
-            }
+        if (isset($_FILES['image']) && $_FILES['image']['error'] === UPLOAD_ERR_OK) {
 
             $tmpName = $_FILES['image']['tmp_name'];
             $original = $_FILES['image']['name'];
 
-            //extension
-            $ext = pathinfo($original, PATHINFO_EXTENSION);
+            $ext = strtolower(pathinfo($original, PATHINFO_EXTENSION));
+
             $allowed = ['jpg', 'jpeg', 'png', 'webp'];
 
-            if (!in_array(strtolower($ext), $allowed)) {
+            if (!in_array($ext, $allowed, true)) {
                 echo json_encode([
                     'status' => 'error',
                     'message' => 'Invalid image format'
@@ -45,15 +42,52 @@ try {
                 exit;
             }
 
-            //unique name
-            $imageName = 'IMG_' . time() . '_' . rand(1000, 9999) . "." . $ext;
+            // Upload directory
+            $uploadDir = rtrim($_SERVER['DOCUMENT_ROOT'], '/\\')
+                . '/Aeronero/qvision/claim/Uploads/';
 
-            //move file
-            move_uploaded_file($tmpName, $uploadDir . $imageName);
+            // Create directory
+            if (!is_dir($uploadDir)) {
+                mkdir($uploadDir, 0775, true);
+            }
+
+            if (!is_dir($uploadDir) || !is_writable($uploadDir)) {
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Upload folder not writable',
+                    'path' => $uploadDir
+                ]);
+                exit;
+            }
+
+            // Unique filename
+            $imageName = 'IMG_' . time() . '_' .
+                rand(1000, 9999) . '.' . $ext;
+
+            $destination = $uploadDir . $imageName;
+
+            // Move uploaded file
+            if (move_uploaded_file($tmpName, $destination)) {
+
+                if (!file_exists($destination)) {
+                    echo json_encode([
+                        'status' => 'error',
+                        'message' => 'File not found after upload'
+                    ]);
+                    exit;
+                }
+            } else {
+                echo json_encode([
+                    'status' => 'error',
+                    'message' => 'Image upload failed',
+                    'destination' => $destination
+                ]);
+                exit;
+            }
         }
 
-        $sql = $con->prepare("
-            INSERT INTO claim_request (
+
+        $sql = $con->prepare("INSERT INTO claim_request (
                 candidate_id,
                 customer_name,
                 travel_type,

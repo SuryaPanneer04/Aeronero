@@ -349,6 +349,19 @@ function get_project_badges($name, $selected_val, $project_list)
     margin-top: 28px;
 }
 
+
+/* No projects assigned: centered time label only */
+.timesheet-table:not(:has(.project-picker)) td.align-middle {
+    vertical-align: middle;
+    text-align: center !important;
+}
+
+.timesheet-table:not(:has(.project-picker)) td.align-middle > strong {
+    height: auto;
+    line-height: 1.4;
+    margin-bottom: 0;
+    font-size: 16px;
+}
 .task-textarea:focus {
     border-color: #009EE3;
     box-shadow: 0 0 0 2px rgba(0, 158, 227, .15);

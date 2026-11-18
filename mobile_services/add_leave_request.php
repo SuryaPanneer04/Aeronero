@@ -52,14 +52,22 @@ if ($type == 'leave_details') {
 
             //$balance_leave=$_POST['balance_leave'];
 
-            $stmtz = $con->prepare("SELECT prefix_code,emp_code,candid_id,reporting_person FROM staff_master where candid_id='$candids_id'");
+            $stmtz = $con->prepare(
+                "SELECT prefix_code, emp_code, candid_id, reporting_person
+                    FROM staff_master
+                    WHERE candid_id = ?"
+            );
 
-            if (!$stmtz->execute()) {
+            $stmtz->execute([$candids_id]);
+
+            $rowz = $stmtz->fetch(PDO::FETCH_ASSOC);
+
+            if (!$rowz) {
                 echo json_encode([
                     'status' => 'error',
                     'message' => 'Employee Id Not Found'
                 ]);
-                exit();
+                exit;
             }
 
             $rowz = $stmtz->fetch();
@@ -95,15 +103,20 @@ if ($type == 'leave_details') {
                 //     ]);
                 //     exit;
                 // }
-                if (isset($_FILES['uploadfile'])) {
+                $filename = '';
+
+                if (
+                    isset($_FILES['uploadfile']) &&
+                    $_FILES['uploadfile']['error'] === UPLOAD_ERR_OK
+                ) {
 
                     $filename = $_FILES['uploadfile']['name'];
                     $tempname = $_FILES['uploadfile']['tmp_name'];
 
-                    // extension
                     $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
 
                     $allowed = ['jpg', 'jpeg', 'png', 'webp'];
+
                     if (!in_array($ext, $allowed)) {
                         echo json_encode([
                             'status' => 'error',
@@ -112,22 +125,20 @@ if ($type == 'leave_details') {
                         exit;
                     }
 
-                    // ensure directory exists
-                    // $uploadDir = 'files/';
-                    $uploadDir = $_SERVER['DOCUMENT_ROOT'] . "/qvision/Leave_Management/leave_request/files/";
-                    if (!is_dir($uploadDir)) {
-                        mkdir($uploadDir, 0777, true);
-                    }
+                    $uploadDir = $_SERVER['DOCUMENT_ROOT'] .
+                        "/qvision/Leave_Management/leave_request/files/";
+
                     if (!is_dir($uploadDir)) {
                         mkdir($uploadDir, 0777, true);
                     }
 
-                    // unique name
-                    $imageName = 'IMG_' . time() . '_' . rand(1000, 9999) . '.' . $ext;
+                    $imageName = 'IMG_' . time() . '_' .
+                        rand(1000, 9999) . '.' . $ext;
+
                     $folder = $uploadDir . $imageName;
 
                     if (move_uploaded_file($tempname, $folder)) {
-                        $msg = "Image uploaded successfully";
+                        $filename = $imageName;
                     } else {
                         echo json_encode([
                             'status' => 'error',
@@ -148,16 +159,31 @@ if ($type == 'leave_details') {
                 //     $msg = "Failed to upload image";
                 // }
 
-                $stmt = $con->prepare("
-                    INSERT INTO leave_apply_masters
-                    (candid_id, reporting_person, emp_code, emp_name, leave_type, req_date, leave_date, from_date, to_date, no_of_days, leave_reason, sick_doc, status, created_by, created_on)
-                    VALUES
-                    (?,?,?,?,?,?,?,?,?,?,?,?,?,?,NOW())
+
+                $stmt = $con->prepare("INSERT INTO leave_apply_masters
+                        (
+                            reporting_person_id,
+                            candid_id,
+                            emp_code,
+                            emp_name,
+                            leave_type,
+                            req_date,
+                            leave_date,
+                            from_date,
+                            to_date,
+                            no_of_days,
+                            leave_reason,
+                            sick_doc,
+                            status,
+                            created_by,
+                            created_on
+                        )
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW())
                     ");
 
                 $insert = $stmt->execute([
-                    $candids_id,
                     $reporting_person,
+                    $candids_id,
                     $emply_code,
                     $full_name,
                     $leave_type,
@@ -173,29 +199,40 @@ if ($type == 'leave_details') {
                 ]);
 
                 if ($insert) {
-                    echo json_encode(['status' => 'success', 'message' => 'Inserted']);
+                    echo json_encode([
+                        'status' => 'success',
+                        'message' => 'Leave request submitted successfully'
+                    ]);
                 } else {
-                    echo json_encode(['status' => 'error', 'message' => 'Insert failed']);
+                    echo json_encode([
+                        'status' => 'error',
+                        'message' => 'Insert failed',
+                        'details' => $stmt->errorInfo()
+                    ]);
                 }
+
                 exit();
             } else {
                 echo json_encode([
                     'status' => 'error',
-                    'message' => 'Data Not Found'
+                    'message' => 'Leave not available'
                 ]);
                 exit();
             }
         } else {
             echo json_encode([
                 'status' => 'error',
-                'message' => 'Data Not Found'
+                'message' => 'Request fileds error'
             ]);
             exit();
         }
-    } catch (Exception $e) {
+    } catch (PDOException $e) {
+        error_log("Leave Insert Error: " . $e->getMessage());
+
         echo json_encode([
             'status' => 'error',
-            'message' => 'submit error' . $e
+            'message' => 'Database insert failed',
+            'details' => $e->getMessage()
         ]);
         exit();
     }

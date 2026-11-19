@@ -100,11 +100,12 @@ $project_list = $assigned_projects->fetchAll(PDO::FETCH_ASSOC);
 $has_projects = count($project_list) > 0;
 
 // Box height grows with the number of assigned projects (+1 for "Others").
-$option_count = $has_projects ? count($project_list) + 1 : 0;
-$box_height   = $has_projects
-    ? min(320, 40 + ($option_count * 36))
-    : 90;
+// $option_count = $has_projects ? count($project_list) + 1 : 0;
+// $box_height   = $has_projects
+//     ? min(320, 40 + ($option_count * 36))
+//     : 90;
 
+$box_height = $has_projects ? 125 : 70;
 
 // Convert saved project values into an array.
 function get_selected_project_ids($selected_val)
@@ -349,19 +350,6 @@ function get_project_badges($name, $selected_val, $project_list)
     margin-top: 28px;
 }
 
-
-/* No projects assigned: centered time label only */
-.timesheet-table:not(:has(.project-picker)) td.align-middle {
-    vertical-align: middle;
-    text-align: center !important;
-}
-
-.timesheet-table:not(:has(.project-picker)) td.align-middle > strong {
-    height: auto;
-    line-height: 1.4;
-    margin-bottom: 0;
-    font-size: 16px;
-}
 .task-textarea:focus {
     border-color: #009EE3;
     box-shadow: 0 0 0 2px rgba(0, 158, 227, .15);

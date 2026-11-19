@@ -30,7 +30,7 @@ try {
     }
 
     // Security check: Only allow the authorized user_id to import
-    $allowed_import_userid = 4; 
+    $allowed_import_userid = 45; 
     if ((int)$userId !== $allowed_import_userid) {
         outputResult(0, 'Unauthorized: You do not have permission to import leads.');
     }

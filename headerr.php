@@ -3228,4 +3228,24 @@ try {
             }
         })
     }
+
+    function bespace_reports() {
+        $.ajax({
+            type: "POST",
+            url: "qvision/reports/bespace/bespace_reportss.php",
+            success: function(data) {
+                $("#main_content").html(data);
+            }
+        })
+    }
+
+    function employee_contact_details() {
+        $.ajax({
+            type: "POST",
+            url: "qvision/reports/bespace/contact_reports.php",
+            success: function(data) {
+                $("#main_content").html(data);
+            }
+        })
+    }
 </script>

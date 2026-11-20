@@ -4,7 +4,7 @@ require_once __DIR__ . '/../../../connect.php';
 include_once __DIR__ . '/../../../user.php';
 
 $user_id = $_SESSION['userid'] ?? '';
-$allowed_import_userid = 44;
+$allowed_import_userid = 45;
 ?>
 
 <style>

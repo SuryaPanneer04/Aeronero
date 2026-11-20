@@ -99,6 +99,13 @@ $project_list = $assigned_projects->fetchAll(PDO::FETCH_ASSOC);
 
 $has_projects = count($project_list) > 0;
 
+// Box height grows with the number of assigned projects (+1 for "Others").
+// $option_count = $has_projects ? count($project_list) + 1 : 0;
+// $box_height   = $has_projects
+//     ? min(320, 40 + ($option_count * 36))
+//     : 90;
+
+$box_height = $has_projects ? 125 : 70;
 
 // Convert saved project values into an array.
 function get_selected_project_ids($selected_val)
@@ -226,33 +233,56 @@ function get_project_badges($name, $selected_val, $project_list)
 ?>
 
 <style>
-/* Keep the timesheet columns and input boxes consistently aligned. */
+/* One height for all three boxes (project, to-do, completed) */
 .timesheet-table {
+    --box-h: 140px;
     width: 100%;
     table-layout: fixed;
     margin-bottom: 0;
+    font-size: 13px;
 }
 
 .timesheet-table th,
 .timesheet-table td {
     vertical-align: top;
-    padding: 12px;
+    padding: 8px 10px;
     overflow-wrap: anywhere;
 }
 
 .timesheet-table th {
     vertical-align: middle;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .4px;
+    color: #475569;
 }
 
-.timesheet-table td:first-child {
-    vertical-align: middle;
+/* Time cell: label on top, left aligned */
+.timesheet-table td.align-middle {
+    vertical-align: top;
+    text-align: left !important;
 }
 
+.timesheet-table td.align-middle > strong {
+    display: block;
+    height: 22px;
+    line-height: 22px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #0f172a;
+}
+
+/* ===== Project picker: fixed height, inner scroll ===== */
 .project-picker {
+    display: flex;
+    flex-direction: column;
     width: 100%;
+    height: var(--box-h);
     box-sizing: border-box;
-    margin-top: 10px;
-    padding: 9px;
+    margin: 0;
+    padding: 6px;
     border: 1px solid #ced4da;
     border-radius: 6px;
     background: #fff;
@@ -260,7 +290,8 @@ function get_project_badges($name, $selected_val, $project_list)
 }
 
 .project-checkbox-list {
-    max-height: 125px;
+    flex: 1 1 auto;
+    min-height: 0;
     overflow-y: auto;
 }
 
@@ -268,17 +299,13 @@ function get_project_badges($name, $selected_val, $project_list)
     display: flex;
     align-items: flex-start;
     gap: 8px;
-    padding: 7px;
-    margin: 0 0 4px;
+    padding: 4px 6px;
+    margin: 0 0 2px;
     cursor: pointer;
     font-size: 12px;
     line-height: 1.4;
     border-radius: 4px;
     overflow-wrap: anywhere;
-}
-
-.project-option:last-child {
-    margin-bottom: 0;
 }
 
 .project-option input {
@@ -293,33 +320,47 @@ function get_project_badges($name, $selected_val, $project_list)
 }
 
 .project-picker small {
+    flex: 0 0 auto;
     display: block;
-    margin-top: 8px;
-    font-size: 11px;
+    margin-top: 4px;
+    padding-top: 4px;
+    border-top: 1px solid #eef2f6;
+    font-size: 10.5px;
 }
 
+/* ===== Textareas: same height as the project box ===== */
 .task-textarea {
     display: block;
     width: 100%;
     min-width: 0;
-    min-height: 110px;
+    height: var(--box-h);
+    min-height: var(--box-h);
     box-sizing: border-box;
-    resize: vertical;
-    line-height: 1.5;
+    resize: none;
+    padding: 7px 10px;
+    font-size: 13px;
+    line-height: 1.45;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+}
+
+/* Push textareas down so their top lines up with the project box
+   (below the 22px time label + 6px gap) */
+.timesheet-table:has(.project-picker) .task-textarea {
+    margin-top: 28px;
+}
+
+.task-textarea:focus {
+    border-color: #009EE3;
+    box-shadow: 0 0 0 2px rgba(0, 158, 227, .15);
 }
 
 @media (max-width: 768px) {
     .timesheet-table {
         min-width: 720px;
     }
-
-    .timesheet-table th,
-    .timesheet-table td {
-        padding: 8px;
-    }
 }
 </style>
-
 
 <form role="form"
       id="time_sheet_form"
@@ -369,7 +410,10 @@ function get_project_badges($name, $selected_val, $project_list)
 
         <div class="card-body">
 
-            <table class="table table-bordered timesheet-table">
+            <!-- <table class="table table-bordered timesheet-table"> -->
+
+            <table class="table table-bordered timesheet-table"
+       style="--box-h: <?php echo (int)$box_height; ?>px;">
 
                 <tr>
                     <td colspan="3" class="text-center py-3">

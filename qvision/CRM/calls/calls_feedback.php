@@ -707,7 +707,7 @@ function closeForm() {
     $.ajax({
     type:'GET',
     data:data,	
-  url:"qvision/CRM/Calls/calls_feedback_insert.php",
+  url:"qvision/CRM/calls/calls_feedback_insert.php",
     success:function(data)
     {   
 
@@ -736,7 +736,7 @@ function closeForm() {
     $.ajax({
     type:'GET',
     data: data + "&" + "id="+id,
-  url:"qvision/CRM/Calls/calls_feedback_insert1.php",
+  url:"qvision/CRM/calls/calls_feedback_insert1.php",
     success:function(data)
     {      
         alert("Feedback Inserted Successfully");
@@ -754,7 +754,7 @@ function closeForm() {
     $.ajax({
     type:'GET',
     data: data + "&" + "id="+id,
-  url:"qvision/CRM/Calls/calls_feedback_insert2.php",
+  url:"qvision/CRM/calls/calls_feedback_insert2.php",
     success:function(data)
     {      
         alert("Feedback Inserted Successfully");
@@ -809,7 +809,7 @@ function closeForm() {
     $.ajax({
     type:'POST',
     data:"id="+idd+'&remark='+remark+'&feedback='+feedback+'&feedback_date='+feedback_date+'&fed_date='+fed_date,
-	url:"qvision/CRM/Calls/enquiry_insert.php",
+	url:"qvision/CRM/calls/enquiry_insert.php",
 	success:function(data)
 	{
 		
@@ -926,7 +926,7 @@ function closeForm() {
 var formData = new FormData(this);
 
             $.ajax({  
-                 url:"qvision/CRM/Calls/enquiry_insertuh.php",
+                 url:"qvision/CRM/calls/enquiry_insertuh.php",
                 method:"POST",  
                 data:formData, 
 				cache: false,
@@ -946,7 +946,7 @@ var formData = new FormData(this);
      ev.preventDefault();
      var formData = new FormData(this);
      $.ajax({  
-         url: "qvision/CRM/Calls/enquiry_insertuhh.php",
+         url: "qvision/CRM/calls/enquiry_insertuhh.php",
          method: "POST",  
          data: formData, 
          cache: false,

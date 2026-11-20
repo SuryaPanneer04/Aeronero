@@ -41,8 +41,9 @@ try {
             END,
             p.deadline ASC
     ");
-    $projects_list = $p_stmt->fetchAll(PDO::FETCH_ASSOC);
+    $projects_list = $p_stmt ? $p_stmt->fetchAll(PDO::FETCH_ASSOC) : [];
     $total_projects = count($projects_list);
+
 
     foreach ($projects_list as $p) {
         $st = strtolower(trim($p['status'] ?? ''));
@@ -83,7 +84,8 @@ $total_csr_visits = 0;
 
 try {
     $csr_stmt = $con->query("SELECT * FROM z_csr ORDER BY id DESC");
-    $csr_list = $csr_stmt->fetchAll(PDO::FETCH_ASSOC);
+    // $csr_list = $csr_stmt->fetchAll(PDO::FETCH_ASSOC);
+     $csr_list = $csr_stmt ? $csr_stmt->fetchAll(PDO::FETCH_ASSOC) : [];
     $total_csr = count($csr_list);
 
     foreach ($csr_list as $c) {

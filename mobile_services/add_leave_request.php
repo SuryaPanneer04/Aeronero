@@ -7,6 +7,7 @@ header('Content-Type: application/json');
 require('../connect.php');
 
 $type = $_REQUEST['type'] ?? '';
+$fol = '';
 
 if ($type == 'leave_details') {
     $query = $con->prepare('SELECT * FROM master_leave where status=1 ORDER BY id ASC');
@@ -70,13 +71,21 @@ if ($type == 'leave_details') {
                 exit;
             }
 
-            $rowz = $stmtz->fetch();
-
             $prefix_code = $rowz['prefix_code'];
             $emp_code = $rowz['emp_code'];
-            $reporting_person = $rowz['reporting_person'];
             $emply_code = $emp_code;
+            $reporting_person = $rowz['reporting_person'] ?? null;
 
+            if (empty($reporting_person)) {
+                echo json_encode([
+                    'row' => $rowz,
+                    'status' => 'error',
+                    'message' => 'Reporting person not assigned for this employee',
+                    'candidate_id' => $candids_id,
+                    'reporting_person' => $reporting_person,
+                ]);
+                exit;
+            }
 
             $date1 = date_create("$from_date");
             $date2 = date_create("$to_date");
@@ -103,21 +112,21 @@ if ($type == 'leave_details') {
                 //     ]);
                 //     exit;
                 // }
+
                 $filename = '';
 
                 if (
                     isset($_FILES['uploadfile']) &&
                     $_FILES['uploadfile']['error'] === UPLOAD_ERR_OK
                 ) {
-
-                    $filename = $_FILES['uploadfile']['name'];
+                    $originalName = $_FILES['uploadfile']['name'];
                     $tempname = $_FILES['uploadfile']['tmp_name'];
 
-                    $ext = strtolower(pathinfo($filename, PATHINFO_EXTENSION));
+                    $ext = strtolower(pathinfo($originalName, PATHINFO_EXTENSION));
 
                     $allowed = ['jpg', 'jpeg', 'png', 'webp'];
 
-                    if (!in_array($ext, $allowed)) {
+                    if (!in_array($ext, $allowed, true)) {
                         echo json_encode([
                             'status' => 'error',
                             'message' => 'Invalid image format'
@@ -125,11 +134,22 @@ if ($type == 'leave_details') {
                         exit;
                     }
 
-                    $uploadDir = $_SERVER['DOCUMENT_ROOT'] .
-                        "/qvision/Leave_Management/leave_request/files/";
+                    // Correct upload directory
+                    $uploadDir = rtrim($_SERVER['DOCUMENT_ROOT'], '/\\')
+                        . '/Aeronero/qvision/Leave_Management/leave_request/files/';
 
+                    // Create directory if not exists
                     if (!is_dir($uploadDir)) {
-                        mkdir($uploadDir, 0777, true);
+                        mkdir($uploadDir, 0775, true);
+                    }
+
+                    if (!is_dir($uploadDir) || !is_writable($uploadDir)) {
+                        echo json_encode([
+                            'status' => 'error',
+                            'message' => 'Upload directory not writable',
+                            'path' => $uploadDir
+                        ]);
+                        exit;
                     }
 
                     $imageName = 'IMG_' . time() . '_' .
@@ -142,7 +162,9 @@ if ($type == 'leave_details') {
                     } else {
                         echo json_encode([
                             'status' => 'error',
-                            'message' => 'Failed to upload image'
+                            'message' => 'Failed to move uploaded file',
+                            'upload_error' => $_FILES['uploadfile']['error'],
+                            'destination' => $folder
                         ]);
                         exit;
                     }
@@ -201,10 +223,12 @@ if ($type == 'leave_details') {
                 if ($insert) {
                     echo json_encode([
                         'status' => 'success',
-                        'message' => 'Leave request submitted successfully'
+                        'message' => 'Leave request submitted successfully',
+                        'folder' => $fol
                     ]);
                 } else {
                     echo json_encode([
+                        'canditate id' => $candids_id,
                         'status' => 'error',
                         'message' => 'Insert failed',
                         'details' => $stmt->errorInfo()

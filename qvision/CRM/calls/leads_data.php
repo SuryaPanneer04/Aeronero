@@ -1,4 +1,3 @@
-
 <?php
 // leads_data.php — Server-side DataTables endpoint
 
@@ -103,7 +102,7 @@ try {
         }
     }
 
-    // Preserve original role-based access.
+    // Role-based access (includes assigned_to and assigned_by).
     $accessConditions = [];
     $accessParams = [];
 
@@ -117,15 +116,21 @@ try {
     ) {
 
         $accessConditions[] = "
-            EXISTS (
-                SELECT 1
-                FROM z_user_master dept_user
-                WHERE dept_user.user_id = l.created_by
-                  AND dept_user.department = :department
+            (
+                EXISTS (
+                    SELECT 1
+                    FROM z_user_master dept_user
+                    WHERE dept_user.user_id = l.created_by
+                      AND dept_user.department = :department
+                )
+                OR l.assigned_to = :head_assigned_to
+                OR l.assigned_by = :head_assigned_by
             )
         ";
 
         $accessParams['department'] = $department;
+        $accessParams['head_assigned_to'] = $userId;
+        $accessParams['head_assigned_by'] = $userId;
 
     } else {
 
@@ -133,11 +138,15 @@ try {
             (
                 l.employee = :candidate
                 OR l.created_by = :user_id
+                OR l.assigned_to = :assigned_to_uid
+                OR l.assigned_by = :assigned_by_uid
             )
         ";
 
         $accessParams['candidate'] = $candidateId;
         $accessParams['user_id'] = $userId;
+        $accessParams['assigned_to_uid'] = $userId;
+        $accessParams['assigned_by_uid'] = $userId;
     }
 
     $accessSql = $accessConditions
@@ -162,6 +171,7 @@ try {
             (
                 l.client_org LIKE :search_org
                 OR l.client_name LIKE :search_client
+                OR l.contact LIKE :search_contact
                 OR CAST(l.created_on AS CHAR) LIKE :search_date
                 OR EXISTS (
                     SELECT 1 FROM lead_sources ls
@@ -171,7 +181,17 @@ try {
                 OR EXISTS (
                     SELECT 1 FROM z_user_master um
                     WHERE um.user_id = l.created_by
-                    AND um.full_name LIKE :search_creator
+                    AND COALESCE(NULLIF(TRIM(um.full_name), ''), um.user_name) LIKE :search_creator
+                )
+                OR EXISTS (
+                    SELECT 1 FROM z_user_master um_to
+                    WHERE um_to.user_id = l.assigned_to
+                    AND COALESCE(NULLIF(TRIM(um_to.full_name), ''), um_to.user_name) LIKE :search_assigned_to
+                )
+                OR EXISTS (
+                    SELECT 1 FROM z_user_master um_by
+                    WHERE um_by.user_id = l.assigned_by
+                    AND COALESCE(NULLIF(TRIM(um_by.full_name), ''), um_by.user_name) LIKE :search_assigned_by
                 )
                 OR EXISTS (
                     SELECT 1
@@ -196,9 +216,12 @@ try {
 
         $params['search_org'] = $like;
         $params['search_client'] = $like;
+        $params['search_contact'] = $like;
         $params['search_date'] = $like;
         $params['search_source'] = $like;
         $params['search_creator'] = $like;
+        $params['search_assigned_to'] = $like;
+        $params['search_assigned_by'] = $like;
         $params['search_feedback'] = $like;
         $params['search_feedback_date'] = $like;
         $params['search_followup'] = $like;
@@ -292,11 +315,16 @@ try {
                 l.created_on,
                 l.client_org,
                 l.client_name,
+                l.contact,
                 l.status,
                 l.moved_to_enquiry,
+                l.assigned_to,
+                l.assigned_by,
 
                 s.name AS source_name,
-                u.full_name AS created_by_name,
+                COALESCE(NULLIF(TRIM(u.full_name), ''), u.user_name) AS created_by_name,
+                COALESCE(NULLIF(TRIM(u_to.full_name), ''), u_to.user_name) AS assigned_to_name,
+                COALESCE(NULLIF(TRIM(u_by.full_name), ''), u_by.user_name) AS assigned_by_name,
 
                 f.feedback,
                 f.feedback_date,
@@ -309,6 +337,12 @@ try {
 
             LEFT JOIN z_user_master u
                 ON u.user_id = l.created_by
+
+            LEFT JOIN z_user_master u_to
+                ON u_to.user_id = l.assigned_to
+
+            LEFT JOIN z_user_master u_by
+                ON u_by.user_id = l.assigned_by
 
             LEFT JOIN crm_leads_feedback f
                 ON f.id = (
@@ -329,6 +363,8 @@ try {
             $leadsById[$lead['id']] = $lead;
         }
 
+        $currentUserId = (int)$userId;
+
         foreach ($ids as $index => $leadId) {
 
             if (!isset($leadsById[$leadId])) {
@@ -347,6 +383,27 @@ try {
                     '<input type="checkbox" ' .
                     'class="lead-select-checkbox lead-row-checkbox" ' .
                     'value="' . $id . '">';
+            }
+
+            // Dynamic Assigned column:
+            // - Assigned person sees who assigned it.
+            // - Assigner / others see who it is assigned to.
+            $assignedToId = (int)($lead['assigned_to'] ?? 0);
+            $assignedToName = trim((string)($lead['assigned_to_name'] ?? ''));
+            $assignedByName = trim((string)($lead['assigned_by_name'] ?? ''));
+
+            $assignedInfo = '-';
+
+            if ($assignedToId > 0) {
+                if ($currentUserId === $assignedToId) {
+                    $assignedInfo = $assignedByName !== ''
+                        ? 'Assigned by: ' . leadsEscape($assignedByName)
+                        : 'Assigned';
+                } else {
+                    $assignedInfo = $assignedToName !== ''
+                        ? 'Assigned to: ' . leadsEscape($assignedToName)
+                        : '-';
+                }
             }
 
             // Status.
@@ -399,12 +456,14 @@ try {
                 leadsEscape($lead['client_org']),
                 leadsEscape($lead['client_name']),
                 leadsEscape($lead['source_name']),
+                leadsEscape($lead['contact']),
                 leadsEscape($lead['feedback']),
                 leadsEscape($lead['feedback_date']),
                 leadsEscape($lead['followup_date']),
                 leadsEscape(
                     $lead['created_by_name'] ?: 'Unknown User'
                 ),
+                $assignedInfo,
                 $status,
                 $actions
             ];

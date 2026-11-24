@@ -48,6 +48,16 @@ $allowed_import_userid = 45;
     opacity: 0.6;
 }
 
+#bulkAssignBtn {
+    background: #f0ad4e;
+    border: 1px solid white;
+    color: white;
+}
+
+#bulkAssignBtn:disabled {
+    opacity: 0.6;
+}
+
 #leadsTable_wrapper {
     width: 100%;
 }
@@ -71,6 +81,18 @@ $allowed_import_userid = 45;
                 class="btn btn-primary"
                 style="float:right;background:#009EE3;border:1px solid white;margin-left:8px;">
             <i class="fa fa-plus"></i> ADD
+        </button>
+
+        <button type="button"
+                id="bulkAssignBtn"
+                class="btn btn-warning"
+                onclick="openAssignModal()"
+                style="float:right;margin-left:8px;"
+                disabled>
+
+            <i class="fa fa-user-plus"></i>
+            Assign
+            (<span id="selectedAssignCount">0</span>)
         </button>
 
         <button type="button"
@@ -125,10 +147,12 @@ $allowed_import_userid = 45;
                         <th>Organisation</th>
                         <th>Client</th>
                         <th>Call Source</th>
+                        <th>Contact No</th>
                         <th>Feedback</th>
                         <th>Feedback Date</th>
                         <th>Followup Date</th>
                         <th>Created By</th>
+                        <th>Assigned</th>
                         <th>Status</th>
                         <th>Action</th>
                     </tr>
@@ -192,6 +216,67 @@ $allowed_import_userid = 45;
     </div>
 </div>
 
+<!-- Assign Leads Modal -->
+<div id="assignLeadModal"
+     style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.5);z-index:9999;">
+
+    <div style="background:#fff;width:500px;max-width:90%;margin:8% auto;padding:20px;border-radius:6px;">
+
+        <h4>
+            Assign Selected Leads (<span id="assignModalLeadCount">0</span>)
+
+            <span onclick="closeAssignModal()"
+                  style="float:right;cursor:pointer;">
+                &times;
+            </span>
+        </h4>
+
+        <form id="assignLeadForm">
+
+            <div class="form-group" style="margin-top:15px;">
+                <label for="assignDepartment">Department</label>
+                <select id="assignDepartment"
+                        name="department_id"
+                        class="form-control"
+                        required>
+                    <option value="">-- Select Department --</option>
+                </select>
+            </div>
+
+            <div class="form-group" style="margin-top:15px;">
+                <label for="assignMember">Department Member</label>
+                <select id="assignMember"
+                        name="member_id"
+                        class="form-control"
+                        required
+                        disabled>
+                    <option value="">-- Select Department First --</option>
+                </select>
+            </div>
+
+            <div id="assignStatus"
+                 style="display:none;margin-top:10px;">
+            </div>
+
+            <div style="text-align:right;margin-top:20px;">
+
+                <button type="button"
+                        class="btn btn-secondary"
+                        onclick="closeAssignModal()">
+                    Cancel
+                </button>
+
+                <button type="submit"
+                        id="assignSubmitBtn"
+                        class="btn btn-primary">
+                    Assign
+                </button>
+
+            </div>
+        </form>
+    </div>
+</div>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
 <script>
@@ -245,7 +330,7 @@ window.initLeadsTable = function () {
                 text: 'Export Current Page',
                 title: 'Aeronero_Leads',
                 exportOptions: {
-                    columns: [1,2,3,4,5,6,7,8,9,10]
+                    columns: [1,2,3,4,5,6,7,8,9,10,11,12]
                 }
             }
         ] : [],
@@ -274,12 +359,12 @@ window.initLeadsTable = function () {
 
         columnDefs: [
             {
-                targets: [0, 11],
+                targets: [0, 13],
                 orderable: false,
                 searchable: false
             },
             {
-                targets: [5, 6, 7, 8, 9, 10],
+                targets: [5, 6, 7, 8, 9, 10, 11, 12],
                 orderable: false
             }
         ],
@@ -466,7 +551,15 @@ function updateSelectedLeadCount() {
     $('#selectedLeadCount')
         .text(selectedIds.length);
 
+    $('#selectedAssignCount')
+        .text(selectedIds.length);
+
     $('#bulkMoveBtn').prop(
+        'disabled',
+        selectedIds.length === 0
+    );
+
+    $('#bulkAssignBtn').prop(
         'disabled',
         selectedIds.length === 0
     );
@@ -753,6 +846,194 @@ $(document)
     };
 
     reader.readAsArrayBuffer(file);
+});
+
+
+// Open Assign Modal
+function openAssignModal() {
+
+    var selectedIds = getSelectedLeadIds();
+
+    if (selectedIds.length === 0) {
+        alert('Please select at least one lead to assign.');
+        return;
+    }
+
+    $('#assignModalLeadCount').text(selectedIds.length);
+    $('#assignStatus').hide().text('');
+
+    $('#assignDepartment')
+        .prop('disabled', true)
+        .html('<option value="">Loading departments...</option>');
+
+    $('#assignMember')
+        .prop('disabled', true)
+        .html('<option value="">-- Select Department First --</option>');
+
+    $('#assignLeadModal').fadeIn(200);
+
+    $.ajax({
+        type: 'GET',
+        url: 'qvision/CRM/calls/get_assign_options.php',
+        data: { action: 'departments' },
+        dataType: 'json',
+
+        success: function (res) {
+
+            var options = '<option value="">-- Select Department --</option>';
+
+            if (Number(res.status) === 1 && Array.isArray(res.data)) {
+                $.each(res.data, function (i, dept) {
+                    options += '<option value="' + dept.id + '">' + dept.dept_name + '</option>';
+                });
+            }
+
+            $('#assignDepartment')
+                .html(options)
+                .prop('disabled', false);
+        },
+
+        error: function (xhr) {
+            console.error(xhr.responseText);
+            $('#assignDepartment')
+                .html('<option value="">Failed to load departments</option>')
+                .prop('disabled', false);
+        }
+    });
+}
+
+
+// Close Assign Modal
+function closeAssignModal() {
+    $('#assignLeadModal').fadeOut(200);
+}
+
+
+// Load Department Members when Department changes
+$(document)
+.off('change.assignDept', '#assignDepartment')
+.on('change.assignDept', '#assignDepartment', function () {
+
+    var deptId = $(this).val();
+
+    if (!deptId) {
+        $('#assignMember')
+            .prop('disabled', true)
+            .html('<option value="">-- Select Department First --</option>');
+        return;
+    }
+
+    $('#assignMember')
+        .prop('disabled', true)
+        .html('<option value="">Loading members...</option>');
+
+    $.ajax({
+        type: 'GET',
+        url: 'qvision/CRM/calls/get_assign_options.php',
+        data: {
+            action: 'members',
+            department_id: deptId
+        },
+        dataType: 'json',
+
+        success: function (res) {
+
+            var options = '<option value="">-- Select Member --</option>';
+
+            if (Number(res.status) === 1 && Array.isArray(res.data) && res.data.length > 0) {
+                $.each(res.data, function (i, member) {
+                    options += '<option value="' + member.user_id + '">' + member.display_name + '</option>';
+                });
+
+                $('#assignMember')
+                    .html(options)
+                    .prop('disabled', false);
+            } else {
+                $('#assignMember')
+                    .html('<option value="">No members found in this department</option>')
+                    .prop('disabled', true);
+            }
+        },
+
+        error: function (xhr) {
+            console.error(xhr.responseText);
+            $('#assignMember')
+                .html('<option value="">Failed to load members</option>')
+                .prop('disabled', true);
+        }
+    });
+});
+
+
+// Submit Assign Form
+$(document)
+.off('submit.assignLeads', '#assignLeadForm')
+.on('submit.assignLeads', '#assignLeadForm', function (e) {
+
+    e.preventDefault();
+
+    var selectedIds = getSelectedLeadIds();
+    var deptId = $('#assignDepartment').val();
+    var memberId = $('#assignMember').val();
+
+    if (selectedIds.length === 0) {
+        alert('Please select at least one lead.');
+        return;
+    }
+
+    if (!deptId || !memberId) {
+        alert('Please select both a department and a member.');
+        return;
+    }
+
+    $('#assignSubmitBtn')
+        .prop('disabled', true)
+        .text('Assigning...');
+
+    $('#assignStatus')
+        .show()
+        .css('color', '#0056b3')
+        .text('Assigning selected leads...');
+
+    $.ajax({
+        type: 'POST',
+        url: 'qvision/CRM/calls/leads_assign.php',
+        data: {
+            ids: selectedIds,
+            department_id: deptId,
+            member_id: memberId
+        },
+        dataType: 'json',
+
+        success: function (res) {
+
+            $('#assignSubmitBtn')
+                .prop('disabled', false)
+                .text('Assign');
+
+            if (Number(res.status) === 1) {
+                alert(res.message || 'Leads assigned successfully.');
+                closeAssignModal();
+                loadLeadsList();
+            } else {
+                $('#assignStatus')
+                    .css('color', 'red')
+                    .text(res.message || 'Unable to assign leads.');
+            }
+        },
+
+        error: function (xhr) {
+            console.error(xhr.responseText);
+
+            $('#assignSubmitBtn')
+                .prop('disabled', false)
+                .text('Assign');
+
+            $('#assignStatus')
+                .css('color', 'red')
+                .text('Server error while assigning leads.');
+        }
+    });
 });
 
 </script>

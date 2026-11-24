@@ -24,8 +24,7 @@ try {
             exit;
         }
 
-        $con->query("
-            UPDATE leave_apply_masters 
+        $con->query("UPDATE leave_apply_masters 
             SET status = 2, modified_on = NOW(), modified_by = '$user_id'
             WHERE id = '$id'
         ");
@@ -94,8 +93,8 @@ try {
     $query = $con->prepare("SELECT 
         ml.leave_name,lap.* FROM leave_apply_masters lap 
         LEFT JOIN master_leave ml ON ml.id =lap.leave_type 
-        where (lap.candid_id= $user_id OR lap.reporting_person = $user_id)
-        ORDER BY lap.req_date DESC;
+        where (lap.candid_id= $user_id OR lap.reporting_person_id = $user_id)
+        ORDER BY lap.req_date DESC , lap.id DESC;
     ");
     if ($query->execute()) {
         $row = $query->fetchAll(PDO::FETCH_ASSOC);
